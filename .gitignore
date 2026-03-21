@@ -1,6 +1,9 @@
 # Generated graph output
 graphs/
 
+# Ground truth eval working files (not for publication)
+GT/
+
 # Python
 __pycache__/
 *.pyc
