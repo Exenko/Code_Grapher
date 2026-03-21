@@ -1,0 +1,151 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/e2e/test_api_communication.py",
+  "stats": {
+    "nodes": 9,
+    "edges": 8
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py",
+      "type": "file",
+      "label": "test_api_communication.py",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::sample_recipes_100",
+      "type": "symbol",
+      "label": "sample_recipes_100",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 47,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::mock_server_client",
+      "type": "symbol",
+      "label": "mock_server_client",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 95,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::sample_query_request",
+      "type": "symbol",
+      "label": "sample_query_request",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 104,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::test_token_deduction_on_successful_query",
+      "type": "symbol",
+      "label": "test_token_deduction_on_successful_query",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 119,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::test_batch_size_parameter_respected",
+      "type": "symbol",
+      "label": "test_batch_size_parameter_respected",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 210,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::test_recipes_ordered_by_seasonal_score_descending",
+      "type": "symbol",
+      "label": "test_recipes_ordered_by_seasonal_score_descending",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 298,
+      "language": "python",
+      "is_test": true,
+      "x": -42.42640687119286,
+      "y": -42.426406871192846
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::test_allergen_exclusion_filters_correctly",
+      "type": "symbol",
+      "label": "test_allergen_exclusion_filters_correctly",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 395,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_api_communication.py::test_cuisine_filter_applied_correctly",
+      "type": "symbol",
+      "label": "test_cuisine_filter_applied_correctly",
+      "file": "test_scripts/e2e/test_api_communication.py",
+      "line": 499,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::sample_recipes_100",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::mock_server_client",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::sample_query_request",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::test_token_deduction_on_successful_query",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::test_batch_size_parameter_respected",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::test_recipes_ordered_by_seasonal_score_descending",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::test_allergen_exclusion_filters_correctly",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_api_communication.py",
+      "to": "repo::test_scripts/e2e/test_api_communication.py::test_cuisine_filter_applied_correctly",
+      "relation": "defines"
+    }
+  ]
+}

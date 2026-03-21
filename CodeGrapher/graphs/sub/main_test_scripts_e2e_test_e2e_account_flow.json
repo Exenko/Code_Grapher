@@ -1,0 +1,247 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/e2e/test_e2e_account_flow.py",
+  "stats": {
+    "nodes": 15,
+    "edges": 14
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py",
+      "type": "file",
+      "label": "test_e2e_account_flow.py",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_e2e_account_flow::TestAccountCreation",
+      "type": "type",
+      "label": "TestAccountCreation",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 13,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_create_anonymous_account",
+      "type": "symbol",
+      "label": "TestAccountCreation.test_create_anonymous_account",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 16,
+      "language": "python",
+      "is_test": true,
+      "x": 54.05813207414515,
+      "y": 26.033024347053487
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_account_id_is_valid_uuid",
+      "type": "symbol",
+      "label": "TestAccountCreation.test_account_id_is_valid_uuid",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 33,
+      "language": "python",
+      "is_test": true,
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_each_account_gets_unique_id",
+      "type": "symbol",
+      "label": "TestAccountCreation.test_each_account_gets_unique_id",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 44,
+      "language": "python",
+      "is_test": true,
+      "x": 13.351256037378867,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::test_e2e_account_flow::TestTokenBalance",
+      "type": "type",
+      "label": "TestTokenBalance",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 55,
+      "language": "python",
+      "is_test": true,
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenBalance.test_get_token_balance",
+      "type": "symbol",
+      "label": "TestTokenBalance.test_get_token_balance",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 58,
+      "language": "python",
+      "is_test": true,
+      "x": -37.40938811152401,
+      "y": 46.90988894808179
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenBalance.test_get_balance_nonexistent_account",
+      "type": "symbol",
+      "label": "TestTokenBalance.test_get_balance_nonexistent_account",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 73,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "type": "type",
+      "label": "TestTokenConsumption",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 84,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_success",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_tokens_success",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 87,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_multiple_times",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_tokens_multiple_times",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": -37.409388111524024,
+      "y": -46.90988894808178
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_insufficient_tokens",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_insufficient_tokens",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 132,
+      "language": "python",
+      "is_test": true,
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_zero_tokens_rejected",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_zero_tokens_rejected",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 142,
+      "language": "python",
+      "is_test": true,
+      "x": 13.3512560373788,
+      "y": -58.49567473090943
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_negative_tokens_rejected",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_negative_tokens_rejected",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 152,
+      "language": "python",
+      "is_test": true,
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_nonexistent_account",
+      "type": "symbol",
+      "label": "TestTokenConsumption.test_consume_tokens_nonexistent_account",
+      "file": "test_scripts/e2e/test_e2e_account_flow.py",
+      "line": 162,
+      "language": "python",
+      "is_test": true,
+      "x": 54.05813207414516,
+      "y": -26.033024347053452
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_account_flow.py",
+      "to": "repo::test_e2e_account_flow::TestAccountCreation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestAccountCreation",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_create_anonymous_account",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestAccountCreation",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_account_id_is_valid_uuid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestAccountCreation",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestAccountCreation.test_each_account_gets_unique_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_account_flow.py",
+      "to": "repo::test_e2e_account_flow::TestTokenBalance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenBalance",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenBalance.test_get_token_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenBalance",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenBalance.test_get_balance_nonexistent_account",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_account_flow.py",
+      "to": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_multiple_times",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_insufficient_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_zero_tokens_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_negative_tokens_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_account_flow::TestTokenConsumption",
+      "to": "repo::test_scripts/e2e/test_e2e_account_flow.py::TestTokenConsumption.test_consume_tokens_nonexistent_account",
+      "relation": "contains"
+    }
+  ]
+}

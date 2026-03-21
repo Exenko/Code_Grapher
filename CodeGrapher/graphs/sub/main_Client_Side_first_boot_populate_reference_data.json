@@ -1,0 +1,256 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/first_boot/populate_reference_data.py",
+  "stats": {
+    "nodes": 13,
+    "edges": 21
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py",
+      "type": "file",
+      "label": "populate_reference_data.py",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::populate_reference_data::ReferenceDataPopulator",
+      "type": "type",
+      "label": "ReferenceDataPopulator",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 7,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.__init__",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.__init__",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 8,
+      "language": "python",
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_all_reference_data",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 14,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_geographic_hierarchy_from_json",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_geographic_hierarchy_from_json",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 30,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_allergen_hierarchy_from_json",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_allergen_hierarchy_from_json",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 131,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_diet_types_from_json",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_diet_types_from_json",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 190,
+      "language": "python",
+      "x": -51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_equipment_types_from_json",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_equipment_types_from_json",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 215,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_storage_types_from_json",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_storage_types_from_json",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 250,
+      "language": "python",
+      "x": -51.96152422706633,
+      "y": -29.999999999999982
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_hierarchy_records",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.insert_hierarchy_records",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 284,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_allergen_records",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.insert_allergen_records",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 298,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_climate_seasonality",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator.populate_climate_seasonality",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 312,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator._insert_climate_bucket_ranges",
+      "type": "symbol",
+      "label": "ReferenceDataPopulator._insert_climate_bucket_ranges",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "line": 420,
+      "language": "python",
+      "x": 51.961524227066306,
+      "y": -30.00000000000003
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py",
+      "to": "repo::populate_reference_data::ReferenceDataPopulator",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_geographic_hierarchy_from_json",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_allergen_hierarchy_from_json",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_diet_types_from_json",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_equipment_types_from_json",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_storage_types_from_json",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_all_reference_data",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_climate_seasonality",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_geographic_hierarchy_from_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_geographic_hierarchy_from_json",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_hierarchy_records",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_allergen_hierarchy_from_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_allergen_hierarchy_from_json",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_allergen_records",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_diet_types_from_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_equipment_types_from_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_storage_types_from_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_hierarchy_records",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.insert_allergen_records",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_climate_seasonality",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator.populate_climate_seasonality",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator._insert_climate_bucket_ranges",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::populate_reference_data::ReferenceDataPopulator",
+      "to": "repo::Client_Side/first_boot/populate_reference_data.py::ReferenceDataPopulator._insert_climate_bucket_ranges",
+      "relation": "contains"
+    }
+  ]
+}

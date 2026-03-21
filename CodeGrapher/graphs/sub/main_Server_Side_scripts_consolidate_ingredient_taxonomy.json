@@ -1,0 +1,382 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+  "stats": {
+    "nodes": 19,
+    "edges": 33
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "type": "file",
+      "label": "consolidate_ingredient_taxonomy.py",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "type": "type",
+      "label": "IngredientConsolidator",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 32,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.__init__",
+      "type": "symbol",
+      "label": "IngredientConsolidator.__init__",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 35,
+      "language": "python",
+      "x": 56.381557247154504,
+      "y": 20.521208599540124
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.extract_climate_zone_from_filename",
+      "type": "symbol",
+      "label": "IngredientConsolidator.extract_climate_zone_from_filename",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 59,
+      "language": "python",
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_varieties",
+      "type": "symbol",
+      "label": "IngredientConsolidator.merge_varieties",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 78,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_ingredient",
+      "type": "symbol",
+      "label": "IngredientConsolidator.merge_ingredient",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 98,
+      "language": "python",
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_to_taxonomy",
+      "type": "symbol",
+      "label": "IngredientConsolidator.add_to_taxonomy",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 149,
+      "language": "python",
+      "x": -10.418890660015819,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator._infer_scientific_name",
+      "type": "symbol",
+      "label": "IngredientConsolidator._infer_scientific_name",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 178,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_seasonal_data",
+      "type": "symbol",
+      "label": "IngredientConsolidator.add_seasonal_data",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 200,
+      "language": "python",
+      "x": -45.96266658713867,
+      "y": 38.56725658119237
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "type": "symbol",
+      "label": "IngredientConsolidator.process_category_section",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 231,
+      "language": "python",
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_import_section",
+      "type": "symbol",
+      "label": "IngredientConsolidator.process_import_section",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 273,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "type": "symbol",
+      "label": "IngredientConsolidator.process_yaml_file",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 323,
+      "language": "python",
+      "x": -56.381557247154504,
+      "y": -20.52120859954012
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_all_files",
+      "type": "symbol",
+      "label": "IngredientConsolidator.process_all_files",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 385,
+      "language": "python",
+      "x": -45.9626665871387,
+      "y": -38.56725658119233
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_master_ingredients",
+      "type": "symbol",
+      "label": "IngredientConsolidator.write_master_ingredients",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 403,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_agricultural_taxonomy",
+      "type": "symbol",
+      "label": "IngredientConsolidator.write_agricultural_taxonomy",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 428,
+      "language": "python",
+      "x": -10.418890660015819,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_seasonal_availability",
+      "type": "symbol",
+      "label": "IngredientConsolidator.write_seasonal_availability",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 455,
+      "language": "python",
+      "x": 10.418890660015798,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.print_statistics",
+      "type": "symbol",
+      "label": "IngredientConsolidator.print_statistics",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 482,
+      "language": "python",
+      "x": 29.99999999999996,
+      "y": -51.96152422706634
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "type": "symbol",
+      "label": "IngredientConsolidator.run",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 506,
+      "language": "python",
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "line": 529,
+      "language": "python",
+      "x": 56.381557247154504,
+      "y": -20.521208599540117
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "to": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.extract_climate_zone_from_filename",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_varieties",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_ingredient",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_varieties",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_to_taxonomy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_to_taxonomy",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator._infer_scientific_name",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator._infer_scientific_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_seasonal_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.merge_ingredient",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_to_taxonomy",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.add_seasonal_data",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_import_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.extract_climate_zone_from_filename",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_category_section",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_import_section",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_all_files",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_all_files",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_yaml_file",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_master_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_agricultural_taxonomy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_seasonal_availability",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.print_statistics",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.process_all_files",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_master_ingredients",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_agricultural_taxonomy",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.write_seasonal_availability",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.run",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::IngredientConsolidator.print_statistics",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py",
+      "to": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/scripts/consolidate_ingredient_taxonomy.py::main",
+      "to": "repo::consolidate_ingredient_taxonomy::IngredientConsolidator",
+      "relation": "calls",
+      "seq": 5
+    }
+  ]
+}

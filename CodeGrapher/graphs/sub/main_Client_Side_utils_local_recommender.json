@@ -1,0 +1,1031 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/utils/local_recommender.py",
+  "stats": {
+    "nodes": 51,
+    "edges": 89
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py",
+      "type": "file",
+      "label": "local_recommender.py",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::local_recommender::RecipeScore",
+      "type": "type",
+      "label": "RecipeScore",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 24,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.recipe_id",
+      "type": "symbol",
+      "label": "RecipeScore.recipe_id",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 26,
+      "language": "python",
+      "annotation": "int",
+      "x": 59.526882078868674,
+      "y": 7.5199940138582555
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.total_score",
+      "type": "symbol",
+      "label": "RecipeScore.total_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 27,
+      "language": "python",
+      "annotation": "float",
+      "x": 58.114989667717865,
+      "y": 14.921393229891288
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.allergen_safe",
+      "type": "symbol",
+      "label": "RecipeScore.allergen_safe",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 28,
+      "language": "python",
+      "annotation": "bool",
+      "x": 55.78658915329509,
+      "y": 22.087473161080673
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.dietary_safe",
+      "type": "symbol",
+      "label": "RecipeScore.dietary_safe",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 29,
+      "language": "python",
+      "annotation": "bool",
+      "x": 52.57840080263181,
+      "y": 28.90522044610292
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.geographic_score",
+      "type": "symbol",
+      "label": "RecipeScore.geographic_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 30,
+      "language": "python",
+      "annotation": "float",
+      "x": 48.54101966249685,
+      "y": 35.26711513754839
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.equipment_score",
+      "type": "symbol",
+      "label": "RecipeScore.equipment_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 31,
+      "language": "python",
+      "annotation": "float",
+      "x": 43.738117645284696,
+      "y": 41.07282635572132
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.seasonal_score",
+      "type": "symbol",
+      "label": "RecipeScore.seasonal_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 32,
+      "language": "python",
+      "annotation": "float",
+      "x": 38.24543938492138,
+      "y": 46.23079456654735
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.recency_score",
+      "type": "symbol",
+      "label": "RecipeScore.recency_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 33,
+      "language": "python",
+      "annotation": "float",
+      "x": 32.14960769873979,
+      "y": 50.65967553012091
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.member_scores",
+      "type": "symbol",
+      "label": "RecipeScore.member_scores",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 34,
+      "language": "python",
+      "annotation": "Dict[int, float]",
+      "x": 25.54675749390436,
+      "y": 54.28962314796117
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.is_rejected",
+      "type": "symbol",
+      "label": "RecipeScore.is_rejected",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 35,
+      "language": "python",
+      "annotation": "bool",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::RecipeScore.rejection_reason",
+      "type": "symbol",
+      "label": "RecipeScore.rejection_reason",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 36,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 11.242878875143484,
+      "y": 58.937235043721316
+    },
+    {
+      "id": "repo::local_recommender::CompatibilityBreakdown",
+      "type": "type",
+      "label": "CompatibilityBreakdown",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 40,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 3.767431171758812,
+      "y": 59.88160370569629
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recipe_id",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.recipe_id",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 42,
+      "language": "python",
+      "annotation": "int",
+      "x": -3.7674311717588043,
+      "y": 59.88160370569629
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recipe_title",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.recipe_title",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 43,
+      "language": "python",
+      "annotation": "str",
+      "x": -11.242878875143475,
+      "y": 58.93723504372132
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.total_score",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.total_score",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 44,
+      "language": "python",
+      "annotation": "float",
+      "x": -18.541019662496826,
+      "y": 57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.allergen_status",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.allergen_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 47,
+      "language": "python",
+      "annotation": "Dict[str, any]",
+      "x": -25.546757493904362,
+      "y": 54.289623147961166
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.dietary_status",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.dietary_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 48,
+      "language": "python",
+      "annotation": "Dict[str, any]",
+      "x": -32.149607698739814,
+      "y": 50.6596755301209
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.geographic_constraints",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.geographic_constraints",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 49,
+      "language": "python",
+      "annotation": "Dict[str, Dict]",
+      "x": -38.24543938492138,
+      "y": 46.23079456654735
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.equipment_matches",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.equipment_matches",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 50,
+      "language": "python",
+      "annotation": "List[str]",
+      "x": -43.73811764528468,
+      "y": 41.07282635572133
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.seasonal_status",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.seasonal_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 51,
+      "language": "python",
+      "annotation": "str",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recency_status",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.recency_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 52,
+      "language": "python",
+      "annotation": "str",
+      "x": -52.57840080263181,
+      "y": 28.905220446102913
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.member_scores",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.member_scores",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 55,
+      "language": "python",
+      "annotation": "Dict[int, float]",
+      "x": -55.78658915329508,
+      "y": 22.087473161080688
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.lowest_score_member",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.lowest_score_member",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 56,
+      "language": "python",
+      "annotation": "int",
+      "x": -58.11498966771786,
+      "y": 14.921393229891315
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.lowest_score_reason",
+      "type": "symbol",
+      "label": "CompatibilityBreakdown.lowest_score_reason",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 57,
+      "language": "python",
+      "annotation": "str",
+      "x": -59.52688207886867,
+      "y": 7.519994013858272
+    },
+    {
+      "id": "repo::local_recommender::LocalRecommender",
+      "type": "type",
+      "label": "LocalRecommender",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 60,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.__init__",
+      "type": "symbol",
+      "label": "LocalRecommender.__init__",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 79,
+      "language": "python",
+      "x": -59.526882078868674,
+      "y": -7.519994013858257
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_connection",
+      "type": "symbol",
+      "label": "LocalRecommender._get_connection",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 88,
+      "language": "python",
+      "x": -58.11498966771787,
+      "y": -14.921393229891274
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "type": "symbol",
+      "label": "LocalRecommender.score_recipe",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 96,
+      "language": "python",
+      "x": -55.78658915329509,
+      "y": -22.087473161080673
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.rank_recipes",
+      "type": "symbol",
+      "label": "LocalRecommender.rank_recipes",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 206,
+      "language": "python",
+      "x": -52.57840080263181,
+      "y": -28.905220446102923
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.filter_recipes",
+      "type": "symbol",
+      "label": "LocalRecommender.filter_recipes",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 227,
+      "language": "python",
+      "x": -48.541019662496865,
+      "y": -35.26711513754836
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "type": "symbol",
+      "label": "LocalRecommender.get_compatibility_breakdown",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 250,
+      "language": "python",
+      "x": -43.73811764528471,
+      "y": -41.072826355721304
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.compile_compatibility_report",
+      "type": "symbol",
+      "label": "LocalRecommender.compile_compatibility_report",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 336,
+      "language": "python",
+      "x": -38.24543938492137,
+      "y": -46.23079456654736
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety",
+      "type": "symbol",
+      "label": "LocalRecommender._check_allergen_safety",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 372,
+      "language": "python",
+      "x": -32.14960769873978,
+      "y": -50.65967553012092
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety_for_member",
+      "type": "symbol",
+      "label": "LocalRecommender._check_allergen_safety_for_member",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 380,
+      "language": "python",
+      "x": -25.54675749390433,
+      "y": -54.28962314796119
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety",
+      "type": "symbol",
+      "label": "LocalRecommender._check_dietary_safety",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 411,
+      "language": "python",
+      "x": -18.541019662496854,
+      "y": -57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety_for_member",
+      "type": "symbol",
+      "label": "LocalRecommender._check_dietary_safety_for_member",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 419,
+      "language": "python",
+      "x": -11.242878875143477,
+      "y": -58.93723504372132
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_rejection_status",
+      "type": "symbol",
+      "label": "LocalRecommender._check_rejection_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 449,
+      "language": "python",
+      "x": -3.7674311717587923,
+      "y": -59.88160370569629
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_geographic_preference",
+      "type": "symbol",
+      "label": "LocalRecommender._score_geographic_preference",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 480,
+      "language": "python",
+      "x": 3.76743117175877,
+      "y": -59.88160370569629
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_equipment_match",
+      "type": "symbol",
+      "label": "LocalRecommender._score_equipment_match",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 556,
+      "language": "python",
+      "x": 11.242878875143456,
+      "y": -58.93723504372132
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_seasonal_alignment",
+      "type": "symbol",
+      "label": "LocalRecommender._score_seasonal_alignment",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 596,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_recency",
+      "type": "symbol",
+      "label": "LocalRecommender._score_recency",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 653,
+      "language": "python",
+      "x": 25.54675749390431,
+      "y": -54.289623147961194
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "type": "symbol",
+      "label": "LocalRecommender._get_household_members",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 670,
+      "language": "python",
+      "x": 32.14960769873981,
+      "y": -50.6596755301209
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_title",
+      "type": "symbol",
+      "label": "LocalRecommender._get_recipe_title",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 680,
+      "language": "python",
+      "x": 38.245439384921355,
+      "y": -46.230794566547374
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_member_name",
+      "type": "symbol",
+      "label": "LocalRecommender._get_member_name",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 687,
+      "language": "python",
+      "x": 43.738117645284674,
+      "y": -41.07282635572134
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_equipment",
+      "type": "symbol",
+      "label": "LocalRecommender._get_recipe_equipment",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 694,
+      "language": "python",
+      "x": 48.54101966249684,
+      "y": -35.2671151375484
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_seasonal_status",
+      "type": "symbol",
+      "label": "LocalRecommender._get_seasonal_status",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 705,
+      "language": "python",
+      "x": 52.57840080263179,
+      "y": -28.905220446102966
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_recency_days",
+      "type": "symbol",
+      "label": "LocalRecommender._get_recipe_recency_days",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 761,
+      "language": "python",
+      "x": 55.78658915329509,
+      "y": -22.087473161080673
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_geographic_constraints_breakdown",
+      "type": "symbol",
+      "label": "LocalRecommender._get_geographic_constraints_breakdown",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 778,
+      "language": "python",
+      "x": 58.11498966771786,
+      "y": -14.92139322989132
+    },
+    {
+      "id": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "type": "symbol",
+      "label": "LocalRecommender._get_lowest_score_reason",
+      "file": "Client_Side/utils/local_recommender.py",
+      "line": 828,
+      "language": "python",
+      "x": 59.52688207886867,
+      "y": -7.519994013858279
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py",
+      "to": "repo::local_recommender::RecipeScore",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.total_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.allergen_safe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.dietary_safe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.geographic_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.equipment_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.seasonal_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.recency_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.member_scores",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.is_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::RecipeScore",
+      "to": "repo::Client_Side/utils/local_recommender.py::RecipeScore.rejection_reason",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py",
+      "to": "repo::local_recommender::CompatibilityBreakdown",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recipe_title",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.total_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.allergen_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.dietary_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.geographic_constraints",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.equipment_matches",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.seasonal_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.recency_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.member_scores",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.lowest_score_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::CompatibilityBreakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::CompatibilityBreakdown.lowest_score_reason",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py",
+      "to": "repo::local_recommender::LocalRecommender",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_connection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::local_recommender::RecipeScore",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::local_recommender::RecipeScore",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_rejection_status",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_geographic_preference",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_equipment_match",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_seasonal_alignment",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_recency",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.rank_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.rank_recipes",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.filter_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.filter_recipes",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::local_recommender::CompatibilityBreakdown",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_title",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.score_recipe",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_member_name",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety_for_member",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety_for_member",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_geographic_constraints_breakdown",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_equipment",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_seasonal_status",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_recency_days",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "to": "repo::local_recommender::CompatibilityBreakdown",
+      "relation": "calls",
+      "seq": 16
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.compile_compatibility_report",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.compile_compatibility_report",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.rank_recipes",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.compile_compatibility_report",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.get_compatibility_breakdown",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.compile_compatibility_report",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender.filter_recipes",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety_for_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_allergen_safety_for_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety_for_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_dietary_safety_for_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._check_rejection_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_geographic_preference",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_equipment_match",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_seasonal_alignment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_recency",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_recency",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_recency_days",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_household_members",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_title",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_member_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_equipment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_seasonal_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_recipe_recency_days",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_geographic_constraints_breakdown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::local_recommender::LocalRecommender",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_geographic_constraints_breakdown",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_equipment_match",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_seasonal_alignment",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._get_lowest_score_reason",
+      "to": "repo::Client_Side/utils/local_recommender.py::LocalRecommender._score_recency",
+      "relation": "calls",
+      "seq": 5
+    }
+  ]
+}

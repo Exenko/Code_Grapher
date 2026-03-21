@@ -1,0 +1,174 @@
+{
+  "iteration": 7,
+  "generated": "2026-03-21",
+  "thresholds": {
+    "node_recall": 0.80,
+    "edge_recall": 0.70,
+    "hallucination_max": 0.15
+  },
+  "runs": [
+    {
+      "name": "allergen_indexer_v2",
+      "file": "Server_Side/db/allergen_indexer.py",
+      "diagram_type": "classDiagram",
+      "version": "v2",
+      "gt_nodes": 2,
+      "gt_edges": 0,
+      "skill_nodes": 2,
+      "skill_edges": 0,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.00,
+      "pass": true,
+      "notes": "v2 fix confirmed: generic container type rule correctly applied. Dict[str, AllergenHierarchy] → declared type is Dict → NO edge. v1 drew 1 edge (incorrect). v2 draws 0 edges (correct)."
+    },
+    {
+      "name": "ingredient_sync_manager_v2",
+      "file": "Client_Side/utils/ingredient_sync_manager.py",
+      "diagram_type": "sequenceDiagram",
+      "version": "v2",
+      "gt_nodes": 3,
+      "gt_edges": 8,
+      "skill_nodes": 3,
+      "skill_edges": 9,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.00,
+      "pass": true,
+      "notes": "v2 fixes confirmed: (1) no self-messages — ISM→ISM arrows removed; (2) _get_local_sync_state() correctly excluded as intra-file method; (3) _get_connection() calls compressed to one per block. Diagram matches GT structure exactly with correct alt-block placement of count calls. Note: _get_master_ingredient_count() and _get_seasonality_count() are actually ISM's own intra-file methods — the skill correctly labels their internal DB interaction via _get_connection(), semantically matching GT's labeling. 3 v2 run attempts before clean output achieved."
+    },
+    {
+      "name": "preference_compiler",
+      "file": "Client_Side/utils/preference_compiler.py",
+      "diagram_type": "classDiagram",
+      "version": "v1",
+      "gt_nodes": 2,
+      "gt_edges": 0,
+      "skill_nodes": 2,
+      "skill_edges": 0,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.00,
+      "pass": true,
+      "notes": "0-edge diagram. Both classes (AnonymousQueryRequest dataclass + PreferenceCompiler) have only primitive/container fields. Skill correctly draws 0 edges. PreferenceCompiler.compile_for_query() RETURNS AnonymousQueryRequest but this is a return type, not a field declaration. Generic container rule not triggered (List[int] fields, no local class type params)."
+    },
+    {
+      "name": "seasonal_calculator",
+      "file": "Client_Side/utils/seasonal_calculator.py",
+      "diagram_type": "classDiagram",
+      "version": "v1",
+      "gt_nodes": 2,
+      "gt_edges": 0,
+      "skill_nodes": 2,
+      "skill_edges": 0,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.00,
+      "pass": true,
+      "notes": "0-edge diagram. Hemisphere enum present but never used as a field type in SeasonalCalculator. SeasonalCalculator fields are primitives only (db_path: str, server_url: str, reference_data_max_age: int). Tests enum-in-same-file scenario — correct result: no edge."
+    },
+    {
+      "name": "master_ingredients_loader",
+      "file": "Server_Side/db/master_ingredients_loader.py",
+      "diagram_type": "flowchart TB",
+      "version": "v1",
+      "gt_nodes": 11,
+      "gt_edges": 10,
+      "skill_nodes": 12,
+      "skill_edges": 12,
+      "node_recall": 0.636,
+      "edge_recall": 0.600,
+      "hallucination": 0.458,
+      "pass": false,
+      "gt_nodes_matched": 7,
+      "gt_edges_matched": 6,
+      "skill_nodes_not_in_gt": ["setup_logging", "_load_hierarchy", "_validate_hierarchy", "IngredientEntry", "_extract_ingredients_from_category"],
+      "gt_nodes_not_in_skill": ["db_util.close()", "db_util.connect()", "db_util.execute()/fetchall()", "db_util.commit()"],
+      "root_cause": "flowchart_cross_file_terminal_nodes_gap",
+      "notes": "Skill shows intra-file call chain correctly but misses cross-file DB terminal nodes entirely. db_util.connect(), db_util.commit(), db_util.execute()/fetchall(), db_util.close() are calls on the db_factory database object (cross-file) and must appear as leaf nodes. Skill agent prompt only said 'method-level granularity' without explicitly requiring cross-file calls as terminal nodes. New SKILL.md rule needed."
+    },
+    {
+      "name": "cuisine_hierarchy_loader",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "diagram_type": "flowchart TB",
+      "version": "v1",
+      "gt_nodes": 7,
+      "gt_edges": 7,
+      "skill_nodes": 6,
+      "skill_edges": 4,
+      "node_recall": 0.429,
+      "edge_recall": 0.286,
+      "hallucination": 0.400,
+      "pass": false,
+      "gt_nodes_matched": 3,
+      "gt_edges_matched": 2,
+      "skill_nodes_not_in_gt": ["__init__", "_load_data", "generate_report"],
+      "gt_nodes_not_in_skill": ["db.execute(DELETE)", "db.commit()", "db.fetch_one(INSERT)", "iterate root items"],
+      "root_cause": "flowchart_cross_file_terminal_nodes_gap",
+      "notes": "Same root cause as master_ingredients_loader: skill shows __init__→_load_data initialization chain (pre-entry-point) instead of the load_hierarchy() pipeline DB calls. db.execute(DELETE), db.commit(), db.fetch_one(INSERT) are cross-file terminal nodes representing calls on the db object from db_factory.py. Shows __init__/_load_data as extra intra-file initialization context not in GT."
+    },
+    {
+      "name": "sync",
+      "file": "Server_Side/api/routes/sync.py",
+      "diagram_type": "sequenceDiagram",
+      "version": "v1",
+      "gt_nodes": 3,
+      "gt_edges": 3,
+      "skill_nodes": 6,
+      "skill_edges_approx": 13,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.630,
+      "pass": false,
+      "gt_nodes_matched": 3,
+      "gt_edges_matched": 3,
+      "skill_non_file_actors": ["FastAPI Client", "PostgreSQL DB"],
+      "root_cause": "non_file_actors_and_library_traversal",
+      "notes": "All GT file actors and GT calls present (node_recall=1.0, edge_recall=1.0). FAIL due to hallucinations: (1) added FastAPI Client and PostgreSQL DB as actors — external systems, not Python files; (2) showed pg_database_utility's INTERNAL calls to PostgreSQL (PgUtil→Database arrows) — should only show sync.py's outgoing calls; (3) one ISM→ISM self-message 'build versions dict'. Two new SKILL.md rules needed."
+    }
+  ],
+  "summary": {
+    "total_runs": 7,
+    "passes": 4,
+    "fails": 3,
+    "pass_rate": 0.571,
+    "v2_reruns": {
+      "allergen_indexer": "PASS",
+      "ingredient_sync_manager": "PASS",
+      "both_fixes_confirmed": true
+    },
+    "new_entries_pass_rate": "2/5 (40%)",
+    "new_gaps_identified": [
+      {
+        "id": "flowchart_cross_file_terminal_nodes",
+        "affected_diagram_type": "flowchart TB",
+        "affected_runs": ["master_ingredients_loader", "cuisine_hierarchy_loader"],
+        "description": "Skill agent for flowchart TB omitted cross-file method calls on imported objects. When entry point calls methods on objects from imported modules (db_util.connect(), db_util.execute(), db.commit(), db.fetch_one()), these MUST be shown as terminal leaf nodes in the flowchart. Current prompt only says 'method-level granularity' without specifying cross-file terminal node inclusion.",
+        "fix": "Add SKILL.md rule: For flowchart diagrams, identify ALL method calls on objects from imported modules (db.*, db_util.*, self.<injected>.* etc.) in the source code. Include these as terminal leaf nodes labeled with <object>.<method>() even if not captured in the graph JSON."
+      },
+      {
+        "id": "sequencediagram_actors_python_files_only",
+        "affected_diagram_type": "sequenceDiagram",
+        "affected_runs": ["sync"],
+        "description": "Skill agent added external system actors (FastAPI Client, PostgreSQL DB) that are not Python source files. Actor rule states 'each actor maps to a distinct FILE' but skill interpreted this loosely to include HTTP clients and database servers.",
+        "fix": "Add SKILL.md rule: Actors in sequenceDiagram MUST be Python .py source files only. HTTP clients, database servers (PostgreSQL, SQLite), external services, and framework infrastructure are NOT actors and must not appear as participants."
+      },
+      {
+        "id": "sequencediagram_no_library_traversal",
+        "affected_diagram_type": "sequenceDiagram",
+        "affected_runs": ["sync"],
+        "description": "Skill agent traced into the internal implementation of called libraries (showed pg_database_utility's internal calls to PostgreSQL). Only the entry point file's outgoing calls should be shown.",
+        "fix": "Add SKILL.md rule: Show only the entry point file's outgoing calls to other files. Do NOT trace into what those called files do internally. If sync.py calls pg_database_utility.execute(), show sync→pgutil: execute() only. Do not show pgutil→database arrows."
+      }
+    ],
+    "cumulative_pass_rates": {
+      "iteration_1": "15/15 (100%) - stress-test C/C++/Proto/WSDL",
+      "iteration_2": "4/5 (80%) - SmartRecipeApp v1 (1 known limitation)",
+      "iteration_3": "1/5 (20%) - classDiagram + GT calibration gaps",
+      "iteration_4": "4/4 (100%) - v2 fixes",
+      "iteration_5": "4/5 (80%) - new entries",
+      "iteration_6": "4/6 (67%) - 1 v2 + 5 new",
+      "iteration_7": "4/7 (57%) - 2 v2 + 5 new"
+    }
+  }
+}

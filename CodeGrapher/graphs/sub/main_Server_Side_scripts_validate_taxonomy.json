@@ -1,0 +1,100 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/scripts/validate_taxonomy.py",
+  "stats": {
+    "nodes": 5,
+    "edges": 7
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/scripts/validate_taxonomy.py",
+      "type": "file",
+      "label": "validate_taxonomy.py",
+      "file": "Server_Side/scripts/validate_taxonomy.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/scripts/validate_taxonomy.py::validate_master_ingredients",
+      "type": "symbol",
+      "label": "validate_master_ingredients",
+      "file": "Server_Side/scripts/validate_taxonomy.py",
+      "line": 14,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/scripts/validate_taxonomy.py::validate_agricultural_taxonomy",
+      "type": "symbol",
+      "label": "validate_agricultural_taxonomy",
+      "file": "Server_Side/scripts/validate_taxonomy.py",
+      "line": 48,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Server_Side/scripts/validate_taxonomy.py::validate_seasonal_availability",
+      "type": "symbol",
+      "label": "validate_seasonal_availability",
+      "file": "Server_Side/scripts/validate_taxonomy.py",
+      "line": 82,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Server_Side/scripts/validate_taxonomy.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/scripts/validate_taxonomy.py",
+      "line": 118,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_master_ingredients",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_agricultural_taxonomy",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_seasonal_availability",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py::main",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_master_ingredients",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py::main",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_agricultural_taxonomy",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/scripts/validate_taxonomy.py::main",
+      "to": "repo::Server_Side/scripts/validate_taxonomy.py::validate_seasonal_availability",
+      "relation": "calls",
+      "seq": 6
+    }
+  ]
+}

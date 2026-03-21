@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package events;
+
+option java_package = "com.stresstest.events";
+
+// EventType enum — matches the string event names used in dispatch_event calls
+enum EventType {
+    UNKNOWN         = 0;
+    MSG_SENT        = 1;  // fired by Producer:TRANSMITTING
+    MSG_FORWARDED   = 2;  // fired by Broker:FORWARDING
+    WRITE_COMPLETE  = 3;  // fired by Consumer:WRITING (this is the ACK)
+    ERROR           = 4;  // fired by any service on error
+}
+
+// EventEnvelope — wraps any event fired through EventBus::publish
+// consumes: by all EventBus::subscribe callbacks
+// produces: by all dispatch_event wrappers (producer, broker, consumer)
+message EventEnvelope {
+    EventType event_type  = 1;
+    string    source_id   = 2;
+    uint64    timestamp   = 3;
+    bytes     payload     = 4;  // optional event payload (may be empty for ERROR)
+}
+
+// AckEvent — specifically for WRITE_COMPLETE (the Producer ACK)
+// produced by: Consumer dispatch_event("WRITE_COMPLETE")
+// consumed by: Producer on_state_change callback (WAITING_ACK → IDLE transition)
+message AckEvent {
+    string  session_id  = 1;
+    uint64  seq_num     = 2;
+    bool    success     = 3;
+}
+
+// ErrorEvent — for ERROR notifications across services
+// produced by: any service dispatch_event("ERROR")
+// consumed by: all peer services' on_state_change / broker_on_error / consumer_on_error
+message ErrorEvent {
+    string  source_service = 1;
+    string  error_code     = 2;
+    string  description    = 3;
+    uint64  timestamp      = 4;
+}

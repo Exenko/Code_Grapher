@@ -1,0 +1,151 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/db/cuisine_hierarchy_loader.py",
+  "stats": {
+    "nodes": 8,
+    "edges": 11
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py",
+      "type": "file",
+      "label": "cuisine_hierarchy_loader.py",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "type": "type",
+      "label": "CuisineHierarchyLoader",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 33,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.__init__",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader.__init__",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 42,
+      "language": "python",
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._load_data",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader._load_data",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 64,
+      "language": "python",
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._insert_node",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader._insert_node",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 73,
+      "language": "python",
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader._process_node",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 105,
+      "language": "python",
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.load_hierarchy",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader.load_hierarchy",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 132,
+      "language": "python",
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.generate_report",
+      "type": "symbol",
+      "label": "CuisineHierarchyLoader.generate_report",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "line": 163,
+      "language": "python",
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/db/cuisine_hierarchy_loader.py",
+      "to": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.__init__",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._load_data",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._load_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._insert_node",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._insert_node",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.load_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.load_hierarchy",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader._process_node",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::cuisine_hierarchy_loader::CuisineHierarchyLoader",
+      "to": "repo::Server_Side/db/cuisine_hierarchy_loader.py::CuisineHierarchyLoader.generate_report",
+      "relation": "contains"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "feature": "stress",
+  "entry_point": "CodeGrapherStressTest/consumer/main.cc",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "type": "file",
+      "label": "main.cc",
+      "file": "CodeGrapherStressTest/consumer/main.cc",
+      "line": null,
+      "language": "cpp",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "CodeGrapherStressTest/consumer/main.cc",
+      "line": 8,
+      "language": "cpp",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "relation": "defines"
+    }
+  ]
+}

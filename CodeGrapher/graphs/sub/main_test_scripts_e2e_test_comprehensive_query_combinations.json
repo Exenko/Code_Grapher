@@ -1,0 +1,807 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+  "stats": {
+    "nodes": 50,
+    "edges": 49
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "type": "file",
+      "label": "test_comprehensive_query_combinations.py",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestRecipeQueryBasic",
+      "type": "type",
+      "label": "TestRecipeQueryBasic",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 29,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_empty_query_returns_results",
+      "type": "symbol",
+      "label": "TestRecipeQueryBasic.test_empty_query_returns_results",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 32,
+      "language": "python",
+      "is_test": true,
+      "x": 59.50740082939477,
+      "y": 7.67262970107036
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_query_returns_recipe_structure",
+      "type": "symbol",
+      "label": "TestRecipeQueryBasic.test_query_returns_recipe_structure",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 56,
+      "language": "python",
+      "is_test": true,
+      "x": 58.03769178234177,
+      "y": 15.21927503457044
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_query_includes_query_id",
+      "type": "symbol",
+      "label": "TestRecipeQueryBasic.test_query_includes_query_id",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 85,
+      "language": "python",
+      "is_test": true,
+      "x": 55.61500544076131,
+      "y": 22.516020292762445
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestSeasonalBucketFiltering",
+      "type": "type",
+      "label": "TestSeasonalBucketFiltering",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 106,
+      "language": "python",
+      "is_test": true,
+      "x": 52.279122247403365,
+      "y": 29.44305312023627
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_single_seasonal_bucket",
+      "type": "symbol",
+      "label": "TestSeasonalBucketFiltering.test_single_seasonal_bucket",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 109,
+      "language": "python",
+      "is_test": true,
+      "x": 48.0848173120774,
+      "y": 35.88663182947296
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_multiple_seasonal_buckets",
+      "type": "symbol",
+      "label": "TestSeasonalBucketFiltering.test_multiple_seasonal_buckets",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 129,
+      "language": "python",
+      "is_test": true,
+      "x": 43.10096100586366,
+      "y": 41.740953036209184
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_all_seasonal_buckets",
+      "type": "symbol",
+      "label": "TestSeasonalBucketFiltering.test_all_seasonal_buckets",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 148,
+      "language": "python",
+      "is_test": true,
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestAllergenExclusion",
+      "type": "type",
+      "label": "TestAllergenExclusion",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 168,
+      "language": "python",
+      "is_test": true,
+      "x": 31.10355409863151,
+      "y": 51.30856578032076
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_single_allergen",
+      "type": "symbol",
+      "label": "TestAllergenExclusion.test_exclude_single_allergen",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 171,
+      "language": "python",
+      "is_test": true,
+      "x": 24.287000587343627,
+      "y": 54.86475738094875
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_multiple_allergens",
+      "type": "symbol",
+      "label": "TestAllergenExclusion.test_exclude_multiple_allergens",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 190,
+      "language": "python",
+      "is_test": true,
+      "x": 17.071655197861947,
+      "y": 57.520071182199636
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_many_allergens",
+      "type": "symbol",
+      "label": "TestAllergenExclusion.test_exclude_many_allergens",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": 9.575993702002773,
+      "y": 59.23090700486701
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "type": "type",
+      "label": "TestDifficultyFiltering",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 228,
+      "language": "python",
+      "is_test": true,
+      "x": 1.92309465429932,
+      "y": 59.96917297204127
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_easy",
+      "type": "symbol",
+      "label": "TestDifficultyFiltering.test_max_difficulty_easy",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 231,
+      "language": "python",
+      "is_test": true,
+      "x": -5.761381554460906,
+      "y": 59.722746776951894
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_medium",
+      "type": "symbol",
+      "label": "TestDifficultyFiltering.test_max_difficulty_medium",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 256,
+      "language": "python",
+      "is_test": true,
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_hard",
+      "type": "symbol",
+      "label": "TestDifficultyFiltering.test_max_difficulty_hard",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 281,
+      "language": "python",
+      "is_test": true,
+      "x": -20.72190326527845,
+      "y": 56.308105322985625
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_invalid_difficulty_rejected",
+      "type": "symbol",
+      "label": "TestDifficultyFiltering.test_invalid_difficulty_rejected",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 299,
+      "language": "python",
+      "is_test": true,
+      "x": -27.752297414450105,
+      "y": 53.195958382380006
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "type": "type",
+      "label": "TestCostFiltering",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 318,
+      "language": "python",
+      "is_test": true,
+      "x": -34.32699960733019,
+      "y": 49.21033527581734
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_low",
+      "type": "symbol",
+      "label": "TestCostFiltering.test_max_cost_low",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 321,
+      "language": "python",
+      "is_test": true,
+      "x": -40.338053415679006,
+      "y": 44.41667982451893
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_medium",
+      "type": "symbol",
+      "label": "TestCostFiltering.test_max_cost_medium",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 346,
+      "language": "python",
+      "is_test": true,
+      "x": -45.686757502148055,
+      "y": 38.89370371846732
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_high",
+      "type": "symbol",
+      "label": "TestCostFiltering.test_max_cost_high",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 371,
+      "language": "python",
+      "is_test": true,
+      "x": -50.28528629351044,
+      "y": 32.732094072632925
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_invalid_cost_rejected",
+      "type": "symbol",
+      "label": "TestCostFiltering.test_invalid_cost_rejected",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 389,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestCuisineFiltering",
+      "type": "type",
+      "label": "TestCuisineFiltering",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 408,
+      "language": "python",
+      "is_test": true,
+      "x": -56.943344820640114,
+      "y": 18.906493081417278
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_include_cuisine_filter",
+      "type": "symbol",
+      "label": "TestCuisineFiltering.test_include_cuisine_filter",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 411,
+      "language": "python",
+      "is_test": true,
+      "x": -58.89354941946392,
+      "y": 11.469517722082353
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_exclude_cuisine_filter",
+      "type": "symbol",
+      "label": "TestCuisineFiltering.test_exclude_cuisine_filter",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 429,
+      "language": "python",
+      "is_test": true,
+      "x": -59.87672356502018,
+      "y": 3.8442131988427937
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_cuisine_include_and_exclude_together",
+      "type": "symbol",
+      "label": "TestCuisineFiltering.test_cuisine_include_and_exclude_together",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 447,
+      "language": "python",
+      "is_test": true,
+      "x": -59.87672356502018,
+      "y": -3.8442131988427795
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestRecipeExclusion",
+      "type": "type",
+      "label": "TestRecipeExclusion",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 467,
+      "language": "python",
+      "is_test": true,
+      "x": -58.89354941946392,
+      "y": -11.469517722082337
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeExclusion.test_exclude_specific_recipes",
+      "type": "symbol",
+      "label": "TestRecipeExclusion.test_exclude_specific_recipes",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 470,
+      "language": "python",
+      "is_test": true,
+      "x": -56.94334482064012,
+      "y": -18.906493081417235
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeExclusion.test_exclude_many_recipes",
+      "type": "symbol",
+      "label": "TestRecipeExclusion.test_exclude_many_recipes",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 494,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "type": "type",
+      "label": "TestBatchSize",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 513,
+      "language": "python",
+      "is_test": true,
+      "x": -50.285286293510445,
+      "y": -32.73209407263291
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_small_batch_size",
+      "type": "symbol",
+      "label": "TestBatchSize.test_small_batch_size",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 516,
+      "language": "python",
+      "is_test": true,
+      "x": -45.686757502148076,
+      "y": -38.89370371846729
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_default_batch_size",
+      "type": "symbol",
+      "label": "TestBatchSize.test_default_batch_size",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 535,
+      "language": "python",
+      "is_test": true,
+      "x": -40.33805341567902,
+      "y": -44.416679824518916
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_large_batch_size",
+      "type": "symbol",
+      "label": "TestBatchSize.test_large_batch_size",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 554,
+      "language": "python",
+      "is_test": true,
+      "x": -34.3269996073302,
+      "y": -49.210335275817336
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_batch_size_one",
+      "type": "symbol",
+      "label": "TestBatchSize.test_batch_size_one",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 573,
+      "language": "python",
+      "is_test": true,
+      "x": -27.75229741445012,
+      "y": -53.19595838238
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "type": "type",
+      "label": "TestFilterCombinations",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 593,
+      "language": "python",
+      "is_test": true,
+      "x": -20.72190326527844,
+      "y": -56.30810532298563
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_seasonal_plus_allergen_exclusion",
+      "type": "symbol",
+      "label": "TestFilterCombinations.test_seasonal_plus_allergen_exclusion",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 596,
+      "language": "python",
+      "is_test": true,
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_seasonal_plus_difficulty_plus_cost",
+      "type": "symbol",
+      "label": "TestFilterCombinations.test_seasonal_plus_difficulty_plus_cost",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 613,
+      "language": "python",
+      "is_test": true,
+      "x": -5.761381554460894,
+      "y": -59.722746776951894
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_allergen_plus_cuisine_plus_difficulty",
+      "type": "symbol",
+      "label": "TestFilterCombinations.test_allergen_plus_cuisine_plus_difficulty",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 632,
+      "language": "python",
+      "is_test": true,
+      "x": 1.9230946542992915,
+      "y": -59.96917297204127
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_all_filters_combined",
+      "type": "symbol",
+      "label": "TestFilterCombinations.test_all_filters_combined",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 651,
+      "language": "python",
+      "is_test": true,
+      "x": 9.575993702002704,
+      "y": -59.23090700486702
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_restrictive_filters_may_return_empty",
+      "type": "symbol",
+      "label": "TestFilterCombinations.test_restrictive_filters_may_return_empty",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 672,
+      "language": "python",
+      "is_test": true,
+      "x": 17.07165519786192,
+      "y": -57.52007118219965
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestTokenHandling",
+      "type": "type",
+      "label": "TestTokenHandling",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 693,
+      "language": "python",
+      "is_test": true,
+      "x": 24.287000587343623,
+      "y": -54.86475738094875
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_deducts_10_tokens",
+      "type": "symbol",
+      "label": "TestTokenHandling.test_query_deducts_10_tokens",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 696,
+      "language": "python",
+      "is_test": true,
+      "x": 31.10355409863147,
+      "y": -51.308565780320784
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_with_insufficient_tokens",
+      "type": "symbol",
+      "label": "TestTokenHandling.test_query_with_insufficient_tokens",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 715,
+      "language": "python",
+      "is_test": true,
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_with_invalid_account",
+      "type": "symbol",
+      "label": "TestTokenHandling.test_query_with_invalid_account",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 756,
+      "language": "python",
+      "is_test": true,
+      "x": 43.100961005863624,
+      "y": -41.74095303620922
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestQueryPerformance",
+      "type": "type",
+      "label": "TestQueryPerformance",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 774,
+      "language": "python",
+      "is_test": true,
+      "x": 48.084817312077355,
+      "y": -35.88663182947302
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryPerformance.test_query_response_time_simple",
+      "type": "symbol",
+      "label": "TestQueryPerformance.test_query_response_time_simple",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 777,
+      "language": "python",
+      "is_test": true,
+      "x": 52.279122247403365,
+      "y": -29.44305312023627
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryPerformance.test_query_response_time_complex",
+      "type": "symbol",
+      "label": "TestQueryPerformance.test_query_response_time_complex",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 798,
+      "language": "python",
+      "is_test": true,
+      "x": 55.6150054407613,
+      "y": -22.516020292762477
+    },
+    {
+      "id": "repo::test_comprehensive_query_combinations::TestQueryRandomization",
+      "type": "type",
+      "label": "TestQueryRandomization",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 823,
+      "language": "python",
+      "is_test": true,
+      "x": 58.03769178234176,
+      "y": -15.219275034570451
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryRandomization.test_queries_return_different_results",
+      "type": "symbol",
+      "label": "TestQueryRandomization.test_queries_return_different_results",
+      "file": "test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "line": 826,
+      "language": "python",
+      "is_test": true,
+      "x": 59.50740082939476,
+      "y": -7.672629701070398
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestRecipeQueryBasic",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestRecipeQueryBasic",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_empty_query_returns_results",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestRecipeQueryBasic",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_query_returns_recipe_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestRecipeQueryBasic",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeQueryBasic.test_query_includes_query_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestSeasonalBucketFiltering",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestSeasonalBucketFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_single_seasonal_bucket",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestSeasonalBucketFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_multiple_seasonal_buckets",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestSeasonalBucketFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestSeasonalBucketFiltering.test_all_seasonal_buckets",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestAllergenExclusion",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestAllergenExclusion",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_single_allergen",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestAllergenExclusion",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_multiple_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestAllergenExclusion",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestAllergenExclusion.test_exclude_many_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_easy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_medium",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_max_difficulty_hard",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestDifficultyFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestDifficultyFiltering.test_invalid_difficulty_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_low",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_medium",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_max_cost_high",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCostFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCostFiltering.test_invalid_cost_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestCuisineFiltering",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCuisineFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_include_cuisine_filter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCuisineFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_exclude_cuisine_filter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestCuisineFiltering",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestCuisineFiltering.test_cuisine_include_and_exclude_together",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestRecipeExclusion",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestRecipeExclusion",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeExclusion.test_exclude_specific_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestRecipeExclusion",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestRecipeExclusion.test_exclude_many_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_small_batch_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_default_batch_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_large_batch_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestBatchSize",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestBatchSize.test_batch_size_one",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_seasonal_plus_allergen_exclusion",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_seasonal_plus_difficulty_plus_cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_allergen_plus_cuisine_plus_difficulty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_all_filters_combined",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestFilterCombinations",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestFilterCombinations.test_restrictive_filters_may_return_empty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestTokenHandling",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestTokenHandling",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_deducts_10_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestTokenHandling",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_with_insufficient_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestTokenHandling",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestTokenHandling.test_query_with_invalid_account",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestQueryPerformance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestQueryPerformance",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryPerformance.test_query_response_time_simple",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestQueryPerformance",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryPerformance.test_query_response_time_complex",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py",
+      "to": "repo::test_comprehensive_query_combinations::TestQueryRandomization",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_comprehensive_query_combinations::TestQueryRandomization",
+      "to": "repo::test_scripts/e2e/test_comprehensive_query_combinations.py::TestQueryRandomization.test_queries_return_different_results",
+      "relation": "contains"
+    }
+  ]
+}

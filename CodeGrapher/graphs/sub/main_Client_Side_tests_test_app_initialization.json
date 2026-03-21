@@ -1,0 +1,407 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_app_initialization.py",
+  "stats": {
+    "nodes": 25,
+    "edges": 24
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py",
+      "type": "file",
+      "label": "test_app_initialization.py",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_app_initialization::TestDatabaseInitialization",
+      "type": "type",
+      "label": "TestDatabaseInitialization",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 19,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_database_creates_on_first_run",
+      "type": "symbol",
+      "label": "TestDatabaseInitialization.test_database_creates_on_first_run",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 22,
+      "language": "python",
+      "is_test": true,
+      "x": 57.9555495773441,
+      "y": 15.529142706151244
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_all_expected_tables_created",
+      "type": "symbol",
+      "label": "TestDatabaseInitialization.test_all_expected_tables_created",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 33,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_database_is_idempotent",
+      "type": "symbol",
+      "label": "TestDatabaseInitialization.test_database_is_idempotent",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 87,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::test_app_initialization::TestConfigManager",
+      "type": "type",
+      "label": "TestConfigManager",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 109,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_creates_config_dir",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_creates_config_dir",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 112,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151244,
+      "y": 57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_creates_settings_json",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_creates_settings_json",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 122,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_loads_defaults",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_loads_defaults",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 134,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151237,
+      "y": 57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_and_set",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_get_and_set",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 145,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_database_path",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_get_database_path",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 159,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_merges_defaults",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_merges_defaults",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 169,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_handles_corrupted_file",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_handles_corrupted_file",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 185,
+      "language": "python",
+      "is_test": true,
+      "x": -57.955549577344094,
+      "y": 15.52914270615126
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_all",
+      "type": "symbol",
+      "label": "TestConfigManager.test_config_manager_get_all",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 198,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_app_initialization::TestLogging",
+      "type": "type",
+      "label": "TestLogging",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 211,
+      "language": "python",
+      "is_test": true,
+      "x": -57.9555495773441,
+      "y": -15.529142706151248
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_directory_created",
+      "type": "symbol",
+      "label": "TestLogging.test_logging_directory_created",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 214,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706633,
+      "y": -29.999999999999982
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_creates_log_file",
+      "type": "symbol",
+      "label": "TestLogging.test_logging_creates_log_file",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 226,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192874,
+      "y": -42.426406871192825
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_writes_to_file",
+      "type": "symbol",
+      "label": "TestLogging.test_logging_writes_to_file",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 239,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_respects_debug_mode",
+      "type": "symbol",
+      "label": "TestLogging.test_logging_respects_debug_mode",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 256,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151237,
+      "y": -57.9555495773441
+    },
+    {
+      "id": "repo::test_app_initialization::TestConfigPaths",
+      "type": "type",
+      "label": "TestConfigPaths",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 277,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigPaths.test_default_config_has_valid_paths",
+      "type": "symbol",
+      "label": "TestConfigPaths.test_default_config_has_valid_paths",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 280,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151218,
+      "y": -57.95554957734411
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestConfigPaths.test_config_manager_expands_home_path",
+      "type": "symbol",
+      "label": "TestConfigPaths.test_config_manager_expands_home_path",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 285,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::test_app_initialization::TestFirstRunScenario",
+      "type": "type",
+      "label": "TestFirstRunScenario",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 299,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestFirstRunScenario.test_first_run_creates_everything",
+      "type": "symbol",
+      "label": "TestFirstRunScenario.test_first_run_creates_everything",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 302,
+      "language": "python",
+      "is_test": true,
+      "x": 51.961524227066306,
+      "y": -30.00000000000003
+    },
+    {
+      "id": "repo::Client_Side/tests/test_app_initialization.py::TestFirstRunScenario.test_second_run_loads_existing",
+      "type": "symbol",
+      "label": "TestFirstRunScenario.test_second_run_loads_existing",
+      "file": "Client_Side/tests/test_app_initialization.py",
+      "line": 338,
+      "language": "python",
+      "is_test": true,
+      "x": 57.95554957734409,
+      "y": -15.529142706151294
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_app_initialization.py",
+      "to": "repo::test_app_initialization::TestDatabaseInitialization",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_app_initialization::TestDatabaseInitialization",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_database_creates_on_first_run",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestDatabaseInitialization",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_all_expected_tables_created",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestDatabaseInitialization",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestDatabaseInitialization.test_database_is_idempotent",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_app_initialization.py",
+      "to": "repo::test_app_initialization::TestConfigManager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_creates_config_dir",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_creates_settings_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_loads_defaults",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_and_set",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_database_path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_merges_defaults",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_handles_corrupted_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigManager",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigManager.test_config_manager_get_all",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_app_initialization.py",
+      "to": "repo::test_app_initialization::TestLogging",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_app_initialization::TestLogging",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_directory_created",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestLogging",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_creates_log_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestLogging",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_writes_to_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestLogging",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestLogging.test_logging_respects_debug_mode",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_app_initialization.py",
+      "to": "repo::test_app_initialization::TestConfigPaths",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigPaths",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigPaths.test_default_config_has_valid_paths",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestConfigPaths",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestConfigPaths.test_config_manager_expands_home_path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_app_initialization.py",
+      "to": "repo::test_app_initialization::TestFirstRunScenario",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_app_initialization::TestFirstRunScenario",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestFirstRunScenario.test_first_run_creates_everything",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_app_initialization::TestFirstRunScenario",
+      "to": "repo::Client_Side/tests/test_app_initialization.py::TestFirstRunScenario.test_second_run_loads_existing",
+      "relation": "contains"
+    }
+  ]
+}

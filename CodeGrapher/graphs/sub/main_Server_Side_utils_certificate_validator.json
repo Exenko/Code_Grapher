@@ -1,0 +1,253 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/utils/certificate_validator.py",
+  "stats": {
+    "nodes": 14,
+    "edges": 19
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py",
+      "type": "file",
+      "label": "certificate_validator.py",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::certificate_validator::CertificateError",
+      "type": "type",
+      "label": "CertificateError",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 22,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::certificate_validator::CertificateValidator",
+      "type": "type",
+      "label": "CertificateValidator",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 27,
+      "language": "python",
+      "x": 53.12736153919259,
+      "y": 27.88339032262611
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.__init__",
+      "type": "symbol",
+      "label": "CertificateValidator.__init__",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 30,
+      "language": "python",
+      "x": 34.08388480386935,
+      "y": 49.37903195361938
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._ensure_schema",
+      "type": "symbol",
+      "label": "CertificateValidator._ensure_schema",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 42,
+      "language": "python",
+      "x": 7.232200815319381,
+      "y": 59.562532445883235
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.register_public_key",
+      "type": "symbol",
+      "label": "CertificateValidator.register_public_key",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 87,
+      "language": "python",
+      "x": -21.276293222552127,
+      "y": 56.10097456112489
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "type": "symbol",
+      "label": "CertificateValidator.validate_certificate",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 134,
+      "language": "python",
+      "x": -44.91064489026607,
+      "y": 39.78735949444771
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._is_nonce_used",
+      "type": "symbol",
+      "label": "CertificateValidator._is_nonce_used",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 240,
+      "language": "python",
+      "x": -58.25650904556312,
+      "y": 14.35893985725346
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._record_nonce",
+      "type": "symbol",
+      "label": "CertificateValidator._record_nonce",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 254,
+      "language": "python",
+      "x": -58.25650904556313,
+      "y": -14.358939857253446
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_public_key",
+      "type": "symbol",
+      "label": "CertificateValidator._get_public_key",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 270,
+      "language": "python",
+      "x": -44.91064489026608,
+      "y": -39.7873594944477
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._update_last_used",
+      "type": "symbol",
+      "label": "CertificateValidator._update_last_used",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 284,
+      "language": "python",
+      "x": -21.276293222552155,
+      "y": -56.100974561124886
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_token_balance",
+      "type": "symbol",
+      "label": "CertificateValidator._get_token_balance",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 304,
+      "language": "python",
+      "x": 7.232200815319392,
+      "y": -59.562532445883235
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.cleanup_expired_nonces",
+      "type": "symbol",
+      "label": "CertificateValidator.cleanup_expired_nonces",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 318,
+      "language": "python",
+      "x": 34.08388480386929,
+      "y": -49.37903195361942
+    },
+    {
+      "id": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.get_certificate_stats",
+      "type": "symbol",
+      "label": "CertificateValidator.get_certificate_stats",
+      "file": "Server_Side/utils/certificate_validator.py",
+      "line": 338,
+      "language": "python",
+      "x": 53.1273615391926,
+      "y": -27.883390322626102
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py",
+      "to": "repo::certificate_validator::CertificateError",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py",
+      "to": "repo::certificate_validator::CertificateValidator",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.__init__",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._ensure_schema",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._ensure_schema",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.register_public_key",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._is_nonce_used",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_public_key",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_token_balance",
+      "relation": "calls",
+      "seq": 17
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._record_nonce",
+      "relation": "calls",
+      "seq": 18
+    },
+    {
+      "from": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.validate_certificate",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._update_last_used",
+      "relation": "calls",
+      "seq": 19
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._is_nonce_used",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._record_nonce",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_public_key",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._update_last_used",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator._get_token_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.cleanup_expired_nonces",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::certificate_validator::CertificateValidator",
+      "to": "repo::Server_Side/utils/certificate_validator.py::CertificateValidator.get_certificate_stats",
+      "relation": "contains"
+    }
+  ]
+}

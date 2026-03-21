@@ -1,0 +1,74 @@
+[
+  {
+    "fsm_name": "TristateMealButton",
+    "file": "Client_Side/ui_new/components/tristate_meal_button.py",
+    "dispatch_method": "_on_clicked",
+    "states": ["not_joining", "eating", "cooking"],
+    "transitions": [
+      {"from": "not_joining", "trigger": "click", "to": "eating"},
+      {"from": "eating", "trigger": "click", "to": "cooking"},
+      {"from": "cooking", "trigger": "click", "to": "not_joining"}
+    ],
+    "notes": "Cyclic state machine; state-based appearance updates; conditional signal emission; external _cooking_details dict"
+  },
+  {
+    "fsm_name": "ThemeMode",
+    "file": "Client_Side/ui_new/styles/theme_manager.py",
+    "dispatch_method": "_cycle_theme (in MainWindow)",
+    "states": ["LIGHT", "MEDIUM", "DARK"],
+    "transitions": [
+      {"from": "LIGHT", "trigger": "_cycle_theme()", "to": "MEDIUM"},
+      {"from": "MEDIUM", "trigger": "_cycle_theme()", "to": "DARK"},
+      {"from": "DARK", "trigger": "_cycle_theme()", "to": "LIGHT"}
+    ],
+    "notes": "Enum-based; cyclic; simple theme cycling"
+  },
+  {
+    "fsm_name": "MealType",
+    "file": "Client_Side/utils/meal_plan_manager.py",
+    "type": "classification_enum",
+    "states": ["BREAKFAST", "LUNCH", "DINNER", "SIDE", "DESSERT"],
+    "transitions": [],
+    "notes": "Static classification enum — no runtime transitions; used as type discriminator in meal planning"
+  },
+  {
+    "fsm_name": "DayOfWeek",
+    "file": "Client_Side/utils/meal_plan_manager.py",
+    "type": "classification_enum",
+    "states": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"],
+    "transitions": [],
+    "notes": "Static classification enum — no runtime transitions; values 0-6"
+  },
+  {
+    "fsm_name": "Hemisphere",
+    "file": "Client_Side/utils/seasonal_calculator.py",
+    "type": "classification_enum",
+    "states": ["NORTHERN", "SOUTHERN", "BOTH"],
+    "transitions": [],
+    "notes": "Static classification enum — no runtime transitions; geographic discriminator for seasonality"
+  },
+  {
+    "fsm_name": "MainWindowViewController",
+    "file": "Client_Side/ui_new/main_window.py",
+    "dispatch_method": "switch_view",
+    "state_attribute": "_current_view_name",
+    "states": ["login", "dashboard", "calendar", "preferences", "recipe_entry", "settings"],
+    "transitions": [
+      {"from": "any", "trigger": "switch_view(name)", "to": "name", "guard": "name in registered views"}
+    ],
+    "notes": "QStackedWidget with lazy instantiation; emits view_changed(str) signal on transition"
+  },
+  {
+    "fsm_name": "SmartRecipeAppState",
+    "file": "Client_Side/main.py",
+    "state_attribute": "is_authenticated + current_household_id + current_user_id",
+    "states": ["UNINITIALIZED", "AUTHENTICATING", "AUTHENTICATED", "UNAUTHENTICATED"],
+    "transitions": [
+      {"from": "UNINITIALIZED", "trigger": "app startup", "to": "AUTHENTICATING"},
+      {"from": "AUTHENTICATING", "trigger": "login success", "to": "AUTHENTICATED"},
+      {"from": "AUTHENTICATING", "trigger": "login fail", "to": "UNAUTHENTICATED"},
+      {"from": "AUTHENTICATED", "trigger": "logout()", "to": "UNAUTHENTICATED"}
+    ],
+    "notes": "No explicit state enum; inferred from is_authenticated boolean + session fields; ConfigManager persists session"
+  }
+]

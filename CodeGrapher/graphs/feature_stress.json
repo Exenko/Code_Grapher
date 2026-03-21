@@ -1,0 +1,4840 @@
+{
+  "feature": "stress",
+  "stats": {
+    "nodes": 251,
+    "edges": 517
+  },
+  "nodes": [
+    {
+      "id": "stress::CodeGrapherStressTest/broker/main.cc",
+      "type": "file",
+      "label": "main.cc",
+      "file": "CodeGrapherStressTest/broker/main.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "CodeGrapherStressTest/broker/main.cc",
+      "line": 7,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "type": "file",
+      "label": "relay.cc",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "type": "symbol",
+      "label": "on_msg_received",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 23,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "type": "symbol",
+      "label": "forward_message",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 42,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::session_create",
+      "type": "symbol",
+      "label": "session_create",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 47,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::session_destroy",
+      "type": "symbol",
+      "label": "session_destroy",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 56,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::broker_subscribe_all",
+      "type": "symbol",
+      "label": "broker_subscribe_all",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 60,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.cc::broker_on_error",
+      "type": "symbol",
+      "label": "broker_on_error",
+      "file": "CodeGrapherStressTest/broker/relay.cc",
+      "line": 64,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h",
+      "type": "file",
+      "label": "relay.h",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::relay::RawBytes",
+      "type": "type",
+      "label": "RawBytes",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 6,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::RawBytes.data",
+      "type": "symbol",
+      "label": "RawBytes.data",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint8_t*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::RawBytes.len",
+      "type": "symbol",
+      "label": "RawBytes.len",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "size_t"
+    },
+    {
+      "id": "stress::relay::Session",
+      "type": "type",
+      "label": "Session",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 16,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::Session.session_id",
+      "type": "symbol",
+      "label": "Session.session_id",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::Session.header",
+      "type": "symbol",
+      "label": "Session.header",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "Header*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::Session.ttl",
+      "type": "symbol",
+      "label": "Session.ttl",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint32_t"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::Session.active",
+      "type": "symbol",
+      "label": "Session.active",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::relay::EventBus",
+      "type": "type",
+      "label": "EventBus",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 24,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 32,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::on_msg_received",
+      "type": "symbol",
+      "label": "on_msg_received",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 36,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::forward_message",
+      "type": "symbol",
+      "label": "forward_message",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 37,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::session_create",
+      "type": "symbol",
+      "label": "session_create",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 40,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::session_destroy",
+      "type": "symbol",
+      "label": "session_destroy",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 41,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::broker_subscribe_all",
+      "type": "symbol",
+      "label": "broker_subscribe_all",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 44,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/relay.h::broker_on_error",
+      "type": "symbol",
+      "label": "broker_on_error",
+      "file": "CodeGrapherStressTest/broker/relay.h",
+      "line": 45,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.cc",
+      "type": "file",
+      "label": "router.cc",
+      "file": "CodeGrapherStressTest/broker/router.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.cc::load_routing_table",
+      "type": "symbol",
+      "label": "load_routing_table",
+      "file": "CodeGrapherStressTest/broker/router.cc",
+      "line": 8,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.cc::inspect_header",
+      "type": "symbol",
+      "label": "inspect_header",
+      "file": "CodeGrapherStressTest/broker/router.cc",
+      "line": 18,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "type": "symbol",
+      "label": "lookup_route",
+      "file": "CodeGrapherStressTest/broker/router.cc",
+      "line": 29,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h",
+      "type": "file",
+      "label": "router.h",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::router::RoutingKey",
+      "type": "type",
+      "label": "RoutingKey",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 6,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.destination",
+      "type": "symbol",
+      "label": "RoutingKey.destination",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.priority",
+      "type": "symbol",
+      "label": "RoutingKey.priority",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int32_t"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.flags",
+      "type": "symbol",
+      "label": "RoutingKey.flags",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint32_t"
+    },
+    {
+      "id": "stress::router::RouteEntry",
+      "type": "type",
+      "label": "RouteEntry",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.key",
+      "type": "symbol",
+      "label": "RouteEntry.key",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "RoutingKey"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.target_address",
+      "type": "symbol",
+      "label": "RouteEntry.target_address",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.weight",
+      "type": "symbol",
+      "label": "RouteEntry.weight",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::router::RoutingTable",
+      "type": "type",
+      "label": "RoutingTable",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 20,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RoutingTable.entries",
+      "type": "symbol",
+      "label": "RoutingTable.entries",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "RouteEntry*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::RoutingTable.count",
+      "type": "symbol",
+      "label": "RoutingTable.count",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::inspect_header",
+      "type": "symbol",
+      "label": "inspect_header",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 28,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::lookup_route",
+      "type": "symbol",
+      "label": "lookup_route",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 34,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/router.h::load_routing_table",
+      "type": "symbol",
+      "label": "load_routing_table",
+      "file": "CodeGrapherStressTest/broker/router.h",
+      "line": 39,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "type": "file",
+      "label": "state_machine.cc",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "type": "symbol",
+      "label": "broker_fsm_init",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 4,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "type": "symbol",
+      "label": "broker_fsm_run",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 14,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "type": "symbol",
+      "label": "broker_handle_listening",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 43,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_routing",
+      "type": "symbol",
+      "label": "broker_handle_routing",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 52,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "type": "symbol",
+      "label": "broker_handle_forwarding",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 58,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "type": "symbol",
+      "label": "broker_handle_error_recovery",
+      "file": "CodeGrapherStressTest/broker/state_machine.cc",
+      "line": 72,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "type": "file",
+      "label": "state_machine.h",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::state_machine::BrokerFSM",
+      "type": "type",
+      "label": "BrokerFSM",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.state",
+      "type": "symbol",
+      "label": "BrokerFSM.state",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "BrokerState"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.current_session",
+      "type": "symbol",
+      "label": "BrokerFSM.current_session",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "Session*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.routing_table",
+      "type": "symbol",
+      "label": "BrokerFSM.routing_table",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "RoutingTable*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.bus",
+      "type": "symbol",
+      "label": "BrokerFSM.bus",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "EventBus*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.retry_count",
+      "type": "symbol",
+      "label": "BrokerFSM.retry_count",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.max_retries",
+      "type": "symbol",
+      "label": "BrokerFSM.max_retries",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::state_machine::BrokerState",
+      "type": "type",
+      "label": "BrokerState",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 6,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_init",
+      "type": "symbol",
+      "label": "broker_fsm_init",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 22,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_run",
+      "type": "symbol",
+      "label": "broker_fsm_run",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 23,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_listening",
+      "type": "symbol",
+      "label": "broker_handle_listening",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 25,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_routing",
+      "type": "symbol",
+      "label": "broker_handle_routing",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 26,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_forwarding",
+      "type": "symbol",
+      "label": "broker_handle_forwarding",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 27,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_error_recovery",
+      "type": "symbol",
+      "label": "broker_handle_error_recovery",
+      "file": "CodeGrapherStressTest/broker/state_machine.h",
+      "line": 28,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/broker_config.xml",
+      "type": "file",
+      "label": "broker_config.xml",
+      "file": "CodeGrapherStressTest\\config\\broker_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/broker_config.xml::RoutingTable",
+      "type": "symbol",
+      "label": "RoutingTable",
+      "file": "CodeGrapherStressTest\\config\\broker_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/broker_config.xml::RetryPolicy",
+      "type": "symbol",
+      "label": "RetryPolicy",
+      "file": "CodeGrapherStressTest\\config\\broker_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/broker_config.xml::ErrorRecovery",
+      "type": "symbol",
+      "label": "ErrorRecovery",
+      "file": "CodeGrapherStressTest\\config\\broker_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/producer_config.xml",
+      "type": "file",
+      "label": "producer_config.xml",
+      "file": "CodeGrapherStressTest\\config\\producer_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/producer_config.xml::Serialization",
+      "type": "symbol",
+      "label": "Serialization",
+      "file": "CodeGrapherStressTest\\config\\producer_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/producer_config.xml::Transport",
+      "type": "symbol",
+      "label": "Transport",
+      "file": "CodeGrapherStressTest\\config\\producer_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/producer_config.xml::AckPolicy",
+      "type": "symbol",
+      "label": "AckPolicy",
+      "file": "CodeGrapherStressTest\\config\\producer_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/config/producer_config.xml::ErrorPolicy",
+      "type": "symbol",
+      "label": "ErrorPolicy",
+      "file": "CodeGrapherStressTest\\config\\producer_config.xml",
+      "line": null,
+      "language": "config"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "type": "file",
+      "label": "decoder.cc",
+      "file": "CodeGrapherStressTest/consumer/decoder.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.cc::detect_format",
+      "type": "symbol",
+      "label": "detect_format",
+      "file": "CodeGrapherStressTest/consumer/decoder.cc",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "type": "symbol",
+      "label": "decode_message",
+      "file": "CodeGrapherStressTest/consumer/decoder.cc",
+      "line": 24,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_proto",
+      "type": "symbol",
+      "label": "decode_proto",
+      "file": "CodeGrapherStressTest/consumer/decoder.cc",
+      "line": 35,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_wsdl",
+      "type": "symbol",
+      "label": "decode_wsdl",
+      "file": "CodeGrapherStressTest/consumer/decoder.cc",
+      "line": 52,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "type": "file",
+      "label": "decoder.h",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::decoder::DecodedMessage",
+      "type": "type",
+      "label": "DecodedMessage",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.format",
+      "type": "symbol",
+      "label": "DecodedMessage.format",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "WireFormat"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.event_type",
+      "type": "symbol",
+      "label": "DecodedMessage.event_type",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.payload_data",
+      "type": "symbol",
+      "label": "DecodedMessage.payload_data",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint8_t*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.payload_len",
+      "type": "symbol",
+      "label": "DecodedMessage.payload_len",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "size_t"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.sequence_num",
+      "type": "symbol",
+      "label": "DecodedMessage.sequence_num",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint64_t"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.version",
+      "type": "symbol",
+      "label": "DecodedMessage.version",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::decoder::RawBytes",
+      "type": "type",
+      "label": "RawBytes",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 28,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::RawBytes.data",
+      "type": "symbol",
+      "label": "RawBytes.data",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint8_t*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::RawBytes.len",
+      "type": "symbol",
+      "label": "RawBytes.len",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "size_t"
+    },
+    {
+      "id": "stress::decoder::WireFormat",
+      "type": "type",
+      "label": "WireFormat",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 6,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::detect_format",
+      "type": "symbol",
+      "label": "detect_format",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 36,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_message",
+      "type": "symbol",
+      "label": "decode_message",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 41,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_proto",
+      "type": "symbol",
+      "label": "decode_proto",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 46,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_wsdl",
+      "type": "symbol",
+      "label": "decode_wsdl",
+      "file": "CodeGrapherStressTest/consumer/decoder.h",
+      "line": 52,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "type": "file",
+      "label": "main.cc",
+      "file": "CodeGrapherStressTest/consumer/main.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "CodeGrapherStressTest/consumer/main.cc",
+      "line": 8,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "type": "file",
+      "label": "output.cc",
+      "file": "CodeGrapherStressTest/consumer/output.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/consumer/output.cc",
+      "line": 11,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.cc::write_output",
+      "type": "symbol",
+      "label": "write_output",
+      "file": "CodeGrapherStressTest/consumer/output.cc",
+      "line": 18,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_on_error",
+      "type": "symbol",
+      "label": "consumer_on_error",
+      "file": "CodeGrapherStressTest/consumer/output.cc",
+      "line": 26,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_subscribe_all",
+      "type": "symbol",
+      "label": "consumer_subscribe_all",
+      "file": "CodeGrapherStressTest/consumer/output.cc",
+      "line": 30,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.h",
+      "type": "file",
+      "label": "output.h",
+      "file": "CodeGrapherStressTest/consumer/output.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.h::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/consumer/output.h",
+      "line": 17,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.h::write_output",
+      "type": "symbol",
+      "label": "write_output",
+      "file": "CodeGrapherStressTest/consumer/output.h",
+      "line": 22,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.h::consumer_on_error",
+      "type": "symbol",
+      "label": "consumer_on_error",
+      "file": "CodeGrapherStressTest/consumer/output.h",
+      "line": 25,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/output.h::consumer_subscribe_all",
+      "type": "symbol",
+      "label": "consumer_subscribe_all",
+      "file": "CodeGrapherStressTest/consumer/output.h",
+      "line": 26,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "type": "file",
+      "label": "processor.cc",
+      "file": "CodeGrapherStressTest/consumer/processor.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "type": "symbol",
+      "label": "process_payload",
+      "file": "CodeGrapherStressTest/consumer/processor.cc",
+      "line": 9,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.cc::validate",
+      "type": "symbol",
+      "label": "validate",
+      "file": "CodeGrapherStressTest/consumer/processor.cc",
+      "line": 34,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.cc::transform",
+      "type": "symbol",
+      "label": "transform",
+      "file": "CodeGrapherStressTest/consumer/processor.cc",
+      "line": 46,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.cc::enrich",
+      "type": "symbol",
+      "label": "enrich",
+      "file": "CodeGrapherStressTest/consumer/processor.cc",
+      "line": 60,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "type": "file",
+      "label": "processor.h",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::processor::ProcessedPayload",
+      "type": "type",
+      "label": "ProcessedPayload",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.source",
+      "type": "symbol",
+      "label": "ProcessedPayload.source",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "DecodedMessage*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.canonical_type",
+      "type": "symbol",
+      "label": "ProcessedPayload.canonical_type",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.normalized_data",
+      "type": "symbol",
+      "label": "ProcessedPayload.normalized_data",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint8_t*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.normalized_len",
+      "type": "symbol",
+      "label": "ProcessedPayload.normalized_len",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "size_t"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.metadata",
+      "type": "symbol",
+      "label": "ProcessedPayload.metadata",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.valid",
+      "type": "symbol",
+      "label": "ProcessedPayload.valid",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::processor::ProcessingState",
+      "type": "type",
+      "label": "ProcessingState",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 5,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::process_payload",
+      "type": "symbol",
+      "label": "process_payload",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 25,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::validate",
+      "type": "symbol",
+      "label": "validate",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 30,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::transform",
+      "type": "symbol",
+      "label": "transform",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 36,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/processor.h::enrich",
+      "type": "symbol",
+      "label": "enrich",
+      "file": "CodeGrapherStressTest/consumer/processor.h",
+      "line": 41,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "type": "file",
+      "label": "state_machine.cc",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "type": "symbol",
+      "label": "consumer_fsm_init",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 4,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "type": "symbol",
+      "label": "consumer_fsm_run",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_waiting",
+      "type": "symbol",
+      "label": "consumer_handle_waiting",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 26,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::on_msg_received",
+      "type": "symbol",
+      "label": "on_msg_received",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 33,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "type": "symbol",
+      "label": "consumer_handle_decoding",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 39,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "type": "symbol",
+      "label": "consumer_handle_processing",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 53,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "type": "symbol",
+      "label": "consumer_handle_writing",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 67,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_error",
+      "type": "symbol",
+      "label": "consumer_handle_error",
+      "file": "CodeGrapherStressTest/consumer/state_machine.cc",
+      "line": 81,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "type": "file",
+      "label": "state_machine.h",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::state_machine::ConsumerFSM",
+      "type": "type",
+      "label": "ConsumerFSM",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.state",
+      "type": "symbol",
+      "label": "ConsumerFSM.state",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "ConsumerState"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.bus",
+      "type": "symbol",
+      "label": "ConsumerFSM.bus",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "EventBus*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_msg",
+      "type": "symbol",
+      "label": "ConsumerFSM.current_msg",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "DecodedMessage*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_payload",
+      "type": "symbol",
+      "label": "ConsumerFSM.current_payload",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "ProcessedPayload*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.retry_count",
+      "type": "symbol",
+      "label": "ConsumerFSM.retry_count",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::state_machine::ConsumerState",
+      "type": "type",
+      "label": "ConsumerState",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 7,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_init",
+      "type": "symbol",
+      "label": "consumer_fsm_init",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 23,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_run",
+      "type": "symbol",
+      "label": "consumer_fsm_run",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 24,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_waiting",
+      "type": "symbol",
+      "label": "consumer_handle_waiting",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 27,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_decoding",
+      "type": "symbol",
+      "label": "consumer_handle_decoding",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 28,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_processing",
+      "type": "symbol",
+      "label": "consumer_handle_processing",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 29,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_writing",
+      "type": "symbol",
+      "label": "consumer_handle_writing",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 30,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_error",
+      "type": "symbol",
+      "label": "consumer_handle_error",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 31,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/consumer/state_machine.h::on_msg_received",
+      "type": "symbol",
+      "label": "on_msg_received",
+      "file": "CodeGrapherStressTest/consumer/state_machine.h",
+      "line": 35,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "type": "file",
+      "label": "callbacks.cc",
+      "file": "CodeGrapherStressTest/producer/callbacks.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/producer/callbacks.cc",
+      "line": 10,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.cc::on_state_change",
+      "type": "symbol",
+      "label": "on_state_change",
+      "file": "CodeGrapherStressTest/producer/callbacks.cc",
+      "line": 14,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.cc::subscribe_all",
+      "type": "symbol",
+      "label": "subscribe_all",
+      "file": "CodeGrapherStressTest/producer/callbacks.cc",
+      "line": 23,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.cc::register_callbacks",
+      "type": "symbol",
+      "label": "register_callbacks",
+      "file": "CodeGrapherStressTest/producer/callbacks.cc",
+      "line": 27,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.h",
+      "type": "file",
+      "label": "callbacks.h",
+      "file": "CodeGrapherStressTest/producer/callbacks.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.h::dispatch_event",
+      "type": "symbol",
+      "label": "dispatch_event",
+      "file": "CodeGrapherStressTest/producer/callbacks.h",
+      "line": 8,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.h::on_state_change",
+      "type": "symbol",
+      "label": "on_state_change",
+      "file": "CodeGrapherStressTest/producer/callbacks.h",
+      "line": 11,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.h::subscribe_all",
+      "type": "symbol",
+      "label": "subscribe_all",
+      "file": "CodeGrapherStressTest/producer/callbacks.h",
+      "line": 14,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/callbacks.h::register_callbacks",
+      "type": "symbol",
+      "label": "register_callbacks",
+      "file": "CodeGrapherStressTest/producer/callbacks.h",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "type": "file",
+      "label": "encoder.cc",
+      "file": "CodeGrapherStressTest/producer/encoder.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "type": "symbol",
+      "label": "encode_payload",
+      "file": "CodeGrapherStressTest/producer/encoder.cc",
+      "line": 10,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.cc::select_serializer",
+      "type": "symbol",
+      "label": "select_serializer",
+      "file": "CodeGrapherStressTest/producer/encoder.cc",
+      "line": 25,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.cc::serialize_proto",
+      "type": "symbol",
+      "label": "serialize_proto",
+      "file": "CodeGrapherStressTest/producer/encoder.cc",
+      "line": 32,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.cc::transmit_message",
+      "type": "symbol",
+      "label": "transmit_message",
+      "file": "CodeGrapherStressTest/producer/encoder.cc",
+      "line": 41,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.h",
+      "type": "file",
+      "label": "encoder.h",
+      "file": "CodeGrapherStressTest/producer/encoder.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.h::encode_payload",
+      "type": "symbol",
+      "label": "encode_payload",
+      "file": "CodeGrapherStressTest/producer/encoder.h",
+      "line": 11,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.h::select_serializer",
+      "type": "symbol",
+      "label": "select_serializer",
+      "file": "CodeGrapherStressTest/producer/encoder.h",
+      "line": 12,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.h::serialize_proto",
+      "type": "symbol",
+      "label": "serialize_proto",
+      "file": "CodeGrapherStressTest/producer/encoder.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/encoder.h::transmit_message",
+      "type": "symbol",
+      "label": "transmit_message",
+      "file": "CodeGrapherStressTest/producer/encoder.h",
+      "line": 14,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "type": "file",
+      "label": "legacy_encoder.cc",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::build_legacy_event",
+      "type": "symbol",
+      "label": "build_legacy_event",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "line": 10,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::serialize_wsdl",
+      "type": "symbol",
+      "label": "serialize_wsdl",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "line": 21,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h",
+      "type": "file",
+      "label": "legacy_encoder.h",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::legacy_encoder::LegacyEvent_CC",
+      "type": "type",
+      "label": "LegacyEvent_CC",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": 7,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.event_type",
+      "type": "symbol",
+      "label": "LegacyEvent_CC.event_type",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "const char*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.payload",
+      "type": "symbol",
+      "label": "LegacyEvent_CC.payload",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "PayloadHandle"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.version",
+      "type": "symbol",
+      "label": "LegacyEvent_CC.version",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "RawBytes**\n    int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::serialize_wsdl",
+      "type": "symbol",
+      "label": "serialize_wsdl",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": 14,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::build_legacy_event",
+      "type": "symbol",
+      "label": "build_legacy_event",
+      "file": "CodeGrapherStressTest/producer/legacy_encoder.h",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/main.cc",
+      "type": "file",
+      "label": "main.cc",
+      "file": "CodeGrapherStressTest/producer/main.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/main.cc::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "CodeGrapherStressTest/producer/main.cc",
+      "line": 8,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "type": "file",
+      "label": "state_machine.cc",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "type": "symbol",
+      "label": "producer_fsm_init",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 8,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "type": "symbol",
+      "label": "producer_fsm_run",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 17,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_idle",
+      "type": "symbol",
+      "label": "handle_idle",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 31,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_encoding",
+      "type": "symbol",
+      "label": "handle_encoding",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 37,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "type": "symbol",
+      "label": "handle_transmitting",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 51,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_waiting_ack",
+      "type": "symbol",
+      "label": "handle_waiting_ack",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 66,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_error",
+      "type": "symbol",
+      "label": "handle_error",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 76,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::trigger_event",
+      "type": "symbol",
+      "label": "trigger_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 86,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::ack_received_event",
+      "type": "symbol",
+      "label": "ack_received_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 87,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::timeout_event",
+      "type": "symbol",
+      "label": "timeout_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 88,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.cc::error_event",
+      "type": "symbol",
+      "label": "error_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.cc",
+      "line": 89,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "type": "file",
+      "label": "state_machine.h",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::state_machine::ProducerFSM",
+      "type": "type",
+      "label": "ProducerFSM",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 20,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.state",
+      "type": "symbol",
+      "label": "ProducerFSM.state",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "ProducerState"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.encoding_path",
+      "type": "symbol",
+      "label": "ProducerFSM.encoding_path",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "EncodingPath"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.config",
+      "type": "symbol",
+      "label": "ProducerFSM.config",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "ProducerConfig"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.bus",
+      "type": "symbol",
+      "label": "ProducerFSM.bus",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "EventBus*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.ack_received",
+      "type": "symbol",
+      "label": "ProducerFSM.ack_received",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.retry_count",
+      "type": "symbol",
+      "label": "ProducerFSM.retry_count",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::state_machine::ProducerState",
+      "type": "type",
+      "label": "ProducerState",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 5,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::state_machine::EncodingPath",
+      "type": "type",
+      "label": "EncodingPath",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_init",
+      "type": "symbol",
+      "label": "producer_fsm_init",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 30,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_run",
+      "type": "symbol",
+      "label": "producer_fsm_run",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 31,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_idle",
+      "type": "symbol",
+      "label": "handle_idle",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 34,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_encoding",
+      "type": "symbol",
+      "label": "handle_encoding",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 35,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_transmitting",
+      "type": "symbol",
+      "label": "handle_transmitting",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 36,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_waiting_ack",
+      "type": "symbol",
+      "label": "handle_waiting_ack",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 37,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_error",
+      "type": "symbol",
+      "label": "handle_error",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 38,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::trigger_event",
+      "type": "symbol",
+      "label": "trigger_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 41,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::ack_received_event",
+      "type": "symbol",
+      "label": "ack_received_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 42,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::timeout_event",
+      "type": "symbol",
+      "label": "timeout_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 43,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/state_machine.h::error_event",
+      "type": "symbol",
+      "label": "error_event",
+      "file": "CodeGrapherStressTest/producer/state_machine.h",
+      "line": 44,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h",
+      "type": "file",
+      "label": "types.h",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::types::RawBytes",
+      "type": "type",
+      "label": "RawBytes",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 6,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h::RawBytes.data",
+      "type": "symbol",
+      "label": "RawBytes.data",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "uint8_t*"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h::RawBytes.len",
+      "type": "symbol",
+      "label": "RawBytes.len",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "size_t"
+    },
+    {
+      "id": "stress::types::ProducerConfig",
+      "type": "type",
+      "label": "ProducerConfig",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 33,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.use_proto",
+      "type": "symbol",
+      "label": "ProducerConfig.use_proto",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.retry_limit",
+      "type": "symbol",
+      "label": "ProducerConfig.retry_limit",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "legacy WSDL path\n    int"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.ack_timeout_ms",
+      "type": "symbol",
+      "label": "ProducerConfig.ack_timeout_ms",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": null,
+      "language": "cpp",
+      "annotation": "int"
+    },
+    {
+      "id": "stress::types::MessageBody",
+      "type": "type",
+      "label": "MessageBody",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 13,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::types::Payload",
+      "type": "type",
+      "label": "Payload",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 15,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::types::PayloadHandle",
+      "type": "type",
+      "label": "PayloadHandle",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 17,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::types::PayloadHandlePP",
+      "type": "type",
+      "label": "PayloadHandlePP",
+      "file": "CodeGrapherStressTest/producer/types.h",
+      "line": 19,
+      "language": "cpp"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/proto/events.proto",
+      "type": "file",
+      "label": "events.proto",
+      "file": "CodeGrapherStressTest/proto/events.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::events::EventEnvelope",
+      "type": "type",
+      "label": "EventEnvelope",
+      "file": "CodeGrapherStressTest/proto/events.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::events::AckEvent",
+      "type": "type",
+      "label": "AckEvent",
+      "file": "CodeGrapherStressTest/proto/events.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::events::ErrorEvent",
+      "type": "type",
+      "label": "ErrorEvent",
+      "file": "CodeGrapherStressTest/proto/events.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::events::EventType",
+      "type": "type",
+      "label": "EventType",
+      "file": "CodeGrapherStressTest/proto/events.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/proto/legacy.proto",
+      "type": "file",
+      "label": "legacy.proto",
+      "file": "CodeGrapherStressTest/proto/legacy.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::legacy::LegacyEvent_Proto",
+      "type": "type",
+      "label": "LegacyEvent_Proto",
+      "file": "CodeGrapherStressTest/proto/legacy.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::legacy::LegacySession",
+      "type": "type",
+      "label": "LegacySession",
+      "file": "CodeGrapherStressTest/proto/legacy.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::legacy::LegacyEventType",
+      "type": "type",
+      "label": "LegacyEventType",
+      "file": "CodeGrapherStressTest/proto/legacy.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/proto/messages.proto",
+      "type": "file",
+      "label": "messages.proto",
+      "file": "CodeGrapherStressTest/proto/messages.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::messages::Header",
+      "type": "type",
+      "label": "Header",
+      "file": "CodeGrapherStressTest/proto/messages.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::messages::Envelope",
+      "type": "type",
+      "label": "Envelope",
+      "file": "CodeGrapherStressTest/proto/messages.proto",
+      "line": null,
+      "language": "proto"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml",
+      "type": "file",
+      "label": "legacy_service.xml",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_service.xml",
+      "line": null,
+      "language": "wsdl"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml::ProducerPortType.SendLegacyEvent",
+      "type": "symbol",
+      "label": "SendLegacyEvent",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_service.xml",
+      "line": null,
+      "language": "wsdl"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml::BrokerPortType.ForwardLegacyEvent",
+      "type": "symbol",
+      "label": "ForwardLegacyEvent",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_service.xml",
+      "line": null,
+      "language": "wsdl"
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "type": "file",
+      "label": "legacy_types.xml",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    },
+    {
+      "id": "stress::legacy_types::EventTypeEnum",
+      "type": "type",
+      "label": "EventTypeEnum",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    },
+    {
+      "id": "stress::legacy_types::LegacyEvent",
+      "type": "type",
+      "label": "LegacyEvent",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    },
+    {
+      "id": "stress::legacy_types::LegacySession",
+      "type": "type",
+      "label": "LegacySession",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    },
+    {
+      "id": "stress::legacy_types::AckMessage",
+      "type": "type",
+      "label": "AckMessage",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    },
+    {
+      "id": "stress::legacy_types::ErrorInfo",
+      "type": "type",
+      "label": "ErrorInfo",
+      "file": "CodeGrapherStressTest\\wsdl\\legacy_types.xml",
+      "line": null,
+      "language": "xsd"
+    }
+  ],
+  "edges": [
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc",
+      "to": "stress::relay.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc",
+      "to": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::relay.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::router.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "to": "stress::relay::EventBus",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::relay::Session",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::inspect_header",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::session_create",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::session_create",
+      "to": "stress::relay::Session",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::session_destroy",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::session_destroy",
+      "to": "stress::relay::Session",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::broker_subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::broker_subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::broker_subscribe_all",
+      "to": "unresolved::bus::subscribe",
+      "relation": "calls",
+      "unresolved": true,
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::broker_on_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::broker_on_error",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.cc::broker_on_error",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::relay::RawBytes",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::relay::RawBytes",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::RawBytes.data",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::relay::RawBytes",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::RawBytes.len",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::relay::Session",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::relay::Session",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::Session.session_id",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::relay::Session",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::Session.header",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::Session.header",
+      "to": "stress::messages::Header",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::relay::Session",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::Session.ttl",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::relay::Session",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::Session.active",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::relay::EventBus",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::dispatch_event",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::on_msg_received",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::on_msg_received",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::on_msg_received",
+      "to": "stress::relay::Session",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::forward_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::forward_message",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::session_create",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::session_create",
+      "to": "stress::relay::Session",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::session_destroy",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::session_destroy",
+      "to": "stress::relay::Session",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::broker_subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::broker_subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h",
+      "to": "stress::CodeGrapherStressTest/broker/relay.h::broker_on_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/relay.h::broker_on_error",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc",
+      "to": "stress::router.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::load_routing_table",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc::load_routing_table",
+      "to": "stress::router::RoutingTable",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::inspect_header",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc::inspect_header",
+      "to": "stress::router::RoutingKey",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "to": "stress::router::RoutingKey",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "to": "stress::router::RoutingTable",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::router::RoutingKey",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::router::RoutingKey",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.destination",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::router::RoutingKey",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.priority",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::router::RoutingKey",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RoutingKey.flags",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::router::RouteEntry",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::router::RouteEntry",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.key",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.key",
+      "to": "stress::router::RoutingKey",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::router::RouteEntry",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.target_address",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::router::RouteEntry",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RouteEntry.weight",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::router::RoutingTable",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::router::RoutingTable",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RoutingTable.entries",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::RoutingTable.entries",
+      "to": "stress::router::RouteEntry",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::router::RoutingTable",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::RoutingTable.count",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::inspect_header",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::inspect_header",
+      "to": "stress::router::RoutingKey",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::lookup_route",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::lookup_route",
+      "to": "stress::router::RoutingKey",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::lookup_route",
+      "to": "stress::router::RoutingTable",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h",
+      "to": "stress::CodeGrapherStressTest/broker/router.h::load_routing_table",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/router.h::load_routing_table",
+      "to": "stress::router::RoutingTable",
+      "relation": "produces",
+      "via": "return_value",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_init",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::broker_subscribe_all",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_routing",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::inspect_header",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/router.cc::lookup_route",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_fsm_run",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_listening",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::on_msg_received",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_routing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_routing",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_routing",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_forwarding",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::session_destroy",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.cc::broker_handle_error_recovery",
+      "to": "stress::CodeGrapherStressTest/broker/relay.cc::forward_message",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.state",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.state",
+      "to": "stress::state_machine::BrokerState",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.current_session",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.current_session",
+      "to": "stress::relay::Session",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.routing_table",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.routing_table",
+      "to": "stress::CodeGrapherStressTest/config/broker_config.xml::RoutingTable",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.bus",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.bus",
+      "to": "stress::relay::EventBus",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.retry_count",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::state_machine::BrokerFSM",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::BrokerFSM.max_retries",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::state_machine::BrokerState",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_init",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_fsm_run",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_listening",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_listening",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_listening",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_routing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_routing",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_routing",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_forwarding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_forwarding",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_forwarding",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_error_recovery",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_error_recovery",
+      "to": "stress::state_machine::BrokerFSM",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/broker/state_machine.h::broker_handle_error_recovery",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies",
+      "relay": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/broker_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/broker_config.xml::RoutingTable",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/broker_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/broker_config.xml::RetryPolicy",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/broker_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/broker_config.xml::ErrorRecovery",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/producer_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/producer_config.xml::Serialization",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/producer_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/producer_config.xml::Transport",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/producer_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/producer_config.xml::AckPolicy",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/config/producer_config.xml",
+      "to": "stress::CodeGrapherStressTest/config/producer_config.xml::ErrorPolicy",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "to": "stress::decoder.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::detect_format",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::detect_format",
+      "to": "stress::decoder::WireFormat",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::detect_format",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "to": "stress::decoder::WireFormat",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_proto",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_wsdl",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_proto",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_proto",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_proto",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_wsdl",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_wsdl",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_wsdl",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.format",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.format",
+      "to": "stress::decoder::WireFormat",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.event_type",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.payload_data",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.payload_len",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.sequence_num",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::decoder::DecodedMessage",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::DecodedMessage.version",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::decoder::RawBytes",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::decoder::RawBytes",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::RawBytes.data",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::decoder::RawBytes",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::RawBytes.len",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::decoder::WireFormat",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::detect_format",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::detect_format",
+      "to": "stress::decoder::WireFormat",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::detect_format",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_message",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_message",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_message",
+      "to": "stress::decoder::WireFormat",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_proto",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_proto",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_proto",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_wsdl",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_wsdl",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/decoder.h::decode_wsdl",
+      "to": "stress::decoder::RawBytes",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "to": "stress::output.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "to": "stress::output.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "to": "stress::relay::EventBus",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::write_output",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::write_output",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::write_output",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_on_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_on_error",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_subscribe_all",
+      "to": "unresolved::bus::subscribe",
+      "relation": "calls",
+      "unresolved": true,
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h",
+      "to": "stress::relay::EventBus",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h",
+      "to": "stress::CodeGrapherStressTest/consumer/output.h::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h",
+      "to": "stress::CodeGrapherStressTest/consumer/output.h::write_output",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h::write_output",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h",
+      "to": "stress::CodeGrapherStressTest/consumer/output.h::consumer_on_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h",
+      "to": "stress::CodeGrapherStressTest/consumer/output.h::consumer_subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/output.h::consumer_subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "to": "stress::processor.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::validate",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::transform",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::enrich",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::validate",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::validate",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::transform",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::transform",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::transform",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::enrich",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.cc::enrich",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.source",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.source",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.canonical_type",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.normalized_data",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.normalized_len",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.metadata",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::processor::ProcessedPayload",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::ProcessedPayload.valid",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::processor::ProcessingState",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::process_payload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::process_payload",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::process_payload",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::validate",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::validate",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::transform",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::transform",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::transform",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.h::enrich",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/processor.h::enrich",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_init",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::consumer_subscribe_all",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_waiting",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_error",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_waiting",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_waiting",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::on_msg_received",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::on_msg_received",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::on_msg_received",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::on_msg_received",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::detect_format",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::CodeGrapherStressTest/consumer/decoder.cc::decode_message",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_decoding",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "to": "stress::CodeGrapherStressTest/consumer/processor.cc::process_payload",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_processing",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::write_output",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_writing",
+      "to": "stress::CodeGrapherStressTest/consumer/output.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.cc::consumer_handle_error",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::state_machine::ConsumerFSM",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.state",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.state",
+      "to": "stress::state_machine::ConsumerState",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ConsumerFSM",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.bus",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.bus",
+      "to": "stress::relay::EventBus",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ConsumerFSM",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_msg",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_msg",
+      "to": "stress::decoder::DecodedMessage",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ConsumerFSM",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_payload",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.current_payload",
+      "to": "stress::processor::ProcessedPayload",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ConsumerFSM",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::ConsumerFSM.retry_count",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::state_machine::ConsumerState",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_init",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_fsm_run",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_waiting",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_waiting",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_decoding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_decoding",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_decoding",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_processing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_processing",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_writing",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_writing",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::consumer_handle_error",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/consumer/state_machine.h::on_msg_received",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::on_msg_received",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/consumer/state_machine.h::on_msg_received",
+      "to": "stress::state_machine::ConsumerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::callbacks.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::types.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "to": "stress::relay::EventBus",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::on_state_change",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::on_state_change",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::subscribe_all",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::register_callbacks",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::register_callbacks",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::register_callbacks",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.cc::register_callbacks",
+      "to": "unresolved::bus::subscribe",
+      "relation": "calls",
+      "unresolved": true,
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.h::dispatch_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h::dispatch_event",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.h::on_state_change",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h::on_state_change",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.h::subscribe_all",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h::subscribe_all",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.h::register_callbacks",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/callbacks.h::register_callbacks",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::encoder.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::callbacks.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::types.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::types::PayloadHandlePP",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::select_serializer",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::serialize_proto",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::transmit_message",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::select_serializer",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::select_serializer",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::serialize_proto",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::serialize_proto",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::serialize_proto",
+      "to": "stress::messages::Envelope",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::transmit_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.cc::transmit_message",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.h::encode_payload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::encode_payload",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::encode_payload",
+      "to": "stress::types::PayloadHandlePP",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::encode_payload",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.h::select_serializer",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::select_serializer",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.h::serialize_proto",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::serialize_proto",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::serialize_proto",
+      "to": "stress::messages::Envelope",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.h::transmit_message",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/encoder.h::transmit_message",
+      "to": "stress::relay::RawBytes",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "to": "stress::legacy_encoder.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "to": "stress::callbacks.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "to": "stress::types.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::build_legacy_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::build_legacy_event",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::build_legacy_event",
+      "to": "stress::types::PayloadHandlePP",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::serialize_wsdl",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::serialize_wsdl",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::serialize_wsdl",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy_encoder::LegacyEvent_CC",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.event_type",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::legacy_encoder::LegacyEvent_CC",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.payload",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.payload",
+      "to": "stress::types::PayloadHandle",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::legacy_encoder::LegacyEvent_CC",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::LegacyEvent_CC.version",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::serialize_wsdl",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::serialize_wsdl",
+      "to": "stress::relay::RawBytes",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::serialize_wsdl",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::build_legacy_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::build_legacy_event",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/legacy_encoder.h::build_legacy_event",
+      "to": "stress::types::PayloadHandlePP",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc",
+      "to": "stress::callbacks.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc",
+      "to": "stress::types.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc",
+      "to": "stress::CodeGrapherStressTest/producer/main.cc::main",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/main.cc::main",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::state_machine.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::encoder.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::legacy_encoder.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::callbacks.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::types.h",
+      "relation": "depends_on"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_init",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::subscribe_all",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_idle",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_encoding",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_waiting_ack",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::producer_fsm_run",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_error",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_idle",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_idle",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_idle",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::trigger_event",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_encoding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_encoding",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "to": "stress::CodeGrapherStressTest/producer/encoder.cc::encode_payload",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::build_legacy_event",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "to": "stress::CodeGrapherStressTest/producer/legacy_encoder.cc::serialize_wsdl",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_transmitting",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_waiting_ack",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_waiting_ack",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_waiting_ack",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::timeout_event",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_error",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::handle_error",
+      "to": "stress::CodeGrapherStressTest/producer/callbacks.cc::dispatch_event",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::trigger_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::trigger_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::ack_received_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::ack_received_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::timeout_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::timeout_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.cc::error_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.cc::error_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.state",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.state",
+      "to": "stress::state_machine::ProducerState",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.encoding_path",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.encoding_path",
+      "to": "stress::state_machine::EncodingPath",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.config",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.config",
+      "to": "stress::types::ProducerConfig",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.bus",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.bus",
+      "to": "stress::relay::EventBus",
+      "relation": "uses_type"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.ack_received",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::state_machine::ProducerFSM",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ProducerFSM.retry_count",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::state_machine::ProducerState",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::state_machine::EncodingPath",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_init",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_init",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_init",
+      "to": "stress::relay::EventBus",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_init",
+      "to": "stress::types::ProducerConfig",
+      "relation": "consumes",
+      "role": "control"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_run",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::producer_fsm_run",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_idle",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_idle",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_encoding",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_encoding",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_transmitting",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_transmitting",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_waiting_ack",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_waiting_ack",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_error",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::handle_error",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::trigger_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::trigger_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::ack_received_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::ack_received_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::timeout_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::timeout_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h",
+      "to": "stress::CodeGrapherStressTest/producer/state_machine.h::error_event",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/state_machine.h::error_event",
+      "to": "stress::state_machine::ProducerFSM",
+      "relation": "modifies"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::RawBytes",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::RawBytes",
+      "to": "stress::CodeGrapherStressTest/producer/types.h::RawBytes.data",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::types::RawBytes",
+      "to": "stress::CodeGrapherStressTest/producer/types.h::RawBytes.len",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::relay::EventBus",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::ProducerConfig",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::ProducerConfig",
+      "to": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.use_proto",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::types::ProducerConfig",
+      "to": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.retry_limit",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::types::ProducerConfig",
+      "to": "stress::CodeGrapherStressTest/producer/types.h::ProducerConfig.ack_timeout_ms",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::MessageBody",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::MessageBody",
+      "to": "stress::types::RawBytes",
+      "relation": "typedef_of",
+      "ptr_depth": 0
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::Payload",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::Payload",
+      "to": "stress::types::MessageBody",
+      "relation": "typedef_of",
+      "ptr_depth": 1
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::PayloadHandle",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::PayloadHandle",
+      "to": "stress::types::Payload",
+      "relation": "typedef_of",
+      "ptr_depth": 2
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/producer/types.h",
+      "to": "stress::types::PayloadHandlePP",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::types::PayloadHandlePP",
+      "to": "stress::types::PayloadHandle",
+      "relation": "typedef_of",
+      "ptr_depth": 3
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/events.proto",
+      "to": "stress::events::EventEnvelope",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::events::EventEnvelope",
+      "to": "unresolved::EventType",
+      "relation": "uses_type",
+      "unresolved": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/events.proto",
+      "to": "stress::events::AckEvent",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/events.proto",
+      "to": "stress::events::ErrorEvent",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/events.proto",
+      "to": "stress::events::EventType",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/legacy.proto",
+      "to": "stress::legacy::LegacyEvent_Proto",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy::LegacyEvent_Proto",
+      "to": "unresolved::LegacyEventType",
+      "relation": "uses_type",
+      "unresolved": true
+    },
+    {
+      "from": "stress::legacy::LegacyEvent_Proto",
+      "to": "unresolved::messages.MessageBody",
+      "relation": "uses_type",
+      "unresolved": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/legacy.proto",
+      "to": "stress::legacy::LegacySession",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy::LegacySession",
+      "to": "stress::legacy::LegacyEvent_Proto",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/legacy.proto",
+      "to": "stress::legacy::LegacyEventType",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy::LegacyEvent_Proto",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "maps_to"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/messages.proto",
+      "to": "stress::types::MessageBody",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/messages.proto",
+      "to": "stress::router::RoutingKey",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/messages.proto",
+      "to": "stress::messages::Header",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::messages::Header",
+      "to": "stress::router::RoutingKey",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/proto/messages.proto",
+      "to": "stress::messages::Envelope",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::messages::Envelope",
+      "to": "stress::messages::Header",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::messages::Envelope",
+      "to": "stress::types::MessageBody",
+      "relation": "contains"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml",
+      "to": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml::ProducerPortType.SendLegacyEvent",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml",
+      "to": "stress::CodeGrapherStressTest/wsdl/legacy_service.xml::BrokerPortType.ForwardLegacyEvent",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::legacy_types::EventTypeEnum",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::relay::RawBytes",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::legacy_types::LegacyEvent",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy_types::LegacyEvent",
+      "to": "stress::legacy_types::EventTypeEnum",
+      "relation": "contains",
+      "unresolved": true
+    },
+    {
+      "from": "stress::legacy_types::LegacyEvent",
+      "to": "stress::relay::RawBytes",
+      "relation": "contains",
+      "unresolved": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::legacy_types::LegacySession",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::legacy_types::LegacySession",
+      "to": "stress::legacy_types::LegacyEvent",
+      "relation": "contains",
+      "unresolved": true
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::legacy_types::AckMessage",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::CodeGrapherStressTest/wsdl/legacy_types.xml",
+      "to": "stress::legacy_types::ErrorInfo",
+      "relation": "defines"
+    },
+    {
+      "from": "stress::relay::RawBytes",
+      "to": "stress::types::RawBytes",
+      "relation": "maps_to"
+    },
+    {
+      "from": "stress::relay::RawBytes",
+      "to": "stress::decoder::RawBytes",
+      "relation": "maps_to"
+    },
+    {
+      "from": "stress::legacy_types::LegacyEvent",
+      "to": "stress::legacy::LegacyEvent_Proto",
+      "relation": "maps_to"
+    },
+    {
+      "from": "stress::legacy_types::LegacyEvent",
+      "to": "stress::legacy_encoder::LegacyEvent_CC",
+      "relation": "maps_to"
+    },
+    {
+      "from": "stress::legacy_types::LegacySession",
+      "to": "stress::legacy::LegacySession",
+      "relation": "maps_to"
+    }
+  ]
+}

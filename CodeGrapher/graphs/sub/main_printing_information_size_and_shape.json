@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "printing_information/size_and_shape.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::printing_information/size_and_shape.py",
+      "type": "file",
+      "label": "size_and_shape.py",
+      "file": "printing_information/size_and_shape.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/size_and_shape.py::print_table_sizes_and_shapes",
+      "type": "symbol",
+      "label": "print_table_sizes_and_shapes",
+      "file": "printing_information/size_and_shape.py",
+      "line": 3,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::printing_information/size_and_shape.py",
+      "to": "repo::printing_information/size_and_shape.py::print_table_sizes_and_shapes",
+      "relation": "defines"
+    }
+  ]
+}

@@ -1,0 +1,1244 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/utils/meal_plan_manager.py",
+  "stats": {
+    "nodes": 63,
+    "edges": 106
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py",
+      "type": "file",
+      "label": "meal_plan_manager.py",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::meal_plan_manager::MealType",
+      "type": "type",
+      "label": "MealType",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 26,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::meal_plan_manager::DayOfWeek",
+      "type": "type",
+      "label": "DayOfWeek",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 35,
+      "language": "python",
+      "x": 59.692159403513706,
+      "y": 6.07009931924593
+    },
+    {
+      "id": "repo::meal_plan_manager::MealAssignment",
+      "type": "type",
+      "label": "MealAssignment",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 47,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 58.77179647514967,
+      "y": 12.077911205319603
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.plan_id",
+      "type": "symbol",
+      "label": "MealAssignment.plan_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 49,
+      "language": "python",
+      "annotation": "str",
+      "x": 57.24835538400293,
+      "y": 17.961787378401475
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.household_id",
+      "type": "symbol",
+      "label": "MealAssignment.household_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 50,
+      "language": "python",
+      "annotation": "int",
+      "x": 55.13746869721383,
+      "y": 23.661351306799112
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.week_start_date",
+      "type": "symbol",
+      "label": "MealAssignment.week_start_date",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 51,
+      "language": "python",
+      "annotation": "date",
+      "x": 52.46079696867493,
+      "y": 29.11811775186486
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.day_of_week",
+      "type": "symbol",
+      "label": "MealAssignment.day_of_week",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 52,
+      "language": "python",
+      "annotation": "int",
+      "x": 49.24580647243658,
+      "y": 34.27609290568754
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.meal_type",
+      "type": "symbol",
+      "label": "MealAssignment.meal_type",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 53,
+      "language": "python",
+      "annotation": "str",
+      "x": 45.52548736156746,
+      "y": 39.08234896333333
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.recipe_id",
+      "type": "symbol",
+      "label": "MealAssignment.recipe_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 54,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 41.338015144541195,
+      "y": 43.4875672337472
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.assigned_by",
+      "type": "symbol",
+      "label": "MealAssignment.assigned_by",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 55,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 36.726358952859776,
+      "y": 47.44654421626191
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.notes",
+      "type": "symbol",
+      "label": "MealAssignment.notes",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 56,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 31.737840619617742,
+      "y": 50.918655449685055
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.parent_meal_id",
+      "type": "symbol",
+      "label": "MealAssignment.parent_meal_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 57,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 26.42364909345807,
+      "y": 53.8682723742445
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.side_order",
+      "type": "symbol",
+      "label": "MealAssignment.side_order",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 58,
+      "language": "python",
+      "annotation": "int",
+      "x": 20.838315170689217,
+      "y": 56.265127928824825
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.modified_date",
+      "type": "symbol",
+      "label": "MealAssignment.modified_date",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 59,
+      "language": "python",
+      "annotation": "Optional[datetime]",
+      "x": 15.039151935523233,
+      "y": 58.084627131972255
+    },
+    {
+      "id": "repo::meal_plan_manager::DinnerWithSides",
+      "type": "type",
+      "label": "DinnerWithSides",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 63,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 9.085666650274602,
+      "y": 59.30809945968668
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.dinner",
+      "type": "symbol",
+      "label": "DinnerWithSides.dinner",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 65,
+      "language": "python",
+      "annotation": "Optional[MealAssignment]",
+      "x": 3.0389501303227795,
+      "y": 59.92299043026316
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.sides",
+      "type": "symbol",
+      "label": "DinnerWithSides.sides",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 66,
+      "language": "python",
+      "annotation": "List[MealAssignment]",
+      "x": -3.0389501303227586,
+      "y": 59.92299043026316
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.dinner_recipe_id",
+      "type": "symbol",
+      "label": "DinnerWithSides.dinner_recipe_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 69,
+      "language": "python",
+      "x": -9.085666650274607,
+      "y": 59.30809945968668
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.side_recipe_ids",
+      "type": "symbol",
+      "label": "DinnerWithSides.side_recipe_ids",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 73,
+      "language": "python",
+      "x": -15.039151935523225,
+      "y": 58.084627131972255
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.all_recipe_ids",
+      "type": "symbol",
+      "label": "DinnerWithSides.all_recipe_ids",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 77,
+      "language": "python",
+      "x": -20.83831517068921,
+      "y": 56.26512792882483
+    },
+    {
+      "id": "repo::meal_plan_manager::ScaledIngredient",
+      "type": "type",
+      "label": "ScaledIngredient",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 87,
+      "language": "python",
+      "is_dataclass": true,
+      "x": -26.423649093458064,
+      "y": 53.8682723742445
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.ingredient_id",
+      "type": "symbol",
+      "label": "ScaledIngredient.ingredient_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 89,
+      "language": "python",
+      "annotation": "int",
+      "x": -31.73784061961775,
+      "y": 50.918655449685055
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.ingredient_name",
+      "type": "symbol",
+      "label": "ScaledIngredient.ingredient_name",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 90,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -36.726358952859755,
+      "y": 47.446544216261934
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.quantity",
+      "type": "symbol",
+      "label": "ScaledIngredient.quantity",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 91,
+      "language": "python",
+      "annotation": "float",
+      "x": -41.338015144541174,
+      "y": 43.487567233747214
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.unit",
+      "type": "symbol",
+      "label": "ScaledIngredient.unit",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 92,
+      "language": "python",
+      "annotation": "str",
+      "x": -45.52548736156746,
+      "y": 39.08234896333334
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.recipe_id",
+      "type": "symbol",
+      "label": "ScaledIngredient.recipe_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 93,
+      "language": "python",
+      "annotation": "int",
+      "x": -49.24580647243658,
+      "y": 34.27609290568754
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.original_quantity",
+      "type": "symbol",
+      "label": "ScaledIngredient.original_quantity",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 94,
+      "language": "python",
+      "annotation": "float",
+      "x": -52.46079696867493,
+      "y": 29.11811775186486
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.original_unit",
+      "type": "symbol",
+      "label": "ScaledIngredient.original_unit",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 95,
+      "language": "python",
+      "annotation": "str",
+      "x": -55.13746869721383,
+      "y": 23.661351306799116
+    },
+    {
+      "id": "repo::meal_plan_manager::AggregatedIngredient",
+      "type": "type",
+      "label": "AggregatedIngredient",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 99,
+      "language": "python",
+      "is_dataclass": true,
+      "x": -57.24835538400293,
+      "y": 17.961787378401482
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.ingredient_id",
+      "type": "symbol",
+      "label": "AggregatedIngredient.ingredient_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 101,
+      "language": "python",
+      "annotation": "int",
+      "x": -58.77179647514967,
+      "y": 12.07791120531961
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.ingredient_name",
+      "type": "symbol",
+      "label": "AggregatedIngredient.ingredient_name",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 102,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -59.6921594035137,
+      "y": 6.070099319245964
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.total_quantity",
+      "type": "symbol",
+      "label": "AggregatedIngredient.total_quantity",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 103,
+      "language": "python",
+      "annotation": "float",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.unit",
+      "type": "symbol",
+      "label": "AggregatedIngredient.unit",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 104,
+      "language": "python",
+      "annotation": "str",
+      "x": -59.692159403513706,
+      "y": -6.070099319245923
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.recipe_count",
+      "type": "symbol",
+      "label": "AggregatedIngredient.recipe_count",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 105,
+      "language": "python",
+      "annotation": "int",
+      "x": -58.77179647514967,
+      "y": -12.077911205319595
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.recipes",
+      "type": "symbol",
+      "label": "AggregatedIngredient.recipes",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 106,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": -57.24835538400293,
+      "y": -17.961787378401493
+    },
+    {
+      "id": "repo::meal_plan_manager::MealPlanManager",
+      "type": "type",
+      "label": "MealPlanManager",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 109,
+      "language": "python",
+      "x": -55.13746869721384,
+      "y": -23.661351306799105
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.__init__",
+      "type": "symbol",
+      "label": "MealPlanManager.__init__",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 129,
+      "language": "python",
+      "x": -52.460796968674934,
+      "y": -29.11811775186485
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "type": "symbol",
+      "label": "MealPlanManager._get_connection",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 138,
+      "language": "python",
+      "x": -49.24580647243659,
+      "y": -34.27609290568753
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_recipe_to_meal",
+      "type": "symbol",
+      "label": "MealPlanManager.assign_recipe_to_meal",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 146,
+      "language": "python",
+      "x": -45.525487361567464,
+      "y": -39.082348963333324
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_side_to_dinner",
+      "type": "symbol",
+      "label": "MealPlanManager.assign_side_to_dinner",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 215,
+      "language": "python",
+      "x": -41.3380151445412,
+      "y": -43.487567233747185
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "type": "symbol",
+      "label": "MealPlanManager.get_dinner_sides",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 297,
+      "language": "python",
+      "x": -36.72635895285976,
+      "y": -47.44654421626192
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_side_from_dinner",
+      "type": "symbol",
+      "label": "MealPlanManager.remove_side_from_dinner",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 337,
+      "language": "python",
+      "x": -31.737840619617764,
+      "y": -50.91865544968505
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_all_sides_from_dinner",
+      "type": "symbol",
+      "label": "MealPlanManager.remove_all_sides_from_dinner",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 380,
+      "language": "python",
+      "x": -26.423649093458053,
+      "y": -53.8682723742445
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "type": "symbol",
+      "label": "MealPlanManager.get_dinner_with_sides",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 422,
+      "language": "python",
+      "x": -20.838315170689235,
+      "y": -56.26512792882482
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan",
+      "type": "symbol",
+      "label": "MealPlanManager.get_weekly_plan",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 443,
+      "language": "python",
+      "x": -15.039151935523279,
+      "y": -58.08462713197224
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan_detailed",
+      "type": "symbol",
+      "label": "MealPlanManager.get_weekly_plan_detailed",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 511,
+      "language": "python",
+      "x": -9.085666650274622,
+      "y": -59.30809945968668
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_meal",
+      "type": "symbol",
+      "label": "MealPlanManager.remove_meal",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 565,
+      "language": "python",
+      "x": -3.0389501303228132,
+      "y": -59.92299043026316
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_meal",
+      "type": "symbol",
+      "label": "MealPlanManager.update_meal",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 615,
+      "language": "python",
+      "x": 3.038950130322791,
+      "y": -59.92299043026316
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_side",
+      "type": "symbol",
+      "label": "MealPlanManager.update_side",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 669,
+      "language": "python",
+      "x": 9.0856666502746,
+      "y": -59.30809945968668
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "type": "symbol",
+      "label": "MealPlanManager.scale_recipe_ingredients",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 720,
+      "language": "python",
+      "x": 15.039151935523204,
+      "y": -58.08462713197226
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._round_quantity",
+      "type": "symbol",
+      "label": "MealPlanManager._round_quantity",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 781,
+      "language": "python",
+      "x": 20.838315170689217,
+      "y": -56.265127928824825
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "type": "symbol",
+      "label": "MealPlanManager.generate_shopping_list",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 808,
+      "language": "python",
+      "x": 26.423649093458035,
+      "y": -53.86827237424451
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_shopping_list",
+      "type": "symbol",
+      "label": "MealPlanManager.get_shopping_list",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 972,
+      "language": "python",
+      "x": 31.737840619617742,
+      "y": -50.918655449685055
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.check_off_ingredient",
+      "type": "symbol",
+      "label": "MealPlanManager.check_off_ingredient",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1006,
+      "language": "python",
+      "x": 36.72635895285975,
+      "y": -47.446544216261934
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "type": "symbol",
+      "label": "MealPlanManager._generate_plan_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1047,
+      "language": "python",
+      "x": 41.33801514454119,
+      "y": -43.4875672337472
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_list_id",
+      "type": "symbol",
+      "label": "MealPlanManager._generate_list_id",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1051,
+      "language": "python",
+      "x": 45.525487361567464,
+      "y": -39.08234896333332
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "type": "symbol",
+      "label": "MealPlanManager._row_to_meal_assignment",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1055,
+      "language": "python",
+      "x": 49.24580647243658,
+      "y": -34.27609290568755
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "type": "symbol",
+      "label": "MealPlanManager.get_meal_assignment",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1071,
+      "language": "python",
+      "x": 52.46079696867491,
+      "y": -29.118117751864894
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_by_recipe",
+      "type": "symbol",
+      "label": "MealPlanManager.get_meals_by_recipe",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1111,
+      "language": "python",
+      "x": 55.13746869721383,
+      "y": -23.661351306799123
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_week_start_date",
+      "type": "symbol",
+      "label": "MealPlanManager.get_week_start_date",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1152,
+      "language": "python",
+      "x": 57.24835538400292,
+      "y": -17.961787378401514
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.clear_weekly_plan",
+      "type": "symbol",
+      "label": "MealPlanManager.clear_weekly_plan",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1166,
+      "language": "python",
+      "x": 58.77179647514966,
+      "y": -12.077911205319669
+    },
+    {
+      "id": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_stats",
+      "type": "symbol",
+      "label": "MealPlanManager.get_meals_stats",
+      "file": "Client_Side/utils/meal_plan_manager.py",
+      "line": 1196,
+      "language": "python",
+      "x": 59.692159403513706,
+      "y": -6.070099319245918
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::MealType",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::DayOfWeek",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.plan_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.week_start_date",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.day_of_week",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.meal_type",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.assigned_by",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.notes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.parent_meal_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.side_order",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealAssignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealAssignment.modified_date",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::DinnerWithSides",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::meal_plan_manager::DinnerWithSides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.dinner",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::meal_plan_manager::DinnerWithSides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.sides",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::meal_plan_manager::DinnerWithSides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.dinner_recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::DinnerWithSides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.side_recipe_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::DinnerWithSides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::DinnerWithSides.all_recipe_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::ScaledIngredient",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.ingredient_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.ingredient_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.quantity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.unit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.original_quantity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::ScaledIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::ScaledIngredient.original_unit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::AggregatedIngredient",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.ingredient_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.ingredient_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.total_quantity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.unit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.recipe_count",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::AggregatedIngredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::AggregatedIngredient.recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py",
+      "to": "repo::meal_plan_manager::MealPlanManager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_recipe_to_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_recipe_to_meal",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_recipe_to_meal",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_side_to_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_side_to_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.assign_side_to_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_side_from_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_side_from_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_side_from_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_all_sides_from_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_all_sides_from_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_all_sides_from_dinner",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "to": "repo::meal_plan_manager::DinnerWithSides",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_sides",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_dinner_with_sides",
+      "to": "repo::meal_plan_manager::DinnerWithSides",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan_detailed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan_detailed",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan_detailed",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan_detailed",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.remove_meal",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_meal",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_side",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_side",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.update_side",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "to": "repo::meal_plan_manager::ScaledIngredient",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "to": "repo::meal_plan_manager::ScaledIngredient",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._round_quantity",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._round_quantity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.scale_recipe_ingredients",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "to": "repo::meal_plan_manager::AggregatedIngredient",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.generate_shopping_list",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_list_id",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_shopping_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_shopping_list",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.check_off_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.check_off_ingredient",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_plan_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._generate_list_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "to": "repo::meal_plan_manager::MealAssignment",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meal_assignment",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._row_to_meal_assignment",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_by_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_by_recipe",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_week_start_date",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.clear_weekly_plan",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.clear_weekly_plan",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::meal_plan_manager::MealPlanManager",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_stats",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_meals_stats",
+      "to": "repo::Client_Side/utils/meal_plan_manager.py::MealPlanManager.get_weekly_plan",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

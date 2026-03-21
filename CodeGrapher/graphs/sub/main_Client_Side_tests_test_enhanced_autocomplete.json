@@ -1,0 +1,599 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_enhanced_autocomplete.py",
+  "stats": {
+    "nodes": 37,
+    "edges": 36
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "type": "file",
+      "label": "test_enhanced_autocomplete.py",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestReferenceDataLoader",
+      "type": "type",
+      "label": "TestReferenceDataLoader",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 15,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestReferenceDataLoader.test_singleton_pattern",
+      "type": "symbol",
+      "label": "TestReferenceDataLoader.test_singleton_pattern",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 18,
+      "language": "python",
+      "is_test": true,
+      "x": 59.088465180732484,
+      "y": 10.418890660015819
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestReferenceDataLoader.test_data_loaded",
+      "type": "symbol",
+      "label": "TestReferenceDataLoader.test_data_loaded",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 24,
+      "language": "python",
+      "is_test": true,
+      "x": 56.381557247154504,
+      "y": 20.521208599540124
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "type": "type",
+      "label": "TestHierarchicalCuisine",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 39,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_1_continent",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_tier_1_continent",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 42,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_2_region",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_tier_2_region",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 50,
+      "language": "python",
+      "is_test": true,
+      "x": 38.56725658119236,
+      "y": 45.96266658713868
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_3_country",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_tier_3_country",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 58,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_4_subregion",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_tier_4_subregion",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 66,
+      "language": "python",
+      "is_test": true,
+      "x": 20.52120859954013,
+      "y": 56.3815572471545
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_5_province",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_tier_5_province",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 74,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_case_insensitive",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_case_insensitive",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 82,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_partial_match_any_tier",
+      "type": "symbol",
+      "label": "TestHierarchicalCuisine.test_partial_match_any_tier",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 93,
+      "language": "python",
+      "is_test": true,
+      "x": -10.418890660015819,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "type": "type",
+      "label": "TestMultiTagSupport",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 102,
+      "language": "python",
+      "is_test": true,
+      "x": -20.52120859954011,
+      "y": 56.381557247154504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_single_tag",
+      "type": "symbol",
+      "label": "TestMultiTagSupport.test_single_tag",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 105,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_multi_tag_with_plus",
+      "type": "symbol",
+      "label": "TestMultiTagSupport.test_multi_tag_with_plus",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 113,
+      "language": "python",
+      "is_test": true,
+      "x": -38.56725658119236,
+      "y": 45.96266658713868
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_multi_tag_completion",
+      "type": "symbol",
+      "label": "TestMultiTagSupport.test_multi_tag_completion",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 122,
+      "language": "python",
+      "is_test": true,
+      "x": -45.96266658713867,
+      "y": 38.56725658119237
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_three_tags",
+      "type": "symbol",
+      "label": "TestMultiTagSupport.test_three_tags",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 130,
+      "language": "python",
+      "is_test": true,
+      "x": -51.961524227066306,
+      "y": 30.00000000000002
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestSanitization",
+      "type": "type",
+      "label": "TestSanitization",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 139,
+      "language": "python",
+      "is_test": true,
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_cuisine_case",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_cuisine_case",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 142,
+      "language": "python",
+      "is_test": true,
+      "x": -59.088465180732484,
+      "y": 10.418890660015817
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_diet_type",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_diet_type",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 151,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_multi_tag",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_multi_tag",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 158,
+      "language": "python",
+      "is_test": true,
+      "x": -59.088465180732484,
+      "y": -10.418890660015801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_invalid_returns_original",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_invalid_returns_original",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 168,
+      "language": "python",
+      "is_test": true,
+      "x": -56.381557247154504,
+      "y": -20.52120859954012
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_equipment",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_equipment",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 175,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706631,
+      "y": -30.000000000000007
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_storage",
+      "type": "symbol",
+      "label": "TestSanitization.test_sanitize_storage",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 182,
+      "language": "python",
+      "is_test": true,
+      "x": -45.9626665871387,
+      "y": -38.56725658119233
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "type": "type",
+      "label": "TestOtherAutocompleteTypes",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 190,
+      "language": "python",
+      "is_test": true,
+      "x": -38.56725658119237,
+      "y": -45.96266658713867
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_meal_type_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_meal_type_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 193,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_seasonality_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_seasonality_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 201,
+      "language": "python",
+      "is_test": true,
+      "x": -20.521208599540113,
+      "y": -56.381557247154504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_cost_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_cost_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": -10.418890660015819,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_equipment_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_equipment_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 217,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_allergen_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_allergen_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 225,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015798,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_storage_suggestions",
+      "type": "symbol",
+      "label": "TestOtherAutocompleteTypes.test_storage_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 233,
+      "language": "python",
+      "is_test": true,
+      "x": 20.521208599540138,
+      "y": -56.3815572471545
+    },
+    {
+      "id": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "type": "type",
+      "label": "TestEdgeCases",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 242,
+      "language": "python",
+      "is_test": true,
+      "x": 29.99999999999996,
+      "y": -51.96152422706634
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_empty_search",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_empty_search",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 245,
+      "language": "python",
+      "is_test": true,
+      "x": 38.56725658119235,
+      "y": -45.962666587138685
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_whitespace_only",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_whitespace_only",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 252,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_invalid_autocomplete_type",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_invalid_autocomplete_type",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 264,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706633,
+      "y": -29.99999999999998
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_sanitize_empty_string",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_sanitize_empty_string",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 271,
+      "language": "python",
+      "is_test": true,
+      "x": 56.381557247154504,
+      "y": -20.521208599540117
+    },
+    {
+      "id": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_limit_suggestions",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_limit_suggestions",
+      "file": "Client_Side/tests/test_enhanced_autocomplete.py",
+      "line": 278,
+      "language": "python",
+      "is_test": true,
+      "x": 59.088465180732484,
+      "y": -10.418890660015823
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestReferenceDataLoader",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestReferenceDataLoader",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestReferenceDataLoader.test_singleton_pattern",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestReferenceDataLoader",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestReferenceDataLoader.test_data_loaded",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_1_continent",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_2_region",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_3_country",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_4_subregion",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_tier_5_province",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_case_insensitive",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestHierarchicalCuisine",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestHierarchicalCuisine.test_partial_match_any_tier",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_single_tag",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_multi_tag_with_plus",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_multi_tag_completion",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestMultiTagSupport",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestMultiTagSupport.test_three_tags",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestSanitization",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_cuisine_case",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_diet_type",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_multi_tag",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_invalid_returns_original",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_equipment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestSanitization",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestSanitization.test_sanitize_storage",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_meal_type_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_seasonality_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_cost_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_equipment_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_allergen_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestOtherAutocompleteTypes",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestOtherAutocompleteTypes.test_storage_suggestions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_enhanced_autocomplete.py",
+      "to": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_empty_search",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_whitespace_only",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_invalid_autocomplete_type",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_sanitize_empty_string",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_enhanced_autocomplete::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_enhanced_autocomplete.py::TestEdgeCases.test_limit_suggestions",
+      "relation": "contains"
+    }
+  ]
+}

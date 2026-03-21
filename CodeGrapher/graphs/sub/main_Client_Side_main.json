@@ -1,0 +1,382 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/main.py",
+  "stats": {
+    "nodes": 23,
+    "edges": 27
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/main.py",
+      "type": "file",
+      "label": "main.py",
+      "file": "Client_Side/main.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::main::SmartRecipeApp",
+      "type": "type",
+      "label": "SmartRecipeApp",
+      "file": "Client_Side/main.py",
+      "line": 31,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.__init__",
+      "type": "symbol",
+      "label": "SmartRecipeApp.__init__",
+      "file": "Client_Side/main.py",
+      "line": 37,
+      "language": "python",
+      "x": 57.569578416869845,
+      "y": 16.90395341048578
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.check_first_run",
+      "type": "symbol",
+      "label": "SmartRecipeApp.check_first_run",
+      "file": "Client_Side/main.py",
+      "line": 71,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": 32.43844904733585
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.run_migrations",
+      "type": "symbol",
+      "label": "SmartRecipeApp.run_migrations",
+      "file": "Client_Side/main.py",
+      "line": 94,
+      "language": "python",
+      "x": 39.29164403671711,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.initialize_fresh_database",
+      "type": "symbol",
+      "label": "SmartRecipeApp.initialize_fresh_database",
+      "file": "Client_Side/main.py",
+      "line": 107,
+      "language": "python",
+      "x": 24.924900780113187,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.run",
+      "type": "symbol",
+      "label": "SmartRecipeApp.run",
+      "file": "Client_Side/main.py",
+      "line": 132,
+      "language": "python",
+      "x": 8.538890296397106,
+      "y": 59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.check_authentication",
+      "type": "symbol",
+      "label": "SmartRecipeApp.check_authentication",
+      "file": "Client_Side/main.py",
+      "line": 159,
+      "language": "python",
+      "x": -8.538890296397101,
+      "y": 59.38928651285597
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_database_manager",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_database_manager",
+      "file": "Client_Side/main.py",
+      "line": 192,
+      "language": "python",
+      "x": -24.92490078011318,
+      "y": 54.57791972127111
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_server_client",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_server_client",
+      "file": "Client_Side/main.py",
+      "line": 196,
+      "language": "python",
+      "x": -39.2916440367171,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_current_user",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_current_user",
+      "file": "Client_Side/main.py",
+      "line": 200,
+      "language": "python",
+      "x": -50.47521196987086,
+      "y": 32.438449047335865
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.set_current_user",
+      "type": "symbol",
+      "label": "SmartRecipeApp.set_current_user",
+      "file": "Client_Side/main.py",
+      "line": 204,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": 16.90395341048578
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_household_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_household_id",
+      "file": "Client_Side/main.py",
+      "line": 208,
+      "language": "python",
+      "x": -60.0,
+      "y": 3.399323338588788e-14
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.set_household_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.set_household_id",
+      "file": "Client_Side/main.py",
+      "line": 212,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": -16.903953410485762
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_current_household_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_current_household_id",
+      "file": "Client_Side/main.py",
+      "line": 216,
+      "language": "python",
+      "x": -50.47521196987087,
+      "y": -32.43844904733585
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_current_user_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_current_user_id",
+      "file": "Client_Side/main.py",
+      "line": 220,
+      "language": "python",
+      "x": -39.291644036717116,
+      "y": -45.34497446125549
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_meal_plan_manager",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_meal_plan_manager",
+      "file": "Client_Side/main.py",
+      "line": 224,
+      "language": "python",
+      "x": -24.92490078011323,
+      "y": -54.57791972127108
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_seasonal_calculator",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_seasonal_calculator",
+      "file": "Client_Side/main.py",
+      "line": 235,
+      "language": "python",
+      "x": -8.538890296397113,
+      "y": -59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_local_recommender",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_local_recommender",
+      "file": "Client_Side/main.py",
+      "line": 245,
+      "language": "python",
+      "x": 8.538890296397092,
+      "y": -59.38928651285597
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.get_preference_compiler",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_preference_compiler",
+      "file": "Client_Side/main.py",
+      "line": 256,
+      "language": "python",
+      "x": 24.924900780113163,
+      "y": -54.577919721271115
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.on_login_success",
+      "type": "symbol",
+      "label": "SmartRecipeApp.on_login_success",
+      "file": "Client_Side/main.py",
+      "line": 267,
+      "language": "python",
+      "x": 39.291644036717074,
+      "y": -45.344974461255525
+    },
+    {
+      "id": "repo::Client_Side/main.py::SmartRecipeApp.on_logout",
+      "type": "symbol",
+      "label": "SmartRecipeApp.on_logout",
+      "file": "Client_Side/main.py",
+      "line": 282,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": -32.438449047335844
+    },
+    {
+      "id": "repo::Client_Side/main.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Client_Side/main.py",
+      "line": 298,
+      "language": "python",
+      "x": 57.569578416869845,
+      "y": -16.903953410485787
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/main.py",
+      "to": "repo::main::SmartRecipeApp",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main.py::SmartRecipeApp.__init__",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.check_first_run",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.check_first_run",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main.py::SmartRecipeApp.check_first_run",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.initialize_fresh_database",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::Client_Side/main.py::SmartRecipeApp.check_first_run",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.run_migrations",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.run_migrations",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.initialize_fresh_database",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.run",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main.py::SmartRecipeApp.run",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.check_authentication",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.check_authentication",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_database_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_server_client",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_current_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.set_current_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.set_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_current_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_current_user_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_meal_plan_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_seasonal_calculator",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_local_recommender",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.get_preference_compiler",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.on_login_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main::SmartRecipeApp",
+      "to": "repo::Client_Side/main.py::SmartRecipeApp.on_logout",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main.py",
+      "to": "repo::Client_Side/main.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/main.py::main",
+      "to": "repo::main::SmartRecipeApp",
+      "relation": "calls",
+      "seq": 4
+    }
+  ]
+}

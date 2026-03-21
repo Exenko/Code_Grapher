@@ -1,0 +1,1 @@
+{"fsms": [], "reason": "no FSMs found — all 8 files are procedural utility scripts (CSV/directory/SQLite analysis), no state tracking or dispatch patterns"}

@@ -1,0 +1,151 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_autocomplete_widget.py",
+  "stats": {
+    "nodes": 9,
+    "edges": 8
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py",
+      "type": "file",
+      "label": "test_autocomplete_widget.py",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "type": "type",
+      "label": "TestAutocompleteWidget",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 15,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_ingredient_terms_loaded",
+      "type": "symbol",
+      "label": "TestAutocompleteWidget.test_ingredient_terms_loaded",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 18,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_extract_terms_from_hierarchy",
+      "type": "symbol",
+      "label": "TestAutocompleteWidget.test_extract_terms_from_hierarchy",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 34,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_match_logic",
+      "type": "symbol",
+      "label": "TestAutocompleteWidget.test_match_logic",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 69,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_hierarchy_structure",
+      "type": "symbol",
+      "label": "TestAutocompleteWidget.test_hierarchy_structure",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 120,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_autocomplete_widget::TestAutocompleteIntegration",
+      "type": "type",
+      "label": "TestAutocompleteIntegration",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 143,
+      "language": "python",
+      "is_test": true,
+      "x": -42.42640687119286,
+      "y": -42.426406871192846
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteIntegration.test_autocomplete_imports_correctly",
+      "type": "symbol",
+      "label": "TestAutocompleteIntegration.test_autocomplete_imports_correctly",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 146,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteIntegration.test_widget_in_recipe_view_imports",
+      "type": "symbol",
+      "label": "TestAutocompleteIntegration.test_widget_in_recipe_view_imports",
+      "file": "Client_Side/tests/test_autocomplete_widget.py",
+      "line": 151,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_autocomplete_widget.py",
+      "to": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_ingredient_terms_loaded",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_extract_terms_from_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_match_logic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteWidget",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteWidget.test_hierarchy_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autocomplete_widget.py",
+      "to": "repo::test_autocomplete_widget::TestAutocompleteIntegration",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteIntegration",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteIntegration.test_autocomplete_imports_correctly",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autocomplete_widget::TestAutocompleteIntegration",
+      "to": "repo::Client_Side/tests/test_autocomplete_widget.py::TestAutocompleteIntegration.test_widget_in_recipe_view_imports",
+      "relation": "contains"
+    }
+  ]
+}

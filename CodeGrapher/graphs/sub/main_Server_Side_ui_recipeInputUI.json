@@ -1,0 +1,460 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/ui/recipeInputUI.py",
+  "stats": {
+    "nodes": 23,
+    "edges": 40
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py",
+      "type": "file",
+      "label": "recipeInputUI.py",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "type": "type",
+      "label": "CTkAutocompleteEntry",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 18,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.__init__",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.__init__",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 21,
+      "language": "python",
+      "x": 57.569578416869845,
+      "y": 16.90395341048578
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.handle_keyrelease",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.handle_keyrelease",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 31,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": 32.43844904733585
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.show_dropdown",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.show_dropdown",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 96,
+      "language": "python",
+      "x": 39.29164403671711,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.select_item",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.select_item",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 133,
+      "language": "python",
+      "x": 24.924900780113187,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.clear_dropdown",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.clear_dropdown",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 142,
+      "language": "python",
+      "x": 8.538890296397106,
+      "y": 59.38928651285596
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.focus_out",
+      "type": "symbol",
+      "label": "CTkAutocompleteEntry.focus_out",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 147,
+      "language": "python",
+      "x": -8.538890296397101,
+      "y": 59.38928651285597
+    },
+    {
+      "id": "repo::recipeInputUI::RecipeApp",
+      "type": "type",
+      "label": "RecipeApp",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 156,
+      "language": "python",
+      "x": -24.92490078011318,
+      "y": 54.57791972127111
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.normalize_amount",
+      "type": "symbol",
+      "label": "RecipeApp.normalize_amount",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 158,
+      "language": "python",
+      "x": -39.2916440367171,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.on_amount_focus_out",
+      "type": "symbol",
+      "label": "RecipeApp.on_amount_focus_out",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 190,
+      "language": "python",
+      "x": -50.47521196987086,
+      "y": 32.438449047335865
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.__init__",
+      "type": "symbol",
+      "label": "RecipeApp.__init__",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 199,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": 16.90395341048578
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.setup_keyboard_shortcuts",
+      "type": "symbol",
+      "label": "RecipeApp.setup_keyboard_shortcuts",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 365,
+      "language": "python",
+      "x": -60.0,
+      "y": 3.399323338588788e-14
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.add_ingredient_row",
+      "type": "symbol",
+      "label": "RecipeApp.add_ingredient_row",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 371,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": -16.903953410485762
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.remove_ingredient_row",
+      "type": "symbol",
+      "label": "RecipeApp.remove_ingredient_row",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 415,
+      "language": "python",
+      "x": -50.47521196987087,
+      "y": -32.43844904733585
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.select_image",
+      "type": "symbol",
+      "label": "RecipeApp.select_image",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 429,
+      "language": "python",
+      "x": -39.291644036717116,
+      "y": -45.34497446125549
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.display_image_preview",
+      "type": "symbol",
+      "label": "RecipeApp.display_image_preview",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 448,
+      "language": "python",
+      "x": -24.92490078011323,
+      "y": -54.57791972127108
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_image",
+      "type": "symbol",
+      "label": "RecipeApp.clear_image",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 469,
+      "language": "python",
+      "x": -8.538890296397113,
+      "y": -59.38928651285596
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.save_image",
+      "type": "symbol",
+      "label": "RecipeApp.save_image",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 475,
+      "language": "python",
+      "x": 8.538890296397092,
+      "y": -59.38928651285597
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_error_dialog",
+      "type": "symbol",
+      "label": "RecipeApp.show_error_dialog",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 518,
+      "language": "python",
+      "x": 24.924900780113163,
+      "y": -54.577919721271115
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_success_dialog",
+      "type": "symbol",
+      "label": "RecipeApp.show_success_dialog",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 534,
+      "language": "python",
+      "x": 39.291644036717074,
+      "y": -45.344974461255525
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "type": "symbol",
+      "label": "RecipeApp.clear_form",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 550,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": -32.438449047335844
+    },
+    {
+      "id": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "type": "symbol",
+      "label": "RecipeApp.submit_recipe",
+      "file": "Server_Side/ui/recipeInputUI.py",
+      "line": 578,
+      "language": "python",
+      "x": 57.569578416869845,
+      "y": -16.903953410485787
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py",
+      "to": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.handle_keyrelease",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.handle_keyrelease",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.clear_dropdown",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.handle_keyrelease",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.show_dropdown",
+      "relation": "calls",
+      "seq": 14
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.show_dropdown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.show_dropdown",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.clear_dropdown",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.show_dropdown",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.select_item",
+      "relation": "calls",
+      "seq": 17
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.select_item",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.select_item",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.clear_dropdown",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.clear_dropdown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::CTkAutocompleteEntry",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::CTkAutocompleteEntry.focus_out",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py",
+      "to": "repo::recipeInputUI::RecipeApp",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.normalize_amount",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.on_amount_focus_out",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.on_amount_focus_out",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.normalize_amount",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.__init__",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.add_ingredient_row",
+      "relation": "calls",
+      "seq": 21
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.__init__",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.setup_keyboard_shortcuts",
+      "relation": "calls",
+      "seq": 56
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.setup_keyboard_shortcuts",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.setup_keyboard_shortcuts",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.setup_keyboard_shortcuts",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.add_ingredient_row",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.add_ingredient_row",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.remove_ingredient_row",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.remove_ingredient_row",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.select_image",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.select_image",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.display_image_preview",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.display_image_preview",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_image",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.save_image",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_error_dialog",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_success_dialog",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.remove_ingredient_row",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_image",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::recipeInputUI::RecipeApp",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_error_dialog",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.save_image",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.show_success_dialog",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.submit_recipe",
+      "to": "repo::Server_Side/ui/recipeInputUI.py::RecipeApp.clear_form",
+      "relation": "calls",
+      "seq": 12
+    }
+  ]
+}

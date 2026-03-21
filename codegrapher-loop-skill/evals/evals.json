@@ -1,0 +1,206 @@
+{
+  "skill_name": "codegrapher-loop",
+  "description": "Two-agent comparison evals: ground-truth agent (reads source) vs skill agent (MCP tools only). Measures node recall, edge recall, and hallucination rate for data-flow diagrams.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "eval-broker",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at CodeGrapher/graphs/), produce a Mermaid flowchart LR data-flow diagram for the Broker sub-system of the stress-test codebase. The entry point is broker/main.cc. Include all key symbols in the internal call chain (on_msg_received through dispatch_event), the data types consumed and produced, and annotate relay:true edges. Use only the MCP tools — do NOT read source files. Save the diagram to outputs/skill_output.md and the tool call log to outputs/tool_calls.json.",
+      "expected_output": "Mermaid flowchart covering the 4-hop broker chain (on_msg_received → inspect_header → lookup_route → forward_message → dispatch_event), Header and RoutingKey type nodes, relay:true annotation on produces edges, and EventBus as the target of dispatch_event.",
+      "assertions": [
+        {
+          "text": "Diagram contains on_msg_received node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "on_msg_received"
+        },
+        {
+          "text": "Diagram contains dispatch_event node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "dispatch_event"
+        },
+        {
+          "text": "Diagram contains forward_message node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "forward_message"
+        },
+        {
+          "text": "Diagram contains RoutingKey or Header type node",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["RoutingKey", "Header"]
+        },
+        {
+          "text": "Diagram annotates relay:true on at least one broker produces edge",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "relay"
+        },
+        {
+          "text": "Diagram contains inspect_header (full 4-hop chain present)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "inspect_header"
+        },
+        {
+          "text": "Diagram contains lookup_route (full 4-hop chain present)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "lookup_route"
+        },
+        {
+          "text": "Diagram contains EventBus (dispatch_event convergence point)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "EventBus"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "eval-consumer",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at CodeGrapher/graphs/), produce a Mermaid flowchart LR data-flow diagram for the Consumer sub-system of the stress-test codebase. The entry point is consumer/main.cc. Include the full 6-hop internal chain (on_msg_received through dispatch_event), the proto and WSDL decoder branches, the LegacyEvent maps_to bridge, and the key consumed types (Envelope, MessageBody). Use only the MCP tools. Save the diagram to outputs/skill_output.md and the tool call log to outputs/tool_calls.json.",
+      "expected_output": "Mermaid flowchart covering detect_format, decode_proto/decode_wsdl branches, process_payload, validate, transform, dispatch_event(WRITE_COMPLETE). LegacyEvent_Proto and LegacyEvent_WSDL connected via maps_to. Envelope and MessageBody as type nodes.",
+      "assertions": [
+        {
+          "text": "Diagram contains detect_format node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "detect_format"
+        },
+        {
+          "text": "Diagram contains at least one decoder node (decode_proto or decode_wsdl)",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["decode_proto", "decode_wsdl", "decode_message"]
+        },
+        {
+          "text": "Diagram contains maps_to bridge (LegacyEvent)",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["maps_to", "LegacyEvent"]
+        },
+        {
+          "text": "Diagram contains dispatch_event / WRITE_COMPLETE",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["dispatch_event", "WRITE_COMPLETE"]
+        },
+        {
+          "text": "Diagram contains process_payload (depth-4 processing stage)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "process_payload"
+        },
+        {
+          "text": "Diagram contains validate or transform (sub-FSM stages, chain hits depth cap at 6)",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["validate", "transform"]
+        },
+        {
+          "text": "Diagram contains LegacyEvent_CC (C++ endpoint of maps_to bridge)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "LegacyEvent_CC"
+        },
+        {
+          "text": "Diagram contains WireFormat (detect_format output / decode_message control input)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "WireFormat"
+        },
+        {
+          "text": "Diagram contains EventBus (3-to-1 convergence point)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "EventBus"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "eval-producer",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at CodeGrapher/graphs/), produce a Mermaid flowchart LR data-flow diagram for the Producer sub-system of the stress-test codebase. The entry point is producer/main.cc. Include the 5-hop internal chain (trigger_event through dispatch_event), the proto vs WSDL serializer branch, the full typedef chain (RawBytes → MessageBody → Payload → PayloadHandle → PayloadHandlePP), and the Envelope type. Use only the MCP tools. Save the diagram to outputs/skill_output.md and the tool call log to outputs/tool_calls.json.",
+      "expected_output": "Mermaid flowchart covering encode_payload, select_serializer, serialize_proto/serialize_wsdl branches, transmit_message, dispatch_event(MSG_SENT). Typedef chain with ptr_depth annotations. Envelope as produced type.",
+      "assertions": [
+        {
+          "text": "Diagram contains encode_payload node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "encode_payload"
+        },
+        {
+          "text": "Diagram contains serialize_proto or serialize_wsdl",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["serialize_proto", "serialize_wsdl"]
+        },
+        {
+          "text": "Diagram contains at least 2 nodes from typedef chain",
+          "check": "min_substrings_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["RawBytes", "MessageBody", "Payload", "PayloadHandle"],
+          "min_count": 2
+        },
+        {
+          "text": "Diagram contains transmit_message or dispatch_event",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["transmit_message", "dispatch_event"]
+        },
+        {
+          "text": "Diagram contains all 4 typedef chain nodes (full chain present)",
+          "check": "min_substrings_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["RawBytes", "MessageBody", "Payload", "PayloadHandle", "PayloadHandlePP"],
+          "min_count": 4
+        },
+        {
+          "text": "Diagram contains ptr_depth annotation on typedef edges (regression test)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "ptr_depth"
+        },
+        {
+          "text": "Diagram contains LegacyEvent_CC (WSDL path endpoint)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "LegacyEvent_CC"
+        },
+        {
+          "text": "Diagram contains select_serializer (branching decision node)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "select_serializer"
+        },
+        {
+          "text": "Diagram contains EventBus (3-to-1 convergence point)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "EventBus"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
+    }
+  ]
+}

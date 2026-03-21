@@ -1,0 +1,21 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/db/database_utility.py",
+  "stats": {
+    "nodes": 1,
+    "edges": 0
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/db/database_utility.py",
+      "type": "file",
+      "label": "database_utility.py",
+      "file": "Server_Side/db/database_utility.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    }
+  ],
+  "edges": []
+}

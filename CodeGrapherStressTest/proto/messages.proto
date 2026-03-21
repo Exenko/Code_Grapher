@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package messages;
+
+option java_package = "com.stresstest.messages";
+option java_outer_classname = "MessagesProto";
+
+// MessageBody — base data container.
+// maps_to: RawBytes (C++ typedef chain base type in producer/types.h)
+// maps_to: MessageBody (C++ typedef, ptr_depth=0)
+message MessageBody {
+    bytes   data     = 1;
+    uint64  checksum = 2;
+    string  encoding = 3;
+}
+
+// RoutingKey — defined in C++ in broker/router.h.
+// This proto definition creates a maps_to edge to the C++ struct.
+// Also creates a cross-language contains edge: Header contains RoutingKey.
+message RoutingKey {
+    string   destination = 1;
+    int32    priority    = 2;
+    uint32   flags       = 3;
+}
+
+// Header — contains RoutingKey and references MessageBody.
+// contains: RoutingKey (nested message)
+// contains: MessageBody is referenced by Envelope, not Header directly
+message Header {
+    string     message_id  = 1;
+    RoutingKey routing_key = 2;
+    uint64     timestamp   = 3;
+    string     source_id   = 4;
+}
+
+// Envelope — top-level wire message.
+// contains: Header
+// contains: MessageBody
+// produces: by Producer encoder (serialize_proto in encoder.cc)
+// consumes: by Consumer decoder (decode_proto in consumer/decoder.cc)
+message Envelope {
+    Header      header  = 1;
+    MessageBody body    = 2;
+    uint64      seq_num = 3;
+    string      version = 4;
+}

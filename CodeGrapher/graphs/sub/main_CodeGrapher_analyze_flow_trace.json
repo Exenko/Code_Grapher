@@ -1,0 +1,220 @@
+{
+  "feature": "codegrapher",
+  "entry_point": "CodeGrapher/analyze/flow_trace.py",
+  "stats": {
+    "nodes": 11,
+    "edges": 18
+  },
+  "nodes": [
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "type": "file",
+      "label": "flow_trace.py",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_make_id_generator",
+      "type": "symbol",
+      "label": "_make_id_generator",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 21,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_load_graph",
+      "type": "symbol",
+      "label": "_load_graph",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 39,
+      "language": "python",
+      "x": 48.54101966249685,
+      "y": 35.26711513754839
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_find_entry_symbol",
+      "type": "symbol",
+      "label": "_find_entry_symbol",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 81,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_common_dir_prefix",
+      "type": "symbol",
+      "label": "_common_dir_prefix",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 149,
+      "language": "python",
+      "x": -18.54101966249684,
+      "y": 57.06339097770922
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_relative_dir",
+      "type": "symbol",
+      "label": "_relative_dir",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 171,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_is_callback_boundary",
+      "type": "symbol",
+      "label": "_is_callback_boundary",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 201,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_walk",
+      "type": "symbol",
+      "label": "_walk",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 215,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_file_level",
+      "type": "symbol",
+      "label": "_render_file_level",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 307,
+      "language": "python",
+      "x": -18.541019662496854,
+      "y": -57.06339097770921
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_symbol_level",
+      "type": "symbol",
+      "label": "_render_symbol_level",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 389,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "type": "symbol",
+      "label": "trace",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": 491,
+      "language": "python",
+      "x": 48.54101966249684,
+      "y": -35.2671151375484
+    }
+  ],
+  "edges": [
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_make_id_generator",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_load_graph",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_find_entry_symbol",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_common_dir_prefix",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_relative_dir",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_is_callback_boundary",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_walk",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::_walk",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_is_callback_boundary",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_file_level",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_file_level",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_common_dir_prefix",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_symbol_level",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_load_graph",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_find_entry_symbol",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_walk",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_make_id_generator",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_file_level",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py::trace",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py::_render_symbol_level",
+      "relation": "calls",
+      "seq": 8
+    }
+  ]
+}

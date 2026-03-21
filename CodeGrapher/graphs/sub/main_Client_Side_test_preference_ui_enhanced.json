@@ -1,0 +1,87 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/test_preference_ui_enhanced.py",
+  "stats": {
+    "nodes": 5,
+    "edges": 4
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/test_preference_ui_enhanced.py",
+      "type": "file",
+      "label": "test_preference_ui_enhanced.py",
+      "file": "Client_Side/test_preference_ui_enhanced.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_preference_ui_enhanced::PreferenceUITestWindow",
+      "type": "type",
+      "label": "PreferenceUITestWindow",
+      "file": "Client_Side/test_preference_ui_enhanced.py",
+      "line": 17,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow.__init__",
+      "type": "symbol",
+      "label": "PreferenceUITestWindow.__init__",
+      "file": "Client_Side/test_preference_ui_enhanced.py",
+      "line": 20,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow._on_cuisine_changed",
+      "type": "symbol",
+      "label": "PreferenceUITestWindow._on_cuisine_changed",
+      "file": "Client_Side/test_preference_ui_enhanced.py",
+      "line": 46,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow._on_household_changed",
+      "type": "symbol",
+      "label": "PreferenceUITestWindow._on_household_changed",
+      "file": "Client_Side/test_preference_ui_enhanced.py",
+      "line": 50,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/test_preference_ui_enhanced.py",
+      "to": "repo::test_preference_ui_enhanced::PreferenceUITestWindow",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_ui_enhanced::PreferenceUITestWindow",
+      "to": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_ui_enhanced::PreferenceUITestWindow",
+      "to": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow._on_cuisine_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_ui_enhanced::PreferenceUITestWindow",
+      "to": "repo::Client_Side/test_preference_ui_enhanced.py::PreferenceUITestWindow._on_household_changed",
+      "relation": "contains"
+    }
+  ]
+}

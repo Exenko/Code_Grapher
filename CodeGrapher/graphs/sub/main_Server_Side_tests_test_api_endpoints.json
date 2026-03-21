@@ -1,0 +1,327 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/tests/test_api_endpoints.py",
+  "stats": {
+    "nodes": 20,
+    "edges": 19
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py",
+      "type": "file",
+      "label": "test_api_endpoints.py",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_health_check",
+      "type": "symbol",
+      "label": "test_health_check",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 23,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_health_check_message_content",
+      "type": "symbol",
+      "label": "test_health_check_message_content",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 36,
+      "language": "python",
+      "is_test": true,
+      "x": 56.74903450203808,
+      "y": 19.481968152281006
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_create_anonymous_account",
+      "type": "symbol",
+      "label": "test_create_anonymous_account",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 45,
+      "language": "python",
+      "is_test": true,
+      "x": 47.348430563783616,
+      "y": 36.85276276138007
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_create_anonymous_account_uuid_format",
+      "type": "symbol",
+      "label": "test_create_anonymous_account_uuid_format",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 59,
+      "language": "python",
+      "is_test": true,
+      "x": 32.81688948734561,
+      "y": 50.229988695751715
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance",
+      "type": "symbol",
+      "label": "test_get_token_balance",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 73,
+      "language": "python",
+      "is_test": true,
+      "x": 14.729129228447954,
+      "y": 58.16401595635982
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance_nonexistent",
+      "type": "symbol",
+      "label": "test_get_token_balance_nonexistent",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 91,
+      "language": "python",
+      "is_test": true,
+      "x": -4.954760728339936,
+      "y": 59.79506958040019
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance_invalid_uuid",
+      "type": "symbol",
+      "label": "test_get_token_balance_invalid_uuid",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 97,
+      "language": "python",
+      "is_test": true,
+      "x": -24.101725479178164,
+      "y": 54.94639959930345
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens",
+      "type": "symbol",
+      "label": "test_consume_tokens",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": -40.63689429754445,
+      "y": 44.1434346403879
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_updates_balance",
+      "type": "symbol",
+      "label": "test_consume_tokens_updates_balance",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 136,
+      "language": "python",
+      "is_test": true,
+      "x": -52.768425072389334,
+      "y": 28.55684358222442
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_insufficient",
+      "type": "symbol",
+      "label": "test_consume_tokens_insufficient",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 157,
+      "language": "python",
+      "is_test": true,
+      "x": -59.18167820416334,
+      "y": 9.875675416844041
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_insufficient_after_partial",
+      "type": "symbol",
+      "label": "test_consume_tokens_insufficient_after_partial",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 171,
+      "language": "python",
+      "is_test": true,
+      "x": -59.18167820416335,
+      "y": -9.875675416844027
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_invalid_amount_zero",
+      "type": "symbol",
+      "label": "test_consume_tokens_invalid_amount_zero",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 193,
+      "language": "python",
+      "is_test": true,
+      "x": -52.768425072389356,
+      "y": -28.556843582224385
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_invalid_amount_negative",
+      "type": "symbol",
+      "label": "test_consume_tokens_invalid_amount_negative",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 206,
+      "language": "python",
+      "is_test": true,
+      "x": -40.636894297544465,
+      "y": -44.143434640387895
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_nonexistent_account",
+      "type": "symbol",
+      "label": "test_consume_tokens_nonexistent_account",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 219,
+      "language": "python",
+      "is_test": true,
+      "x": -24.101725479178143,
+      "y": -54.946399599303454
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes",
+      "type": "symbol",
+      "label": "test_search_recipes",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 231,
+      "language": "python",
+      "is_test": true,
+      "x": -4.954760728339965,
+      "y": -59.79506958040019
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_result_structure",
+      "type": "symbol",
+      "label": "test_search_recipes_result_structure",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 245,
+      "language": "python",
+      "is_test": true,
+      "x": 14.729129228447928,
+      "y": -58.164015956359826
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_no_results",
+      "type": "symbol",
+      "label": "test_search_recipes_no_results",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 259,
+      "language": "python",
+      "is_test": true,
+      "x": 32.8168894873456,
+      "y": -50.22998869575173
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_respects_limit",
+      "type": "symbol",
+      "label": "test_search_recipes_respects_limit",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 273,
+      "language": "python",
+      "is_test": true,
+      "x": 47.34843056378364,
+      "y": -36.85276276138004
+    },
+    {
+      "id": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_default_limit",
+      "type": "symbol",
+      "label": "test_search_recipes_default_limit",
+      "file": "Server_Side/tests/test_api_endpoints.py",
+      "line": 284,
+      "language": "python",
+      "is_test": true,
+      "x": 56.74903450203808,
+      "y": -19.481968152281024
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_health_check",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_health_check_message_content",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_create_anonymous_account",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_create_anonymous_account_uuid_format",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance_nonexistent",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_get_token_balance_invalid_uuid",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_updates_balance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_insufficient",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_insufficient_after_partial",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_invalid_amount_zero",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_invalid_amount_negative",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_consume_tokens_nonexistent_account",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_result_structure",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_no_results",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_respects_limit",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/tests/test_api_endpoints.py",
+      "to": "repo::Server_Side/tests/test_api_endpoints.py::test_search_recipes_default_limit",
+      "relation": "defines"
+    }
+  ]
+}

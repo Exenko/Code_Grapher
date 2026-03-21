@@ -1,0 +1,392 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/main_tkinkter.py",
+  "stats": {
+    "nodes": 20,
+    "edges": 33
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/main_tkinkter.py",
+      "type": "file",
+      "label": "main_tkinkter.py",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::main_tkinkter::SmartRecipeApp",
+      "type": "type",
+      "label": "SmartRecipeApp",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 25,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.__init__",
+      "type": "symbol",
+      "label": "SmartRecipeApp.__init__",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 28,
+      "language": "python",
+      "x": 56.74903450203808,
+      "y": 19.481968152281006
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_first_run",
+      "type": "symbol",
+      "label": "SmartRecipeApp.check_first_run",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 72,
+      "language": "python",
+      "x": 47.348430563783616,
+      "y": 36.85276276138007
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.initialize_fresh_database",
+      "type": "symbol",
+      "label": "SmartRecipeApp.initialize_fresh_database",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 82,
+      "language": "python",
+      "x": 32.81688948734561,
+      "y": 50.229988695751715
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_ui",
+      "type": "symbol",
+      "label": "SmartRecipeApp.setup_ui",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 107,
+      "language": "python",
+      "x": 14.729129228447954,
+      "y": 58.16401595635982
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.create_tabs",
+      "type": "symbol",
+      "label": "SmartRecipeApp.create_tabs",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 124,
+      "language": "python",
+      "x": -4.954760728339936,
+      "y": 59.79506958040019
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_settings_tab",
+      "type": "symbol",
+      "label": "SmartRecipeApp.setup_settings_tab",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 150,
+      "language": "python",
+      "x": -24.101725479178164,
+      "y": 54.94639959930345
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_authentication",
+      "type": "symbol",
+      "label": "SmartRecipeApp.check_authentication",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 174,
+      "language": "python",
+      "x": -40.63689429754445,
+      "y": 44.1434346403879
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "type": "symbol",
+      "label": "SmartRecipeApp.show_login",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 197,
+      "language": "python",
+      "x": -52.768425072389334,
+      "y": 28.55684358222442
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_main_tabs",
+      "type": "symbol",
+      "label": "SmartRecipeApp.show_main_tabs",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 202,
+      "language": "python",
+      "x": -59.18167820416334,
+      "y": 9.875675416844041
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.hide_main_tabs",
+      "type": "symbol",
+      "label": "SmartRecipeApp.hide_main_tabs",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 211,
+      "language": "python",
+      "x": -59.18167820416335,
+      "y": -9.875675416844027
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_login_success",
+      "type": "symbol",
+      "label": "SmartRecipeApp.on_login_success",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 216,
+      "language": "python",
+      "x": -52.768425072389356,
+      "y": -28.556843582224385
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_logout",
+      "type": "symbol",
+      "label": "SmartRecipeApp.on_logout",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 228,
+      "language": "python",
+      "x": -40.636894297544465,
+      "y": -44.143434640387895
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.test_database",
+      "type": "symbol",
+      "label": "SmartRecipeApp.test_database",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 242,
+      "language": "python",
+      "is_test": true,
+      "x": -24.101725479178143,
+      "y": -54.946399599303454
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_current_household_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_current_household_id",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 257,
+      "language": "python",
+      "x": -4.954760728339965,
+      "y": -59.79506958040019
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_current_user_id",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_current_user_id",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 261,
+      "language": "python",
+      "x": 14.729129228447928,
+      "y": -58.164015956359826
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_database_manager",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_database_manager",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 265,
+      "language": "python",
+      "x": 32.8168894873456,
+      "y": -50.22998869575173
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_server_client",
+      "type": "symbol",
+      "label": "SmartRecipeApp.get_server_client",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 269,
+      "language": "python",
+      "x": 47.34843056378364,
+      "y": -36.85276276138004
+    },
+    {
+      "id": "repo::Client_Side/main_tkinkter.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Client_Side/main_tkinkter.py",
+      "line": 274,
+      "language": "python",
+      "x": 56.74903450203808,
+      "y": -19.481968152281024
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/main_tkinkter.py",
+      "to": "repo::main_tkinkter::SmartRecipeApp",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.__init__",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_first_run",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.__init__",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_ui",
+      "relation": "calls",
+      "seq": 14
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.__init__",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_authentication",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_first_run",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_first_run",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.initialize_fresh_database",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.initialize_fresh_database",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_ui",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.create_tabs",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_ui",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.create_tabs",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.create_tabs",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_settings_tab",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.create_tabs",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.hide_main_tabs",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.setup_settings_tab",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_authentication",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_authentication",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.check_authentication",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_main_tabs",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.hide_main_tabs",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_main_tabs",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.hide_main_tabs",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_login_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_login_success",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_main_tabs",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_logout",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.on_logout",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.show_login",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.test_database",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_current_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_current_user_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_database_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_tkinkter::SmartRecipeApp",
+      "to": "repo::Client_Side/main_tkinkter.py::SmartRecipeApp.get_server_client",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py",
+      "to": "repo::Client_Side/main_tkinkter.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/main_tkinkter.py::main",
+      "to": "repo::main_tkinkter::SmartRecipeApp",
+      "relation": "calls",
+      "seq": 3
+    }
+  ]
+}

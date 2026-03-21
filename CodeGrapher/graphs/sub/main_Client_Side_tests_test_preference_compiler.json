@@ -1,0 +1,1685 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_preference_compiler.py",
+  "stats": {
+    "nodes": 67,
+    "edges": 167
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py",
+      "type": "file",
+      "label": "test_preference_compiler.py",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "type": "type",
+      "label": "TestPreferenceCompilerSetup",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 27,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup.setUpClass",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup.setUpClass",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 31,
+      "language": "python",
+      "is_test": true,
+      "x": 59.728315354385074,
+      "y": 5.703362598250959
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup.tearDownClass",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup.tearDownClass",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 41,
+      "language": "python",
+      "is_test": true,
+      "x": 58.915721835762405,
+      "y": 11.355074661624611
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_household",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 48,
+      "language": "python",
+      "is_test": true,
+      "x": 57.569578416869845,
+      "y": 16.90395341048578
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_user",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 59,
+      "language": "python",
+      "is_test": true,
+      "x": 55.70207598096436,
+      "y": 22.29974733961965
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_household_member",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 71,
+      "language": "python",
+      "is_test": true,
+      "x": 53.33012691929541,
+      "y": 27.493591303644624
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 82,
+      "language": "python",
+      "is_test": true,
+      "x": 50.47521196987087,
+      "y": 32.43844904733585
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_served_recipe",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 93,
+      "language": "python",
+      "is_test": true,
+      "x": 47.16318568456725,
+      "y": 37.08953917323631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 105,
+      "language": "python",
+      "is_test": true,
+      "x": 43.424042286304214,
+      "y": 41.404740688926715
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_seasonal_context",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._insert_seasonal_context",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 122,
+      "language": "python",
+      "is_test": true,
+      "x": 39.29164403671711,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "type": "symbol",
+      "label": "TestPreferenceCompilerSetup._clean_household_data",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 133,
+      "language": "python",
+      "is_test": true,
+      "x": 34.80341457427189,
+      "y": 48.874557123020146
+    },
+    {
+      "id": "repo::test_preference_compiler::TestAllergenCompilation",
+      "type": "type",
+      "label": "TestAllergenCompilation",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 161,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.setUp",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 164,
+      "language": "python",
+      "is_test": true,
+      "x": 24.924900780113187,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.test_single_member_single_allergen",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 168,
+      "language": "python",
+      "is_test": true,
+      "x": 19.624077799045292,
+      "y": 56.70004912288011
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.test_single_member_multiple_allergens",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 179,
+      "language": "python",
+      "is_test": true,
+      "x": 14.145536130565636,
+      "y": 58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 192,
+      "language": "python",
+      "is_test": true,
+      "x": 8.53889029639712,
+      "y": 59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 210,
+      "language": "python",
+      "is_test": true,
+      "x": 2.8549149494245443,
+      "y": 59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_no_allergen_exclusions",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.test_no_allergen_exclusions",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 229,
+      "language": "python",
+      "is_test": true,
+      "x": -2.8549149494245367,
+      "y": 59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.tearDown",
+      "type": "symbol",
+      "label": "TestAllergenCompilation.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 239,
+      "language": "python",
+      "is_test": true,
+      "x": -8.538890296397101,
+      "y": 59.38928651285597
+    },
+    {
+      "id": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "type": "type",
+      "label": "TestRecipeExclusionCompilation",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 245,
+      "language": "python",
+      "is_test": true,
+      "x": -14.145536130565617,
+      "y": 58.308694099412506
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.setUp",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 248,
+      "language": "python",
+      "is_test": true,
+      "x": -19.6240777990453,
+      "y": 56.70004912288011
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 252,
+      "language": "python",
+      "is_test": true,
+      "x": -24.92490078011319,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 267,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_permanent_rejection",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 282,
+      "language": "python",
+      "is_test": true,
+      "x": -34.80341457427188,
+      "y": 48.874557123020146
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 294,
+      "language": "python",
+      "is_test": true,
+      "x": -39.2916440367171,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 307,
+      "language": "python",
+      "is_test": true,
+      "x": -43.424042286304214,
+      "y": 41.404740688926715
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_combined_exclusions",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 320,
+      "language": "python",
+      "is_test": true,
+      "x": -47.16318568456725,
+      "y": 37.08953917323631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_no_exclusions",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.test_no_exclusions",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 340,
+      "language": "python",
+      "is_test": true,
+      "x": -50.47521196987086,
+      "y": 32.438449047335865
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.tearDown",
+      "type": "symbol",
+      "label": "TestRecipeExclusionCompilation.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 350,
+      "language": "python",
+      "is_test": true,
+      "x": -53.3301269192954,
+      "y": 27.49359130364463
+    },
+    {
+      "id": "repo::test_preference_compiler::TestObfuscation",
+      "type": "type",
+      "label": "TestObfuscation",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 356,
+      "language": "python",
+      "is_test": true,
+      "x": -55.70207598096435,
+      "y": 22.299747339619653
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.setUp",
+      "type": "symbol",
+      "label": "TestObfuscation.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 359,
+      "language": "python",
+      "is_test": true,
+      "x": -57.56957841686984,
+      "y": 16.903953410485805
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_disabled",
+      "type": "symbol",
+      "label": "TestObfuscation.test_obfuscation_disabled",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 373,
+      "language": "python",
+      "is_test": true,
+      "x": -58.9157218357624,
+      "y": 11.355074661624629
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_enabled_adds_decoys",
+      "type": "symbol",
+      "label": "TestObfuscation.test_obfuscation_enabled_adds_decoys",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 379,
+      "language": "python",
+      "is_test": true,
+      "x": -59.728315354385074,
+      "y": 5.703362598250973
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_decoy_not_in_real_list",
+      "type": "symbol",
+      "label": "TestObfuscation.test_decoy_not_in_real_list",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 393,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_cuisine_disabled",
+      "type": "symbol",
+      "label": "TestObfuscation.test_obfuscation_cuisine_disabled",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 404,
+      "language": "python",
+      "is_test": true,
+      "x": -59.728315354385074,
+      "y": -5.7033625982509575
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.tearDown",
+      "type": "symbol",
+      "label": "TestObfuscation.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 411,
+      "language": "python",
+      "is_test": true,
+      "x": -58.91572183576241,
+      "y": -11.35507466162459
+    },
+    {
+      "id": "repo::test_preference_compiler::TestAnonymousQueryRequest",
+      "type": "type",
+      "label": "TestAnonymousQueryRequest",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 420,
+      "language": "python",
+      "is_test": true,
+      "x": -57.569578416869845,
+      "y": -16.903953410485762
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_creation",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_query_request_creation",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 423,
+      "language": "python",
+      "is_test": true,
+      "x": -55.70207598096436,
+      "y": -22.299747339619643
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_to_dict",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_query_request_to_dict",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 438,
+      "language": "python",
+      "is_test": true,
+      "x": -53.330126919295424,
+      "y": -27.493591303644596
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_empty_optional_fields",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_query_request_empty_optional_fields",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 460,
+      "language": "python",
+      "is_test": true,
+      "x": -50.475211969870884,
+      "y": -32.43844904733584
+    },
+    {
+      "id": "repo::test_preference_compiler::TestUtilityMethods",
+      "type": "type",
+      "label": "TestUtilityMethods",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 477,
+      "language": "python",
+      "is_test": true,
+      "x": -47.163185684567246,
+      "y": -37.08953917323632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.setUp",
+      "type": "symbol",
+      "label": "TestUtilityMethods.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 480,
+      "language": "python",
+      "is_test": true,
+      "x": -43.42404228630422,
+      "y": -41.40474068892671
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_get_compilation_summary",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 484,
+      "language": "python",
+      "is_test": true,
+      "x": -39.291644036717095,
+      "y": -45.344974461255504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_validate_household_exists",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 503,
+      "language": "python",
+      "is_test": true,
+      "x": -34.8034145742719,
+      "y": -48.87455712302014
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_not_found",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_validate_household_not_found",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 516,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_members",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_validate_household_no_members",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 523,
+      "language": "python",
+      "is_test": true,
+      "x": -24.924900780113184,
+      "y": -54.57791972127111
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 533,
+      "language": "python",
+      "is_test": true,
+      "x": -19.624077799045313,
+      "y": -56.7000491228801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.tearDown",
+      "type": "symbol",
+      "label": "TestUtilityMethods.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 545,
+      "language": "python",
+      "is_test": true,
+      "x": -14.145536130565619,
+      "y": -58.308694099412506
+    },
+    {
+      "id": "repo::test_preference_compiler::TestCompileForQuery",
+      "type": "type",
+      "label": "TestCompileForQuery",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 551,
+      "language": "python",
+      "is_test": true,
+      "x": -8.538890296397113,
+      "y": -59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.setUp",
+      "type": "symbol",
+      "label": "TestCompileForQuery.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 554,
+      "language": "python",
+      "is_test": true,
+      "x": -2.854914949424565,
+      "y": -59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "type": "symbol",
+      "label": "TestCompileForQuery.test_compile_for_query_basic",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 558,
+      "language": "python",
+      "is_test": true,
+      "x": 2.854914949424543,
+      "y": -59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "type": "symbol",
+      "label": "TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 581,
+      "language": "python",
+      "is_test": true,
+      "x": 8.538890296397092,
+      "y": -59.38928651285597
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "type": "symbol",
+      "label": "TestCompileForQuery.test_compile_for_query_multi_member",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 611,
+      "language": "python",
+      "is_test": true,
+      "x": 14.145536130565649,
+      "y": -58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_to_dict",
+      "type": "symbol",
+      "label": "TestCompileForQuery.test_compile_to_dict",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 633,
+      "language": "python",
+      "is_test": true,
+      "x": 19.624077799045292,
+      "y": -56.70004912288012
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.tearDown",
+      "type": "symbol",
+      "label": "TestCompileForQuery.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 654,
+      "language": "python",
+      "is_test": true,
+      "x": 24.924900780113163,
+      "y": -54.577919721271115
+    },
+    {
+      "id": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "type": "type",
+      "label": "TestPrivacyCompliance",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 666,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.setUp",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 669,
+      "language": "python",
+      "is_test": true,
+      "x": 34.803414574271876,
+      "y": -48.87455712302015
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 673,
+      "language": "python",
+      "is_test": true,
+      "x": 39.291644036717074,
+      "y": -45.344974461255525
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 696,
+      "language": "python",
+      "is_test": true,
+      "x": 43.42404228630421,
+      "y": -41.40474068892672
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.tearDown",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 723,
+      "language": "python",
+      "is_test": true,
+      "x": 47.16318568456723,
+      "y": -37.08953917323634
+    },
+    {
+      "id": "repo::test_preference_compiler::TestEdgeCases",
+      "type": "type",
+      "label": "TestEdgeCases",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 729,
+      "language": "python",
+      "is_test": true,
+      "x": 50.47521196987085,
+      "y": -32.438449047335894
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.setUp",
+      "type": "symbol",
+      "label": "TestEdgeCases.setUp",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 732,
+      "language": "python",
+      "is_test": true,
+      "x": 53.3301269192954,
+      "y": -27.49359130364464
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_empty_household",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 736,
+      "language": "python",
+      "is_test": true,
+      "x": 55.70207598096434,
+      "y": -22.299747339619685
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_large_exclusion_list",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 754,
+      "language": "python",
+      "is_test": true,
+      "x": 57.569578416869845,
+      "y": -16.903953410485787
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_zero_obfuscation_level",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 774,
+      "language": "python",
+      "is_test": true,
+      "x": 58.9157218357624,
+      "y": -11.355074661624638
+    },
+    {
+      "id": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.tearDown",
+      "type": "symbol",
+      "label": "TestEdgeCases.tearDown",
+      "file": "Client_Side/tests/test_preference_compiler.py",
+      "line": 792,
+      "language": "python",
+      "is_test": true,
+      "x": 59.72831535438507,
+      "y": -5.703362598251006
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup.setUpClass",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup.tearDownClass",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_seasonal_context",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPreferenceCompilerSetup",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestAllergenCompilation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_single_allergen",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_single_member_multiple_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_union_of_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_multiple_members_overlapping_allergens",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_no_allergen_exclusions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_no_allergen_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_no_allergen_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.test_no_allergen_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAllergenCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestAllergenCompilation.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_recently_served_excluded",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_old_serving_history_included",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_permanent_rejection",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_valid",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_temporary_rejection_expired",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_combined_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_rejected_recipe",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_no_exclusions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_no_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_no_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.test_no_exclusions",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_preference_compiler::TestRecipeExclusionCompilation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestRecipeExclusionCompilation.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestObfuscation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_disabled",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_enabled_adds_decoys",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_decoy_not_in_real_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.test_obfuscation_cuisine_disabled",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestObfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestObfuscation.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestAnonymousQueryRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_creation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_to_dict",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestAnonymousQueryRequest.test_query_request_empty_optional_fields",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestUtilityMethods",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_get_compilation_summary",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_exists",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_not_found",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_members",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_members",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.test_validate_household_no_seasonal_context",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_preference_compiler::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestUtilityMethods.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestCompileForQuery",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_basic",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_served_recipe",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_with_obfuscation",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_for_query_multi_member",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_to_dict",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_to_dict",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_to_dict",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.test_compile_to_dict",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_preference_compiler::TestCompileForQuery",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestCompileForQuery.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_no_household_identifiers",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.test_query_contains_only_numeric_ids",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestPrivacyCompliance.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py",
+      "to": "repo::test_preference_compiler::TestEdgeCases",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.setUp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_preference_compiler::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_empty_household",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_large_exclusion_list",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_user",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_household_member",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.test_zero_obfuscation_level",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._insert_allergen_exclusion",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_preference_compiler::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.tearDown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_preference_compiler.py::TestEdgeCases.tearDown",
+      "to": "repo::Client_Side/tests/test_preference_compiler.py::TestPreferenceCompilerSetup._clean_household_data",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

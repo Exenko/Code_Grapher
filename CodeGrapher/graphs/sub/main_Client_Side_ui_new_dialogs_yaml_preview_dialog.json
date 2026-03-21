@@ -1,0 +1,340 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+  "stats": {
+    "nodes": 17,
+    "edges": 29
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "type": "file",
+      "label": "yaml_preview_dialog.py",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "type": "type",
+      "label": "YamlPreviewDialog",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 39,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.__init__",
+      "type": "symbol",
+      "label": "YamlPreviewDialog.__init__",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 56,
+      "language": "python",
+      "x": 55.43277195067721,
+      "y": 22.961005941905388
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._setup_ui",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._setup_ui",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 77,
+      "language": "python",
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_token_display",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._create_token_display",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 121,
+      "language": "python",
+      "x": 22.96100594190539,
+      "y": 55.43277195067721
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_buttons",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._create_buttons",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 146,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._load_content",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._load_content",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 189,
+      "language": "python",
+      "x": -22.961005941905384,
+      "y": 55.43277195067721
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._on_content_changed",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._on_content_changed",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 203,
+      "language": "python",
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._validate_yaml",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 208,
+      "language": "python",
+      "x": -55.43277195067721,
+      "y": 22.961005941905395
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_validation_status",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._show_validation_status",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 253,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._update_token_estimate",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._update_token_estimate",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 268,
+      "language": "python",
+      "x": -55.432771950677214,
+      "y": -22.96100594190538
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._copy_to_clipboard",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._copy_to_clipboard",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 289,
+      "language": "python",
+      "x": -42.42640687119286,
+      "y": -42.426406871192846
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._save_to_file",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._save_to_file",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 296,
+      "language": "python",
+      "x": -22.96100594190542,
+      "y": -55.43277195067719
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._submit_yaml",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._submit_yaml",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 337,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_toast",
+      "type": "symbol",
+      "label": "YamlPreviewDialog._show_toast",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 400,
+      "language": "python",
+      "x": 22.961005941905402,
+      "y": -55.4327719506772
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.get_yaml_content",
+      "type": "symbol",
+      "label": "YamlPreviewDialog.get_yaml_content",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 410,
+      "language": "python",
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    },
+    {
+      "id": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.get_estimated_tokens",
+      "type": "symbol",
+      "label": "YamlPreviewDialog.get_estimated_tokens",
+      "file": "Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "line": 414,
+      "language": "python",
+      "x": 55.43277195067719,
+      "y": -22.961005941905423
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py",
+      "to": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.__init__",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._setup_ui",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.__init__",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._load_content",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._setup_ui",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_token_display",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._setup_ui",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_buttons",
+      "relation": "calls",
+      "seq": 31
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_token_display",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._create_buttons",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._load_content",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._load_content",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._update_token_estimate",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._load_content",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._on_content_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._on_content_changed",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._on_content_changed",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._update_token_estimate",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_validation_status",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_validation_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._update_token_estimate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._copy_to_clipboard",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._copy_to_clipboard",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_toast",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._save_to_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._save_to_file",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_toast",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._submit_yaml",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._submit_yaml",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._validate_yaml",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._submit_yaml",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_toast",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog._show_toast",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.get_yaml_content",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::yaml_preview_dialog::YamlPreviewDialog",
+      "to": "repo::Client_Side/ui_new/dialogs/yaml_preview_dialog.py::YamlPreviewDialog.get_estimated_tokens",
+      "relation": "contains"
+    }
+  ]
+}

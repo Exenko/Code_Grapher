@@ -1,0 +1,399 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_calendar_autofill.py",
+  "stats": {
+    "nodes": 20,
+    "edges": 31
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "type": "file",
+      "label": "test_calendar_autofill.py",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_calendar_autofill::_Slot",
+      "type": "type",
+      "label": "_Slot",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 43,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.__init__",
+      "type": "symbol",
+      "label": "_Slot.__init__",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 46,
+      "language": "python",
+      "is_test": true,
+      "x": 56.74903450203808,
+      "y": 19.481968152281006
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_recipe",
+      "type": "symbol",
+      "label": "_Slot.set_recipe",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 58,
+      "language": "python",
+      "is_test": true,
+      "x": 47.348430563783616,
+      "y": 36.85276276138007
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_metadata",
+      "type": "symbol",
+      "label": "_Slot.set_metadata",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 62,
+      "language": "python",
+      "is_test": true,
+      "x": 32.81688948734561,
+      "y": 50.229988695751715
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_special_meal",
+      "type": "symbol",
+      "label": "_Slot.set_special_meal",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 70,
+      "language": "python",
+      "is_test": true,
+      "x": 14.729129228447954,
+      "y": 58.16401595635982
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "type": "symbol",
+      "label": "_build_slot_grid",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 103,
+      "language": "python",
+      "is_test": true,
+      "x": -4.954760728339936,
+      "y": 59.79506958040019
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_assign_schedule",
+      "type": "symbol",
+      "label": "_assign_schedule",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": -24.101725479178164,
+      "y": 54.94639959930345
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_test_household",
+      "type": "symbol",
+      "label": "_insert_test_household",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 127,
+      "language": "python",
+      "is_test": true,
+      "x": -40.63689429754445,
+      "y": 44.1434346403879
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_simple_household",
+      "type": "symbol",
+      "label": "_insert_simple_household",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 208,
+      "language": "python",
+      "is_test": true,
+      "x": -52.768425072389334,
+      "y": 28.55684358222442
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::_cleanup_test_household",
+      "type": "symbol",
+      "label": "_cleanup_test_household",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 272,
+      "language": "python",
+      "is_test": true,
+      "x": -59.18167820416334,
+      "y": 9.875675416844041
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::real_db_manager",
+      "type": "symbol",
+      "label": "real_db_manager",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 289,
+      "language": "python",
+      "is_test": true,
+      "x": -59.18167820416335,
+      "y": -9.875675416844027
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::real_server_client",
+      "type": "symbol",
+      "label": "real_server_client",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 298,
+      "language": "python",
+      "is_test": true,
+      "x": -52.768425072389356,
+      "y": -28.556843582224385
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::real_local_recommender",
+      "type": "symbol",
+      "label": "real_local_recommender",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 304,
+      "language": "python",
+      "is_test": true,
+      "x": -40.636894297544465,
+      "y": -44.143434640387895
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::real_preference_compiler",
+      "type": "symbol",
+      "label": "real_preference_compiler",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 309,
+      "language": "python",
+      "is_test": true,
+      "x": -24.101725479178143,
+      "y": -54.946399599303454
+    },
+    {
+      "id": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "type": "type",
+      "label": "TestCalendarAutofill",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 315,
+      "language": "python",
+      "is_test": true,
+      "x": -4.954760728339965,
+      "y": -59.79506958040019
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_server_reachable",
+      "type": "symbol",
+      "label": "TestCalendarAutofill.test_server_reachable",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 317,
+      "language": "python",
+      "is_test": true,
+      "x": 14.729129228447928,
+      "y": -58.164015956359826
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "type": "symbol",
+      "label": "TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 324,
+      "language": "python",
+      "is_test": true,
+      "x": 32.8168894873456,
+      "y": -50.22998869575173
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_cooking",
+      "type": "symbol",
+      "label": "TestCalendarAutofill.test_autofill_all_cooking",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 478,
+      "language": "python",
+      "is_test": true,
+      "x": 47.34843056378364,
+      "y": -36.85276276138004
+    },
+    {
+      "id": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_eating",
+      "type": "symbol",
+      "label": "TestCalendarAutofill.test_autofill_all_eating",
+      "file": "Client_Side/tests/test_calendar_autofill.py",
+      "line": 527,
+      "language": "python",
+      "is_test": true,
+      "x": 56.74903450203808,
+      "y": -19.481968152281024
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::test_calendar_autofill::_Slot",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_calendar_autofill::_Slot",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_calendar_autofill::_Slot",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_calendar_autofill::_Slot",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_metadata",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_calendar_autofill::_Slot",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_Slot.set_special_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "to": "repo::test_calendar_autofill::_Slot",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "to": "repo::test_calendar_autofill::_Slot",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_assign_schedule",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_test_household",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_test_household",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_assign_schedule",
+      "relation": "calls",
+      "seq": 21
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_simple_household",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_cleanup_test_household",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::real_db_manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::real_server_client",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::real_local_recommender",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::real_preference_compiler",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py",
+      "to": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_server_reachable",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_test_household",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_7_cook_7_eat_7_empty",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_cleanup_test_household",
+      "relation": "calls",
+      "seq": 14
+    },
+    {
+      "from": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_cooking",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_cooking",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_simple_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_cooking",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_cooking",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_cleanup_test_household",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::test_calendar_autofill::TestCalendarAutofill",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_eating",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_eating",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_insert_simple_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_eating",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_build_slot_grid",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_calendar_autofill.py::TestCalendarAutofill.test_autofill_all_eating",
+      "to": "repo::Client_Side/tests/test_calendar_autofill.py::_cleanup_test_household",
+      "relation": "calls",
+      "seq": 8
+    }
+  ]
+}

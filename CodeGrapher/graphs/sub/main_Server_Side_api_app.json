@@ -1,0 +1,2691 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/api/app.py",
+  "stats": {
+    "nodes": 164,
+    "edges": 181
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/api/app.py",
+      "type": "file",
+      "label": "app.py",
+      "file": "Server_Side/api/app.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_db",
+      "type": "symbol",
+      "label": "get_db",
+      "file": "Server_Side/api/app.py",
+      "line": 76,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::app::HealthCheckResponse",
+      "type": "type",
+      "label": "HealthCheckResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 87,
+      "language": "python",
+      "x": 59.95542903817798,
+      "y": 2.3122562245573532
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::HealthCheckResponse.status",
+      "type": "symbol",
+      "label": "HealthCheckResponse.status",
+      "file": "Server_Side/api/app.py",
+      "line": 89,
+      "language": "python",
+      "annotation": "str",
+      "x": 59.82178237173319,
+      "y": 4.621077132984458
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::HealthCheckResponse.message",
+      "type": "symbol",
+      "label": "HealthCheckResponse.message",
+      "file": "Server_Side/api/app.py",
+      "line": 90,
+      "language": "python",
+      "annotation": "str",
+      "x": 59.59925855934788,
+      "y": 6.923032512995866
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::HealthCheckResponse.database_connected",
+      "type": "symbol",
+      "label": "HealthCheckResponse.database_connected",
+      "file": "Server_Side/api/app.py",
+      "line": 91,
+      "language": "python",
+      "annotation": "bool",
+      "x": 59.28818820436694,
+      "y": 9.214702352412967
+    },
+    {
+      "id": "repo::app::AnonymousAccountResponse",
+      "type": "type",
+      "label": "AnonymousAccountResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 94,
+      "language": "python",
+      "x": 58.889033463620876,
+      "y": 11.49268192027171
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousAccountResponse.account_id",
+      "type": "symbol",
+      "label": "AnonymousAccountResponse.account_id",
+      "file": "Server_Side/api/app.py",
+      "line": 96,
+      "language": "python",
+      "annotation": "str",
+      "x": 58.40238736080007,
+      "y": 13.753586825227087
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousAccountResponse.subscription_tier",
+      "type": "symbol",
+      "label": "AnonymousAccountResponse.subscription_tier",
+      "file": "Server_Side/api/app.py",
+      "line": 97,
+      "language": "python",
+      "annotation": "str",
+      "x": 57.82897290540017,
+      "y": 15.99405804373903
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousAccountResponse.token_balance",
+      "type": "symbol",
+      "label": "AnonymousAccountResponse.token_balance",
+      "file": "Server_Side/api/app.py",
+      "line": 98,
+      "language": "python",
+      "annotation": "int",
+      "x": 57.16964201854783,
+      "y": 18.210766910569422
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousAccountResponse.message",
+      "type": "symbol",
+      "label": "AnonymousAccountResponse.message",
+      "file": "Server_Side/api/app.py",
+      "line": 99,
+      "language": "python",
+      "annotation": "str",
+      "x": 56.42537426730259,
+      "y": 20.400420064175794
+    },
+    {
+      "id": "repo::app::TokenTransactionResponse",
+      "type": "type",
+      "label": "TokenTransactionResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 102,
+      "language": "python",
+      "x": 55.59727540931532,
+      "y": 22.55976433965438
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::TokenTransactionResponse.transaction_id",
+      "type": "symbol",
+      "label": "TokenTransactionResponse.transaction_id",
+      "file": "Server_Side/api/app.py",
+      "line": 104,
+      "language": "python",
+      "annotation": "str",
+      "x": 54.686575750005495,
+      "y": 24.685591601963083
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::TokenTransactionResponse.account_id",
+      "type": "symbol",
+      "label": "TokenTransactionResponse.account_id",
+      "file": "Server_Side/api/app.py",
+      "line": 105,
+      "language": "python",
+      "annotation": "str",
+      "x": 53.694628314698,
+      "y": 26.774743512243628
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::TokenTransactionResponse.new_balance",
+      "type": "symbol",
+      "label": "TokenTransactionResponse.new_balance",
+      "file": "Server_Side/api/app.py",
+      "line": 106,
+      "language": "python",
+      "annotation": "int",
+      "x": 52.62290683843511,
+      "y": 28.82411622016155
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::TokenTransactionResponse.transaction_type",
+      "type": "symbol",
+      "label": "TokenTransactionResponse.transaction_type",
+      "file": "Server_Side/api/app.py",
+      "line": 107,
+      "language": "python",
+      "annotation": "str",
+      "x": 51.47300357645023,
+      "y": 30.83066497529273
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::TokenTransactionResponse.message",
+      "type": "symbol",
+      "label": "TokenTransactionResponse.message",
+      "file": "Server_Side/api/app.py",
+      "line": 108,
+      "language": "python",
+      "annotation": "str",
+      "x": 50.24662693855634,
+      "y": 32.791408650705215
+    },
+    {
+      "id": "repo::app::ErrorResponse",
+      "type": "type",
+      "label": "ErrorResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 111,
+      "language": "python",
+      "x": 48.94559895096366,
+      "y": 34.703434172015676
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::ErrorResponse.error",
+      "type": "symbol",
+      "label": "ErrorResponse.error",
+      "file": "Server_Side/api/app.py",
+      "line": 113,
+      "language": "python",
+      "annotation": "str",
+      "x": 47.57185254929768,
+      "y": 36.563900845340335
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::ErrorResponse.details",
+      "type": "symbol",
+      "label": "ErrorResponse.details",
+      "file": "Server_Side/api/app.py",
+      "line": 114,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 46.127428706839126,
+      "y": 38.37004457771028
+    },
+    {
+      "id": "repo::app::RecipeSummary",
+      "type": "type",
+      "label": "RecipeSummary",
+      "file": "Server_Side/api/app.py",
+      "line": 119,
+      "language": "python",
+      "x": 44.614473402252564,
+      "y": 40.11918198368081
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.recipe_id",
+      "type": "symbol",
+      "label": "RecipeSummary.recipe_id",
+      "file": "Server_Side/api/app.py",
+      "line": 121,
+      "language": "python",
+      "annotation": "int",
+      "x": 43.035234431308616,
+      "y": 41.80871437203384
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.name",
+      "type": "symbol",
+      "label": "RecipeSummary.name",
+      "file": "Server_Side/api/app.py",
+      "line": 122,
+      "language": "python",
+      "annotation": "str",
+      "x": 41.3920580673367,
+      "y": 43.43613160665009
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.serving_size",
+      "type": "symbol",
+      "label": "RecipeSummary.serving_size",
+      "file": "Server_Side/api/app.py",
+      "line": 123,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 39.68738557536965,
+      "y": 44.99901583581513
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.prep_time",
+      "type": "symbol",
+      "label": "RecipeSummary.prep_time",
+      "file": "Server_Side/api/app.py",
+      "line": 124,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 37.92374958515942,
+      "y": 46.49504508441863
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.cook_time",
+      "type": "symbol",
+      "label": "RecipeSummary.cook_time",
+      "file": "Server_Side/api/app.py",
+      "line": 125,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 36.10377032845226,
+      "y": 47.92199670370977
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.difficulty_level",
+      "type": "symbol",
+      "label": "RecipeSummary.difficulty_level",
+      "file": "Server_Side/api/app.py",
+      "line": 126,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 34.230151746113755,
+      "y": 49.27775067348372
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.rating",
+      "type": "symbol",
+      "label": "RecipeSummary.rating",
+      "file": "Server_Side/api/app.py",
+      "line": 127,
+      "language": "python",
+      "annotation": "Optional[float]",
+      "x": 32.30567747088733,
+      "y": 50.560292751792915
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.cost",
+      "type": "symbol",
+      "label": "RecipeSummary.cost",
+      "file": "Server_Side/api/app.py",
+      "line": 128,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 30.333206691754583,
+      "y": 51.76771746750377
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSummary.meal_types",
+      "type": "symbol",
+      "label": "RecipeSummary.meal_types",
+      "file": "Server_Side/api/app.py",
+      "line": 129,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 28.315669906041933,
+      "y": 52.89823095125272
+    },
+    {
+      "id": "repo::app::AnonymousQueryRequest",
+      "type": "type",
+      "label": "AnonymousQueryRequest",
+      "file": "Server_Side/api/app.py",
+      "line": 132,
+      "language": "python",
+      "x": 26.256064565584367,
+      "y": 53.95015360059566
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.token_certificate",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.token_certificate",
+      "file": "Server_Side/api/app.py",
+      "line": 141,
+      "language": "python",
+      "annotation": "str",
+      "x": 24.157450623415173,
+      "y": 54.92192257539113
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.seasonal_buckets",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.seasonal_buckets",
+      "file": "Server_Side/api/app.py",
+      "line": 142,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": 22.022945987597524,
+      "y": 55.812094119709954
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_allergen_ids",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.exclude_allergen_ids",
+      "file": "Server_Side/api/app.py",
+      "line": 143,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": 19.855721888952495,
+      "y": 56.619345706821555
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_recipe_ids",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.exclude_recipe_ids",
+      "file": "Server_Side/api/app.py",
+      "line": 144,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": 17.658998169565425,
+      "y": 57.342478004070294
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_cuisine_ids",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.exclude_cuisine_ids",
+      "file": "Server_Side/api/app.py",
+      "line": 145,
+      "language": "python",
+      "annotation": "Optional[List[int]]",
+      "x": 15.43603849907068,
+      "y": 57.980416654722376
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.include_cuisine_ids",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.include_cuisine_ids",
+      "file": "Server_Side/api/app.py",
+      "line": 146,
+      "language": "python",
+      "annotation": "Optional[List[int]]",
+      "x": 13.190145525821746,
+      "y": 58.53221387413639
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.max_difficulty",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.max_difficulty",
+      "file": "Server_Side/api/app.py",
+      "line": 147,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 10.924655970150871,
+      "y": 58.99704985788566
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.max_cost",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.max_cost",
+      "file": "Server_Side/api/app.py",
+      "line": 148,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 8.642935667007853,
+      "y": 59.374233999740696
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryRequest.batch_size",
+      "type": "symbol",
+      "label": "AnonymousQueryRequest.batch_size",
+      "file": "Server_Side/api/app.py",
+      "line": 149,
+      "language": "python",
+      "annotation": "int",
+      "x": 6.348374565343368,
+      "y": 59.66320591770192
+    },
+    {
+      "id": "repo::app::AnonymousQueryResponse",
+      "type": "type",
+      "label": "AnonymousQueryResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 152,
+      "language": "python",
+      "x": 4.0443816916660795,
+      "y": 59.863536286558585
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryResponse.recipes",
+      "type": "symbol",
+      "label": "AnonymousQueryResponse.recipes",
+      "file": "Server_Side/api/app.py",
+      "line": 160,
+      "language": "python",
+      "annotation": "List[RecipeSummary]",
+      "x": 1.7343800852563607,
+      "y": 59.97492747573661
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryResponse.tokens_deducted",
+      "type": "symbol",
+      "label": "AnonymousQueryResponse.tokens_deducted",
+      "file": "Server_Side/api/app.py",
+      "line": 161,
+      "language": "python",
+      "annotation": "int",
+      "x": -0.5781982874388395,
+      "y": 59.997213991487996
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AnonymousQueryResponse.query_id",
+      "type": "symbol",
+      "label": "AnonymousQueryResponse.query_id",
+      "file": "Server_Side/api/app.py",
+      "line": 162,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -2.889917631674233,
+      "y": 59.93036272276464
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::health_check",
+      "type": "symbol",
+      "label": "health_check",
+      "file": "Server_Side/api/app.py",
+      "line": 170,
+      "language": "python",
+      "x": -5.197343428961929,
+      "y": 59.77447299041144
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::create_anonymous_account",
+      "type": "symbol",
+      "label": "create_anonymous_account",
+      "file": "Server_Side/api/app.py",
+      "line": 195,
+      "language": "python",
+      "x": -7.497047539731353,
+      "y": 59.52977639960533
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_token_balance",
+      "type": "symbol",
+      "label": "get_token_balance",
+      "file": "Server_Side/api/app.py",
+      "line": 239,
+      "language": "python",
+      "x": -9.785613296511764,
+      "y": 59.19663649575989
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::consume_tokens",
+      "type": "symbol",
+      "label": "consume_tokens",
+      "file": "Server_Side/api/app.py",
+      "line": 274,
+      "language": "python",
+      "x": -12.059640580070687,
+      "y": 58.775548224406315
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::anonymous_recipe_query",
+      "type": "symbol",
+      "label": "anonymous_recipe_query",
+      "file": "Server_Side/api/app.py",
+      "line": 351,
+      "language": "python",
+      "x": -14.315750870966916,
+      "y": 58.267137195853465
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::search_recipes",
+      "type": "symbol",
+      "label": "search_recipes",
+      "file": "Server_Side/api/app.py",
+      "line": 605,
+      "language": "python",
+      "x": -16.55059226901234,
+      "y": 57.67215875571946
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::search_recipes_by_ingredient",
+      "type": "symbol",
+      "label": "search_recipes_by_ingredient",
+      "file": "Server_Side/api/app.py",
+      "line": 658,
+      "language": "python",
+      "x": -18.76084447318597,
+      "y": 56.99149686271565
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_recipe",
+      "type": "symbol",
+      "label": "get_recipe",
+      "file": "Server_Side/api/app.py",
+      "line": 756,
+      "language": "python",
+      "x": -20.943223714600848,
+      "y": 56.22616277535023
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_ingredient",
+      "type": "symbol",
+      "label": "get_ingredient",
+      "file": "Server_Side/api/app.py",
+      "line": 847,
+      "language": "python",
+      "x": -23.094487635195257,
+      "y": 55.37729354950288
+    },
+    {
+      "id": "repo::app::AdvancedSearchRequest",
+      "type": "type",
+      "label": "AdvancedSearchRequest",
+      "file": "Server_Side/api/app.py",
+      "line": 887,
+      "language": "python",
+      "x": -25.211440104900106,
+      "y": 54.44615034910213
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.cuisine",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.cuisine",
+      "file": "Server_Side/api/app.py",
+      "line": 889,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -27.29093597012516,
+      "y": 53.434116572415874
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.difficulty",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.difficulty",
+      "file": "Server_Side/api/app.py",
+      "line": 890,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -29.329885726509836,
+      "y": 52.3426957967382
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.cost",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.cost",
+      "file": "Server_Side/api/app.py",
+      "line": 891,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -31.325260108995828,
+      "y": 51.173509544526596
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.exclude_equipment",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.exclude_equipment",
+      "file": "Server_Side/api/app.py",
+      "line": 892,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": -33.27409459240238,
+      "y": 49.92829487430808
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.max_prep_time",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.max_prep_time",
+      "file": "Server_Side/api/app.py",
+      "line": 893,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -35.173493795817606,
+      "y": 48.60890179993353
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.max_cook_time",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.max_cook_time",
+      "file": "Server_Side/api/app.py",
+      "line": 894,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -37.02063578426216,
+      "y": 47.21729054201445
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchRequest.limit",
+      "type": "symbol",
+      "label": "AdvancedSearchRequest.limit",
+      "file": "Server_Side/api/app.py",
+      "line": 895,
+      "language": "python",
+      "annotation": "int",
+      "x": -38.81277626123448,
+      "y": 45.75552861562582
+    },
+    {
+      "id": "repo::app::RecipeSearchResult",
+      "type": "type",
+      "label": "RecipeSearchResult",
+      "file": "Server_Side/api/app.py",
+      "line": 898,
+      "language": "python",
+      "x": -40.5472526459086,
+      "y": 44.225787758601406
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.recipe_id",
+      "type": "symbol",
+      "label": "RecipeSearchResult.recipe_id",
+      "file": "Server_Side/api/app.py",
+      "line": 900,
+      "language": "python",
+      "annotation": "int",
+      "x": -42.2214880289271,
+      "y": 42.630340704985755
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.name",
+      "type": "symbol",
+      "label": "RecipeSearchResult.name",
+      "file": "Server_Side/api/app.py",
+      "line": 901,
+      "language": "python",
+      "annotation": "str",
+      "x": -43.83299500091207,
+      "y": 40.97155780843606
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.cuisine",
+      "type": "symbol",
+      "label": "RecipeSearchResult.cuisine",
+      "file": "Server_Side/api/app.py",
+      "line": 902,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -45.379379348006026,
+      "y": 39.251903520590744
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.difficulty_level",
+      "type": "symbol",
+      "label": "RecipeSearchResult.difficulty_level",
+      "file": "Server_Side/api/app.py",
+      "line": 903,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -46.858343608952424,
+      "y": 37.47393272963684
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.cost",
+      "type": "symbol",
+      "label": "RecipeSearchResult.cost",
+      "file": "Server_Side/api/app.py",
+      "line": 904,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -48.267690488430894,
+      "y": 35.640286964515845
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.prep_time",
+      "type": "symbol",
+      "label": "RecipeSearchResult.prep_time",
+      "file": "Server_Side/api/app.py",
+      "line": 905,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -49.60532612157616,
+      "y": 33.75369047040743
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.cook_time",
+      "type": "symbol",
+      "label": "RecipeSearchResult.cook_time",
+      "file": "Server_Side/api/app.py",
+      "line": 906,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -50.86926318483029,
+      "y": 31.81694616132211
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.total_time",
+      "type": "symbol",
+      "label": "RecipeSearchResult.total_time",
+      "file": "Server_Side/api/app.py",
+      "line": 907,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -52.05762384850693,
+      "y": 29.832931455815114
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.rating",
+      "type": "symbol",
+      "label": "RecipeSearchResult.rating",
+      "file": "Server_Side/api/app.py",
+      "line": 908,
+      "language": "python",
+      "annotation": "Optional[float]",
+      "x": -53.16864256668034,
+      "y": 27.804594002009587
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.serving_size",
+      "type": "symbol",
+      "label": "RecipeSearchResult.serving_size",
+      "file": "Server_Side/api/app.py",
+      "line": 909,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -54.20066870025482,
+      "y": 25.734947298279387
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSearchResult.meal_types",
+      "type": "symbol",
+      "label": "RecipeSearchResult.meal_types",
+      "file": "Server_Side/api/app.py",
+      "line": 910,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": -55.152168969317074,
+      "y": 23.627066216098413
+    },
+    {
+      "id": "repo::app::AdvancedSearchResponse",
+      "type": "type",
+      "label": "AdvancedSearchResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 913,
+      "language": "python",
+      "x": -56.02172973112823,
+      "y": 21.48408243170797
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchResponse.recipes",
+      "type": "symbol",
+      "label": "AdvancedSearchResponse.recipes",
+      "file": "Server_Side/api/app.py",
+      "line": 915,
+      "language": "python",
+      "annotation": "List[RecipeSearchResult]",
+      "x": -56.808059080371066,
+      "y": 19.3091797733894
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchResponse.count",
+      "type": "symbol",
+      "label": "AdvancedSearchResponse.count",
+      "file": "Server_Side/api/app.py",
+      "line": 916,
+      "language": "python",
+      "annotation": "int",
+      "x": -57.50998876853212,
+      "y": 17.105589491254303
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::AdvancedSearchResponse.filters_applied",
+      "type": "symbol",
+      "label": "AdvancedSearchResponse.filters_applied",
+      "file": "Server_Side/api/app.py",
+      "line": 917,
+      "language": "python",
+      "annotation": "Dict[str, Any]",
+      "x": -58.12647593956692,
+      "y": 14.876585456580665
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::advanced_recipe_search",
+      "type": "symbol",
+      "label": "advanced_recipe_search",
+      "file": "Server_Side/api/app.py",
+      "line": 931,
+      "language": "python",
+      "x": -58.656604679270046,
+      "y": 12.625479297826095
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_recipes_by_cuisine",
+      "type": "symbol",
+      "label": "get_recipes_by_cuisine",
+      "file": "Server_Side/api/app.py",
+      "line": 1056,
+      "language": "python",
+      "x": -59.09958737604754,
+      "y": 10.355615480545922
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_recipes_by_difficulty",
+      "type": "symbol",
+      "label": "get_recipes_by_difficulty",
+      "file": "Server_Side/api/app.py",
+      "line": 1102,
+      "language": "python",
+      "x": -59.45476589107054,
+      "y": 8.070366338524853
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_recipes_by_cost",
+      "type": "symbol",
+      "label": "get_recipes_by_cost",
+      "file": "Server_Side/api/app.py",
+      "line": 1170,
+      "language": "python",
+      "x": -59.721612536071284,
+      "y": 5.77312706350498
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_seasonal_ingredients_by_bucket",
+      "type": "symbol",
+      "label": "get_seasonal_ingredients_by_bucket",
+      "file": "Server_Side/api/app.py",
+      "line": 1221,
+      "language": "python",
+      "x": -59.899730857328876,
+      "y": 3.467310660953737
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_seasonal_buckets",
+      "type": "symbol",
+      "label": "get_seasonal_buckets",
+      "file": "Server_Side/api/app.py",
+      "line": 1308,
+      "language": "python",
+      "x": -59.98885622468009,
+      "y": 1.1563428793660393
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::list_equipment",
+      "type": "symbol",
+      "label": "list_equipment",
+      "file": "Server_Side/api/app.py",
+      "line": 1343,
+      "language": "python",
+      "x": -59.98885622468009,
+      "y": -1.1563428793659978
+    },
+    {
+      "id": "repo::app::SeasonalQueryRequest",
+      "type": "type",
+      "label": "SeasonalQueryRequest",
+      "file": "Server_Side/api/app.py",
+      "line": 1414,
+      "language": "python",
+      "x": -59.89973085732887,
+      "y": -3.467310660953749
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.climate_zone",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.climate_zone",
+      "file": "Server_Side/api/app.py",
+      "line": 1416,
+      "language": "python",
+      "annotation": "str",
+      "x": -59.721612536071284,
+      "y": -5.773127063504992
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.seasonal_buckets",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.seasonal_buckets",
+      "file": "Server_Side/api/app.py",
+      "line": 1417,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": -59.454765891070544,
+      "y": -8.070366338524838
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.exclude_allergens",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.exclude_allergens",
+      "file": "Server_Side/api/app.py",
+      "line": 1418,
+      "language": "python",
+      "annotation": "List[int]",
+      "x": -59.09958737604754,
+      "y": -10.355615480545907
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.exclude_dietary",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.exclude_dietary",
+      "file": "Server_Side/api/app.py",
+      "line": 1419,
+      "language": "python",
+      "annotation": "List[str]",
+      "x": -58.65660467927006,
+      "y": -12.625479297826054
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.recipe_type_distribution",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.recipe_type_distribution",
+      "file": "Server_Side/api/app.py",
+      "line": 1420,
+      "language": "python",
+      "annotation": "Optional[Dict[str, float]]",
+      "x": -58.12647593956694,
+      "y": -14.876585456580626
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.include_decoy_cuisines",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.include_decoy_cuisines",
+      "file": "Server_Side/api/app.py",
+      "line": 1421,
+      "language": "python",
+      "annotation": "bool",
+      "x": -57.50998876853211,
+      "y": -17.105589491254314
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryRequest.batch_size",
+      "type": "symbol",
+      "label": "SeasonalQueryRequest.batch_size",
+      "file": "Server_Side/api/app.py",
+      "line": 1422,
+      "language": "python",
+      "annotation": "int",
+      "x": -56.80805908037107,
+      "y": -19.30917977338939
+    },
+    {
+      "id": "repo::app::SeasonalRecipeResult",
+      "type": "type",
+      "label": "SeasonalRecipeResult",
+      "file": "Server_Side/api/app.py",
+      "line": 1425,
+      "language": "python",
+      "x": -56.02172973112823,
+      "y": -21.484082431707957
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.recipe_id",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.recipe_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1427,
+      "language": "python",
+      "annotation": "int",
+      "x": -55.15216896931708,
+      "y": -23.6270662160984
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.name",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.name",
+      "file": "Server_Side/api/app.py",
+      "line": 1428,
+      "language": "python",
+      "annotation": "str",
+      "x": -54.20066870025484,
+      "y": -25.734947298279348
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.seasonal_score",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.seasonal_score",
+      "file": "Server_Side/api/app.py",
+      "line": 1429,
+      "language": "python",
+      "annotation": "float",
+      "x": -53.16864256668033,
+      "y": -27.804594002009598
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.serving_size",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.serving_size",
+      "file": "Server_Side/api/app.py",
+      "line": 1430,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -52.057623848506935,
+      "y": -29.8329314558151
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.prep_time",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.prep_time",
+      "file": "Server_Side/api/app.py",
+      "line": 1431,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -50.869263184830295,
+      "y": -31.816946161322097
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.cook_time",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.cook_time",
+      "file": "Server_Side/api/app.py",
+      "line": 1432,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -49.60532612157617,
+      "y": -33.75369047040742
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.difficulty_level",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.difficulty_level",
+      "file": "Server_Side/api/app.py",
+      "line": 1433,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -48.267690488430915,
+      "y": -35.64028696451581
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.rating",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.rating",
+      "file": "Server_Side/api/app.py",
+      "line": 1434,
+      "language": "python",
+      "annotation": "Optional[float]",
+      "x": -46.85834360895242,
+      "y": -37.47393272963685
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.cost",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.cost",
+      "file": "Server_Side/api/app.py",
+      "line": 1435,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -45.37937934800602,
+      "y": -39.25190352059075
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalRecipeResult.meal_types",
+      "type": "symbol",
+      "label": "SeasonalRecipeResult.meal_types",
+      "file": "Server_Side/api/app.py",
+      "line": 1436,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": -43.83299500091208,
+      "y": -40.971557808436046
+    },
+    {
+      "id": "repo::app::SeasonalQueryResponse",
+      "type": "type",
+      "label": "SeasonalQueryResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 1439,
+      "language": "python",
+      "x": -42.22148802892711,
+      "y": -42.63034070498575
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryResponse.recipes",
+      "type": "symbol",
+      "label": "SeasonalQueryResponse.recipes",
+      "file": "Server_Side/api/app.py",
+      "line": 1441,
+      "language": "python",
+      "annotation": "List[SeasonalRecipeResult]",
+      "x": -40.54725264590861,
+      "y": -44.2257877586014
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryResponse.count",
+      "type": "symbol",
+      "label": "SeasonalQueryResponse.count",
+      "file": "Server_Side/api/app.py",
+      "line": 1442,
+      "language": "python",
+      "annotation": "int",
+      "x": -38.81277626123449,
+      "y": -45.755528615625806
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryResponse.query_id",
+      "type": "symbol",
+      "label": "SeasonalQueryResponse.query_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1443,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -37.02063578426215,
+      "y": -47.21729054201446
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SeasonalQueryResponse.tokens_deducted",
+      "type": "symbol",
+      "label": "SeasonalQueryResponse.tokens_deducted",
+      "file": "Server_Side/api/app.py",
+      "line": 1444,
+      "language": "python",
+      "annotation": "int",
+      "x": -35.17349379581762,
+      "y": -48.60890179993351
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::seasonal_recipe_query",
+      "type": "symbol",
+      "label": "seasonal_recipe_query",
+      "file": "Server_Side/api/app.py",
+      "line": 1448,
+      "language": "python",
+      "x": -33.27409459240241,
+      "y": -49.92829487430806
+    },
+    {
+      "id": "repo::app::CuisineNode",
+      "type": "type",
+      "label": "CuisineNode",
+      "file": "Server_Side/api/app.py",
+      "line": 1602,
+      "language": "python",
+      "x": -31.325260108995824,
+      "y": -51.173509544526596
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.cuisine_id",
+      "type": "symbol",
+      "label": "CuisineNode.cuisine_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1604,
+      "language": "python",
+      "annotation": "int",
+      "x": -29.32988572650985,
+      "y": -52.34269579673819
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.name",
+      "type": "symbol",
+      "label": "CuisineNode.name",
+      "file": "Server_Side/api/app.py",
+      "line": 1605,
+      "language": "python",
+      "annotation": "str",
+      "x": -27.29093597012515,
+      "y": -53.434116572415874
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.level",
+      "type": "symbol",
+      "label": "CuisineNode.level",
+      "file": "Server_Side/api/app.py",
+      "line": 1606,
+      "language": "python",
+      "annotation": "int",
+      "x": -25.211440104900117,
+      "y": -54.446150349102126
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.parent_id",
+      "type": "symbol",
+      "label": "CuisineNode.parent_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1607,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": -23.094487635195296,
+      "y": -55.37729354950286
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.path",
+      "type": "symbol",
+      "label": "CuisineNode.path",
+      "file": "Server_Side/api/app.py",
+      "line": 1608,
+      "language": "python",
+      "annotation": "str",
+      "x": -20.94322371460085,
+      "y": -56.22616277535023
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineNode.display_name",
+      "type": "symbol",
+      "label": "CuisineNode.display_name",
+      "file": "Server_Side/api/app.py",
+      "line": 1609,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": -18.76084447318601,
+      "y": -56.991496862715636
+    },
+    {
+      "id": "repo::app::CuisineHierarchyResponse",
+      "type": "type",
+      "label": "CuisineHierarchyResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 1612,
+      "language": "python",
+      "x": -16.55059226901234,
+      "y": -57.67215875571946
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.cuisines",
+      "type": "symbol",
+      "label": "CuisineHierarchyResponse.cuisines",
+      "file": "Server_Side/api/app.py",
+      "line": 1614,
+      "language": "python",
+      "annotation": "List[CuisineNode]",
+      "x": -14.31575087096693,
+      "y": -58.26713719585346
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.count",
+      "type": "symbol",
+      "label": "CuisineHierarchyResponse.count",
+      "file": "Server_Side/api/app.py",
+      "line": 1615,
+      "language": "python",
+      "annotation": "int",
+      "x": -12.059640580070687,
+      "y": -58.775548224406315
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.version",
+      "type": "symbol",
+      "label": "CuisineHierarchyResponse.version",
+      "file": "Server_Side/api/app.py",
+      "line": 1616,
+      "language": "python",
+      "annotation": "str",
+      "x": -9.785613296511778,
+      "y": -59.19663649575989
+    },
+    {
+      "id": "repo::app::CuisineVersionResponse",
+      "type": "type",
+      "label": "CuisineVersionResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 1619,
+      "language": "python",
+      "x": -7.497047539731407,
+      "y": -59.529776399605325
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineVersionResponse.version",
+      "type": "symbol",
+      "label": "CuisineVersionResponse.version",
+      "file": "Server_Side/api/app.py",
+      "line": 1621,
+      "language": "python",
+      "annotation": "str",
+      "x": -5.197343428961944,
+      "y": -59.77447299041144
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::CuisineVersionResponse.last_updated",
+      "type": "symbol",
+      "label": "CuisineVersionResponse.last_updated",
+      "file": "Server_Side/api/app.py",
+      "line": 1622,
+      "language": "python",
+      "annotation": "str",
+      "x": -2.889917631674208,
+      "y": -59.93036272276464
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_cuisine_hierarchy",
+      "type": "symbol",
+      "label": "get_cuisine_hierarchy",
+      "file": "Server_Side/api/app.py",
+      "line": 1626,
+      "language": "python",
+      "x": -0.5781982874388542,
+      "y": -59.997213991487996
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_cuisine_hierarchy_version",
+      "type": "symbol",
+      "label": "get_cuisine_hierarchy_version",
+      "file": "Server_Side/api/app.py",
+      "line": 1676,
+      "language": "python",
+      "x": 1.7343800852563325,
+      "y": -59.97492747573661
+    },
+    {
+      "id": "repo::app::RecipeSubmissionRequest",
+      "type": "type",
+      "label": "RecipeSubmissionRequest",
+      "file": "Server_Side/api/app.py",
+      "line": 1718,
+      "language": "python",
+      "x": 4.044381691666079,
+      "y": -59.863536286558585
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.account_id",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.account_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1720,
+      "language": "python",
+      "annotation": "str",
+      "x": 6.348374565343342,
+      "y": -59.66320591770192
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.recipe_title",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.recipe_title",
+      "file": "Server_Side/api/app.py",
+      "line": 1721,
+      "language": "python",
+      "annotation": "str",
+      "x": 8.642935667007864,
+      "y": -59.374233999740696
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.ingredients",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.ingredients",
+      "file": "Server_Side/api/app.py",
+      "line": 1722,
+      "language": "python",
+      "annotation": "List[Dict[str, Any]]",
+      "x": 10.924655970150855,
+      "y": -58.99704985788567
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.instructions",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.instructions",
+      "file": "Server_Side/api/app.py",
+      "line": 1723,
+      "language": "python",
+      "annotation": "str",
+      "x": 13.190145525821757,
+      "y": -58.53221387413639
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.prep_instructions",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.prep_instructions",
+      "file": "Server_Side/api/app.py",
+      "line": 1724,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 15.436038499070667,
+      "y": -57.98041665472238
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cook_instructions",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.cook_instructions",
+      "file": "Server_Side/api/app.py",
+      "line": 1725,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 17.6589981695654,
+      "y": -57.3424780040703
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.description",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.description",
+      "file": "Server_Side/api/app.py",
+      "line": 1726,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 19.855721888952495,
+      "y": -56.619345706821555
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.source",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.source",
+      "file": "Server_Side/api/app.py",
+      "line": 1727,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 22.02294598759755,
+      "y": -55.81209411970994
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.servings",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.servings",
+      "file": "Server_Side/api/app.py",
+      "line": 1728,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 24.15745062341517,
+      "y": -54.92192257539113
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.prep_time",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.prep_time",
+      "file": "Server_Side/api/app.py",
+      "line": 1729,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 26.256064565584346,
+      "y": -53.95015360059567
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cook_time",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.cook_time",
+      "file": "Server_Side/api/app.py",
+      "line": 1730,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 28.315669906041883,
+      "y": -52.89823095125274
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.difficulty",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.difficulty",
+      "file": "Server_Side/api/app.py",
+      "line": 1731,
+      "language": "python",
+      "annotation": "Optional[int]",
+      "x": 30.33320669175457,
+      "y": -51.76771746750377
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cost",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.cost",
+      "file": "Server_Side/api/app.py",
+      "line": 1732,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 32.30567747088733,
+      "y": -50.56029275179291
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.rating",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.rating",
+      "file": "Server_Side/api/app.py",
+      "line": 1733,
+      "language": "python",
+      "annotation": "Optional[float]",
+      "x": 34.23015174611375,
+      "y": -49.27775067348373
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cuisine_path",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.cuisine_path",
+      "file": "Server_Side/api/app.py",
+      "line": 1734,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 36.103770328452235,
+      "y": -47.92199670370979
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.meal_types",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.meal_types",
+      "file": "Server_Side/api/app.py",
+      "line": 1735,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 37.92374958515941,
+      "y": -46.49504508441863
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.diet_types",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.diet_types",
+      "file": "Server_Side/api/app.py",
+      "line": 1736,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 39.68738557536963,
+      "y": -44.99901583581515
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.allergens",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.allergens",
+      "file": "Server_Side/api/app.py",
+      "line": 1737,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 41.3920580673367,
+      "y": -43.436131606650086
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.equipment",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.equipment",
+      "file": "Server_Side/api/app.py",
+      "line": 1738,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 43.0352344313086,
+      "y": -41.80871437203386
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.tags",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.tags",
+      "file": "Server_Side/api/app.py",
+      "line": 1739,
+      "language": "python",
+      "annotation": "Optional[List[str]]",
+      "x": 44.614473402252564,
+      "y": -40.119181983680804
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.seasonality",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.seasonality",
+      "file": "Server_Side/api/app.py",
+      "line": 1740,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 46.12742870683912,
+      "y": -38.37004457771029
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.storage_info",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.storage_info",
+      "file": "Server_Side/api/app.py",
+      "line": 1741,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 47.57185254929765,
+      "y": -36.56390084534037
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.notes",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.notes",
+      "file": "Server_Side/api/app.py",
+      "line": 1742,
+      "language": "python",
+      "annotation": "Optional[str]",
+      "x": 48.94559895096365,
+      "y": -34.70343417201568
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.validate_ingredients",
+      "type": "symbol",
+      "label": "RecipeSubmissionRequest.validate_ingredients",
+      "file": "Server_Side/api/app.py",
+      "line": 1744,
+      "language": "python",
+      "x": 50.246626938556346,
+      "y": -32.7914086507052
+    },
+    {
+      "id": "repo::app::RecipeSubmissionResponse",
+      "type": "type",
+      "label": "RecipeSubmissionResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 1767,
+      "language": "python",
+      "x": 51.473003576450225,
+      "y": -30.830664975292738
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.submission_id",
+      "type": "symbol",
+      "label": "RecipeSubmissionResponse.submission_id",
+      "file": "Server_Side/api/app.py",
+      "line": 1769,
+      "language": "python",
+      "annotation": "str",
+      "x": 52.622906838435085,
+      "y": -28.824116220161574
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.status",
+      "type": "symbol",
+      "label": "RecipeSubmissionResponse.status",
+      "file": "Server_Side/api/app.py",
+      "line": 1770,
+      "language": "python",
+      "annotation": "str",
+      "x": 53.69462831469797,
+      "y": -26.77474351224367
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.message",
+      "type": "symbol",
+      "label": "RecipeSubmissionResponse.message",
+      "file": "Server_Side/api/app.py",
+      "line": 1771,
+      "language": "python",
+      "annotation": "str",
+      "x": 54.68657575000549,
+      "y": -24.685591601963107
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.estimated_tokens",
+      "type": "symbol",
+      "label": "RecipeSubmissionResponse.estimated_tokens",
+      "file": "Server_Side/api/app.py",
+      "line": 1772,
+      "language": "python",
+      "annotation": "int",
+      "x": 55.59727540931532,
+      "y": -22.55976433965437
+    },
+    {
+      "id": "repo::app::SubmissionStatusResponse",
+      "type": "type",
+      "label": "SubmissionStatusResponse",
+      "file": "Server_Side/api/app.py",
+      "line": 1775,
+      "language": "python",
+      "x": 56.42537426730259,
+      "y": -20.400420064175808
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SubmissionStatusResponse.submissions",
+      "type": "symbol",
+      "label": "SubmissionStatusResponse.submissions",
+      "file": "Server_Side/api/app.py",
+      "line": 1777,
+      "language": "python",
+      "annotation": "List[Dict[str, Any]]",
+      "x": 57.16964201854782,
+      "y": -18.210766910569458
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_pending",
+      "type": "symbol",
+      "label": "SubmissionStatusResponse.total_pending",
+      "file": "Server_Side/api/app.py",
+      "line": 1778,
+      "language": "python",
+      "annotation": "int",
+      "x": 57.82897290540017,
+      "y": -15.994058043739042
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_approved",
+      "type": "symbol",
+      "label": "SubmissionStatusResponse.total_approved",
+      "file": "Server_Side/api/app.py",
+      "line": 1779,
+      "language": "python",
+      "annotation": "int",
+      "x": 58.40238736080006,
+      "y": -13.753586825227119
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_rejected",
+      "type": "symbol",
+      "label": "SubmissionStatusResponse.total_rejected",
+      "file": "Server_Side/api/app.py",
+      "line": 1780,
+      "language": "python",
+      "annotation": "int",
+      "x": 58.889033463620876,
+      "y": -11.492681920271714
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_tokens_earned",
+      "type": "symbol",
+      "label": "SubmissionStatusResponse.total_tokens_earned",
+      "file": "Server_Side/api/app.py",
+      "line": 1781,
+      "language": "python",
+      "annotation": "int",
+      "x": 59.28818820436694,
+      "y": -9.214702352412992
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::calculate_submission_tokens",
+      "type": "symbol",
+      "label": "calculate_submission_tokens",
+      "file": "Server_Side/api/app.py",
+      "line": 1784,
+      "language": "python",
+      "x": 59.59925855934788,
+      "y": -6.9230325129958645
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::submit_recipe",
+      "type": "symbol",
+      "label": "submit_recipe",
+      "file": "Server_Side/api/app.py",
+      "line": 1813,
+      "language": "python",
+      "x": 59.82178237173319,
+      "y": -4.621077132984478
+    },
+    {
+      "id": "repo::Server_Side/api/app.py::get_submission_status",
+      "type": "symbol",
+      "label": "get_submission_status",
+      "file": "Server_Side/api/app.py",
+      "line": 1925,
+      "language": "python",
+      "x": 59.95542903817798,
+      "y": -2.3122562245573977
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_db",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::HealthCheckResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::HealthCheckResponse",
+      "to": "repo::Server_Side/api/app.py::HealthCheckResponse.status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::HealthCheckResponse",
+      "to": "repo::Server_Side/api/app.py::HealthCheckResponse.message",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::HealthCheckResponse",
+      "to": "repo::Server_Side/api/app.py::HealthCheckResponse.database_connected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::AnonymousAccountResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::AnonymousAccountResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousAccountResponse.account_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousAccountResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousAccountResponse.subscription_tier",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousAccountResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousAccountResponse.token_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousAccountResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousAccountResponse.message",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::TokenTransactionResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::TokenTransactionResponse",
+      "to": "repo::Server_Side/api/app.py::TokenTransactionResponse.transaction_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::TokenTransactionResponse",
+      "to": "repo::Server_Side/api/app.py::TokenTransactionResponse.account_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::TokenTransactionResponse",
+      "to": "repo::Server_Side/api/app.py::TokenTransactionResponse.new_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::TokenTransactionResponse",
+      "to": "repo::Server_Side/api/app.py::TokenTransactionResponse.transaction_type",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::TokenTransactionResponse",
+      "to": "repo::Server_Side/api/app.py::TokenTransactionResponse.message",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::ErrorResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::ErrorResponse",
+      "to": "repo::Server_Side/api/app.py::ErrorResponse.error",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::ErrorResponse",
+      "to": "repo::Server_Side/api/app.py::ErrorResponse.details",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::RecipeSummary",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.serving_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.prep_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.cook_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.difficulty_level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.rating",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSummary",
+      "to": "repo::Server_Side/api/app.py::RecipeSummary.meal_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::AnonymousQueryRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.token_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.seasonal_buckets",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_allergen_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_recipe_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.exclude_cuisine_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.include_cuisine_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.max_difficulty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.max_cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryRequest",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryRequest.batch_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::AnonymousQueryResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::AnonymousQueryResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryResponse.recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::AnonymousQueryResponse.recipes",
+      "to": "repo::app::RecipeSummary",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::app::AnonymousQueryResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryResponse.tokens_deducted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AnonymousQueryResponse",
+      "to": "repo::Server_Side/api/app.py::AnonymousQueryResponse.query_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::health_check",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::create_anonymous_account",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_token_balance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::consume_tokens",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::anonymous_recipe_query",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::anonymous_recipe_query",
+      "to": "repo::app::RecipeSummary",
+      "relation": "calls",
+      "seq": 16
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::anonymous_recipe_query",
+      "to": "repo::app::AnonymousQueryRequest",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::search_recipes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::search_recipes_by_ingredient",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_recipe",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_ingredient",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::AdvancedSearchRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.cuisine",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.difficulty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.exclude_equipment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.max_prep_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.max_cook_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchRequest",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchRequest.limit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.cuisine",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.difficulty_level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.prep_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.cook_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.total_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.rating",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.serving_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSearchResult",
+      "to": "repo::Server_Side/api/app.py::RecipeSearchResult.meal_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::AdvancedSearchResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::AdvancedSearchResponse",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchResponse.recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::AdvancedSearchResponse.recipes",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::app::AdvancedSearchResponse",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchResponse.count",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::AdvancedSearchResponse",
+      "to": "repo::Server_Side/api/app.py::AdvancedSearchResponse.filters_applied",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::advanced_recipe_search",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::advanced_recipe_search",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::advanced_recipe_search",
+      "to": "repo::app::AdvancedSearchResponse",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::advanced_recipe_search",
+      "to": "repo::app::AdvancedSearchRequest",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_recipes_by_cuisine",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::get_recipes_by_cuisine",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_recipes_by_difficulty",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::get_recipes_by_difficulty",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_recipes_by_cost",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::get_recipes_by_cost",
+      "to": "repo::app::RecipeSearchResult",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_seasonal_ingredients_by_bucket",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_seasonal_buckets",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::list_equipment",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::SeasonalQueryRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.climate_zone",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.seasonal_buckets",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.exclude_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.exclude_dietary",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.recipe_type_distribution",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.include_decoy_cuisines",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryRequest",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryRequest.batch_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::SeasonalRecipeResult",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.recipe_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.seasonal_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.serving_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.prep_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.cook_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.difficulty_level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.rating",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalRecipeResult",
+      "to": "repo::Server_Side/api/app.py::SeasonalRecipeResult.meal_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::SeasonalQueryResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::SeasonalQueryResponse",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryResponse.recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::SeasonalQueryResponse.recipes",
+      "to": "repo::app::SeasonalRecipeResult",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::app::SeasonalQueryResponse",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryResponse.count",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryResponse",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryResponse.query_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SeasonalQueryResponse",
+      "to": "repo::Server_Side/api/app.py::SeasonalQueryResponse.tokens_deducted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::seasonal_recipe_query",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::seasonal_recipe_query",
+      "to": "repo::app::SeasonalRecipeResult",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::seasonal_recipe_query",
+      "to": "repo::app::SeasonalQueryRequest",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::CuisineNode",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.cuisine_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.parent_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineNode",
+      "to": "repo::Server_Side/api/app.py::CuisineNode.display_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::CuisineHierarchyResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::CuisineHierarchyResponse",
+      "to": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.cuisines",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.cuisines",
+      "to": "repo::app::CuisineNode",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::app::CuisineHierarchyResponse",
+      "to": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.count",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineHierarchyResponse",
+      "to": "repo::Server_Side/api/app.py::CuisineHierarchyResponse.version",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::CuisineVersionResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::CuisineVersionResponse",
+      "to": "repo::Server_Side/api/app.py::CuisineVersionResponse.version",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::CuisineVersionResponse",
+      "to": "repo::Server_Side/api/app.py::CuisineVersionResponse.last_updated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_cuisine_hierarchy",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::get_cuisine_hierarchy",
+      "to": "repo::app::CuisineNode",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_cuisine_hierarchy_version",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::RecipeSubmissionRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.account_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.recipe_title",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.instructions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.prep_instructions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cook_instructions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.description",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.source",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.servings",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.prep_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cook_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.difficulty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cost",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.rating",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.cuisine_path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.meal_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.diet_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.equipment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.tags",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.seasonality",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.storage_info",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.notes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionRequest",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionRequest.validate_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::RecipeSubmissionResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionResponse",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.submission_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionResponse",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionResponse",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.message",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::RecipeSubmissionResponse",
+      "to": "repo::Server_Side/api/app.py::RecipeSubmissionResponse.estimated_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::app::SubmissionStatusResponse",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::app::SubmissionStatusResponse",
+      "to": "repo::Server_Side/api/app.py::SubmissionStatusResponse.submissions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SubmissionStatusResponse",
+      "to": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_pending",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SubmissionStatusResponse",
+      "to": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_approved",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SubmissionStatusResponse",
+      "to": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::app::SubmissionStatusResponse",
+      "to": "repo::Server_Side/api/app.py::SubmissionStatusResponse.total_tokens_earned",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::calculate_submission_tokens",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::calculate_submission_tokens",
+      "to": "repo::app::RecipeSubmissionRequest",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::submit_recipe",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::submit_recipe",
+      "to": "repo::Server_Side/api/app.py::calculate_submission_tokens",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Server_Side/api/app.py::submit_recipe",
+      "to": "repo::app::RecipeSubmissionRequest",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::Server_Side/api/app.py",
+      "to": "repo::Server_Side/api/app.py::get_submission_status",
+      "relation": "defines"
+    }
+  ]
+}

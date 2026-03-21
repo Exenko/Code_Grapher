@@ -1,0 +1,503 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_key_manager.py",
+  "stats": {
+    "nodes": 31,
+    "edges": 30
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py",
+      "type": "file",
+      "label": "test_key_manager.py",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::test_db",
+      "type": "symbol",
+      "label": "test_db",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 20,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::key_manager",
+      "type": "symbol",
+      "label": "key_manager",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 43,
+      "language": "python",
+      "is_test": true,
+      "x": 58.68885604402834,
+      "y": 12.47470144906556
+    },
+    {
+      "id": "repo::test_key_manager::TestKeyGeneration",
+      "type": "type",
+      "label": "TestKeyGeneration",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 48,
+      "language": "python",
+      "is_test": true,
+      "x": 54.812727458556054,
+      "y": 24.40419858454801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_generate_keypair",
+      "type": "symbol",
+      "label": "TestKeyGeneration.test_generate_keypair",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 51,
+      "language": "python",
+      "is_test": true,
+      "x": 48.54101966249685,
+      "y": 35.26711513754839
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_generate_keypair_duplicate_fails",
+      "type": "symbol",
+      "label": "TestKeyGeneration.test_generate_keypair_duplicate_fails",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 70,
+      "language": "python",
+      "is_test": true,
+      "x": 40.14783638153149,
+      "y": 44.58868952864365
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_keypair_unique_per_household",
+      "type": "symbol",
+      "label": "TestKeyGeneration.test_keypair_unique_per_household",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 82,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::test_key_manager::TestPrivateKeyLoading",
+      "type": "type",
+      "label": "TestPrivateKeyLoading",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 93,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_correct_password",
+      "type": "symbol",
+      "label": "TestPrivateKeyLoading.test_load_private_key_correct_password",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 96,
+      "language": "python",
+      "is_test": true,
+      "x": 6.271707796059207,
+      "y": 59.6713137220964
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_wrong_password",
+      "type": "symbol",
+      "label": "TestPrivateKeyLoading.test_load_private_key_wrong_password",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 111,
+      "language": "python",
+      "is_test": true,
+      "x": -6.2717077960592,
+      "y": 59.67131372209641
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_nonexistent_household",
+      "type": "symbol",
+      "label": "TestPrivateKeyLoading.test_load_private_key_nonexistent_household",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 124,
+      "language": "python",
+      "is_test": true,
+      "x": -18.54101966249684,
+      "y": 57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_updates_last_used",
+      "type": "symbol",
+      "label": "TestPrivateKeyLoading.test_load_updates_last_used",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 129,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "type": "type",
+      "label": "TestPublicKeyRetrieval",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 159,
+      "language": "python",
+      "is_test": true,
+      "x": -40.14783638153148,
+      "y": 44.58868952864367
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_get_public_key_exists",
+      "type": "symbol",
+      "label": "TestPublicKeyRetrieval.test_get_public_key_exists",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 162,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_get_public_key_not_exists",
+      "type": "symbol",
+      "label": "TestPublicKeyRetrieval.test_get_public_key_not_exists",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 175,
+      "language": "python",
+      "is_test": true,
+      "x": -54.81272745855606,
+      "y": 24.404198584548002
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_has_keypair_true",
+      "type": "symbol",
+      "label": "TestPublicKeyRetrieval.test_has_keypair_true",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 180,
+      "language": "python",
+      "is_test": true,
+      "x": -58.68885604402834,
+      "y": 12.47470144906556
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_has_keypair_false",
+      "type": "symbol",
+      "label": "TestPublicKeyRetrieval.test_has_keypair_false",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 187,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 3.399323338588788e-14
+    },
+    {
+      "id": "repo::test_key_manager::TestKeyRotation",
+      "type": "type",
+      "label": "TestKeyRotation",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 192,
+      "language": "python",
+      "is_test": true,
+      "x": -58.68885604402834,
+      "y": -12.474701449065543
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestKeyRotation.test_rotate_keypair_success",
+      "type": "symbol",
+      "label": "TestKeyRotation.test_rotate_keypair_success",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 195,
+      "language": "python",
+      "is_test": true,
+      "x": -54.812727458556054,
+      "y": -24.404198584548013
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestKeyRotation.test_rotate_keypair_wrong_old_password",
+      "type": "symbol",
+      "label": "TestKeyRotation.test_rotate_keypair_wrong_old_password",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 218,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::test_key_manager::TestExportForServer",
+      "type": "type",
+      "label": "TestExportForServer",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 233,
+      "language": "python",
+      "is_test": true,
+      "x": -40.147836381531505,
+      "y": -44.58868952864364
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestExportForServer.test_export_public_key_for_server",
+      "type": "symbol",
+      "label": "TestExportForServer.test_export_public_key_for_server",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 236,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestExportForServer.test_export_without_server_account_id_fails",
+      "type": "symbol",
+      "label": "TestExportForServer.test_export_without_server_account_id_fails",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 258,
+      "language": "python",
+      "is_test": true,
+      "x": -18.541019662496854,
+      "y": -57.06339097770921
+    },
+    {
+      "id": "repo::test_key_manager::TestPasswordDerivation",
+      "type": "type",
+      "label": "TestPasswordDerivation",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 278,
+      "language": "python",
+      "is_test": true,
+      "x": -6.271707796059254,
+      "y": -59.6713137220964
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_same_password_same_key",
+      "type": "symbol",
+      "label": "TestPasswordDerivation.test_same_password_same_key",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 281,
+      "language": "python",
+      "is_test": true,
+      "x": 6.271707796059179,
+      "y": -59.67131372209641
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_different_password_different_key",
+      "type": "symbol",
+      "label": "TestPasswordDerivation.test_different_password_different_key",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 290,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_derived_key_is_fernet_compatible",
+      "type": "symbol",
+      "label": "TestPasswordDerivation.test_derived_key_is_fernet_compatible",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 300,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::test_key_manager::TestCryptographicSecurity",
+      "type": "type",
+      "label": "TestCryptographicSecurity",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 318,
+      "language": "python",
+      "is_test": true,
+      "x": 40.147836381531505,
+      "y": -44.58868952864364
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_private_key_encrypted_at_rest",
+      "type": "symbol",
+      "label": "TestCryptographicSecurity.test_private_key_encrypted_at_rest",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 321,
+      "language": "python",
+      "is_test": true,
+      "x": 48.54101966249684,
+      "y": -35.2671151375484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_public_and_private_key_match",
+      "type": "symbol",
+      "label": "TestCryptographicSecurity.test_public_and_private_key_match",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 342,
+      "language": "python",
+      "is_test": true,
+      "x": 54.81272745855606,
+      "y": -24.40419858454801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_key_size_is_2048_bits",
+      "type": "symbol",
+      "label": "TestCryptographicSecurity.test_key_size_is_2048_bits",
+      "file": "Client_Side/tests/test_key_manager.py",
+      "line": 389,
+      "language": "python",
+      "is_test": true,
+      "x": 58.68885604402834,
+      "y": -12.474701449065538
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::Client_Side/tests/test_key_manager.py::test_db",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::Client_Side/tests/test_key_manager.py::key_manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestKeyGeneration",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestKeyGeneration",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_generate_keypair",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestKeyGeneration",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_generate_keypair_duplicate_fails",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestKeyGeneration",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestKeyGeneration.test_keypair_unique_per_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestPrivateKeyLoading",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestPrivateKeyLoading",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_correct_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPrivateKeyLoading",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_wrong_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPrivateKeyLoading",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_private_key_nonexistent_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPrivateKeyLoading",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPrivateKeyLoading.test_load_updates_last_used",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_get_public_key_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_get_public_key_not_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_has_keypair_true",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPublicKeyRetrieval",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPublicKeyRetrieval.test_has_keypair_false",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestKeyRotation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestKeyRotation",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestKeyRotation.test_rotate_keypair_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestKeyRotation",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestKeyRotation.test_rotate_keypair_wrong_old_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestExportForServer",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestExportForServer",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestExportForServer.test_export_public_key_for_server",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestExportForServer",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestExportForServer.test_export_without_server_account_id_fails",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestPasswordDerivation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestPasswordDerivation",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_same_password_same_key",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPasswordDerivation",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_different_password_different_key",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestPasswordDerivation",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestPasswordDerivation.test_derived_key_is_fernet_compatible",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_key_manager.py",
+      "to": "repo::test_key_manager::TestCryptographicSecurity",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_key_manager::TestCryptographicSecurity",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_private_key_encrypted_at_rest",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestCryptographicSecurity",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_public_and_private_key_match",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_key_manager::TestCryptographicSecurity",
+      "to": "repo::Client_Side/tests/test_key_manager.py::TestCryptographicSecurity.test_key_size_is_2048_bits",
+      "relation": "contains"
+    }
+  ]
+}

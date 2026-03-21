@@ -1,0 +1,274 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/components/equipment_selector.py",
+  "stats": {
+    "nodes": 15,
+    "edges": 21
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py",
+      "type": "file",
+      "label": "equipment_selector.py",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::equipment_selector::EquipmentSelector",
+      "type": "type",
+      "label": "EquipmentSelector",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 19,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.__init__",
+      "type": "symbol",
+      "label": "EquipmentSelector.__init__",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 24,
+      "language": "python",
+      "x": 54.05813207414515,
+      "y": 26.033024347053487
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._load_equipment_data",
+      "type": "symbol",
+      "label": "EquipmentSelector._load_equipment_data",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 33,
+      "language": "python",
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._setup_ui",
+      "type": "symbol",
+      "label": "EquipmentSelector._setup_ui",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 48,
+      "language": "python",
+      "x": 13.351256037378867,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._calculate_num_columns",
+      "type": "symbol",
+      "label": "EquipmentSelector._calculate_num_columns",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 92,
+      "language": "python",
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._create_balanced_grid",
+      "type": "symbol",
+      "label": "EquipmentSelector._create_balanced_grid",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 111,
+      "language": "python",
+      "x": -37.40938811152401,
+      "y": 46.90988894808179
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._on_selection_changed",
+      "type": "symbol",
+      "label": "EquipmentSelector._on_selection_changed",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 183,
+      "language": "python",
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.get_equipment_data",
+      "type": "symbol",
+      "label": "EquipmentSelector.get_equipment_data",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 187,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.set_equipment_data",
+      "type": "symbol",
+      "label": "EquipmentSelector.set_equipment_data",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 203,
+      "language": "python",
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.reset",
+      "type": "symbol",
+      "label": "EquipmentSelector.reset",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 224,
+      "language": "python",
+      "x": -37.409388111524024,
+      "y": -46.90988894808178
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.select_all",
+      "type": "symbol",
+      "label": "EquipmentSelector.select_all",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 229,
+      "language": "python",
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.deselect_all",
+      "type": "symbol",
+      "label": "EquipmentSelector.deselect_all",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 234,
+      "language": "python",
+      "x": 13.3512560373788,
+      "y": -58.49567473090943
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.resizeEvent",
+      "type": "symbol",
+      "label": "EquipmentSelector.resizeEvent",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 239,
+      "language": "python",
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._rebuild_grid",
+      "type": "symbol",
+      "label": "EquipmentSelector._rebuild_grid",
+      "file": "Client_Side/ui_new/components/equipment_selector.py",
+      "line": 250,
+      "language": "python",
+      "x": 54.05813207414516,
+      "y": -26.033024347053452
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py",
+      "to": "repo::equipment_selector::EquipmentSelector",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.__init__",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._load_equipment_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.__init__",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._setup_ui",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._load_equipment_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._setup_ui",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._create_balanced_grid",
+      "relation": "calls",
+      "seq": 17
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._calculate_num_columns",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._create_balanced_grid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._on_selection_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._on_selection_changed",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.get_equipment_data",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.get_equipment_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.set_equipment_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.reset",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.select_all",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.deselect_all",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.resizeEvent",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector.resizeEvent",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._rebuild_grid",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::equipment_selector::EquipmentSelector",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._rebuild_grid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._rebuild_grid",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._calculate_num_columns",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._rebuild_grid",
+      "to": "repo::Client_Side/ui_new/components/equipment_selector.py::EquipmentSelector._create_balanced_grid",
+      "relation": "calls",
+      "seq": 12
+    }
+  ]
+}

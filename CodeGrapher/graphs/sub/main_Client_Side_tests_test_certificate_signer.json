@@ -1,0 +1,583 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_certificate_signer.py",
+  "stats": {
+    "nodes": 36,
+    "edges": 35
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py",
+      "type": "file",
+      "label": "test_certificate_signer.py",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::test_db",
+      "type": "symbol",
+      "label": "test_db",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 20,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::key_manager",
+      "type": "symbol",
+      "label": "key_manager",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 47,
+      "language": "python",
+      "is_test": true,
+      "x": 59.03577531591778,
+      "y": 10.7134136879182
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::signer",
+      "type": "symbol",
+      "label": "signer",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 53,
+      "language": "python",
+      "is_test": true,
+      "x": 56.17409223838423,
+      "y": 21.08248944488056
+    },
+    {
+      "id": "repo::test_certificate_signer::TestCertificateCreation",
+      "type": "type",
+      "label": "TestCertificateCreation",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 58,
+      "language": "python",
+      "is_test": true,
+      "x": 51.506927616111966,
+      "y": 30.773956644354367
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_create_certificate_basic",
+      "type": "symbol",
+      "label": "TestCertificateCreation.test_create_certificate_basic",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 61,
+      "language": "python",
+      "is_test": true,
+      "x": 45.18428796021666,
+      "y": 39.47632355638275
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_create_certificate_with_timestamp",
+      "type": "symbol",
+      "label": "TestCertificateCreation.test_create_certificate_with_timestamp",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 78,
+      "language": "python",
+      "is_test": true,
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_nonces_are_unique",
+      "type": "symbol",
+      "label": "TestCertificateCreation.test_nonces_are_unique",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 92,
+      "language": "python",
+      "is_test": true,
+      "x": 28.43211974837992,
+      "y": 52.83573191140428
+    },
+    {
+      "id": "repo::test_certificate_signer::TestCertificateSigning",
+      "type": "type",
+      "label": "TestCertificateSigning",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 100,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_success",
+      "type": "symbol",
+      "label": "TestCertificateSigning.test_sign_certificate_success",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 103,
+      "language": "python",
+      "is_test": true,
+      "x": 8.053995949059333,
+      "y": 59.45698570607608
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_wrong_password",
+      "type": "symbol",
+      "label": "TestCertificateSigning.test_sign_certificate_wrong_password",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 118,
+      "language": "python",
+      "is_test": true,
+      "x": -2.691889821030892,
+      "y": 59.93958399247888
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_nonexistent_household",
+      "type": "symbol",
+      "label": "TestCertificateSigning.test_sign_certificate_nonexistent_household",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 130,
+      "language": "python",
+      "is_test": true,
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_signature_is_deterministic_for_same_data",
+      "type": "symbol",
+      "label": "TestCertificateSigning.test_signature_is_deterministic_for_same_data",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 142,
+      "language": "python",
+      "is_test": true,
+      "x": -23.5815018992354,
+      "y": 55.17166635308705
+    },
+    {
+      "id": "repo::test_certificate_signer::TestCreateAndSign",
+      "type": "type",
+      "label": "TestCreateAndSign",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 161,
+      "language": "python",
+      "is_test": true,
+      "x": -33.05381888712615,
+      "y": 50.07439522327816
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCreateAndSign.test_create_and_sign_certificate",
+      "type": "symbol",
+      "label": "TestCreateAndSign.test_create_and_sign_certificate",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 164,
+      "language": "python",
+      "is_test": true,
+      "x": -41.46375893921187,
+      "y": 43.36769182964349
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCreateAndSign.test_create_recipe_query_certificate",
+      "type": "symbol",
+      "label": "TestCreateAndSign.test_create_recipe_query_certificate",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 179,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::test_certificate_signer::TestLocalVerification",
+      "type": "type",
+      "label": "TestLocalVerification",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 193,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_valid_certificate",
+      "type": "symbol",
+      "label": "TestLocalVerification.test_verify_valid_certificate",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 196,
+      "language": "python",
+      "is_test": true,
+      "x": -57.837771641751196,
+      "y": 15.962210734000514
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_unsigned_certificate",
+      "type": "symbol",
+      "label": "TestLocalVerification.test_verify_unsigned_certificate",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": -59.758457639714344,
+      "y": 5.378358534206018
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_tampered_certificate",
+      "type": "symbol",
+      "label": "TestLocalVerification.test_verify_tampered_certificate",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 221,
+      "language": "python",
+      "is_test": true,
+      "x": -59.758457639714344,
+      "y": -5.3783585342060025
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_wrong_signature",
+      "type": "symbol",
+      "label": "TestLocalVerification.test_verify_wrong_signature",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 237,
+      "language": "python",
+      "is_test": true,
+      "x": -57.8377716417512,
+      "y": -15.962210734000497
+    },
+    {
+      "id": "repo::test_certificate_signer::TestCertificateFormat",
+      "type": "type",
+      "label": "TestCertificateFormat",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 253,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_to_signable_json_excludes_signature",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_to_signable_json_excludes_signature",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 256,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_to_dict_includes_signature",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_to_dict_includes_signature",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 275,
+      "language": "python",
+      "is_test": true,
+      "x": -41.46375893921191,
+      "y": -43.36769182964347
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_valid",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_validate_certificate_format_valid",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 290,
+      "language": "python",
+      "is_test": true,
+      "x": -33.053818887126155,
+      "y": -50.07439522327815
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_missing_uuid",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_validate_certificate_format_missing_uuid",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 303,
+      "language": "python",
+      "is_test": true,
+      "x": -23.581501899235427,
+      "y": -55.17166635308703
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_invalid_action",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_validate_certificate_format_invalid_action",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 317,
+      "language": "python",
+      "is_test": true,
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_negative_tokens",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_validate_certificate_format_negative_tokens",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 330,
+      "language": "python",
+      "is_test": true,
+      "x": -2.691889821030906,
+      "y": -59.93958399247887
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_invalid_nonce_length",
+      "type": "symbol",
+      "label": "TestCertificateFormat.test_validate_certificate_format_invalid_nonce_length",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 343,
+      "language": "python",
+      "is_test": true,
+      "x": 8.053995949059317,
+      "y": -59.45698570607609
+    },
+    {
+      "id": "repo::test_certificate_signer::TestSignableJsonDeterminism",
+      "type": "type",
+      "label": "TestSignableJsonDeterminism",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 358,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestSignableJsonDeterminism.test_json_keys_sorted",
+      "type": "symbol",
+      "label": "TestSignableJsonDeterminism.test_json_keys_sorted",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 361,
+      "language": "python",
+      "is_test": true,
+      "x": 28.432119748379908,
+      "y": -52.83573191140429
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestSignableJsonDeterminism.test_same_data_same_json",
+      "type": "symbol",
+      "label": "TestSignableJsonDeterminism.test_same_data_same_json",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 375,
+      "language": "python",
+      "is_test": true,
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "repo::test_certificate_signer::TestPrivacyGuarantees",
+      "type": "type",
+      "label": "TestPrivacyGuarantees",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 396,
+      "language": "python",
+      "is_test": true,
+      "x": 45.18428796021664,
+      "y": -39.476323556382766
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_certificate_contains_no_personal_data",
+      "type": "symbol",
+      "label": "TestPrivacyGuarantees.test_certificate_contains_no_personal_data",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 399,
+      "language": "python",
+      "is_test": true,
+      "x": 51.50692761611196,
+      "y": -30.77395664435438
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_household_uuid_is_anonymous",
+      "type": "symbol",
+      "label": "TestPrivacyGuarantees.test_household_uuid_is_anonymous",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 415,
+      "language": "python",
+      "is_test": true,
+      "x": 56.174092238384226,
+      "y": -21.082489444880576
+    },
+    {
+      "id": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_signature_uses_anonymous_data_only",
+      "type": "symbol",
+      "label": "TestPrivacyGuarantees.test_signature_uses_anonymous_data_only",
+      "file": "Client_Side/tests/test_certificate_signer.py",
+      "line": 429,
+      "language": "python",
+      "is_test": true,
+      "x": 59.03577531591778,
+      "y": -10.713413687918212
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::test_db",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::key_manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::signer",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestCertificateCreation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateCreation",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_create_certificate_basic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateCreation",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_create_certificate_with_timestamp",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateCreation",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateCreation.test_nonces_are_unique",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestCertificateSigning",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateSigning",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateSigning",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_wrong_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateSigning",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_sign_certificate_nonexistent_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateSigning",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateSigning.test_signature_is_deterministic_for_same_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestCreateAndSign",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCreateAndSign",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCreateAndSign.test_create_and_sign_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCreateAndSign",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCreateAndSign.test_create_recipe_query_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestLocalVerification",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestLocalVerification",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_valid_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestLocalVerification",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_unsigned_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestLocalVerification",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_tampered_certificate",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestLocalVerification",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestLocalVerification.test_verify_wrong_signature",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestCertificateFormat",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_to_signable_json_excludes_signature",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_to_dict_includes_signature",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_valid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_missing_uuid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_invalid_action",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_negative_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestCertificateFormat",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestCertificateFormat.test_validate_certificate_format_invalid_nonce_length",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestSignableJsonDeterminism",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestSignableJsonDeterminism",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestSignableJsonDeterminism.test_json_keys_sorted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestSignableJsonDeterminism",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestSignableJsonDeterminism.test_same_data_same_json",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_certificate_signer.py",
+      "to": "repo::test_certificate_signer::TestPrivacyGuarantees",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestPrivacyGuarantees",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_certificate_contains_no_personal_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestPrivacyGuarantees",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_household_uuid_is_anonymous",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_certificate_signer::TestPrivacyGuarantees",
+      "to": "repo::Client_Side/tests/test_certificate_signer.py::TestPrivacyGuarantees.test_signature_uses_anonymous_data_only",
+      "relation": "contains"
+    }
+  ]
+}

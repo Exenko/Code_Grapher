@@ -1,0 +1,695 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/e2e/test_e2e_recipe_query.py",
+  "stats": {
+    "nodes": 43,
+    "edges": 42
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "type": "file",
+      "label": "test_e2e_recipe_query.py",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "type": "type",
+      "label": "TestRecipeSearch",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 27,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_recipes_basic",
+      "type": "symbol",
+      "label": "TestRecipeSearch.test_search_recipes_basic",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 30,
+      "language": "python",
+      "is_test": true,
+      "x": 59.32984957350771,
+      "y": 8.942535970570466
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_with_limit",
+      "type": "symbol",
+      "label": "TestRecipeSearch.test_search_with_limit",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 48,
+      "language": "python",
+      "is_test": true,
+      "x": 57.33436834716844,
+      "y": 17.685310464654254
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_no_results",
+      "type": "symbol",
+      "label": "TestRecipeSearch.test_search_no_results",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 60,
+      "language": "python",
+      "is_test": true,
+      "x": 54.05813207414515,
+      "y": 26.033024347053487
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_empty_query",
+      "type": "symbol",
+      "label": "TestRecipeSearch.test_search_empty_query",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 73,
+      "language": "python",
+      "is_test": true,
+      "x": 49.574326458959696,
+      "y": 33.79920348381732
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "type": "type",
+      "label": "TestIngredientSearch",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 87,
+      "language": "python",
+      "is_test": true,
+      "x": 43.98311230978958,
+      "y": 40.810364266255164
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_basic",
+      "type": "symbol",
+      "label": "TestIngredientSearch.test_search_by_ingredient_basic",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 90,
+      "language": "python",
+      "is_test": true,
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_includes_matched_terms",
+      "type": "symbol",
+      "label": "TestIngredientSearch.test_search_by_ingredient_includes_matched_terms",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_no_results",
+      "type": "symbol",
+      "label": "TestIngredientSearch.test_search_by_ingredient_no_results",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 125,
+      "language": "python",
+      "is_test": true,
+      "x": 21.9204614619837,
+      "y": 55.852424918652254
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_respects_limit",
+      "type": "symbol",
+      "label": "TestIngredientSearch.test_search_by_ingredient_respects_limit",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 138,
+      "language": "python",
+      "is_test": true,
+      "x": 13.351256037378867,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestRecipeDetails",
+      "type": "type",
+      "label": "TestRecipeDetails",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 151,
+      "language": "python",
+      "is_test": true,
+      "x": 4.483805615185464,
+      "y": 59.832227830870806
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_get_recipe_by_id",
+      "type": "symbol",
+      "label": "TestRecipeDetails.test_get_recipe_by_id",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 154,
+      "language": "python",
+      "is_test": true,
+      "x": -4.483805615185442,
+      "y": 59.832227830870806
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_get_nonexistent_recipe_returns_404",
+      "type": "symbol",
+      "label": "TestRecipeDetails.test_get_nonexistent_recipe_returns_404",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 184,
+      "language": "python",
+      "is_test": true,
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_recipe_contains_ingredient_details",
+      "type": "symbol",
+      "label": "TestRecipeDetails.test_recipe_contains_ingredient_details",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 193,
+      "language": "python",
+      "is_test": true,
+      "x": -21.920461461983706,
+      "y": 55.852424918652254
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "type": "type",
+      "label": "TestAdvancedSearchEndpoint",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 223,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_basic",
+      "type": "symbol",
+      "label": "TestAdvancedSearchEndpoint.test_advanced_search_basic",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 226,
+      "language": "python",
+      "is_test": true,
+      "x": -37.40938811152401,
+      "y": 46.90988894808179
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_by_cuisine",
+      "type": "symbol",
+      "label": "TestAdvancedSearchEndpoint.test_advanced_search_by_cuisine",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 246,
+      "language": "python",
+      "is_test": true,
+      "x": -43.98311230978958,
+      "y": 40.810364266255164
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_multiple_filters",
+      "type": "symbol",
+      "label": "TestAdvancedSearchEndpoint.test_advanced_search_multiple_filters",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 264,
+      "language": "python",
+      "is_test": true,
+      "x": -49.5743264589597,
+      "y": 33.79920348381731
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_cost_filter",
+      "type": "symbol",
+      "label": "TestAdvancedSearchEndpoint.test_advanced_search_cost_filter",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 283,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_with_time_filters",
+      "type": "symbol",
+      "label": "TestAdvancedSearchEndpoint.test_advanced_search_with_time_filters",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 300,
+      "language": "python",
+      "is_test": true,
+      "x": -57.334368347168436,
+      "y": 17.685310464654275
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestCuisineEndpoints",
+      "type": "type",
+      "label": "TestCuisineEndpoints",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 317,
+      "language": "python",
+      "is_test": true,
+      "x": -59.32984957350771,
+      "y": 8.942535970570484
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine",
+      "type": "symbol",
+      "label": "TestCuisineEndpoints.test_get_recipes_by_cuisine",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 320,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine_with_limit",
+      "type": "symbol",
+      "label": "TestCuisineEndpoints.test_get_recipes_by_cuisine_with_limit",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 334,
+      "language": "python",
+      "is_test": true,
+      "x": -59.329849573507715,
+      "y": -8.942535970570441
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine_structure",
+      "type": "symbol",
+      "label": "TestCuisineEndpoints.test_get_recipes_by_cuisine_structure",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 348,
+      "language": "python",
+      "is_test": true,
+      "x": -57.33436834716845,
+      "y": -17.685310464654236
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "type": "type",
+      "label": "TestDifficultyEndpoints",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 364,
+      "language": "python",
+      "is_test": true,
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_easy",
+      "type": "symbol",
+      "label": "TestDifficultyEndpoints.test_get_recipes_by_difficulty_easy",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 367,
+      "language": "python",
+      "is_test": true,
+      "x": -49.574326458959696,
+      "y": -33.79920348381732
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_medium",
+      "type": "symbol",
+      "label": "TestDifficultyEndpoints.test_get_recipes_by_difficulty_medium",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 381,
+      "language": "python",
+      "is_test": true,
+      "x": -43.983112309789576,
+      "y": -40.81036426625517
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_hard",
+      "type": "symbol",
+      "label": "TestDifficultyEndpoints.test_get_recipes_by_difficulty_hard",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 394,
+      "language": "python",
+      "is_test": true,
+      "x": -37.409388111524024,
+      "y": -46.90988894808178
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_invalid_difficulty_returns_400",
+      "type": "symbol",
+      "label": "TestDifficultyEndpoints.test_invalid_difficulty_returns_400",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 407,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestEquipmentEndpoints",
+      "type": "type",
+      "label": "TestEquipmentEndpoints",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 418,
+      "language": "python",
+      "is_test": true,
+      "x": -21.92046146198369,
+      "y": -55.852424918652254
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEquipmentEndpoints.test_get_equipment_list",
+      "type": "symbol",
+      "label": "TestEquipmentEndpoints.test_get_equipment_list",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 421,
+      "language": "python",
+      "is_test": true,
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEquipmentEndpoints.test_equipment_list_items_have_required_fields",
+      "type": "symbol",
+      "label": "TestEquipmentEndpoints.test_equipment_list_items_have_required_fields",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 434,
+      "language": "python",
+      "is_test": true,
+      "x": -4.483805615185483,
+      "y": -59.832227830870806
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestSearchResponseStructure",
+      "type": "type",
+      "label": "TestSearchResponseStructure",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 451,
+      "language": "python",
+      "is_test": true,
+      "x": 4.483805615185462,
+      "y": -59.832227830870806
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_basic_search_response_structure",
+      "type": "symbol",
+      "label": "TestSearchResponseStructure.test_basic_search_response_structure",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 454,
+      "language": "python",
+      "is_test": true,
+      "x": 13.351256037378853,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_ingredient_search_response_structure",
+      "type": "symbol",
+      "label": "TestSearchResponseStructure.test_ingredient_search_response_structure",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 472,
+      "language": "python",
+      "is_test": true,
+      "x": 21.920461461983724,
+      "y": -55.85242491865225
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_advanced_search_response_structure",
+      "type": "symbol",
+      "label": "TestSearchResponseStructure.test_advanced_search_response_structure",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 490,
+      "language": "python",
+      "is_test": true,
+      "x": 29.99999999999996,
+      "y": -51.96152422706634
+    },
+    {
+      "id": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "type": "type",
+      "label": "TestEdgeCases",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 510,
+      "language": "python",
+      "is_test": true,
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_special_characters",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_search_with_special_characters",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 513,
+      "language": "python",
+      "is_test": true,
+      "x": 43.9831123097896,
+      "y": -40.81036426625515
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_unicode_characters",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_search_with_unicode_characters",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 524,
+      "language": "python",
+      "is_test": true,
+      "x": 49.57432645895967,
+      "y": -33.799203483817365
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_very_large_limit",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_search_with_very_large_limit",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 534,
+      "language": "python",
+      "is_test": true,
+      "x": 54.05813207414514,
+      "y": -26.0330243470535
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_advanced_search_invalid_difficulty",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_advanced_search_invalid_difficulty",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 547,
+      "language": "python",
+      "is_test": true,
+      "x": 57.334368347168436,
+      "y": -17.685310464654282
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_advanced_search_invalid_cost",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_advanced_search_invalid_cost",
+      "file": "test_scripts/e2e/test_e2e_recipe_query.py",
+      "line": 561,
+      "language": "python",
+      "is_test": true,
+      "x": 59.3298495735077,
+      "y": -8.942535970570516
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_recipes_basic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_with_limit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_no_results",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeSearch.test_search_empty_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_basic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_includes_matched_terms",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_no_results",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestIngredientSearch",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestIngredientSearch.test_search_by_ingredient_respects_limit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestRecipeDetails",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeDetails",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_get_recipe_by_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeDetails",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_get_nonexistent_recipe_returns_404",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestRecipeDetails",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestRecipeDetails.test_recipe_contains_ingredient_details",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_basic",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_by_cuisine",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_multiple_filters",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_cost_filter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestAdvancedSearchEndpoint",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestAdvancedSearchEndpoint.test_advanced_search_with_time_filters",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestCuisineEndpoints",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestCuisineEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestCuisineEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine_with_limit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestCuisineEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestCuisineEndpoints.test_get_recipes_by_cuisine_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_easy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_medium",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_get_recipes_by_difficulty_hard",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestDifficultyEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestDifficultyEndpoints.test_invalid_difficulty_returns_400",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestEquipmentEndpoints",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEquipmentEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEquipmentEndpoints.test_get_equipment_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEquipmentEndpoints",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEquipmentEndpoints.test_equipment_list_items_have_required_fields",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestSearchResponseStructure",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestSearchResponseStructure",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_basic_search_response_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestSearchResponseStructure",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_ingredient_search_response_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestSearchResponseStructure",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestSearchResponseStructure.test_advanced_search_response_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_e2e_recipe_query.py",
+      "to": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_special_characters",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_unicode_characters",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_search_with_very_large_limit",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_advanced_search_invalid_difficulty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_e2e_recipe_query::TestEdgeCases",
+      "to": "repo::test_scripts/e2e/test_e2e_recipe_query.py::TestEdgeCases.test_advanced_search_invalid_cost",
+      "relation": "contains"
+    }
+  ]
+}

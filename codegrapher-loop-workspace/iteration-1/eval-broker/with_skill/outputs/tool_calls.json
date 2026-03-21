@@ -1,0 +1,32 @@
+[
+  {
+    "tool": "graph_query",
+    "description": "Load feature_stress.json and filter all nodes where file path contains 'broker'",
+    "result_summary": "Found 69 nodes: 6 file nodes (main.cc, relay.h, relay.cc, router.h, router.cc, state_machine.h, state_machine.cc, broker_config.xml), plus symbol and type nodes. Key types: Session, RoutingKey, RoutingTable, BrokerFSM, BrokerState, RawBytes, EventBus."
+  },
+  {
+    "tool": "graph_query",
+    "description": "Extract all edges where from or to node is a broker node, filtered to calls/produces/consumes/maps_to/typedef_of relations",
+    "result_summary": "Found ~130 relevant edges. Key call chain: on_msg_received calls inspect_header, lookup_route, forward_message, dispatch_event. broker_handle_listening calls on_msg_received. broker_handle_forwarding calls forward_message, dispatch_event. dispatch_event calls EventBus."
+  },
+  {
+    "tool": "graph_query",
+    "description": "Find RoutingKey type and its producers/consumers",
+    "result_summary": "inspect_header produces RoutingKey. lookup_route consumes RoutingKey and also consumes RoutingTable. load_routing_table produces RoutingTable. broker_config.xml defines RoutingTable (control-role config input)."
+  },
+  {
+    "tool": "graph_query",
+    "description": "Find Session type and its connections",
+    "result_summary": "Session defined in relay.h. session_create produces Session. session_destroy produces and consumes Session. on_msg_received produces and consumes Session. Session.header has uses_type edge to Header."
+  },
+  {
+    "tool": "graph_query",
+    "description": "Find EventBus and all nodes with calls edges to it",
+    "result_summary": "EventBus is a type node defined in relay.h (broker copy) and also in types.h (producer) and output.h (consumer). broker dispatch_event has calls edge to EventBus. broker_subscribe_all produces and consumes EventBus."
+  },
+  {
+    "tool": "graph_query",
+    "description": "Identify relay pattern: check for symmetric produces+consumes on same type within broker handlers",
+    "result_summary": "All 4 broker FSM handlers (listening, routing, forwarding, error_recovery) both produce AND consume RawBytes and BrokerFSM. on_msg_received, forward_message, dispatch_event all show symmetric RawBytes produce+consume. This is the relay:true encoding."
+  }
+]

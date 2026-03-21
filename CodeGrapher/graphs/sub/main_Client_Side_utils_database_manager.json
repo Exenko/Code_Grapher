@@ -1,0 +1,1150 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/utils/database_manager.py",
+  "stats": {
+    "nodes": 55,
+    "edges": 107
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/utils/database_manager.py",
+      "type": "file",
+      "label": "database_manager.py",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::database_manager::LocalDatabaseManager",
+      "type": "type",
+      "label": "LocalDatabaseManager",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 8,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.__init__",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.__init__",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 9,
+      "language": "python",
+      "x": 59.59430146451658,
+      "y": 6.965574847513814
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "type": "symbol",
+      "label": "LocalDatabaseManager._get_connection",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 20,
+      "language": "python",
+      "x": 58.38269223478943,
+      "y": 13.83695224454641
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._defer_access_update",
+      "type": "symbol",
+      "label": "LocalDatabaseManager._defer_access_update",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 40,
+      "language": "python",
+      "x": 56.381557247154504,
+      "y": 20.521208599540124
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.flush_access_counts",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.flush_access_counts",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 48,
+      "language": "python",
+      "x": 53.61795841940474,
+      "y": 26.92795081202773
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.close",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.close",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 69,
+      "language": "python",
+      "x": 50.12926868477619,
+      "y": 32.97053868424836
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.__del__",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.__del__",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 79,
+      "language": "python",
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._hash_password",
+      "type": "symbol",
+      "label": "LocalDatabaseManager._hash_password",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 86,
+      "language": "python",
+      "x": 41.17449827212402,
+      "y": 43.64241849438292
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._verify_password",
+      "type": "symbol",
+      "label": "LocalDatabaseManager._verify_password",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 97,
+      "language": "python",
+      "x": 35.82951550216717,
+      "y": 48.127391565302624
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_with_admin",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.create_household_with_admin",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 104,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.authenticate_household",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.authenticate_household",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 185,
+      "language": "python",
+      "x": 23.764785962349414,
+      "y": 55.09296641281644
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_households",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_all_households",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 224,
+      "language": "python",
+      "x": 17.20819396266542,
+      "y": 57.47937073892933
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_info",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_household_info",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 255,
+      "language": "python",
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_members",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_household_members",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 282,
+      "language": "python",
+      "x": 3.4886897346285406,
+      "y": 59.89848949627609
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_users",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_all_users",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 316,
+      "language": "python",
+      "x": -3.4886897346285464,
+      "y": 59.89848949627609
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.create_household",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 338,
+      "language": "python",
+      "x": -10.418890660015805,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_user",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.create_user",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 361,
+      "language": "python",
+      "x": -17.208193962665412,
+      "y": 57.47937073892933
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_user_preferences",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.save_user_preferences",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 380,
+      "language": "python",
+      "x": -23.764785962349407,
+      "y": 55.09296641281644
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_user_preferences",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.load_user_preferences",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 425,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_household_data",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.load_household_data",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 474,
+      "language": "python",
+      "x": -35.829515502167155,
+      "y": 48.12739156530264
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.search_geographic_hierarchy",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.search_geographic_hierarchy",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 482,
+      "language": "python",
+      "x": -41.17449827212401,
+      "y": 43.64241849438293
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_children",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_geographic_children",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 506,
+      "language": "python",
+      "x": -45.96266658713869,
+      "y": 38.567256581192346
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_fusion_preference",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.save_fusion_preference",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 529,
+      "language": "python",
+      "x": -50.12926868477618,
+      "y": 32.970538684248375
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_user_fusion_preferences",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_user_fusion_preferences",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 542,
+      "language": "python",
+      "x": -53.61795841940473,
+      "y": 26.92795081202774
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_hierarchy",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_geographic_hierarchy",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 563,
+      "language": "python",
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_allergen_hierarchy",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_allergen_hierarchy",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 587,
+      "language": "python",
+      "x": -58.38269223478943,
+      "y": 13.83695224454642
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_diet_types",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_diet_types",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 610,
+      "language": "python",
+      "x": -59.59430146451658,
+      "y": 6.965574847513795
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_equipment_types",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_equipment_types",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 627,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_database_stats",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_database_stats",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 644,
+      "language": "python",
+      "x": -59.59430146451658,
+      "y": -6.965574847513808
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_server_account_id",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.save_server_account_id",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 669,
+      "language": "python",
+      "x": -58.38269223478944,
+      "y": -13.836952244546405
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_server_account_id",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_server_account_id",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 710,
+      "language": "python",
+      "x": -56.38155724715451,
+      "y": -20.521208599540092
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_token_balance",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.update_token_balance",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 738,
+      "language": "python",
+      "x": -53.61795841940474,
+      "y": -26.927950812027728
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_token_balance",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_token_balance",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 769,
+      "language": "python",
+      "x": -50.12926868477619,
+      "y": -32.97053868424836
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipes_batch",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.cache_recipes_batch",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 799,
+      "language": "python",
+      "x": -45.96266658713868,
+      "y": -38.56725658119235
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cached_recipe",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_cached_recipe",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 872,
+      "language": "python",
+      "x": -41.17449827212402,
+      "y": -43.642418494382916
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_history",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.add_recipe_to_history",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 943,
+      "language": "python",
+      "x": -35.82951550216717,
+      "y": -48.127391565302624
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_last_served_date",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_recipe_last_served_date",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 972,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_history",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_recipe_history",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1000,
+      "language": "python",
+      "x": -23.76478596234941,
+      "y": -55.09296641281644
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_recipe",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.create_household_recipe",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1037,
+      "language": "python",
+      "x": -17.20819396266544,
+      "y": -57.479370738929326
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_recipe",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_household_recipe",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1109,
+      "language": "python",
+      "x": -10.418890660015819,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_household_recipes",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_all_household_recipes",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1168,
+      "language": "python",
+      "x": -3.4886897346285743,
+      "y": -59.89848949627609
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_to_household_favorites",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.add_to_household_favorites",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1228,
+      "language": "python",
+      "x": 3.488689734628499,
+      "y": -59.8984894962761
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_favorites",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_household_favorites",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1257,
+      "language": "python",
+      "x": 10.41889066001585,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_sync_state",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_cuisine_hierarchy_sync_state",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1294,
+      "language": "python",
+      "x": 17.20819396266542,
+      "y": -57.47937073892933
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_cuisine_hierarchy_sync_state",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.update_cuisine_hierarchy_sync_state",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1321,
+      "language": "python",
+      "x": 23.76478596234939,
+      "y": -55.09296641281645
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.sync_cuisine_hierarchy",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.sync_cuisine_hierarchy",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1347,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_cuisine_hierarchy",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1387,
+      "language": "python",
+      "x": 35.82951550216715,
+      "y": -48.12739156530264
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_by_path",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_cuisine_by_path",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1419,
+      "language": "python",
+      "x": 41.174498272124026,
+      "y": -43.642418494382916
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_path",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_cuisine_hierarchy_path",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1454,
+      "language": "python",
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipe_with_flexibility",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.cache_recipe_with_flexibility",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1484,
+      "language": "python",
+      "x": 50.129268684776164,
+      "y": -32.9705386842484
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_cached_recipes",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_all_cached_recipes",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1498,
+      "language": "python",
+      "x": 53.61795841940473,
+      "y": -26.927950812027746
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_queue",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.add_recipe_to_queue",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1576,
+      "language": "python",
+      "x": 56.38155724715448,
+      "y": -20.521208599540167
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_settings",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.get_household_settings",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1616,
+      "language": "python",
+      "x": 58.382692234789445,
+      "y": -13.836952244546374
+    },
+    {
+      "id": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.fetch_household_meal_availability",
+      "type": "symbol",
+      "label": "LocalDatabaseManager.fetch_household_meal_availability",
+      "file": "Client_Side/utils/database_manager.py",
+      "line": 1663,
+      "language": "python",
+      "x": 59.59430146451658,
+      "y": -6.965574847513802
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/utils/database_manager.py",
+      "to": "repo::database_manager::LocalDatabaseManager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._defer_access_update",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._defer_access_update",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.flush_access_counts",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.flush_access_counts",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.flush_access_counts",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.close",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.close",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.flush_access_counts",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.__del__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.__del__",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.close",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._hash_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._verify_password",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._verify_password",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._hash_password",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_with_admin",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_with_admin",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_with_admin",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._hash_password",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.authenticate_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.authenticate_household",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.authenticate_household",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._verify_password",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_households",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_households",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_info",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_info",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_members",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_members",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_users",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_users",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_user",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_user_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_user_preferences",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_user_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_user_preferences",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_household_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.load_household_data",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_info",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.search_geographic_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.search_geographic_hierarchy",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_children",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_children",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_fusion_preference",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_fusion_preference",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_user_fusion_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_user_fusion_preferences",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_geographic_hierarchy",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_allergen_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_allergen_hierarchy",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_diet_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_diet_types",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_equipment_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_equipment_types",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_database_stats",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_database_stats",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_server_account_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.save_server_account_id",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_server_account_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_server_account_id",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_token_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_token_balance",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_token_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_token_balance",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipes_batch",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipes_batch",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cached_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cached_recipe",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cached_recipe",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._defer_access_update",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_history",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_history",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_last_served_date",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_last_served_date",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_history",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_recipe_history",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.create_household_recipe",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_recipe",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_household_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_household_recipes",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_to_household_favorites",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_to_household_favorites",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_favorites",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_favorites",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_sync_state",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_sync_state",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_cuisine_hierarchy_sync_state",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.update_cuisine_hierarchy_sync_state",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.sync_cuisine_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.sync_cuisine_hierarchy",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_by_path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_by_path",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_path",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_cuisine_hierarchy_path",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipe_with_flexibility",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipe_with_flexibility",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.cache_recipes_batch",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_cached_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_all_cached_recipes",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_queue",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.add_recipe_to_queue",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_settings",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.get_household_settings",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::database_manager::LocalDatabaseManager",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.fetch_household_meal_availability",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager.fetch_household_meal_availability",
+      "to": "repo::Client_Side/utils/database_manager.py::LocalDatabaseManager._get_connection",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

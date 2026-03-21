@@ -1,0 +1,39 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/test_preferences_load.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/test_preferences_load.py",
+      "type": "file",
+      "label": "test_preferences_load.py",
+      "file": "Client_Side/test_preferences_load.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/test_preferences_load.py::test_preferences_load",
+      "type": "symbol",
+      "label": "test_preferences_load",
+      "file": "Client_Side/test_preferences_load.py",
+      "line": 13,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/test_preferences_load.py",
+      "to": "repo::Client_Side/test_preferences_load.py::test_preferences_load",
+      "relation": "defines"
+    }
+  ]
+}

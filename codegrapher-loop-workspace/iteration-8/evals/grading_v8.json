@@ -1,0 +1,205 @@
+{
+  "iteration": 8,
+  "date": "2026-03-21",
+  "thresholds": {
+    "node_recall": 0.80,
+    "edge_recall": 0.70,
+    "hallucination": 0.15
+  },
+  "pass_rate": "2/8 (25%)",
+  "runs": [
+    {
+      "name": "master_ingredients_loader_v2",
+      "file": "Server_Side/db/master_ingredients_loader.py",
+      "diagram_type": "flowchart TB",
+      "version": "v2",
+      "gt_nodes": 11,
+      "gt_edges": 11,
+      "skill_nodes": 32,
+      "skill_edges": 52,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.74,
+      "pass": false,
+      "failure_reason": "hallucination=0.74 >> 0.15 threshold",
+      "root_cause": "cross-file terminal nodes rule applied (all GT DB nodes present) but agent created duplicate per-call-site nodes (db_execute1, db_execute2, db_connect1, db_connect2) instead of shared terminal nodes. Also included extra non-pipeline methods: setup_logging, _load_hierarchy, _validate_hierarchy, get_database(), get_placeholder(), db_util.table_exists(), db_util.rollback().",
+      "fix_needed": "Shared terminal node rule: create ONE terminal node per distinct cross-file method name; multiple callers point to it. Main pipeline only: exclude methods not in the primary call chain."
+    },
+    {
+      "name": "cuisine_hierarchy_loader_v2",
+      "file": "Server_Side/db/cuisine_hierarchy_loader.py",
+      "diagram_type": "flowchart TB",
+      "version": "v2",
+      "gt_nodes": 7,
+      "gt_edges": 6,
+      "skill_nodes": 11,
+      "skill_edges": 10,
+      "node_recall": 1.00,
+      "edge_recall": 0.83,
+      "hallucination": 0.43,
+      "pass": false,
+      "failure_reason": "hallucination=0.43 >> 0.15 threshold",
+      "root_cause": "cross-file terminal nodes rule applied (db.execute, db.commit, db.fetch_one present) but included extra nodes: __init__, _load_data, generate_report (not in main pipeline), db.rollback (exception path excluded from GT). Missing GT edge: db.commit → _process_node (agent shows load_hierarchy → _process_node instead, skipping the chain through db.commit).",
+      "fix_needed": "Main pipeline only rule: exclude initialization chains (__init__, _load_data), utility methods (generate_report), and exception paths (rollback). Preserve the sequential chain structure (A→B→C→D) rather than flattening to common ancestor."
+    },
+    {
+      "name": "sync_v2",
+      "file": "Server_Side/api/routes/sync.py",
+      "diagram_type": "sequenceDiagram",
+      "version": "v2",
+      "gt_actors": 3,
+      "gt_messages": 3,
+      "skill_actors": 3,
+      "skill_messages": 4,
+      "node_recall": 1.00,
+      "edge_recall": 0.33,
+      "hallucination": 0.50,
+      "pass": false,
+      "failure_reason": "edge_recall=0.33 < 0.70 threshold AND hallucination=0.50 >> 0.15",
+      "root_cause": "Python-files-only rule correctly applied (no FastAPI Client or PostgreSQL DB actors). But agent failed to include sync.py's direct db.execute() and db.fetchall() calls as sync→pgutil messages. Agent treated 'db.execute()' as 'unresolved' because parser didn't create cross-file edges for instance method calls on a returned object (db = get_database() returns PostgresDatabaseUtility). Agent then showed library internals (factory→pgutil, pgutil→factory) violating no-library-traversal rule.",
+      "fix_needed": "Instance method tracking rule: when a local variable holds an instance from another Python file (e.g., db = get_database() returns PostgresDatabaseUtility from pg_database_utility.py), ALL method calls on that variable (db.execute, db.fetchall) are cross-file calls to that file. Show them as Actor→target: method() messages."
+    },
+    {
+      "name": "local_recommender_v1",
+      "file": "Client_Side/utils/local_recommender.py",
+      "diagram_type": "classDiagram",
+      "version": "v1",
+      "gt_nodes": 3,
+      "gt_edges": 0,
+      "skill_nodes": 3,
+      "skill_edges": 0,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.00,
+      "pass": true,
+      "notes": "Perfect match. Both GT and skill correctly identified 3 classes with 0 structural edges (all fields are primitives or generic containers). classDiagram rules correctly applied."
+    },
+    {
+      "name": "overlap_sync_manager_v1",
+      "file": "Client_Side/utils/overlap_sync_manager.py",
+      "diagram_type": "sequenceDiagram",
+      "version": "v1",
+      "gt_actors": 1,
+      "gt_messages": 0,
+      "skill_actors": 2,
+      "skill_messages": 1,
+      "node_recall": 1.00,
+      "edge_recall": 1.00,
+      "hallucination": 0.67,
+      "pass": false,
+      "failure_reason": "hallucination=0.67 >> 0.15 threshold",
+      "root_cause": "DEGENERATE CASE: overlap_sync_manager.py uses only sqlite3 (stdlib) — no cross-file calls to other project Python files. Correct diagram has 1 actor and 0 messages. Skill invented a 'test_sync_manager' caller (hallucinated). Also: sequenceDiagram is the wrong diagram type for this file — classDiagram would be more appropriate.",
+      "fix_needed": "Degenerate case rule: if no cross-file Python file calls exist, produce diagram with ONLY the entry file as participant and 0 messages. Do not invent test harnesses or callers. Note: poor diagram type selection; sequenceDiagram requires cross-file call structure."
+    },
+    {
+      "name": "reference_data_loader_v1",
+      "file": "Client_Side/utils/reference_data_loader.py",
+      "diagram_type": "flowchart TB",
+      "version": "v1",
+      "gt_nodes": 15,
+      "gt_edges": 12,
+      "skill_nodes": 15,
+      "skill_edges": 13,
+      "node_recall": 0.88,
+      "edge_recall": 0.73,
+      "hallucination": 0.25,
+      "pass": false,
+      "failure_reason": "hallucination=0.25 > 0.15 threshold (borderline fail — only 3 extra stdlib nodes)",
+      "root_cause": "Skill included json.load(), open(), Path.exists() as cross-file terminal nodes. GT correctly excluded these (file I/O is stdlib, not cross-file project DB utilities). The cross-file terminal nodes rule was over-applied to stdlib. Missing GT edge: get_cuisine_suggestions → _extract_all_cuisine_paths not captured by skill.",
+      "fix_needed": "Stdlib exclusion rule: json.load(), open(), Path.exists(), yaml.load() are NOT cross-file terminal nodes. Only project-internal DB utility calls and direct DB library calls (sqlite3, psycopg2) are terminal nodes."
+    },
+    {
+      "name": "populate_reference_data_v1",
+      "file": "Client_Side/first_boot/populate_reference_data.py",
+      "diagram_type": "flowchart TB",
+      "version": "v1",
+      "gt_nodes": 45,
+      "gt_edges": 48,
+      "skill_nodes": 16,
+      "skill_edges": 35,
+      "node_recall": 0.89,
+      "edge_recall": 0.73,
+      "hallucination": 0.03,
+      "pass": true,
+      "notes": "PASS despite large size discrepancy (16 vs 45 nodes). Skill used shared terminal node pattern (1 sqlite3.connect() pointed to by all callers) vs GT's per-call-site pattern (6 separate sqlite3.connect() instances). Shared-node approach correctly covered 40/45 GT node concepts. json.load correctly excluded. All skill edges have GT equivalents. GT calibration note: GT had per-call-site duplication which inflates node/edge counts — shared node approach is more practical."
+    },
+    {
+      "name": "recipe_entry_view_v1",
+      "file": "Client_Side/ui_new/views/recipe_entry_view.py",
+      "diagram_type": "classDiagram",
+      "version": "v1",
+      "gt_nodes": 7,
+      "gt_edges": 1,
+      "skill_nodes": 2,
+      "skill_edges": 0,
+      "node_recall": 0.29,
+      "edge_recall": 0.00,
+      "hallucination": 0.00,
+      "pass": false,
+      "failure_reason": "node_recall=0.29 << 0.80 threshold AND edge_recall=0.00 << 0.70 threshold",
+      "root_cause": "Skill only read recipe_entry_view.py (2 classes: IngredientRowWidget, RecipeEntryView). GT included 5 additional classes from imported project files (AutocompleteEntryEnhanced, EnhancedAutocompletePopup, NumericEntry, YamlPreviewDialog, RecipeYamlConverter) and the 1 structural edge between imported classes. Skill prompt does not instruct reading imported local class files.",
+      "fix_needed": "Multi-file classDiagram rule: when primary file imports local project classes that appear as field types, read those imported files too. Include classes from imported project files in the classDiagram. This is how a complete class diagram is built across file boundaries."
+    }
+  ],
+  "iteration_summary": {
+    "v2_reruns": {
+      "count": 3,
+      "passed": 0,
+      "note": "None of the 3 v2 re-runs passed. Cross-file terminal nodes rule was applied but over-elaboration (duplicate nodes, extra non-pipeline methods) caused high hallucination. sync.py v2 failed because agent did not trace db.execute/db.fetchall as cross-file calls to pg_database_utility.py."
+    },
+    "new_entries": {
+      "count": 5,
+      "passed": 2,
+      "passing": ["local_recommender_v1", "populate_reference_data_v1"],
+      "failing": ["overlap_sync_manager_v1", "reference_data_loader_v1", "recipe_entry_view_v1"]
+    }
+  },
+  "new_gaps_identified": [
+    {
+      "id": "flowchart-shared-terminal-nodes",
+      "description": "Use ONE shared terminal node per distinct cross-file method name. Don't create db_execute1, db_execute2, db_connect1, db_connect2 etc. Multiple callers can all point to the same terminal node.",
+      "affects": ["master_ingredients_loader", "cuisine_hierarchy_loader"],
+      "priority": "critical"
+    },
+    {
+      "id": "flowchart-main-pipeline-only",
+      "description": "Flowchart must show ONLY the primary execution pipeline. Exclude: initialization helpers not in main call chain (__init__ internals, _load_data), exception paths (rollback, error handlers unless central), utility report methods (generate_report), dead code.",
+      "affects": ["master_ingredients_loader", "cuisine_hierarchy_loader"],
+      "priority": "critical"
+    },
+    {
+      "id": "sequenceDiagram-instance-method-tracking",
+      "description": "When a local variable holds an instance returned from another Python file (e.g., db = get_database() → PostgresDatabaseUtility), ALL method calls on that variable (db.execute, db.fetchall) are cross-file messages to that file. Read source to identify the return type.",
+      "affects": ["sync.py"],
+      "priority": "critical"
+    },
+    {
+      "id": "sequenceDiagram-degenerate-case",
+      "description": "If entry point has NO cross-file calls to other project Python files (only stdlib), produce diagram with 1 actor (self) and 0 messages. Do not invent callers.",
+      "affects": ["overlap_sync_manager"],
+      "priority": "medium"
+    },
+    {
+      "id": "classDiagram-multi-file-scan",
+      "description": "For classDiagram, when primary file imports local project classes that appear as field types, read those imported files too. Include classes from imported project files in the diagram.",
+      "affects": ["recipe_entry_view"],
+      "priority": "high"
+    },
+    {
+      "id": "flowchart-stdlib-exclusion",
+      "description": "json.load(), open(), Path.exists(), yaml.load(), csv.reader() are NOT cross-file terminal nodes. Only project-internal utility calls and direct DB library calls (sqlite3.connect, cursor.execute, conn.commit) are terminal nodes.",
+      "affects": ["reference_data_loader"],
+      "priority": "high"
+    }
+  ],
+  "cumulative_pass_rates": {
+    "iteration_1": "15/15 (100%) - stress test",
+    "iteration_2": "4/5 (80%) - 1 known limitation",
+    "iteration_3": "1/5 (20%)",
+    "iteration_4": "4/4 (100%) - v2 reruns",
+    "iteration_5": "4/5 (80%)",
+    "iteration_6": "4/6 (67%)",
+    "iteration_7": "4/7 (57%)",
+    "iteration_8": "2/8 (25%)"
+  }
+}

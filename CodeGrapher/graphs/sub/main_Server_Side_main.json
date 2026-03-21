@@ -1,0 +1,331 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/main.py",
+  "stats": {
+    "nodes": 16,
+    "edges": 29
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/main.py",
+      "type": "file",
+      "label": "main.py",
+      "file": "Server_Side/main.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/main.py::setup_logging",
+      "type": "symbol",
+      "label": "setup_logging",
+      "file": "Server_Side/main.py",
+      "line": 30,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/main.py::setup_directories",
+      "type": "symbol",
+      "label": "setup_directories",
+      "file": "Server_Side/main.py",
+      "line": 47,
+      "language": "python",
+      "x": 54.812727458556054,
+      "y": 24.40419858454801
+    },
+    {
+      "id": "repo::Server_Side/main.py::validate_data_files",
+      "type": "symbol",
+      "label": "validate_data_files",
+      "file": "Server_Side/main.py",
+      "line": 63,
+      "language": "python",
+      "x": 40.14783638153149,
+      "y": 44.58868952864365
+    },
+    {
+      "id": "repo::Server_Side/main.py::step1_create_database_tables",
+      "type": "symbol",
+      "label": "step1_create_database_tables",
+      "file": "Server_Side/main.py",
+      "line": 97,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Server_Side/main.py::step2_import_data",
+      "type": "symbol",
+      "label": "step2_import_data",
+      "file": "Server_Side/main.py",
+      "line": 131,
+      "language": "python",
+      "x": -6.2717077960592,
+      "y": 59.67131372209641
+    },
+    {
+      "id": "repo::Server_Side/main.py::step2b_load_climate_ingredients",
+      "type": "symbol",
+      "label": "step2b_load_climate_ingredients",
+      "file": "Server_Side/main.py",
+      "line": 186,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Server_Side/main.py::step3_index_allergens",
+      "type": "symbol",
+      "label": "step3_index_allergens",
+      "file": "Server_Side/main.py",
+      "line": 231,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Server_Side/main.py::step4_index_ingredient_overlap",
+      "type": "symbol",
+      "label": "step4_index_ingredient_overlap",
+      "file": "Server_Side/main.py",
+      "line": 259,
+      "language": "python",
+      "x": -58.68885604402834,
+      "y": 12.47470144906556
+    },
+    {
+      "id": "repo::Server_Side/main.py::step6_load_lookup_tables",
+      "type": "symbol",
+      "label": "step6_load_lookup_tables",
+      "file": "Server_Side/main.py",
+      "line": 296,
+      "language": "python",
+      "x": -58.68885604402834,
+      "y": -12.474701449065543
+    },
+    {
+      "id": "repo::Server_Side/main.py::step7_load_cuisine_hierarchy",
+      "type": "symbol",
+      "label": "step7_load_cuisine_hierarchy",
+      "file": "Server_Side/main.py",
+      "line": 319,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Server_Side/main.py::step8_load_taxonomy",
+      "type": "symbol",
+      "label": "step8_load_taxonomy",
+      "file": "Server_Side/main.py",
+      "line": 350,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Server_Side/main.py::step9_import_recipes",
+      "type": "symbol",
+      "label": "step9_import_recipes",
+      "file": "Server_Side/main.py",
+      "line": 380,
+      "language": "python",
+      "x": -6.271707796059254,
+      "y": -59.6713137220964
+    },
+    {
+      "id": "repo::Server_Side/main.py::step10_derive_dietary_restrictions",
+      "type": "symbol",
+      "label": "step10_derive_dietary_restrictions",
+      "file": "Server_Side/main.py",
+      "line": 429,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Server_Side/main.py::generate_completion_report",
+      "type": "symbol",
+      "label": "generate_completion_report",
+      "file": "Server_Side/main.py",
+      "line": 473,
+      "language": "python",
+      "x": 40.147836381531505,
+      "y": -44.58868952864364
+    },
+    {
+      "id": "repo::Server_Side/main.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/main.py",
+      "line": 603,
+      "language": "python",
+      "x": 54.81272745855606,
+      "y": -24.40419858454801
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::setup_logging",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::setup_directories",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::validate_data_files",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step1_create_database_tables",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step2_import_data",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py::step2_import_data",
+      "to": "repo::Server_Side/main.py::validate_data_files",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step2b_load_climate_ingredients",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step3_index_allergens",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step4_index_ingredient_overlap",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step6_load_lookup_tables",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step7_load_cuisine_hierarchy",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step8_load_taxonomy",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step9_import_recipes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::step10_derive_dietary_restrictions",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::generate_completion_report",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py",
+      "to": "repo::Server_Side/main.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::setup_logging",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::setup_directories",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step1_create_database_tables",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step2_import_data",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step2b_load_climate_ingredients",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step3_index_allergens",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step4_index_ingredient_overlap",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step6_load_lookup_tables",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step7_load_cuisine_hierarchy",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step8_load_taxonomy",
+      "relation": "calls",
+      "seq": 14
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step9_import_recipes",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::step10_derive_dietary_restrictions",
+      "relation": "calls",
+      "seq": 16
+    },
+    {
+      "from": "repo::Server_Side/main.py::main",
+      "to": "repo::Server_Side/main.py::generate_completion_report",
+      "relation": "calls",
+      "seq": 17
+    }
+  ]
+}

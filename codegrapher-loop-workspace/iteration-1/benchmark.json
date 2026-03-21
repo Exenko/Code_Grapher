@@ -1,0 +1,91 @@
+{
+  "skill_name": "codegrapher-loop",
+  "iteration": 1,
+  "generated": "2026-03-17",
+  "evals": [
+    {
+      "eval_name": "eval-broker",
+      "with_skill": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "without_skill": {
+        "pass_rate": null,
+        "note": "Ground truth agent — not graded against same assertions (produces reference, not evaluated)"
+      },
+      "qualitative": {
+        "node_coverage": "high — all 4-hop chain symbols present plus FSM state handlers and type nodes",
+        "edge_coverage": "high — call chain, produces/consumes for key types all captured",
+        "relay_semantic": "captured via symmetric produces+consumes pattern inference",
+        "key_gap": "relay:true is not a graph edge attribute — must be inferred from symmetric produce+consume pattern"
+      }
+    },
+    {
+      "eval_name": "eval-consumer",
+      "with_skill": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "without_skill": {
+        "pass_rate": null,
+        "note": "Ground truth agent — reference only"
+      },
+      "qualitative": {
+        "node_coverage": "high — full 6-hop chain, decoder branch, sub-FSM chain all present",
+        "edge_coverage": "high — detect_format->WireFormat->decode_message, decode_proto/wsdl branches, process_payload sub-chain",
+        "maps_to_gap": "LegacyEvent maps_to bridge NOT directly visible from consumer-side graph — skill correctly identified as gap",
+        "key_gap": "maps_to bridge between LegacyEvent variants requires cross-subsystem type tracing (find_type across all nodes)"
+      }
+    },
+    {
+      "eval_name": "eval-producer",
+      "with_skill": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "without_skill": {
+        "pass_rate": null,
+        "note": "Ground truth agent — reference only"
+      },
+      "qualitative": {
+        "node_coverage": "high — typedef chain (all 5 nodes), proto/WSDL paths, LegacyEvent_CC all present",
+        "edge_coverage": "high — typedef_of chain, serialize_proto/wsdl paths, maps_to bridge",
+        "ptr_depth_gap": "ptr_depth NOT stored on typedef edges in graph JSON — chain order implied only",
+        "select_serializer_gap": "select_serializer has no call edges to serializer functions — branch split is implicit"
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_pass_rate": 1.0,
+    "evals_passed_all": 3,
+    "evals_with_any_failure": 0
+  },
+  "parser_gaps_identified": [
+    {
+      "gap": "relay:true not stored as edge attribute",
+      "impact": "medium — broker relay semantics require inference from symmetric produce+consume",
+      "fix": "Add relay boolean field to edges when parser detects broker/relay pattern"
+    },
+    {
+      "gap": "ptr_depth not stored on typedef_of edges",
+      "impact": "low-medium — typedef chain order implies ptr_depth but it's not explicit",
+      "fix": "Emit ptr_depth attribute on typedef_of edges in parser_cpp.py"
+    },
+    {
+      "gap": "select_serializer has no call edges to serializer functions",
+      "impact": "medium — branch split in encode path is invisible in graph",
+      "fix": "Parser should emit calls edges from select_serializer based on what it calls/returns"
+    },
+    {
+      "gap": "maps_to bridge not visible from consumer side",
+      "impact": "low — consumer decoder only sees RawBytes->DecodedMessage; WSDL/proto type mapping is producer-side",
+      "fix": "Could add cross-reference edges from consumer decoder to LegacyEvent types when format detection is present"
+    }
+  ]
+}

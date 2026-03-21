@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/autocomplete_test.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/autocomplete_test.py",
+      "type": "file",
+      "label": "autocomplete_test.py",
+      "file": "Server_Side/autocomplete_test.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/autocomplete_test.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/autocomplete_test.py",
+      "line": 9,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/autocomplete_test.py",
+      "to": "repo::Server_Side/autocomplete_test.py::main",
+      "relation": "defines"
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/main_window.py",
+  "stats": {
+    "nodes": 34,
+    "edges": 40
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py",
+      "type": "file",
+      "label": "main_window.py",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::main_window::MainWindow",
+      "type": "type",
+      "label": "MainWindow",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 21,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "type": "symbol",
+      "label": "MainWindow.__init__",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 30,
+      "language": "python",
+      "x": 58.915721835762405,
+      "y": 11.355074661624611
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_window",
+      "type": "symbol",
+      "label": "MainWindow._setup_window",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 46,
+      "language": "python",
+      "x": 55.70207598096436,
+      "y": 22.29974733961965
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_ui",
+      "type": "symbol",
+      "label": "MainWindow._setup_ui",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 54,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": 32.43844904733585
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._load_theme_preference",
+      "type": "symbol",
+      "label": "MainWindow._load_theme_preference",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 74,
+      "language": "python",
+      "x": 43.424042286304214,
+      "y": 41.404740688926715
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._apply_theme",
+      "type": "symbol",
+      "label": "MainWindow._apply_theme",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 88,
+      "language": "python",
+      "x": 34.80341457427189,
+      "y": 48.874557123020146
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._on_theme_changed",
+      "type": "symbol",
+      "label": "MainWindow._on_theme_changed",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 93,
+      "language": "python",
+      "x": 24.924900780113187,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._cycle_theme",
+      "type": "symbol",
+      "label": "MainWindow._cycle_theme",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 102,
+      "language": "python",
+      "x": 14.145536130565636,
+      "y": 58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_theme_manager",
+      "type": "symbol",
+      "label": "MainWindow.get_theme_manager",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 110,
+      "language": "python",
+      "x": 2.8549149494245443,
+      "y": 59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_theme",
+      "type": "symbol",
+      "label": "MainWindow.set_theme",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 114,
+      "language": "python",
+      "x": -8.538890296397101,
+      "y": 59.38928651285597
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.register_view",
+      "type": "symbol",
+      "label": "MainWindow.register_view",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 120,
+      "language": "python",
+      "x": -19.6240777990453,
+      "y": 56.70004912288011
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow._get_or_create_view",
+      "type": "symbol",
+      "label": "MainWindow._get_or_create_view",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 136,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.switch_view",
+      "type": "symbol",
+      "label": "MainWindow.switch_view",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 157,
+      "language": "python",
+      "x": -39.2916440367171,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_view_name",
+      "type": "symbol",
+      "label": "MainWindow.get_current_view_name",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 176,
+      "language": "python",
+      "x": -47.16318568456725,
+      "y": 37.08953917323631
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_view",
+      "type": "symbol",
+      "label": "MainWindow.get_view",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 180,
+      "language": "python",
+      "x": -53.3301269192954,
+      "y": 27.49359130364463
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_database_manager",
+      "type": "symbol",
+      "label": "MainWindow.get_database_manager",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 187,
+      "language": "python",
+      "x": -57.56957841686984,
+      "y": 16.903953410485805
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_server_client",
+      "type": "symbol",
+      "label": "MainWindow.get_server_client",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 193,
+      "language": "python",
+      "x": -59.728315354385074,
+      "y": 5.703362598250973
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_user",
+      "type": "symbol",
+      "label": "MainWindow.get_current_user",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 199,
+      "language": "python",
+      "x": -59.728315354385074,
+      "y": -5.7033625982509575
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_current_user",
+      "type": "symbol",
+      "label": "MainWindow.set_current_user",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 205,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": -16.903953410485762
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_household_id",
+      "type": "symbol",
+      "label": "MainWindow.get_household_id",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 210,
+      "language": "python",
+      "x": -53.330126919295424,
+      "y": -27.493591303644596
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_household_id",
+      "type": "symbol",
+      "label": "MainWindow.set_household_id",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 216,
+      "language": "python",
+      "x": -47.163185684567246,
+      "y": -37.08953917323632
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_meal_plan_manager",
+      "type": "symbol",
+      "label": "MainWindow.get_meal_plan_manager",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 221,
+      "language": "python",
+      "x": -39.291644036717095,
+      "y": -45.344974461255504
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_seasonal_calculator",
+      "type": "symbol",
+      "label": "MainWindow.get_seasonal_calculator",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 227,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_local_recommender",
+      "type": "symbol",
+      "label": "MainWindow.get_local_recommender",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 233,
+      "language": "python",
+      "x": -19.624077799045313,
+      "y": -56.7000491228801
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_preference_compiler",
+      "type": "symbol",
+      "label": "MainWindow.get_preference_compiler",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 239,
+      "language": "python",
+      "x": -8.538890296397113,
+      "y": -59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.config_manager",
+      "type": "symbol",
+      "label": "MainWindow.config_manager",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 246,
+      "language": "python",
+      "x": 2.854914949424543,
+      "y": -59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.on_login_success",
+      "type": "symbol",
+      "label": "MainWindow.on_login_success",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 252,
+      "language": "python",
+      "x": 14.145536130565649,
+      "y": -58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.on_logout",
+      "type": "symbol",
+      "label": "MainWindow.on_logout",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 257,
+      "language": "python",
+      "x": 24.924900780113163,
+      "y": -54.577919721271115
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_household_id",
+      "type": "symbol",
+      "label": "MainWindow.get_current_household_id",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 262,
+      "language": "python",
+      "x": 34.803414574271876,
+      "y": -48.87455712302015
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_user_id",
+      "type": "symbol",
+      "label": "MainWindow.get_current_user_id",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 268,
+      "language": "python",
+      "x": 43.42404228630421,
+      "y": -41.40474068892672
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.show_message",
+      "type": "symbol",
+      "label": "MainWindow.show_message",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 276,
+      "language": "python",
+      "x": 50.47521196987085,
+      "y": -32.438449047335894
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.show_status",
+      "type": "symbol",
+      "label": "MainWindow.show_status",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 302,
+      "language": "python",
+      "x": 55.70207598096434,
+      "y": -22.299747339619685
+    },
+    {
+      "id": "repo::Client_Side/ui_new/main_window.py::MainWindow.closeEvent",
+      "type": "symbol",
+      "label": "MainWindow.closeEvent",
+      "file": "Client_Side/ui_new/main_window.py",
+      "line": 312,
+      "language": "python",
+      "x": 58.9157218357624,
+      "y": -11.355074661624638
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py",
+      "to": "repo::main_window::MainWindow",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_window",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_ui",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._load_theme_preference",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.__init__",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._apply_theme",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_window",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._load_theme_preference",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._apply_theme",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._on_theme_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow._on_theme_changed",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._apply_theme",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._cycle_theme",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_theme_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_theme",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.register_view",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._get_or_create_view",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.switch_view",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.switch_view",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._get_or_create_view",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_view_name",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_view",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_view",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow._get_or_create_view",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_database_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_server_client",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_current_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.set_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_meal_plan_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_seasonal_calculator",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_local_recommender",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_preference_compiler",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.config_manager",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.on_login_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.on_logout",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.get_current_user_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.show_message",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.show_status",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::main_window::MainWindow",
+      "to": "repo::Client_Side/ui_new/main_window.py::MainWindow.closeEvent",
+      "relation": "contains"
+    }
+  ]
+}

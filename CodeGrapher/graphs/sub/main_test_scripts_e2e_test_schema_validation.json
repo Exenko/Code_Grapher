@@ -1,0 +1,871 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/e2e/test_schema_validation.py",
+  "stats": {
+    "nodes": 54,
+    "edges": 53
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py",
+      "type": "file",
+      "label": "test_schema_validation.py",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_schema_validation::TestGeographicQueries",
+      "type": "type",
+      "label": "TestGeographicQueries",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 48,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.setup",
+      "type": "symbol",
+      "label": "TestGeographicQueries.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 52,
+      "language": "python",
+      "is_test": true,
+      "x": 59.57886576081101,
+      "y": 7.096390255281948
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_get_recipes_by_cuisine_greece",
+      "type": "symbol",
+      "label": "TestGeographicQueries.test_get_recipes_by_cuisine_greece",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 55,
+      "language": "python",
+      "is_test": true,
+      "x": 58.321374844824646,
+      "y": 14.09316274685902
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_cuisine_table_exists",
+      "type": "symbol",
+      "label": "TestGeographicQueries.test_cuisine_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 70,
+      "language": "python",
+      "is_test": true,
+      "x": 56.24517966804726,
+      "y": 20.892098126063924
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_region_to_recipe_mapping_exists",
+      "type": "symbol",
+      "label": "TestGeographicQueries.test_region_to_recipe_mapping_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 75,
+      "language": "python",
+      "is_test": true,
+      "x": 53.37942545968484,
+      "y": 27.397754243622785
+    },
+    {
+      "id": "repo::test_schema_validation::TestAllergenQueries",
+      "type": "type",
+      "label": "TestAllergenQueries",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 80,
+      "language": "python",
+      "is_test": true,
+      "x": 49.764341127012116,
+      "y": 33.518805948219146
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.setup",
+      "type": "symbol",
+      "label": "TestAllergenQueries.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 84,
+      "language": "python",
+      "is_test": true,
+      "x": 45.45067452969721,
+      "y": 39.1693270914313
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_allergen_tables_exist",
+      "type": "symbol",
+      "label": "TestAllergenQueries.test_allergen_tables_exist",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 88,
+      "language": "python",
+      "is_test": true,
+      "x": 40.49898009109263,
+      "y": 44.26999674250364
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_allergen_hierarchy_populated",
+      "type": "symbol",
+      "label": "TestAllergenQueries.test_allergen_hierarchy_populated",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 93,
+      "language": "python",
+      "is_test": true,
+      "x": 34.978768746868326,
+      "y": 48.749212680340875
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_ingredient_allergen_mapping_exists",
+      "type": "symbol",
+      "label": "TestAllergenQueries.test_ingredient_allergen_mapping_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 98,
+      "language": "python",
+      "is_test": true,
+      "x": 28.96753216384469,
+      "y": 52.54409653173821
+    },
+    {
+      "id": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "type": "type",
+      "label": "TestDietaryRestrictionSchema",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 103,
+      "language": "python",
+      "is_test": true,
+      "x": 22.549654926854295,
+      "y": 55.601376445910006
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.setup",
+      "type": "symbol",
+      "label": "TestDietaryRestrictionSchema.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": 15.815229964144068,
+      "y": 57.878134914501516
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_diet_type_table_exists",
+      "type": "symbol",
+      "label": "TestDietaryRestrictionSchema.test_diet_type_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 111,
+      "language": "python",
+      "is_test": true,
+      "x": 8.858793840148877,
+      "y": 59.342411239329834
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_diet_type_populated",
+      "type": "symbol",
+      "label": "TestDietaryRestrictionSchema.test_diet_type_populated",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 116,
+      "language": "python",
+      "is_test": true,
+      "x": 1.77799966935358,
+      "y": 59.973650190527664
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_recipe_dietary_restrictions_table_structure",
+      "type": "symbol",
+      "label": "TestDietaryRestrictionSchema.test_recipe_dietary_restrictions_table_structure",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 121,
+      "language": "python",
+      "is_test": true,
+      "x": -5.327753719376086,
+      "y": 59.76299055691301
+    },
+    {
+      "id": "repo::test_schema_validation::TestMealCategorySchema",
+      "type": "type",
+      "label": "TestMealCategorySchema",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 126,
+      "language": "python",
+      "is_test": true,
+      "x": -12.358717124465896,
+      "y": 58.713389537970244
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.setup",
+      "type": "symbol",
+      "label": "TestMealCategorySchema.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 130,
+      "language": "python",
+      "is_test": true,
+      "x": -19.216191231770257,
+      "y": 56.839581231251486
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_meal_category_table_exists",
+      "type": "symbol",
+      "label": "TestMealCategorySchema.test_meal_category_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 134,
+      "language": "python",
+      "is_test": true,
+      "x": -25.803912136591233,
+      "y": 54.167869797944604
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_meal_category_populated",
+      "type": "symbol",
+      "label": "TestMealCategorySchema.test_meal_category_populated",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 139,
+      "language": "python",
+      "is_test": true,
+      "x": -32.02940267788745,
+      "y": 50.73576021010956
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_recipe_meal_category_junction_exists",
+      "type": "symbol",
+      "label": "TestMealCategorySchema.test_recipe_meal_category_junction_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 144,
+      "language": "python",
+      "is_test": true,
+      "x": -37.80527061490266,
+      "y": 46.59143176308255
+    },
+    {
+      "id": "repo::test_schema_validation::TestSeasonalitySchema",
+      "type": "type",
+      "label": "TestSeasonalitySchema",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 149,
+      "language": "python",
+      "is_test": true,
+      "x": -43.05043542265986,
+      "y": 41.79306174377983
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.setup",
+      "type": "symbol",
+      "label": "TestSeasonalitySchema.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 153,
+      "language": "python",
+      "is_test": true,
+      "x": -47.691266484801204,
+      "y": 36.408008749115595
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_seasonal_buckets_table_exists",
+      "type": "symbol",
+      "label": "TestSeasonalitySchema.test_seasonal_buckets_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 157,
+      "language": "python",
+      "is_test": true,
+      "x": -51.66261670604132,
+      "y": 30.511867118953244
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_seasonal_buckets_has_13_entries",
+      "type": "symbol",
+      "label": "TestSeasonalitySchema.test_seasonal_buckets_has_13_entries",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 162,
+      "language": "python",
+      "is_test": true,
+      "x": -54.908737034581094,
+      "y": 24.187405757278356
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_ingredient_seasonality_table_structure",
+      "type": "symbol",
+      "label": "TestSeasonalitySchema.test_ingredient_seasonality_table_structure",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 167,
+      "language": "python",
+      "is_test": true,
+      "x": -57.38405905659135,
+      "y": 17.523406238218556
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_climate_zone_seasonality_table_exists",
+      "type": "symbol",
+      "label": "TestSeasonalitySchema.test_climate_zone_seasonality_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 172,
+      "language": "python",
+      "is_test": true,
+      "x": -59.05383467685581,
+      "y": 10.61341650735439
+    },
+    {
+      "id": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "type": "type",
+      "label": "TestOverlapOptimizationSchema",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 177,
+      "language": "python",
+      "is_test": true,
+      "x": -59.89462390585929,
+      "y": 3.5544376736228487
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.setup",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 181,
+      "language": "python",
+      "is_test": true,
+      "x": -59.89462390585929,
+      "y": -3.5544376736228336
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_category_table_exists",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_overlap_category_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 185,
+      "language": "python",
+      "is_test": true,
+      "x": -59.05383467685581,
+      "y": -10.613416507354374
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_category_has_parent_id",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_overlap_category_has_parent_id",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 190,
+      "language": "python",
+      "is_test": true,
+      "x": -57.38405905659135,
+      "y": -17.52340623821854
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_terms_table_exists",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_overlap_terms_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 195,
+      "language": "python",
+      "is_test": true,
+      "x": -54.908737034581115,
+      "y": -24.18740575727832
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_ingredient_overlap_mapping_exists",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_ingredient_overlap_mapping_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 200,
+      "language": "python",
+      "is_test": true,
+      "x": -51.66261670604134,
+      "y": -30.511867118953212
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_system_populated",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_overlap_system_populated",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 205,
+      "language": "python",
+      "is_test": true,
+      "x": -47.6912664848012,
+      "y": -36.40800874911561
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_search_by_ingredient_endpoint",
+      "type": "symbol",
+      "label": "TestOverlapOptimizationSchema.test_search_by_ingredient_endpoint",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": -43.050435422659866,
+      "y": -41.793061743779816
+    },
+    {
+      "id": "repo::test_schema_validation::TestRecipeSchema",
+      "type": "type",
+      "label": "TestRecipeSchema",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 223,
+      "language": "python",
+      "is_test": true,
+      "x": -37.80527061490265,
+      "y": -46.591431763082554
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.setup",
+      "type": "symbol",
+      "label": "TestRecipeSchema.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 227,
+      "language": "python",
+      "is_test": true,
+      "x": -32.02940267788746,
+      "y": -50.73576021010956
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipes_table_has_notes_column",
+      "type": "symbol",
+      "label": "TestRecipeSchema.test_recipes_table_has_notes_column",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 231,
+      "language": "python",
+      "is_test": true,
+      "x": -25.803912136591222,
+      "y": -54.16786979794461
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipes_table_has_description_column",
+      "type": "symbol",
+      "label": "TestRecipeSchema.test_recipes_table_has_description_column",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 236,
+      "language": "python",
+      "is_test": true,
+      "x": -19.216191231770285,
+      "y": -56.83958123125148
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipe_ingredients_mapping_exists",
+      "type": "symbol",
+      "label": "TestRecipeSchema.test_recipe_ingredients_mapping_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 241,
+      "language": "python",
+      "is_test": true,
+      "x": -12.35871712446591,
+      "y": -58.71338953797024
+    },
+    {
+      "id": "repo::test_schema_validation::TestMeasurementSystem",
+      "type": "type",
+      "label": "TestMeasurementSystem",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 246,
+      "language": "python",
+      "is_test": true,
+      "x": -5.327753719376127,
+      "y": -59.76299055691301
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.setup",
+      "type": "symbol",
+      "label": "TestMeasurementSystem.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 250,
+      "language": "python",
+      "is_test": true,
+      "x": 1.7779996693535653,
+      "y": -59.973650190527664
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_measurement_unit_table_exists",
+      "type": "symbol",
+      "label": "TestMeasurementSystem.test_measurement_unit_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 254,
+      "language": "python",
+      "is_test": true,
+      "x": 8.858793840148824,
+      "y": -59.34241123932985
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_measurement_system_table_exists",
+      "type": "symbol",
+      "label": "TestMeasurementSystem.test_measurement_system_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 259,
+      "language": "python",
+      "is_test": true,
+      "x": 15.81522996414408,
+      "y": -57.87813491450151
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_unit_conversions_table_exists",
+      "type": "symbol",
+      "label": "TestMeasurementSystem.test_unit_conversions_table_exists",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 264,
+      "language": "python",
+      "is_test": true,
+      "x": 22.54965492685428,
+      "y": -55.601376445910006
+    },
+    {
+      "id": "repo::test_schema_validation::TestIndexes",
+      "type": "type",
+      "label": "TestIndexes",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 269,
+      "language": "python",
+      "is_test": true,
+      "x": 28.967532163844655,
+      "y": -52.544096531738234
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.setup",
+      "type": "symbol",
+      "label": "TestIndexes.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 273,
+      "language": "python",
+      "is_test": true,
+      "x": 34.978768746868305,
+      "y": -48.74921268034089
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.test_ingredient_overlap_index",
+      "type": "symbol",
+      "label": "TestIndexes.test_ingredient_overlap_index",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 277,
+      "language": "python",
+      "is_test": true,
+      "x": 40.49898009109259,
+      "y": -44.26999674250367
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.test_ingredient_allergen_index",
+      "type": "symbol",
+      "label": "TestIndexes.test_ingredient_allergen_index",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 282,
+      "language": "python",
+      "is_test": true,
+      "x": 45.450674529697224,
+      "y": -39.169327091431285
+    },
+    {
+      "id": "repo::test_schema_validation::TestDataIntegrity",
+      "type": "type",
+      "label": "TestDataIntegrity",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 287,
+      "language": "python",
+      "is_test": true,
+      "x": 49.7643411270121,
+      "y": -33.51880594821915
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.setup",
+      "type": "symbol",
+      "label": "TestDataIntegrity.setup",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 291,
+      "language": "python",
+      "is_test": true,
+      "x": 53.37942545968482,
+      "y": -27.397754243622824
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_foreign_keys_can_be_enabled",
+      "type": "symbol",
+      "label": "TestDataIntegrity.test_foreign_keys_can_be_enabled",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 295,
+      "language": "python",
+      "is_test": true,
+      "x": 56.24517966804725,
+      "y": -20.89209812606395
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_recipes_have_ingredients",
+      "type": "symbol",
+      "label": "TestDataIntegrity.test_recipes_have_ingredients",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 300,
+      "language": "python",
+      "is_test": true,
+      "x": 58.321374844824646,
+      "y": -14.093162746859024
+    },
+    {
+      "id": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_no_orphaned_recipe_ingredients",
+      "type": "symbol",
+      "label": "TestDataIntegrity.test_no_orphaned_recipe_ingredients",
+      "file": "test_scripts/e2e/test_schema_validation.py",
+      "line": 305,
+      "language": "python",
+      "is_test": true,
+      "x": 59.57886576081102,
+      "y": -7.09639025528193
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestGeographicQueries",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestGeographicQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestGeographicQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_get_recipes_by_cuisine_greece",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestGeographicQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_cuisine_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestGeographicQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestGeographicQueries.test_region_to_recipe_mapping_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestAllergenQueries",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestAllergenQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestAllergenQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_allergen_tables_exist",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestAllergenQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_allergen_hierarchy_populated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestAllergenQueries",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestAllergenQueries.test_ingredient_allergen_mapping_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_diet_type_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_diet_type_populated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDietaryRestrictionSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDietaryRestrictionSchema.test_recipe_dietary_restrictions_table_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestMealCategorySchema",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMealCategorySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMealCategorySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_meal_category_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMealCategorySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_meal_category_populated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMealCategorySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMealCategorySchema.test_recipe_meal_category_junction_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestSeasonalitySchema",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestSeasonalitySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestSeasonalitySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_seasonal_buckets_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestSeasonalitySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_seasonal_buckets_has_13_entries",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestSeasonalitySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_ingredient_seasonality_table_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestSeasonalitySchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestSeasonalitySchema.test_climate_zone_seasonality_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_category_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_category_has_parent_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_terms_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_ingredient_overlap_mapping_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_overlap_system_populated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestOverlapOptimizationSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestOverlapOptimizationSchema.test_search_by_ingredient_endpoint",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestRecipeSchema",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestRecipeSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestRecipeSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipes_table_has_notes_column",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestRecipeSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipes_table_has_description_column",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestRecipeSchema",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestRecipeSchema.test_recipe_ingredients_mapping_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestMeasurementSystem",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMeasurementSystem",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMeasurementSystem",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_measurement_unit_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMeasurementSystem",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_measurement_system_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestMeasurementSystem",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestMeasurementSystem.test_unit_conversions_table_exists",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestIndexes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestIndexes",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestIndexes",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.test_ingredient_overlap_index",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestIndexes",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestIndexes.test_ingredient_allergen_index",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_scripts/e2e/test_schema_validation.py",
+      "to": "repo::test_schema_validation::TestDataIntegrity",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDataIntegrity",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.setup",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDataIntegrity",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_foreign_keys_can_be_enabled",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDataIntegrity",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_recipes_have_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_schema_validation::TestDataIntegrity",
+      "to": "repo::test_scripts/e2e/test_schema_validation.py::TestDataIntegrity.test_no_orphaned_recipe_ingredients",
+      "relation": "contains"
+    }
+  ]
+}

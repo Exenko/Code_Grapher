@@ -1,0 +1,1127 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_integration_suite.py",
+  "stats": {
+    "nodes": 46,
+    "edges": 109
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py",
+      "type": "file",
+      "label": "test_integration_suite.py",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::test_db",
+      "type": "symbol",
+      "label": "test_db",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 38,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "type": "symbol",
+      "label": "create_household",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 78,
+      "language": "python",
+      "is_test": true,
+      "x": 59.41608412449422,
+      "y": 8.350386057603925
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "type": "symbol",
+      "label": "add_member",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 97,
+      "language": "python",
+      "is_test": true,
+      "x": 57.675701756299134,
+      "y": 16.53824134901995
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::add_recipes_to_queue",
+      "type": "symbol",
+      "label": "add_recipes_to_queue",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 130,
+      "language": "python",
+      "is_test": true,
+      "x": 54.812727458556054,
+      "y": 24.40419858454801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "type": "symbol",
+      "label": "setup_seasonal_context",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 146,
+      "language": "python",
+      "is_test": true,
+      "x": 50.88288576938556,
+      "y": 31.795155853992295
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::add_mock_recipes",
+      "type": "symbol",
+      "label": "add_mock_recipes",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 181,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "type": "type",
+      "label": "TestE2EPrivacyFlow",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 206,
+      "language": "python",
+      "is_test": true,
+      "x": 40.14783638153149,
+      "y": 44.58868952864365
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "type": "symbol",
+      "label": "TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": 33.55157420824481,
+      "y": 49.742254353302506
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "type": "symbol",
+      "label": "TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 272,
+      "language": "python",
+      "is_test": true,
+      "x": 26.302268807344646,
+      "y": 53.92764277795002
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "type": "symbol",
+      "label": "TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 302,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_local_result_filtering",
+      "type": "symbol",
+      "label": "TestE2EPrivacyFlow.test_local_result_filtering",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 331,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_meal_planning_privacy",
+      "type": "symbol",
+      "label": "TestE2EPrivacyFlow.test_meal_planning_privacy",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 360,
+      "language": "python",
+      "is_test": true,
+      "x": 2.093969802150065,
+      "y": 59.96344962114575
+    },
+    {
+      "id": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "type": "type",
+      "label": "TestDatabaseIntegrity",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 388,
+      "language": "python",
+      "is_test": true,
+      "x": -6.2717077960592,
+      "y": 59.67131372209641
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_schema_validation",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_schema_validation",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 391,
+      "language": "python",
+      "is_test": true,
+      "x": -14.515313735980067,
+      "y": 58.21774357655979
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_foreign_key_constraints",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_foreign_key_constraints",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 411,
+      "language": "python",
+      "is_test": true,
+      "x": -22.476395604954725,
+      "y": 55.63103127400724
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_cascading_operations",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_cascading_operations",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 431,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_transaction_isolation",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_transaction_isolation",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 462,
+      "language": "python",
+      "is_test": true,
+      "x": -36.939688519539494,
+      "y": 47.28064521640332
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_error_recovery",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_error_recovery",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 480,
+      "language": "python",
+      "is_test": true,
+      "x": -43.160388020319076,
+      "y": 41.67950222753983
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_unique_constraints",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_unique_constraints",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 496,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_index_performance",
+      "type": "symbol",
+      "label": "TestDatabaseIntegrity.test_index_performance",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 524,
+      "language": "python",
+      "is_test": true,
+      "x": -52.97685557153561,
+      "y": 28.168293767153465
+    },
+    {
+      "id": "repo::test_integration_suite::TestServerInteraction",
+      "type": "type",
+      "label": "TestServerInteraction",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 543,
+      "language": "python",
+      "is_test": true,
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_anonymous_query_format",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_anonymous_query_format",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 546,
+      "language": "python",
+      "is_test": true,
+      "x": -58.68885604402834,
+      "y": 12.47470144906556
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_token_certificate_in_query",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_token_certificate_in_query",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 579,
+      "language": "python",
+      "is_test": true,
+      "x": -59.853843015589455,
+      "y": 4.185388424647531
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_recipe_data_reception",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_recipe_data_reception",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 597,
+      "language": "python",
+      "is_test": true,
+      "x": -59.85384301558946,
+      "y": -4.18538842464749
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_no_query_correlation",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_no_query_correlation",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 617,
+      "language": "python",
+      "is_test": true,
+      "x": -58.68885604402834,
+      "y": -12.474701449065543
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_seasonal_reference_data_fetch",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_seasonal_reference_data_fetch",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 645,
+      "language": "python",
+      "is_test": true,
+      "x": -56.381557247154504,
+      "y": -20.52120859954012
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_server_error_handling",
+      "type": "symbol",
+      "label": "TestServerInteraction.test_server_error_handling",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 668,
+      "language": "python",
+      "is_test": true,
+      "x": -52.976855571535616,
+      "y": -28.16829376715345
+    },
+    {
+      "id": "repo::test_integration_suite::TestOfflineCapability",
+      "type": "type",
+      "label": "TestOfflineCapability",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 681,
+      "language": "python",
+      "is_test": true,
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_queue_operations_offline",
+      "type": "symbol",
+      "label": "TestOfflineCapability.test_queue_operations_offline",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 684,
+      "language": "python",
+      "is_test": true,
+      "x": -43.16038802031906,
+      "y": -41.679502227539835
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_cached_seasonal_data",
+      "type": "symbol",
+      "label": "TestOfflineCapability.test_cached_seasonal_data",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 712,
+      "language": "python",
+      "is_test": true,
+      "x": -36.93968851953949,
+      "y": -47.28064521640333
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "type": "symbol",
+      "label": "TestOfflineCapability.test_preference_compilation_offline",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 730,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_graceful_degradation",
+      "type": "symbol",
+      "label": "TestOfflineCapability.test_graceful_degradation",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 750,
+      "language": "python",
+      "is_test": true,
+      "x": -22.47639560495474,
+      "y": -55.63103127400724
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_recovery_on_reconnection",
+      "type": "symbol",
+      "label": "TestOfflineCapability.test_recovery_on_reconnection",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 771,
+      "language": "python",
+      "is_test": true,
+      "x": -14.515313735980067,
+      "y": -58.21774357655979
+    },
+    {
+      "id": "repo::test_integration_suite::TestPerformance",
+      "type": "type",
+      "label": "TestPerformance",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 792,
+      "language": "python",
+      "is_test": true,
+      "x": -6.271707796059202,
+      "y": -59.67131372209641
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "type": "symbol",
+      "label": "TestPerformance.test_scoring_100_recipes",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 795,
+      "language": "python",
+      "is_test": true,
+      "x": 2.093969802150077,
+      "y": -59.96344962114575
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_ranking_responsiveness",
+      "type": "symbol",
+      "label": "TestPerformance.test_ranking_responsiveness",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 822,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015798,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_database_query_performance",
+      "type": "symbol",
+      "label": "TestPerformance.test_database_query_performance",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 854,
+      "language": "python",
+      "is_test": true,
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_memory_baseline",
+      "type": "symbol",
+      "label": "TestPerformance.test_memory_baseline",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 876,
+      "language": "python",
+      "is_test": true,
+      "x": 26.302268807344646,
+      "y": -53.92764277795002
+    },
+    {
+      "id": "repo::test_integration_suite::TestPrivacyCompliance",
+      "type": "type",
+      "label": "TestPrivacyCompliance",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 895,
+      "language": "python",
+      "is_test": true,
+      "x": 33.55157420824477,
+      "y": -49.74225435330253
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_government_subpoena_scenario",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_government_subpoena_scenario",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 898,
+      "language": "python",
+      "is_test": true,
+      "x": 40.14783638153147,
+      "y": -44.58868952864368
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_household_identification",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_no_household_identification",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 930,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_behavioral_profiling",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_no_behavioral_profiling",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 958,
+      "language": "python",
+      "is_test": true,
+      "x": 50.882885769385524,
+      "y": -31.79515585399235
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_preference_inference",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_no_preference_inference",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 986,
+      "language": "python",
+      "is_test": true,
+      "x": 54.81272745855606,
+      "y": -24.40419858454801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_query_anonymity_verification",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_query_anonymity_verification",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 1001,
+      "language": "python",
+      "is_test": true,
+      "x": 57.67570175629912,
+      "y": -16.538241349019987
+    },
+    {
+      "id": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_data_isolation_between_households",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_data_isolation_between_households",
+      "file": "Client_Side/tests/test_integration_suite.py",
+      "line": 1025,
+      "language": "python",
+      "is_test": true,
+      "x": 59.41608412449421,
+      "y": -8.350386057603952
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::test_db",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_recipes_to_queue",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_mock_recipes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_recipes_to_queue",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_complete_household_lifecycle",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_mock_recipes",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_query_compilation_anonymity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_server_interaction_statelessness",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_local_result_filtering",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_local_result_filtering",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_local_result_filtering",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::test_integration_suite::TestE2EPrivacyFlow",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_meal_planning_privacy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_meal_planning_privacy",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestE2EPrivacyFlow.test_meal_planning_privacy",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_schema_validation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_foreign_key_constraints",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_cascading_operations",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_cascading_operations",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_cascading_operations",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_cascading_operations",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_recipes_to_queue",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_transaction_isolation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_transaction_isolation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_error_recovery",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_error_recovery",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_unique_constraints",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_unique_constraints",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_integration_suite::TestDatabaseIntegrity",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_index_performance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestDatabaseIntegrity.test_index_performance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestServerInteraction",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_anonymous_query_format",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_anonymous_query_format",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_anonymous_query_format",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_anonymous_query_format",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_token_certificate_in_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_token_certificate_in_query",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_token_certificate_in_query",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_recipe_data_reception",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_no_query_correlation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_no_query_correlation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_no_query_correlation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_no_query_correlation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_seasonal_reference_data_fetch",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_integration_suite::TestServerInteraction",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestServerInteraction.test_server_error_handling",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestOfflineCapability",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestOfflineCapability",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_queue_operations_offline",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_queue_operations_offline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_integration_suite::TestOfflineCapability",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_cached_seasonal_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_cached_seasonal_data",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_cached_seasonal_data",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::test_integration_suite::TestOfflineCapability",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_preference_compilation_offline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_recipes_to_queue",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestOfflineCapability",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_graceful_degradation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_graceful_degradation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_graceful_degradation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_graceful_degradation",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestOfflineCapability",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_recovery_on_reconnection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestOfflineCapability.test_recovery_on_reconnection",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestPerformance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestPerformance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_scoring_100_recipes",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_mock_recipes",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestPerformance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_ranking_responsiveness",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_integration_suite::TestPerformance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_database_query_performance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_database_query_performance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_integration_suite::TestPerformance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_memory_baseline",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPerformance.test_memory_baseline",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py",
+      "to": "repo::test_integration_suite::TestPrivacyCompliance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_government_subpoena_scenario",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_government_subpoena_scenario",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_government_subpoena_scenario",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_government_subpoena_scenario",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_household_identification",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_household_identification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_household_identification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_household_identification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_behavioral_profiling",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_behavioral_profiling",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_behavioral_profiling",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_behavioral_profiling",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_preference_inference",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_preference_inference",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_preference_inference",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_no_preference_inference",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_query_anonymity_verification",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_query_anonymity_verification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_query_anonymity_verification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_query_anonymity_verification",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::setup_seasonal_context",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::test_integration_suite::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_data_isolation_between_households",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_data_isolation_between_households",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::create_household",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/tests/test_integration_suite.py::TestPrivacyCompliance.test_data_isolation_between_households",
+      "to": "repo::Client_Side/tests/test_integration_suite.py::add_member",
+      "relation": "calls",
+      "seq": 3
+    }
+  ]
+}

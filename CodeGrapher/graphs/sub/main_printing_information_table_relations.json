@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "printing_information/table_relations.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::printing_information/table_relations.py",
+      "type": "file",
+      "label": "table_relations.py",
+      "file": "printing_information/table_relations.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/table_relations.py::print_table_relations",
+      "type": "symbol",
+      "label": "print_table_relations",
+      "file": "printing_information/table_relations.py",
+      "line": 3,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::printing_information/table_relations.py",
+      "to": "repo::printing_information/table_relations.py::print_table_relations",
+      "relation": "defines"
+    }
+  ]
+}

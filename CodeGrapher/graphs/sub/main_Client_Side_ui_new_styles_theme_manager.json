@@ -1,0 +1,1393 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/styles/theme_manager.py",
+  "stats": {
+    "nodes": 66,
+    "edges": 130
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "type": "file",
+      "label": "theme_manager.py",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::theme_manager::ThemeMode",
+      "type": "type",
+      "label": "ThemeMode",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 38,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::theme_manager::ColorValue",
+      "type": "type",
+      "label": "ColorValue",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 46,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 59.719898083058915,
+      "y": 5.790835254870906
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.l",
+      "type": "symbol",
+      "label": "ColorValue.l",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 56,
+      "language": "python",
+      "annotation": "float",
+      "x": 58.882207568364805,
+      "y": 11.527603041222502
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.c",
+      "type": "symbol",
+      "label": "ColorValue.c",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 57,
+      "language": "python",
+      "annotation": "float",
+      "x": 57.49474974654997,
+      "y": 17.156740703921354
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.h",
+      "type": "symbol",
+      "label": "ColorValue.h",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 58,
+      "language": "python",
+      "annotation": "float",
+      "x": 55.57047893746659,
+      "y": 22.625690501299225
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.a",
+      "type": "symbol",
+      "label": "ColorValue.a",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 59,
+      "language": "python",
+      "annotation": "float",
+      "x": 53.12736153919259,
+      "y": 27.88339032262611
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgb",
+      "type": "symbol",
+      "label": "ColorValue.to_rgb",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 61,
+      "language": "python",
+      "x": 50.1882082806136,
+      "y": 32.88075044128019
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_hex",
+      "type": "symbol",
+      "label": "ColorValue.to_hex",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 98,
+      "language": "python",
+      "x": 46.78046124379334,
+      "y": 37.57111185229882
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgba",
+      "type": "symbol",
+      "label": "ColorValue.to_rgba",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 103,
+      "language": "python",
+      "x": 42.93593764464727,
+      "y": 41.91068191493622
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.with_alpha",
+      "type": "symbol",
+      "label": "ColorValue.with_alpha",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 110,
+      "language": "python",
+      "x": 38.690532764170236,
+      "y": 45.858943232750896
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.lighter",
+      "type": "symbol",
+      "label": "ColorValue.lighter",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 114,
+      "language": "python",
+      "x": 34.08388480386935,
+      "y": 49.37903195361938
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.darker",
+      "type": "symbol",
+      "label": "ColorValue.darker",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 118,
+      "language": "python",
+      "x": 29.15900479455637,
+      "y": 52.43808195759107
+    },
+    {
+      "id": "repo::theme_manager::ThemePalette",
+      "type": "type",
+      "label": "ThemePalette",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 124,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 23.96187501394174,
+      "y": 55.00753171899495
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darkest",
+      "type": "symbol",
+      "label": "ThemePalette.bg_darkest",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 128,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darker",
+      "type": "symbol",
+      "label": "ThemePalette.bg_darker",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 129,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": 12.947051806068368,
+      "y": 58.58646472975633
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_dark",
+      "type": "symbol",
+      "label": "ThemePalette.bg_dark",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 130,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": 7.232200815319394,
+      "y": 59.562532445883235
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg",
+      "type": "symbol",
+      "label": "ThemePalette.bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 131,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": 1.449824714167945,
+      "y": 59.982480844811576
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_light",
+      "type": "symbol",
+      "label": "ThemePalette.bg_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 132,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -4.34608800970575,
+      "y": 59.84238898148947
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lighter",
+      "type": "symbol",
+      "label": "ThemePalette.bg_lighter",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 133,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -10.101422480822311,
+      "y": 59.14356485589906
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lightest",
+      "type": "symbol",
+      "label": "ThemePalette.bg_lightest",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 134,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -15.762442691915204,
+      "y": 57.89253320061309
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text",
+      "type": "symbol",
+      "label": "ThemePalette.text",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 137,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -21.276293222552127,
+      "y": 56.10097456112489
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_muted",
+      "type": "symbol",
+      "label": "ThemePalette.text_muted",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 138,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -26.591492735954475,
+      "y": 53.785616237742225
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_dimmed",
+      "type": "symbol",
+      "label": "ThemePalette.text_dimmed",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 139,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -31.65841464636795,
+      "y": 50.968076107291274
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_subtle",
+      "type": "symbol",
+      "label": "ThemePalette.border_subtle",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 142,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -36.42975046912267,
+      "y": 47.674660782825256
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border",
+      "type": "symbol",
+      "label": "ThemePalette.border",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 143,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -40.86095152720782,
+      "y": 43.93611999586642
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_strong",
+      "type": "symbol",
+      "label": "ThemePalette.border_strong",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 144,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -44.91064489026607,
+      "y": 39.78735949444771
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary",
+      "type": "symbol",
+      "label": "ThemePalette.primary",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 147,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_light",
+      "type": "symbol",
+      "label": "ThemePalette.primary_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 148,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -51.71818001280295,
+      "y": 30.41759122881544
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_lighter",
+      "type": "symbol",
+      "label": "ThemePalette.primary_lighter",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 149,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -54.41246165103272,
+      "y": 25.284066466351746
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_dark",
+      "type": "symbol",
+      "label": "ThemePalette.primary_dark",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 150,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -56.59870879546458,
+      "y": 19.914471187711715
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary",
+      "type": "symbol",
+      "label": "ThemePalette.secondary",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 153,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -58.256509045563114,
+      "y": 14.358939857253485
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_light",
+      "type": "symbol",
+      "label": "ThemePalette.secondary_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 154,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -59.37038396706307,
+      "y": 8.669342974153285
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_lighter",
+      "type": "symbol",
+      "label": "ThemePalette.secondary_lighter",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 155,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -59.92993360993959,
+      "y": 2.8988027715304394
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success",
+      "type": "symbol",
+      "label": "ThemePalette.success",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 158,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -59.929933609939596,
+      "y": -2.8988027715304248
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_light",
+      "type": "symbol",
+      "label": "ThemePalette.success_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 159,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -59.37038396706306,
+      "y": -8.669342974153295
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_bg",
+      "type": "symbol",
+      "label": "ThemePalette.success_bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 160,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -58.25650904556313,
+      "y": -14.358939857253446
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning",
+      "type": "symbol",
+      "label": "ThemePalette.warning",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 162,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -56.59870879546459,
+      "y": -19.914471187711705
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_light",
+      "type": "symbol",
+      "label": "ThemePalette.warning_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 163,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -54.41246165103273,
+      "y": -25.28406646635173
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_bg",
+      "type": "symbol",
+      "label": "ThemePalette.warning_bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 164,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -51.71818001280296,
+      "y": -30.4175912288154
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error",
+      "type": "symbol",
+      "label": "ThemePalette.error",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 166,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_light",
+      "type": "symbol",
+      "label": "ThemePalette.error_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 167,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -44.91064489026608,
+      "y": -39.7873594944477
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_bg",
+      "type": "symbol",
+      "label": "ThemePalette.error_bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 168,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -40.86095152720785,
+      "y": -43.93611999586639
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info",
+      "type": "symbol",
+      "label": "ThemePalette.info",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 170,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -36.42975046912268,
+      "y": -47.67466078282525
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_light",
+      "type": "symbol",
+      "label": "ThemePalette.info_light",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 171,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -31.658414646367966,
+      "y": -50.96807610729127
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_bg",
+      "type": "symbol",
+      "label": "ThemePalette.info_bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 172,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -26.59149273595451,
+      "y": -53.78561623774221
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_bg",
+      "type": "symbol",
+      "label": "ThemePalette.glass_bg",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 175,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -21.276293222552155,
+      "y": -56.100974561124886
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_border",
+      "type": "symbol",
+      "label": "ThemePalette.glass_border",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 176,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -15.762442691915219,
+      "y": -57.89253320061309
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_colored",
+      "type": "symbol",
+      "label": "ThemePalette.btn_text_on_colored",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 179,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -10.1014224808223,
+      "y": -59.14356485589906
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_warning",
+      "type": "symbol",
+      "label": "ThemePalette.btn_text_on_warning",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 180,
+      "language": "python",
+      "annotation": "ColorValue",
+      "x": -4.346088009705765,
+      "y": -59.842388981489464
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "type": "symbol",
+      "label": "create_dark_palette",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 183,
+      "language": "python",
+      "x": 1.4498247141679304,
+      "y": -59.982480844811576
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "type": "symbol",
+      "label": "create_light_palette",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 254,
+      "language": "python",
+      "x": 7.232200815319392,
+      "y": -59.562532445883235
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "type": "symbol",
+      "label": "create_medium_palette",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 325,
+      "language": "python",
+      "x": 12.947051806068341,
+      "y": -58.58646472975634
+    },
+    {
+      "id": "repo::theme_manager::ThemeManager",
+      "type": "type",
+      "label": "ThemeManager",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 396,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "type": "symbol",
+      "label": "ThemeManager.__init__",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 407,
+      "language": "python",
+      "x": 23.96187501394174,
+      "y": -55.00753171899495
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.current_theme",
+      "type": "symbol",
+      "label": "ThemeManager.current_theme",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 417,
+      "language": "python",
+      "x": 29.15900479455634,
+      "y": -52.438081957591095
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.palette",
+      "type": "symbol",
+      "label": "ThemeManager.palette",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 422,
+      "language": "python",
+      "x": 34.08388480386934,
+      "y": -49.379031953619396
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.set_theme",
+      "type": "symbol",
+      "label": "ThemeManager.set_theme",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 426,
+      "language": "python",
+      "x": 38.690532764170236,
+      "y": -45.858943232750896
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.on_theme_changed",
+      "type": "symbol",
+      "label": "ThemeManager.on_theme_changed",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 433,
+      "language": "python",
+      "x": 42.93593764464724,
+      "y": -41.91068191493625
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.get_color",
+      "type": "symbol",
+      "label": "ThemeManager.get_color",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 437,
+      "language": "python",
+      "x": 46.78046124379333,
+      "y": -37.571111852298834
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.get_rgba",
+      "type": "symbol",
+      "label": "ThemeManager.get_rgba",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 444,
+      "language": "python",
+      "x": 50.1882082806136,
+      "y": -32.8807504412802
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "type": "symbol",
+      "label": "ThemeManager.generate_qss",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 451,
+      "language": "python",
+      "x": 53.12736153919258,
+      "y": -27.883390322626152
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager._get_theme_description",
+      "type": "symbol",
+      "label": "ThemeManager._get_theme_description",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 1461,
+      "language": "python",
+      "x": 55.57047893746658,
+      "y": -22.625690501299253
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.save_qss_to_file",
+      "type": "symbol",
+      "label": "ThemeManager.save_qss_to_file",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 1470,
+      "language": "python",
+      "x": 57.494749746549964,
+      "y": -17.156740703921365
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::get_theme_manager",
+      "type": "symbol",
+      "label": "get_theme_manager",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 1480,
+      "language": "python",
+      "x": 58.882207568364805,
+      "y": -11.527603041222497
+    },
+    {
+      "id": "repo::Client_Side/ui_new/styles/theme_manager.py::set_app_theme",
+      "type": "symbol",
+      "label": "set_app_theme",
+      "file": "Client_Side/ui_new/styles/theme_manager.py",
+      "line": 1488,
+      "language": "python",
+      "x": 59.719898083058915,
+      "y": -5.790835254870938
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::theme_manager::ThemeMode",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.l",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.c",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.h",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.a",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgb",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_hex",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_hex",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgb",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgba",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgba",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgb",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.with_alpha",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.with_alpha",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.lighter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.lighter",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::theme_manager::ColorValue",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.darker",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.darker",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darkest",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darkest",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darker",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_darker",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_dark",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_dark",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lighter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lighter",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lightest",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.bg_lightest",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_muted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_muted",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_dimmed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.text_dimmed",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_subtle",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_subtle",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_strong",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.border_strong",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_lighter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_lighter",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_dark",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.primary_dark",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_lighter",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.secondary_lighter",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.success_bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.warning_bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.error_bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_light",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_light",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.info_bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_bg",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_bg",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_border",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.glass_border",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_colored",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_colored",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::theme_manager::ThemePalette",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_warning",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemePalette.btn_text_on_warning",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "uses_type"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "to": "repo::theme_manager::ColorValue",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::theme_manager::ThemeManager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_light_palette",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_medium_palette",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::create_dark_palette",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.__init__",
+      "to": "repo::theme_manager::ThemeMode",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.current_theme",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.current_theme",
+      "to": "repo::theme_manager::ThemeMode",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.palette",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.palette",
+      "to": "repo::theme_manager::ThemePalette",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.set_theme",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.set_theme",
+      "to": "repo::theme_manager::ThemeMode",
+      "relation": "consumes",
+      "role": "data"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.on_theme_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.get_color",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.get_rgba",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager._get_theme_description",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_rgba",
+      "relation": "calls",
+      "seq": 33
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ColorValue.to_hex",
+      "relation": "calls",
+      "seq": 63
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager._get_theme_description",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::theme_manager::ThemeManager",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.save_qss_to_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.save_qss_to_file",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::ThemeManager.generate_qss",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::get_theme_manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::get_theme_manager",
+      "to": "repo::theme_manager::ThemeManager",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::get_theme_manager",
+      "to": "repo::theme_manager::ThemeManager",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::set_app_theme",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::set_app_theme",
+      "to": "repo::Client_Side/ui_new/styles/theme_manager.py::get_theme_manager",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/styles/theme_manager.py::set_app_theme",
+      "to": "repo::theme_manager::ThemeMode",
+      "relation": "consumes",
+      "role": "data"
+    }
+  ]
+}

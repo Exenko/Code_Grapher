@@ -1,0 +1,757 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/views/dashboard_view_new.py",
+  "stats": {
+    "nodes": 38,
+    "edges": 67
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py",
+      "type": "file",
+      "label": "dashboard_view_new.py",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::dashboard_view_new::MealSlotWidget",
+      "type": "type",
+      "label": "MealSlotWidget",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 38,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.__init__",
+      "type": "symbol",
+      "label": "MealSlotWidget.__init__",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 41,
+      "language": "python",
+      "x": 59.13695462086251,
+      "y": 10.140049219310944
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.set_recipe",
+      "type": "symbol",
+      "label": "MealSlotWidget.set_recipe",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 61,
+      "language": "python",
+      "x": 56.57264672766505,
+      "y": 19.988387684523452
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.get_recipe",
+      "type": "symbol",
+      "label": "MealSlotWidget.get_recipe",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 77,
+      "language": "python",
+      "x": 52.38084678967129,
+      "y": 29.261696628818072
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget._update_state",
+      "type": "symbol",
+      "label": "MealSlotWidget._update_state",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 81,
+      "language": "python",
+      "x": 46.68214525910637,
+      "y": 37.69319983773853
+    },
+    {
+      "id": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "type": "type",
+      "label": "IngredientCategoryPanel",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 90,
+      "language": "python",
+      "x": 39.640483403404886,
+      "y": 45.04033831516346
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel.__init__",
+      "type": "symbol",
+      "label": "IngredientCategoryPanel.__init__",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 95,
+      "language": "python",
+      "x": 31.4584370134339,
+      "y": 51.091748263998674
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel._setup_ui",
+      "type": "symbol",
+      "label": "IngredientCategoryPanel._setup_ui",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 104,
+      "language": "python",
+      "x": 22.37138866681852,
+      "y": 55.673341637790564
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel.update_data",
+      "type": "symbol",
+      "label": "IngredientCategoryPanel.update_data",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 142,
+      "language": "python",
+      "x": 12.640756199743585,
+      "y": 58.65331433686117
+    },
+    {
+      "id": "repo::dashboard_view_new::QuickStatsPanel",
+      "type": "type",
+      "label": "QuickStatsPanel",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 191,
+      "language": "python",
+      "x": 2.546472191768908,
+      "y": 59.94593797228089
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel.__init__",
+      "type": "symbol",
+      "label": "QuickStatsPanel.__init__",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 194,
+      "language": "python",
+      "x": -7.621069184812725,
+      "y": 59.51402611553261
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel._setup_ui",
+      "type": "symbol",
+      "label": "QuickStatsPanel._setup_ui",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 199,
+      "language": "python",
+      "x": -17.569366276593005,
+      "y": 57.37000408435507
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel.update_stats",
+      "type": "symbol",
+      "label": "QuickStatsPanel.update_stats",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 245,
+      "language": "python",
+      "x": -27.012224689060403,
+      "y": 53.57555148897411
+    },
+    {
+      "id": "repo::dashboard_view_new::DashboardView",
+      "type": "type",
+      "label": "DashboardView",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 267,
+      "language": "python",
+      "x": -35.6779905782572,
+      "y": 48.23982782201643
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.__init__",
+      "type": "symbol",
+      "label": "DashboardView.__init__",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 283,
+      "language": "python",
+      "x": -43.317365637271465,
+      "y": 41.51633213865277
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._setup_ui",
+      "type": "symbol",
+      "label": "DashboardView._setup_ui",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 301,
+      "language": "python",
+      "x": -49.71057895463053,
+      "y": 33.59848716825573
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_alert_bar",
+      "type": "symbol",
+      "label": "DashboardView._create_alert_bar",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 319,
+      "language": "python",
+      "x": -54.67370942328814,
+      "y": 24.71407489463957
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid_section",
+      "type": "symbol",
+      "label": "DashboardView._create_meal_grid_section",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 346,
+      "language": "python",
+      "x": -58.063976816009934,
+      "y": 15.118683683107502
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid",
+      "type": "symbol",
+      "label": "DashboardView._create_meal_grid",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 414,
+      "language": "python",
+      "x": -59.78384931255159,
+      "y": 5.08835546853057
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_ingredient_optimization_panel",
+      "type": "symbol",
+      "label": "DashboardView._create_ingredient_optimization_panel",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 448,
+      "language": "python",
+      "x": -59.78384931255159,
+      "y": -5.088355468530529
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._on_meal_slot_clicked",
+      "type": "symbol",
+      "label": "DashboardView._on_meal_slot_clicked",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 493,
+      "language": "python",
+      "x": -58.063976816009934,
+      "y": -15.11868368310751
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._previous_week",
+      "type": "symbol",
+      "label": "DashboardView._previous_week",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 497,
+      "language": "python",
+      "x": -54.673709423288145,
+      "y": -24.714074894639555
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._next_week",
+      "type": "symbol",
+      "label": "DashboardView._next_week",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 504,
+      "language": "python",
+      "x": -49.71057895463054,
+      "y": -33.598487168255694
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_week_display",
+      "type": "symbol",
+      "label": "DashboardView._update_week_display",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 511,
+      "language": "python",
+      "x": -43.31736563727148,
+      "y": -41.516332138652764
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_household_meal_pattern",
+      "type": "symbol",
+      "label": "DashboardView._load_household_meal_pattern",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 517,
+      "language": "python",
+      "x": -35.67799057825719,
+      "y": -48.23982782201644
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "type": "symbol",
+      "label": "DashboardView._load_week_meals",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 554,
+      "language": "python",
+      "x": -27.012224689060417,
+      "y": -53.5755514889741
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_action_label",
+      "type": "symbol",
+      "label": "DashboardView._update_action_label",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 589,
+      "language": "python",
+      "x": -17.56936627659302,
+      "y": -57.37000408435506
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._analyze_ingredients",
+      "type": "symbol",
+      "label": "DashboardView._analyze_ingredients",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 606,
+      "language": "python",
+      "x": -7.621069184812752,
+      "y": -59.51402611553261
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._count_seasonal_recipes",
+      "type": "symbol",
+      "label": "DashboardView._count_seasonal_recipes",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 653,
+      "language": "python",
+      "x": 2.5464721917688933,
+      "y": -59.945937972280895
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._calculate_cuisine_balance",
+      "type": "symbol",
+      "label": "DashboardView._calculate_cuisine_balance",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 704,
+      "language": "python",
+      "x": 12.640756199743597,
+      "y": -58.65331433686117
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_quick_stats",
+      "type": "symbol",
+      "label": "DashboardView._load_quick_stats",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 773,
+      "language": "python",
+      "x": 22.371388666818504,
+      "y": -55.67334163779057
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_token_data",
+      "type": "symbol",
+      "label": "DashboardView._load_token_data",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 795,
+      "language": "python",
+      "x": 31.458437013433866,
+      "y": -51.091748263998696
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._smart_fill_week",
+      "type": "symbol",
+      "label": "DashboardView._smart_fill_week",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 809,
+      "language": "python",
+      "x": 39.64048340340487,
+      "y": -45.040338315163474
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._generate_shopping_list",
+      "type": "symbol",
+      "label": "DashboardView._generate_shopping_list",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 817,
+      "language": "python",
+      "x": 46.68214525910637,
+      "y": -37.69319983773853
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._suggest_category",
+      "type": "symbol",
+      "label": "DashboardView._suggest_category",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 850,
+      "language": "python",
+      "x": 52.3808467896713,
+      "y": -29.26169662881805
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "type": "symbol",
+      "label": "DashboardView.refresh_data",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 858,
+      "language": "python",
+      "x": 56.572646727665045,
+      "y": -19.98838768452346
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.on_view_activated",
+      "type": "symbol",
+      "label": "DashboardView.on_view_activated",
+      "file": "Client_Side/ui_new/views/dashboard_view_new.py",
+      "line": 870,
+      "language": "python",
+      "x": 59.136954620862504,
+      "y": -10.140049219310981
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py",
+      "to": "repo::dashboard_view_new::MealSlotWidget",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dashboard_view_new::MealSlotWidget",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.__init__",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget._update_state",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::dashboard_view_new::MealSlotWidget",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.set_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.set_recipe",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget._update_state",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::dashboard_view_new::MealSlotWidget",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.get_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::MealSlotWidget",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget._update_state",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py",
+      "to": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel.__init__",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel._setup_ui",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::IngredientCategoryPanel.update_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py",
+      "to": "repo::dashboard_view_new::QuickStatsPanel",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dashboard_view_new::QuickStatsPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel.__init__",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel._setup_ui",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::dashboard_view_new::QuickStatsPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::QuickStatsPanel",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel.update_stats",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py",
+      "to": "repo::dashboard_view_new::DashboardView",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.__init__",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::QuickStatsPanel._setup_ui",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_alert_bar",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid_section",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_ingredient_optimization_panel",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_alert_bar",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid_section",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid",
+      "relation": "calls",
+      "seq": 28
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid_section",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_week_display",
+      "relation": "calls",
+      "seq": 48
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid",
+      "to": "repo::dashboard_view_new::MealSlotWidget",
+      "relation": "calls",
+      "seq": 19
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_meal_grid",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._on_meal_slot_clicked",
+      "relation": "calls",
+      "seq": 21
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_ingredient_optimization_panel",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_ingredient_optimization_panel",
+      "to": "repo::dashboard_view_new::IngredientCategoryPanel",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._create_ingredient_optimization_panel",
+      "to": "repo::dashboard_view_new::QuickStatsPanel",
+      "relation": "calls",
+      "seq": 24
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._on_meal_slot_clicked",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._previous_week",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._previous_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_week_display",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._previous_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._previous_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._analyze_ingredients",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._next_week",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._next_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_week_display",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._next_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._next_week",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._analyze_ingredients",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_week_display",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_household_meal_pattern",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::MealSlotWidget.set_recipe",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_action_label",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._update_action_label",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._analyze_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._count_seasonal_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._calculate_cuisine_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_quick_stats",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_quick_stats",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._count_seasonal_recipes",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_quick_stats",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._calculate_cuisine_balance",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_token_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._smart_fill_week",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._generate_shopping_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._suggest_category",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_household_meal_pattern",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_week_meals",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._analyze_ingredients",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_quick_stats",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView._load_token_data",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::dashboard_view_new::DashboardView",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.on_view_activated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.on_view_activated",
+      "to": "repo::Client_Side/ui_new/views/dashboard_view_new.py::DashboardView.refresh_data",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

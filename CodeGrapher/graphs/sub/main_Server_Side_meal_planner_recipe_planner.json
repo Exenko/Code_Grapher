@@ -1,0 +1,256 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/meal_planner/recipe_planner.py",
+  "stats": {
+    "nodes": 13,
+    "edges": 21
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "type": "file",
+      "label": "recipe_planner.py",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::get_current_season",
+      "type": "symbol",
+      "label": "get_current_season",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 45,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_seasonal_recipes",
+      "type": "symbol",
+      "label": "suggest_seasonal_recipes",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 57,
+      "language": "python",
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_availability",
+      "type": "symbol",
+      "label": "get_user_availability",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 62,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_available_meals",
+      "type": "symbol",
+      "label": "suggest_available_meals",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 66,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::is_meal_available",
+      "type": "symbol",
+      "label": "is_meal_available",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 76,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "type": "symbol",
+      "label": "generate_meal_plan",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 85,
+      "language": "python",
+      "x": -51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::filter_recipes_by_dietary_restrictions_and_allergies",
+      "type": "symbol",
+      "label": "filter_recipes_by_dietary_restrictions_and_allergies",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 104,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_cuisine_preferences",
+      "type": "symbol",
+      "label": "get_user_cuisine_preferences",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 119,
+      "language": "python",
+      "x": -51.96152422706633,
+      "y": -29.999999999999982
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::select_meals_with_optimized_ingredients",
+      "type": "symbol",
+      "label": "select_meals_with_optimized_ingredients",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 133,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::pick_meals",
+      "type": "symbol",
+      "label": "pick_meals",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 156,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::generate_shopping_list",
+      "type": "symbol",
+      "label": "generate_shopping_list",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 184,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::Server_Side/meal_planner/recipe_planner.py::calculate_quantity_needed",
+      "type": "symbol",
+      "label": "calculate_quantity_needed",
+      "file": "Server_Side/meal_planner/recipe_planner.py",
+      "line": 194,
+      "language": "python",
+      "x": 51.961524227066306,
+      "y": -30.00000000000003
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_current_season",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_seasonal_recipes",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_seasonal_recipes",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_current_season",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_availability",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_available_meals",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_available_meals",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_availability",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_available_meals",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::is_meal_available",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::is_meal_available",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_seasonal_recipes",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::filter_recipes_by_dietary_restrictions_and_allergies",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_cuisine_preferences",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::suggest_available_meals",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_meal_plan",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::pick_meals",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::filter_recipes_by_dietary_restrictions_and_allergies",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::get_user_cuisine_preferences",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::select_meals_with_optimized_ingredients",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::pick_meals",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::generate_shopping_list",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py::generate_shopping_list",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::calculate_quantity_needed",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/meal_planner/recipe_planner.py",
+      "to": "repo::Server_Side/meal_planner/recipe_planner.py::calculate_quantity_needed",
+      "relation": "defines"
+    }
+  ]
+}

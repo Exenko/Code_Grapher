@@ -1,0 +1,670 @@
+{
+  "feature": "codegrapher",
+  "entry_point": "CodeGrapher/parser_cpp.py",
+  "stats": {
+    "nodes": 29,
+    "edges": 66
+  },
+  "nodes": [
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py",
+      "type": "file",
+      "label": "parser_cpp.py",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "type": "symbol",
+      "label": "parse_file",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 43,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::parser_cpp::_BaseParser",
+      "type": "type",
+      "label": "_BaseParser",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 96,
+      "language": "python",
+      "x": 58.495674730909414,
+      "y": 13.351256037378864
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser.__init__",
+      "type": "symbol",
+      "label": "_BaseParser.__init__",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 99,
+      "language": "python",
+      "x": 54.05813207414515,
+      "y": 26.033024347053487
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "type": "symbol",
+      "label": "_BaseParser._resolve_type",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 127,
+      "language": "python",
+      "x": 46.909888948081786,
+      "y": 37.40938811152401
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._is_control_type",
+      "type": "symbol",
+      "label": "_BaseParser._is_control_type",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 164,
+      "language": "python",
+      "x": 37.40938811152402,
+      "y": 46.909888948081786
+    },
+    {
+      "id": "codegrapher::parser_cpp::_HeaderParser",
+      "type": "type",
+      "label": "_HeaderParser",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 176,
+      "language": "python",
+      "x": 26.03302434705349,
+      "y": 54.05813207414515
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "type": "symbol",
+      "label": "_HeaderParser.parse",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 179,
+      "language": "python",
+      "x": 13.351256037378867,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_structs",
+      "type": "symbol",
+      "label": "_HeaderParser._extract_structs",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 186,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_struct_fields",
+      "type": "symbol",
+      "label": "_HeaderParser._extract_struct_fields",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 230,
+      "language": "python",
+      "x": -13.35125603737886,
+      "y": 58.495674730909414
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_enums",
+      "type": "symbol",
+      "label": "_HeaderParser._extract_enums",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 276,
+      "language": "python",
+      "x": -26.033024347053484,
+      "y": 54.05813207414515
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_typedefs",
+      "type": "symbol",
+      "label": "_HeaderParser._extract_typedefs",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 301,
+      "language": "python",
+      "x": -37.40938811152401,
+      "y": 46.90988894808179
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_function_declarations",
+      "type": "symbol",
+      "label": "_HeaderParser._extract_function_declarations",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 372,
+      "language": "python",
+      "x": -46.90988894808177,
+      "y": 37.40938811152404
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_signature",
+      "type": "symbol",
+      "label": "_HeaderParser._process_function_signature",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 408,
+      "language": "python",
+      "x": -54.05813207414514,
+      "y": 26.033024347053495
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_params",
+      "type": "symbol",
+      "label": "_HeaderParser._process_function_params",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 430,
+      "language": "python",
+      "x": -58.49567473090942,
+      "y": 13.351256037378846
+    },
+    {
+      "id": "codegrapher::parser_cpp::_ImplementationParser",
+      "type": "type",
+      "label": "_ImplementationParser",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 499,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.__init__",
+      "type": "symbol",
+      "label": "_ImplementationParser.__init__",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 502,
+      "language": "python",
+      "x": -58.49567473090942,
+      "y": -13.35125603737883
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.parse",
+      "type": "symbol",
+      "label": "_ImplementationParser.parse",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 507,
+      "language": "python",
+      "x": -54.05813207414515,
+      "y": -26.03302434705348
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_variable_declarations",
+      "type": "symbol",
+      "label": "_ImplementationParser._extract_variable_declarations",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 513,
+      "language": "python",
+      "x": -46.90988894808177,
+      "y": -37.40938811152403
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_includes",
+      "type": "symbol",
+      "label": "_ImplementationParser._extract_includes",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 531,
+      "language": "python",
+      "x": -37.409388111524024,
+      "y": -46.90988894808178
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "type": "symbol",
+      "label": "_ImplementationParser._extract_function_definitions",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 551,
+      "language": "python",
+      "x": -26.033024347053498,
+      "y": -54.05813207414514
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "type": "symbol",
+      "label": "_ImplementationParser._process_function_signature",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 604,
+      "language": "python",
+      "x": -13.351256037378874,
+      "y": -58.495674730909414
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "type": "symbol",
+      "label": "_ImplementationParser._process_function_params",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 626,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "type": "symbol",
+      "label": "_ImplementationParser._process_function_body",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 685,
+      "language": "python",
+      "x": 13.3512560373788,
+      "y": -58.49567473090943
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._resolve_call_target",
+      "type": "symbol",
+      "label": "_ImplementationParser._resolve_call_target",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 812,
+      "language": "python",
+      "x": 26.033024347053477,
+      "y": -54.058132074145156
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_rel",
+      "type": "symbol",
+      "label": "_rel",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 899,
+      "language": "python",
+      "x": 37.409388111524,
+      "y": -46.90988894808179
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_module_name",
+      "type": "symbol",
+      "label": "_module_name",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 908,
+      "language": "python",
+      "x": 46.90988894808178,
+      "y": -37.409388111524024
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "type": "symbol",
+      "label": "_is_builtin_cpp_type",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 937,
+      "language": "python",
+      "x": 54.05813207414516,
+      "y": -26.033024347053452
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "type": "symbol",
+      "label": "_is_likely_builtin_cpp",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": 942,
+      "language": "python",
+      "x": 58.495674730909414,
+      "y": -13.351256037378878
+    }
+  ],
+  "edges": [
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_rel",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "to": "codegrapher::parser_cpp::_HeaderParser",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_module_name",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::parse_file",
+      "to": "codegrapher::parser_cpp::_ImplementationParser",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::parser_cpp::_BaseParser",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_BaseParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_BaseParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_BaseParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._is_control_type",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::parser_cpp::_HeaderParser",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_structs",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_enums",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_typedefs",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_function_declarations",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_structs",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_structs",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_struct_fields",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_struct_fields",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_struct_fields",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_struct_fields",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_enums",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_typedefs",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_typedefs",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_function_declarations",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_function_declarations",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._extract_function_declarations",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_signature",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::parser_cpp::_HeaderParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_params",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_HeaderParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._is_control_type",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::parser_cpp::_ImplementationParser",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.parse",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_includes",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_variable_declarations",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser.parse",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_variable_declarations",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_variable_declarations",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_variable_declarations",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_includes",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._extract_function_definitions",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "relation": "calls",
+      "seq": 16
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_signature",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_params",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._is_control_type",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._resolve_call_target",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._process_function_body",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_BaseParser._resolve_type",
+      "relation": "calls",
+      "seq": 24
+    },
+    {
+      "from": "codegrapher::parser_cpp::_ImplementationParser",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_ImplementationParser._resolve_call_target",
+      "relation": "contains"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_rel",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_module_name",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_builtin_cpp_type",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/parser_cpp.py::_is_likely_builtin_cpp",
+      "relation": "defines"
+    }
+  ]
+}

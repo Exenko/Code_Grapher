@@ -1,0 +1,316 @@
+{
+  "feature": "codegrapher",
+  "entry_point": "CodeGrapher/analyze/type_expander.py",
+  "stats": {
+    "nodes": 13,
+    "edges": 31
+  },
+  "nodes": [
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "type": "file",
+      "label": "type_expander.py",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_load_graph",
+      "type": "symbol",
+      "label": "_load_graph",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 20,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_find_type_node",
+      "type": "symbol",
+      "label": "_find_type_node",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 82,
+      "language": "python",
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::list_types",
+      "type": "symbol",
+      "label": "list_types",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 103,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_short_filename",
+      "type": "symbol",
+      "label": "_short_filename",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 119,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_field_name",
+      "type": "symbol",
+      "label": "_field_name",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 129,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_resolve_field_type",
+      "type": "symbol",
+      "label": "_resolve_field_type",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 138,
+      "language": "python",
+      "x": -51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "type": "symbol",
+      "label": "_expand_typedef_chain",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 160,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_collect_fields",
+      "type": "symbol",
+      "label": "_collect_fields",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 255,
+      "language": "python",
+      "x": -51.96152422706633,
+      "y": -29.999999999999982
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "type": "symbol",
+      "label": "_expand_type",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 276,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_text",
+      "type": "symbol",
+      "label": "_render_text",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 392,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "type": "symbol",
+      "label": "_render_mermaid",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 451,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "type": "symbol",
+      "label": "expand",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": 574,
+      "language": "python",
+      "x": 51.961524227066306,
+      "y": -30.00000000000003
+    }
+  ],
+  "edges": [
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_load_graph",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_find_type_node",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::list_types",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_short_filename",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_field_name",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_resolve_field_type",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_short_filename",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_collect_fields",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_short_filename",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_collect_fields",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_field_name",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_resolve_field_type",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_text",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_text",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_text",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_type",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_expand_typedef_chain",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_collect_fields",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_field_name",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_resolve_field_type",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "relation": "defines"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_load_graph",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_find_type_node",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::list_types",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_text",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py::expand",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py::_render_mermaid",
+      "relation": "calls",
+      "seq": 7
+    }
+  ]
+}

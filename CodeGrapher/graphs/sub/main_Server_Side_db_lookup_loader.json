@@ -1,0 +1,172 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/db/lookup_loader.py",
+  "stats": {
+    "nodes": 9,
+    "edges": 13
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py",
+      "type": "file",
+      "label": "lookup_loader.py",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::lookup_loader::LookupLoader",
+      "type": "type",
+      "label": "LookupLoader",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 30,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader.__init__",
+      "type": "symbol",
+      "label": "LookupLoader.__init__",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 41,
+      "language": "python",
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_json_file",
+      "type": "symbol",
+      "label": "LookupLoader._load_json_file",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 54,
+      "language": "python",
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_table",
+      "type": "symbol",
+      "label": "LookupLoader._load_table",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 63,
+      "language": "python",
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_resource_types",
+      "type": "symbol",
+      "label": "LookupLoader._load_resource_types",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 107,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader.load_all",
+      "type": "symbol",
+      "label": "LookupLoader.load_all",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 155,
+      "language": "python",
+      "x": -42.42640687119286,
+      "y": -42.426406871192846
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::LookupLoader.generate_report",
+      "type": "symbol",
+      "label": "LookupLoader.generate_report",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 205,
+      "language": "python",
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Server_Side/db/lookup_loader.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/db/lookup_loader.py",
+      "line": 214,
+      "language": "python",
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py",
+      "to": "repo::lookup_loader::LookupLoader",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_json_file",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_table",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_table",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_json_file",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_resource_types",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_resource_types",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_json_file",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader.load_all",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py::LookupLoader.load_all",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_table",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py::LookupLoader.load_all",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader._load_resource_types",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::lookup_loader::LookupLoader",
+      "to": "repo::Server_Side/db/lookup_loader.py::LookupLoader.generate_report",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py",
+      "to": "repo::Server_Side/db/lookup_loader.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/db/lookup_loader.py::main",
+      "to": "repo::lookup_loader::LookupLoader",
+      "relation": "calls",
+      "seq": 3
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "feature": "repo",
+  "entry_point": "test_scripts/test_token_system.py",
+  "stats": {
+    "nodes": 7,
+    "edges": 11
+  },
+  "nodes": [
+    {
+      "id": "repo::test_scripts/test_token_system.py",
+      "type": "file",
+      "label": "test_token_system.py",
+      "file": "test_scripts/test_token_system.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::get_db_path",
+      "type": "symbol",
+      "label": "get_db_path",
+      "file": "test_scripts/test_token_system.py",
+      "line": 11,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::test_create_anonymous_account",
+      "type": "symbol",
+      "label": "test_create_anonymous_account",
+      "file": "test_scripts/test_token_system.py",
+      "line": 16,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::test_consume_tokens",
+      "type": "symbol",
+      "label": "test_consume_tokens",
+      "file": "test_scripts/test_token_system.py",
+      "line": 44,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::test_multiple_transactions",
+      "type": "symbol",
+      "label": "test_multiple_transactions",
+      "file": "test_scripts/test_token_system.py",
+      "line": 95,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::test_token_insufficient_balance",
+      "type": "symbol",
+      "label": "test_token_insufficient_balance",
+      "file": "test_scripts/test_token_system.py",
+      "line": 153,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::test_scripts/test_token_system.py::test_transaction_history",
+      "type": "symbol",
+      "label": "test_transaction_history",
+      "file": "test_scripts/test_token_system.py",
+      "line": 181,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::test_create_anonymous_account",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py::test_create_anonymous_account",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::test_consume_tokens",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py::test_consume_tokens",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::test_multiple_transactions",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py::test_multiple_transactions",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::test_token_insufficient_balance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py::test_token_insufficient_balance",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py",
+      "to": "repo::test_scripts/test_token_system.py::test_transaction_history",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_scripts/test_token_system.py::test_transaction_history",
+      "to": "repo::test_scripts/test_token_system.py::get_db_path",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

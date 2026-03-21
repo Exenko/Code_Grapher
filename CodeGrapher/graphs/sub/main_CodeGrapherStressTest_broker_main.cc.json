@@ -1,0 +1,37 @@
+{
+  "feature": "stress",
+  "entry_point": "CodeGrapherStressTest/broker/main.cc",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "stress::CodeGrapherStressTest/broker/main.cc",
+      "type": "file",
+      "label": "main.cc",
+      "file": "CodeGrapherStressTest/broker/main.cc",
+      "line": null,
+      "language": "cpp",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "CodeGrapherStressTest/broker/main.cc",
+      "line": 7,
+      "language": "cpp",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "stress::CodeGrapherStressTest/broker/main.cc",
+      "to": "stress::CodeGrapherStressTest/broker/main.cc::main",
+      "relation": "defines"
+    }
+  ]
+}

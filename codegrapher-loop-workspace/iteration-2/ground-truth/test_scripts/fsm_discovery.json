@@ -1,0 +1,1 @@
+{"fsms": [], "reason": "No FSMs in test_scripts — 18 files covering API/database/token/e2e/performance tests. All are stateless test harnesses with no state attributes, state enums, or dispatch loops."}

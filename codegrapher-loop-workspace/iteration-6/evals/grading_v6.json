@@ -1,0 +1,110 @@
+{
+  "iteration": 6,
+  "date": "2026-03-21",
+  "summary": {
+    "total_runs": 6,
+    "passed": 4,
+    "failed": 2,
+    "pass_rate": 0.667
+  },
+  "runs": [
+    {
+      "id": "dummy_query_scheduler_v2",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "diagram_type": "stateDiagram-v2",
+      "run_type": "v2_rerun",
+      "node_recall": 1.0,
+      "edge_recall": 1.0,
+      "hallucination": 0.0,
+      "result": "PASS",
+      "notes": "Filter-method rule confirmed working. get_pending_queries() correctly excluded. State named 'Pending' vs GT 'Scheduled' — semantic equivalent (both = executed=FALSE). Cosmetic naming gap; structure correct."
+    },
+    {
+      "id": "sync_overlap_from_server",
+      "file": "Client_Side/utils/sync_overlap_from_server.py",
+      "diagram_type": "sequenceDiagram",
+      "run_type": "new",
+      "node_recall": 1.0,
+      "edge_recall": 1.0,
+      "hallucination": 0.0,
+      "result": "PASS",
+      "notes": "All 6 cross-file calls captured including 4 instance-method calls on constructed sync_manager. KEY FINDING: chained-method-call gap is a GRAPH PARSER issue, not a skill issue. Skill reads source directly and correctly identifies all instance method calls. Alt block correct."
+    },
+    {
+      "id": "ingredient_analyzer",
+      "file": "Client_Side/utils/ingredient_analyzer.py",
+      "diagram_type": "classDiagram",
+      "run_type": "new",
+      "node_recall": 1.0,
+      "edge_recall": 1.0,
+      "hallucination": 0.0,
+      "result": "PASS",
+      "notes": "Perfect match. 3 classes, 1 edge (WeeklyIngredientAnalysis --> IngredientUsage). Correctly applied edge rule: IngredientAnalyzer.analyze_weekly_plan() returns WeeklyIngredientAnalysis but no edge drawn (return type, not field type)."
+    },
+    {
+      "id": "allergen_indexer",
+      "file": "Server_Side/db/allergen_indexer.py",
+      "diagram_type": "classDiagram",
+      "run_type": "new",
+      "node_recall": 1.0,
+      "edge_recall": null,
+      "hallucination": 0.33,
+      "result": "FAIL",
+      "notes": "GT: 0 edges. Skill drew 1 edge (AllergenIndexer --> AllergenHierarchy via pattern_map: Dict[str, AllergenHierarchy]). RULE GAP exposed: generic type parameter ambiguity. GT applied strict rule: field declared as Dict = built-in = no edge. Skill applied loose rule: AllergenHierarchy appears in Dict[str, AllergenHierarchy] = draw edge. hallucination = 1 extra edge / (2 nodes + 1 edge) = 0.33. Fix: add generic-type rule to SKILL.md."
+    },
+    {
+      "id": "climate_ingredients_loader",
+      "file": "Server_Side/db/climate_ingredients_loader.py",
+      "diagram_type": "flowchart_TB",
+      "run_type": "new",
+      "node_recall": 0.867,
+      "edge_recall": 0.941,
+      "hallucination": 0.0,
+      "result": "PASS",
+      "notes": "GT: 15 nodes, 17 edges. Skill: 13 nodes, 16 edges. Missed __init__ and setup_logging (constructor -> logging setup pair). Minor gap: constructor-called-logging pattern not captured. All main pipeline nodes and edges present. No hallucination."
+    },
+    {
+      "id": "ingredient_sync_manager",
+      "file": "Client_Side/utils/ingredient_sync_manager.py",
+      "diagram_type": "sequenceDiagram",
+      "run_type": "new",
+      "node_recall": 1.0,
+      "edge_recall": 1.0,
+      "hallucination": 0.24,
+      "result": "FAIL",
+      "notes": "All 3 GT actors captured. All 8 GT calls present in skill. OVER-ELABORATION: skill added _get_local_sync_state (likely intra-file self.* call, not cross-file), 3 ISM->ISM self-messages (error return states), and 4 extra _get_connection() instances (same method, multiple call sites within conditional blocks). Extra items not in GT: ~4 out of 17 total = 0.24 hallucination. Fix: add sequenceDiagram anti-over-elaboration rules to SKILL.md."
+    }
+  ],
+  "new_gaps_identified": [
+    {
+      "id": "generic_type_parameter_edge_rule",
+      "affects": "classDiagram",
+      "description": "When a field is typed as a generic container (List[LocalClass], Dict[K, LocalClass]), the skill draws an edge to the local class. GT applied strict rule: container type (Dict) = built-in = no edge. Needs explicit SKILL.md rule: only draw edges when the TOP-LEVEL declared type is a local class, not a type parameter.",
+      "skill_md_fix": "Add to classDiagram rules: For generic containers (List[T], Dict[K,V], Optional[T], Set[T]): the container itself (List, Dict, etc.) is the declared type. Do NOT draw edges based on type parameters. AllergenIndexer.pattern_map: Dict[str, AllergenHierarchy] — declared type is Dict, NOT AllergenHierarchy. No edge."
+    },
+    {
+      "id": "sequenceDiagram_over_elaboration",
+      "affects": "sequenceDiagram",
+      "description": "Skill adds intra-file calls (self._method(), self.*), ISM->ISM self-messages for error/return states, and multiple instances of the same repeated call site within loops/conditionals.",
+      "skill_md_fix": "Add to sequenceDiagram rules: (1) Never draw SelfActor->SelfActor arrows. Return/error states are internal — they are NOT cross-file calls. (2) For repeated calls to the same target method within a loop or multiple conditional branches, show ONE representative call (or use a loop block), not separate arrows for each invocation. (3) Self.* calls (self._helper()) are intra-file. Only self.<injected_dependency>.* calls are cross-file."
+    }
+  ],
+  "confirmed_findings": [
+    {
+      "id": "chained_method_call_gap_is_parser_not_skill",
+      "finding": "The chained-method-call gap (manager = Foo(); manager.bar() not captured) is confirmed as a GRAPH PARSER limitation, not a skill limitation. The skill reads source code directly and correctly identifies all instance method calls as cross-file. Graph parsers (parser_python.py) may not resolve dynamic instance method calls to their defining files."
+    },
+    {
+      "id": "filter_method_rule_works",
+      "finding": "Filter-method rule (get_*, fetch_*, find_*, load_*, query_* are SQL observers) correctly prevents get_pending_queries() from being treated as a state transition in dummy_query_scheduler.py."
+    }
+  ],
+  "cumulative_pass_rates": {
+    "iteration_1": "15/15 (100%)",
+    "iteration_2": "4/5 (80%)",
+    "iteration_3": "1/5 (20%)",
+    "iteration_4": "4/4 (100%)",
+    "iteration_5": "4/5 (80%)",
+    "iteration_6": "4/6 (67%)"
+  }
+}

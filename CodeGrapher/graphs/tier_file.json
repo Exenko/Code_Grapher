@@ -1,0 +1,960 @@
+{
+  "feature": "codegrapher",
+  "stats": {
+    "nodes": 45,
+    "edges": 97
+  },
+  "nodes": [
+    {
+      "id": "codegrapher::CodeGrapher/analyze/__init__.py",
+      "type": "file",
+      "label": "__init__.py",
+      "file": "CodeGrapher/analyze/__init__.py",
+      "line": null,
+      "language": "python",
+      "x": 100.0,
+      "y": 200.0
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "type": "file",
+      "label": "flow_trace.py",
+      "file": "CodeGrapher/analyze/flow_trace.py",
+      "line": null,
+      "language": "python",
+      "x": -49.99999999999998,
+      "y": 286.6025403784439
+    },
+    {
+      "id": "stdlib::json",
+      "type": "file",
+      "label": "json",
+      "file": null,
+      "line": 12,
+      "language": "python",
+      "x": 100.0,
+      "y": 0.0
+    },
+    {
+      "id": "stdlib::collections",
+      "type": "file",
+      "label": "collections",
+      "file": null,
+      "line": 13,
+      "language": "python",
+      "x": 98.07852804032305,
+      "y": 19.509032201612825
+    },
+    {
+      "id": "stdlib::pathlib",
+      "type": "file",
+      "label": "pathlib",
+      "file": null,
+      "line": 14,
+      "language": "python",
+      "x": 92.38795325112868,
+      "y": 38.268343236508976
+    },
+    {
+      "id": "stdlib::argparse",
+      "type": "file",
+      "label": "argparse",
+      "file": null,
+      "line": 549,
+      "language": "python",
+      "x": 83.14696123025452,
+      "y": 55.557023301960214
+    },
+    {
+      "id": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "type": "file",
+      "label": "type_expander.py",
+      "file": "CodeGrapher/analyze/type_expander.py",
+      "line": null,
+      "language": "python",
+      "x": -50.00000000000004,
+      "y": 113.39745962155615
+    },
+    {
+      "id": "codegrapher::CodeGrapher/graph.py",
+      "type": "file",
+      "label": "graph.py",
+      "file": "CodeGrapher/graph.py",
+      "line": null,
+      "language": "python",
+      "x": 100.0,
+      "y": 0.0
+    },
+    {
+      "id": "stdlib::__future__",
+      "type": "file",
+      "label": "__future__",
+      "file": null,
+      "line": 7,
+      "language": "python",
+      "x": 70.71067811865476,
+      "y": 70.71067811865476
+    },
+    {
+      "id": "stdlib::typing",
+      "type": "file",
+      "label": "typing",
+      "file": null,
+      "line": 10,
+      "language": "python",
+      "x": 55.55702330196023,
+      "y": 83.14696123025452
+    },
+    {
+      "id": "stdlib::schema",
+      "type": "file",
+      "label": "schema",
+      "file": null,
+      "line": 11,
+      "language": "python",
+      "x": 38.26834323650898,
+      "y": 92.38795325112868
+    },
+    {
+      "id": "codegrapher::CodeGrapher/mcp_server.py",
+      "type": "file",
+      "label": "mcp_server.py",
+      "file": "CodeGrapher/mcp_server.py",
+      "line": null,
+      "language": "python",
+      "x": 80.90169943749474,
+      "y": 58.778525229247315
+    },
+    {
+      "id": "stdlib::sys",
+      "type": "file",
+      "label": "sys",
+      "file": null,
+      "line": 10,
+      "language": "python",
+      "x": 19.509032201612833,
+      "y": 98.07852804032305
+    },
+    {
+      "id": "stdlib::heapq",
+      "type": "file",
+      "label": "heapq",
+      "file": null,
+      "line": 12,
+      "language": "python",
+      "x": 6.123233995736766e-15,
+      "y": 100.0
+    },
+    {
+      "id": "stdlib::mcp.server.fastmcp",
+      "type": "file",
+      "label": "mcp.server.fastmcp",
+      "file": null,
+      "line": 16,
+      "language": "python",
+      "x": -19.50903220161282,
+      "y": 98.07852804032305
+    },
+    {
+      "id": "stdlib::pydantic",
+      "type": "file",
+      "label": "pydantic",
+      "file": null,
+      "line": 17,
+      "language": "python",
+      "x": -38.268343236508976,
+      "y": 92.38795325112868
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_cpp.py",
+      "type": "file",
+      "label": "parser_cpp.py",
+      "file": "CodeGrapher/parser_cpp.py",
+      "line": null,
+      "language": "python",
+      "x": 30.901699437494745,
+      "y": 95.10565162951535
+    },
+    {
+      "id": "stdlib::re",
+      "type": "file",
+      "label": "re",
+      "file": null,
+      "line": 28,
+      "language": "python",
+      "x": -55.55702330196019,
+      "y": 83.14696123025453
+    },
+    {
+      "id": "stdlib::graph",
+      "type": "file",
+      "label": "graph",
+      "file": null,
+      "line": 36,
+      "language": "python",
+      "x": -70.71067811865474,
+      "y": 70.71067811865476
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_proto.py",
+      "type": "file",
+      "label": "parser_proto.py",
+      "file": "CodeGrapher/parser_proto.py",
+      "line": null,
+      "language": "python",
+      "x": -30.901699437494734,
+      "y": 95.10565162951536
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_python.py",
+      "type": "file",
+      "label": "parser_python.py",
+      "file": "CodeGrapher/parser_python.py",
+      "line": null,
+      "language": "python",
+      "x": -80.90169943749473,
+      "y": 58.77852522924732
+    },
+    {
+      "id": "stdlib::ast",
+      "type": "file",
+      "label": "ast",
+      "file": null,
+      "line": 24,
+      "language": "python",
+      "x": -83.14696123025453,
+      "y": 55.557023301960214
+    },
+    {
+      "id": "codegrapher::CodeGrapher/parser_xml.py",
+      "type": "file",
+      "label": "parser_xml.py",
+      "file": "CodeGrapher/parser_xml.py",
+      "line": null,
+      "language": "python",
+      "x": -100.0,
+      "y": 1.2246467991473532e-14
+    },
+    {
+      "id": "stdlib::xml.etree.ElementTree",
+      "type": "file",
+      "label": "xml.etree.ElementTree",
+      "file": null,
+      "line": 9,
+      "language": "python",
+      "x": -92.38795325112868,
+      "y": 38.26834323650899
+    },
+    {
+      "id": "codegrapher::CodeGrapher/run.py",
+      "type": "file",
+      "label": "run.py",
+      "file": "CodeGrapher/run.py",
+      "line": null,
+      "language": "python",
+      "x": -80.90169943749474,
+      "y": -58.7785252292473
+    },
+    {
+      "id": "stdlib::glob",
+      "type": "file",
+      "label": "glob",
+      "file": null,
+      "line": 21,
+      "language": "python",
+      "x": -98.07852804032305,
+      "y": 19.50903220161286
+    },
+    {
+      "id": "stdlib::parser_python",
+      "type": "file",
+      "label": "parser_python",
+      "file": null,
+      "line": 35,
+      "language": "python",
+      "x": -100.0,
+      "y": 1.2246467991473532e-14
+    },
+    {
+      "id": "stdlib::parser_cpp",
+      "type": "file",
+      "label": "parser_cpp",
+      "file": null,
+      "line": 36,
+      "language": "python",
+      "x": -98.07852804032305,
+      "y": -19.509032201612836
+    },
+    {
+      "id": "stdlib::parser_proto",
+      "type": "file",
+      "label": "parser_proto",
+      "file": null,
+      "line": 37,
+      "language": "python",
+      "x": -92.38795325112868,
+      "y": -38.26834323650897
+    },
+    {
+      "id": "stdlib::parser_xml",
+      "type": "file",
+      "label": "parser_xml",
+      "file": null,
+      "line": 38,
+      "language": "python",
+      "x": -83.14696123025455,
+      "y": -55.55702330196019
+    },
+    {
+      "id": "stdlib::tiered_builder",
+      "type": "file",
+      "label": "tiered_builder",
+      "file": null,
+      "line": 39,
+      "language": "python",
+      "x": -70.71067811865477,
+      "y": -70.71067811865474
+    },
+    {
+      "id": "codegrapher::CodeGrapher/schema.py",
+      "type": "file",
+      "label": "schema.py",
+      "file": "CodeGrapher/schema.py",
+      "line": null,
+      "language": "python",
+      "x": -30.901699437494756,
+      "y": -95.10565162951535
+    },
+    {
+      "id": "stdlib::dataclasses",
+      "type": "file",
+      "label": "dataclasses",
+      "file": null,
+      "line": 7,
+      "language": "python",
+      "x": -55.557023301960214,
+      "y": -83.14696123025452
+    },
+    {
+      "id": "stdlib::enum",
+      "type": "file",
+      "label": "enum",
+      "file": null,
+      "line": 8,
+      "language": "python",
+      "x": -38.26834323650903,
+      "y": -92.38795325112865
+    },
+    {
+      "id": "codegrapher::CodeGrapher/serve.py",
+      "type": "file",
+      "label": "serve.py",
+      "file": "CodeGrapher/serve.py",
+      "line": null,
+      "language": "python",
+      "x": 30.901699437494724,
+      "y": -95.10565162951536
+    },
+    {
+      "id": "stdlib::mimetypes",
+      "type": "file",
+      "label": "mimetypes",
+      "file": null,
+      "line": 14,
+      "language": "python",
+      "x": -19.509032201612868,
+      "y": -98.07852804032304
+    },
+    {
+      "id": "stdlib::os",
+      "type": "file",
+      "label": "os",
+      "file": null,
+      "line": 15,
+      "language": "python",
+      "x": -1.8369701987210297e-14,
+      "y": -100.0
+    },
+    {
+      "id": "stdlib::threading",
+      "type": "file",
+      "label": "threading",
+      "file": null,
+      "line": 17,
+      "language": "python",
+      "x": 19.50903220161283,
+      "y": -98.07852804032305
+    },
+    {
+      "id": "stdlib::webbrowser",
+      "type": "file",
+      "label": "webbrowser",
+      "file": null,
+      "line": 18,
+      "language": "python",
+      "x": 38.268343236509,
+      "y": -92.38795325112866
+    },
+    {
+      "id": "stdlib::http.server",
+      "type": "file",
+      "label": "http.server",
+      "file": null,
+      "line": 19,
+      "language": "python",
+      "x": 55.557023301960186,
+      "y": -83.14696123025455
+    },
+    {
+      "id": "stdlib::urllib.parse",
+      "type": "file",
+      "label": "urllib.parse",
+      "file": null,
+      "line": 21,
+      "language": "python",
+      "x": 70.71067811865474,
+      "y": -70.71067811865477
+    },
+    {
+      "id": "stdlib::analyze",
+      "type": "file",
+      "label": "analyze",
+      "file": null,
+      "line": 25,
+      "language": "python",
+      "x": 83.14696123025452,
+      "y": -55.557023301960214
+    },
+    {
+      "id": "codegrapher::CodeGrapher/tiered_builder.py",
+      "type": "file",
+      "label": "tiered_builder.py",
+      "file": "CodeGrapher/tiered_builder.py",
+      "line": null,
+      "language": "python",
+      "x": 80.90169943749473,
+      "y": -58.778525229247336
+    },
+    {
+      "id": "stdlib::math",
+      "type": "file",
+      "label": "math",
+      "file": null,
+      "line": 15,
+      "language": "python",
+      "x": 92.38795325112865,
+      "y": -38.26834323650904
+    },
+    {
+      "id": "stdlib::datetime",
+      "type": "file",
+      "label": "datetime",
+      "file": null,
+      "line": 17,
+      "language": "python",
+      "x": 98.07852804032304,
+      "y": -19.50903220161287
+    }
+  ],
+  "edges": [
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "stdlib::collections",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "to": "stdlib::argparse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "stdlib::collections",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "to": "stdlib::argparse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::argparse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::sys",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::collections",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::heapq",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::mcp.server.fastmcp",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/mcp_server.py",
+      "to": "stdlib::pydantic",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::re",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "stdlib::graph",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::re",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "stdlib::graph",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::ast",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "stdlib::graph",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_xml.py",
+      "to": "stdlib::xml.etree.ElementTree",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_xml.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_xml.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::argparse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::glob",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::sys",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::ast",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::graph",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::parser_python",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::parser_cpp",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::parser_proto",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::parser_xml",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "stdlib::tiered_builder",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/schema.py",
+      "to": "stdlib::dataclasses",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/schema.py",
+      "to": "stdlib::enum",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/schema.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/schema.py",
+      "to": "stdlib::re",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::argparse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::mimetypes",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::os",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::sys",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::threading",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::webbrowser",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::http.server",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::urllib.parse",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "stdlib::analyze",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::__future__",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::json",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::math",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::collections",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::datetime",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::pathlib",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::typing",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::schema",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "stdlib::graph",
+      "relation": "imports"
+    },
+    {
+      "from": "codegrapher::CodeGrapher/graph.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_cpp.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 9
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_proto.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 6
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_python.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 7
+    },
+    {
+      "from": "codegrapher::CodeGrapher/parser_xml.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 4
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "codegrapher::CodeGrapher/graph.py",
+      "relation": "depends_on",
+      "count": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "codegrapher::CodeGrapher/parser_python.py",
+      "relation": "depends_on",
+      "count": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "codegrapher::CodeGrapher/tiered_builder.py",
+      "relation": "depends_on",
+      "count": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "relation": "depends_on",
+      "count": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/run.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "relation": "depends_on",
+      "count": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "codegrapher::CodeGrapher/analyze/flow_trace.py",
+      "relation": "depends_on",
+      "count": 1
+    },
+    {
+      "from": "codegrapher::CodeGrapher/serve.py",
+      "to": "codegrapher::CodeGrapher/analyze/type_expander.py",
+      "relation": "depends_on",
+      "count": 2
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "codegrapher::CodeGrapher/schema.py",
+      "relation": "depends_on",
+      "count": 7
+    },
+    {
+      "from": "codegrapher::CodeGrapher/tiered_builder.py",
+      "to": "codegrapher::CodeGrapher/graph.py",
+      "relation": "depends_on",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/repopulate_reference_data.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/repopulate_reference_data.py",
+      "type": "file",
+      "label": "repopulate_reference_data.py",
+      "file": "Client_Side/repopulate_reference_data.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/repopulate_reference_data.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Client_Side/repopulate_reference_data.py",
+      "line": 21,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/repopulate_reference_data.py",
+      "to": "repo::Client_Side/repopulate_reference_data.py::main",
+      "relation": "defines"
+    }
+  ]
+}

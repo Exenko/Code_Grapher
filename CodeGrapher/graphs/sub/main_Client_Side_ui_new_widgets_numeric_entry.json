@@ -1,0 +1,214 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/widgets/numeric_entry.py",
+  "stats": {
+    "nodes": 11,
+    "edges": 17
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py",
+      "type": "file",
+      "label": "numeric_entry.py",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::numeric_entry::NumericEntry",
+      "type": "type",
+      "label": "NumericEntry",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 14,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.__init__",
+      "type": "symbol",
+      "label": "NumericEntry.__init__",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 32,
+      "language": "python",
+      "x": 48.54101966249685,
+      "y": 35.26711513754839
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._setup_validator",
+      "type": "symbol",
+      "label": "NumericEntry._setup_validator",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 61,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_text_changed",
+      "type": "symbol",
+      "label": "NumericEntry._on_text_changed",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 83,
+      "language": "python",
+      "x": -18.54101966249684,
+      "y": 57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_editing_finished",
+      "type": "symbol",
+      "label": "NumericEntry._on_editing_finished",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 107,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._set_valid",
+      "type": "symbol",
+      "label": "NumericEntry._set_valid",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 127,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.is_valid",
+      "type": "symbol",
+      "label": "NumericEntry.is_valid",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 137,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.get_value",
+      "type": "symbol",
+      "label": "NumericEntry.get_value",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 141,
+      "language": "python",
+      "x": -18.541019662496854,
+      "y": -57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_value",
+      "type": "symbol",
+      "label": "NumericEntry.set_value",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 161,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_range",
+      "type": "symbol",
+      "label": "NumericEntry.set_range",
+      "file": "Client_Side/ui_new/widgets/numeric_entry.py",
+      "line": 174,
+      "language": "python",
+      "x": 48.54101966249684,
+      "y": -35.2671151375484
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py",
+      "to": "repo::numeric_entry::NumericEntry",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.__init__",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._setup_validator",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._setup_validator",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_text_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_text_changed",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._set_valid",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_text_changed",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.get_value",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_editing_finished",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_editing_finished",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.get_value",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_editing_finished",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._set_valid",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._set_valid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.is_valid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.get_value",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_value",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::numeric_entry::NumericEntry",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_range",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_range",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._setup_validator",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry.set_range",
+      "to": "repo::Client_Side/ui_new/widgets/numeric_entry.py::NumericEntry._on_editing_finished",
+      "relation": "calls",
+      "seq": 2
+    }
+  ]
+}

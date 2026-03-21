@@ -1,0 +1,733 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/views/preferences_view.py",
+  "stats": {
+    "nodes": 34,
+    "edges": 69
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py",
+      "type": "file",
+      "label": "preferences_view.py",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::preferences_view::PreferencesView",
+      "type": "type",
+      "label": "PreferencesView",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 47,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.__init__",
+      "type": "symbol",
+      "label": "PreferencesView.__init__",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 93,
+      "language": "python",
+      "x": 58.915721835762405,
+      "y": 11.355074661624611
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._setup_ui",
+      "type": "symbol",
+      "label": "PreferencesView._setup_ui",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 118,
+      "language": "python",
+      "x": 55.70207598096436,
+      "y": 22.29974733961965
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_header",
+      "type": "symbol",
+      "label": "PreferencesView._create_header",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 144,
+      "language": "python",
+      "x": 50.47521196987087,
+      "y": 32.43844904733585
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_footer",
+      "type": "symbol",
+      "label": "PreferencesView._create_footer",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 223,
+      "language": "python",
+      "x": 43.424042286304214,
+      "y": 41.404740688926715
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "type": "symbol",
+      "label": "PreferencesView._create_preference_sections",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 248,
+      "language": "python",
+      "x": 34.80341457427189,
+      "y": 48.874557123020146
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_section",
+      "type": "symbol",
+      "label": "PreferencesView._create_geographic_section",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 277,
+      "language": "python",
+      "x": 24.924900780113187,
+      "y": 54.5779197212711
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "type": "symbol",
+      "label": "PreferencesView._create_geographic_level",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 288,
+      "language": "python",
+      "x": 14.145536130565636,
+      "y": 58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "type": "symbol",
+      "label": "PreferencesView._create_allergen_section",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 332,
+      "language": "python",
+      "x": 2.8549149494245443,
+      "y": 59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_diet_section",
+      "type": "symbol",
+      "label": "PreferencesView._create_diet_section",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 376,
+      "language": "python",
+      "x": -8.538890296397101,
+      "y": 59.38928651285597
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_equipment_section",
+      "type": "symbol",
+      "label": "PreferencesView._create_equipment_section",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 395,
+      "language": "python",
+      "x": -19.6240777990453,
+      "y": 56.70004912288011
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "type": "symbol",
+      "label": "PreferencesView._load_reference_data",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 420,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "type": "symbol",
+      "label": "PreferencesView._update_user_dropdown",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 437,
+      "language": "python",
+      "x": -39.2916440367171,
+      "y": 45.3449744612555
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_user_selected",
+      "type": "symbol",
+      "label": "PreferencesView._on_user_selected",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 464,
+      "language": "python",
+      "x": -47.16318568456725,
+      "y": 37.08953917323631
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_user_preferences",
+      "type": "symbol",
+      "label": "PreferencesView._load_user_preferences",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 474,
+      "language": "python",
+      "x": -53.3301269192954,
+      "y": 27.49359130364463
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_current_preferences",
+      "type": "symbol",
+      "label": "PreferencesView._save_current_preferences",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 509,
+      "language": "python",
+      "x": -57.56957841686984,
+      "y": 16.903953410485805
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_geographic_change",
+      "type": "symbol",
+      "label": "PreferencesView._on_geographic_change",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 552,
+      "language": "python",
+      "x": -59.728315354385074,
+      "y": 5.703362598250973
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_allergen_change",
+      "type": "symbol",
+      "label": "PreferencesView._on_allergen_change",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 564,
+      "language": "python",
+      "x": -59.728315354385074,
+      "y": -5.7033625982509575
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_diet_change",
+      "type": "symbol",
+      "label": "PreferencesView._on_diet_change",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 568,
+      "language": "python",
+      "x": -57.569578416869845,
+      "y": -16.903953410485762
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_equipment_change",
+      "type": "symbol",
+      "label": "PreferencesView._on_equipment_change",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 572,
+      "language": "python",
+      "x": -53.330126919295424,
+      "y": -27.493591303644596
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._select_all_allergens",
+      "type": "symbol",
+      "label": "PreferencesView._select_all_allergens",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 576,
+      "language": "python",
+      "x": -47.163185684567246,
+      "y": -37.08953917323632
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._clear_all_allergens",
+      "type": "symbol",
+      "label": "PreferencesView._clear_all_allergens",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 584,
+      "language": "python",
+      "x": -39.291644036717095,
+      "y": -45.344974461255504
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_household_settings",
+      "type": "symbol",
+      "label": "PreferencesView._save_household_settings",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 592,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._add_household_member",
+      "type": "symbol",
+      "label": "PreferencesView._add_household_member",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 632,
+      "language": "python",
+      "x": -19.624077799045313,
+      "y": -56.7000491228801
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._export_preferences",
+      "type": "symbol",
+      "label": "PreferencesView._export_preferences",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 664,
+      "language": "python",
+      "x": -8.538890296397113,
+      "y": -59.38928651285596
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reset_to_defaults",
+      "type": "symbol",
+      "label": "PreferencesView._reset_to_defaults",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 668,
+      "language": "python",
+      "x": 2.854914949424543,
+      "y": -59.93204035098048
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reload_data",
+      "type": "symbol",
+      "label": "PreferencesView._reload_data",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 689,
+      "language": "python",
+      "x": 14.145536130565649,
+      "y": -58.3086940994125
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "type": "symbol",
+      "label": "PreferencesView._show_success",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 696,
+      "language": "python",
+      "x": 24.924900780113163,
+      "y": -54.577919721271115
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_error",
+      "type": "symbol",
+      "label": "PreferencesView._show_error",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 700,
+      "language": "python",
+      "x": 34.803414574271876,
+      "y": -48.87455712302015
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.load_household_data",
+      "type": "symbol",
+      "label": "PreferencesView.load_household_data",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 704,
+      "language": "python",
+      "x": 43.42404228630421,
+      "y": -41.40474068892672
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.refresh_data",
+      "type": "symbol",
+      "label": "PreferencesView.refresh_data",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 732,
+      "language": "python",
+      "x": 50.47521196987085,
+      "y": -32.438449047335894
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.clear_data",
+      "type": "symbol",
+      "label": "PreferencesView.clear_data",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 741,
+      "language": "python",
+      "x": 55.70207598096434,
+      "y": -22.299747339619685
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.on_view_activated",
+      "type": "symbol",
+      "label": "PreferencesView.on_view_activated",
+      "file": "Client_Side/ui_new/views/preferences_view.py",
+      "line": 747,
+      "language": "python",
+      "x": 58.9157218357624,
+      "y": -11.355074661624638
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py",
+      "to": "repo::preferences_view::PreferencesView",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.__init__",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._setup_ui",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_header",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_footer",
+      "relation": "calls",
+      "seq": 14
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_header",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_footer",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_section",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_diet_section",
+      "relation": "calls",
+      "seq": 12
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_equipment_section",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_geographic_change",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_geographic_level",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._select_all_allergens",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._clear_all_allergens",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_allergen_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_allergen_change",
+      "relation": "calls",
+      "seq": 19
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_diet_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_diet_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_diet_change",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_equipment_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_equipment_section",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_equipment_change",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._create_preference_sections",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_user_preferences",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_user_selected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_user_selected",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_user_preferences",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_user_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_current_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_current_preferences",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_error",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_current_preferences",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_geographic_change",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_allergen_change",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_diet_change",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._on_equipment_change",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._select_all_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._clear_all_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_household_settings",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_household_settings",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_error",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._save_household_settings",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 8
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._add_household_member",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._add_household_member",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_error",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._add_household_member",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._add_household_member",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._export_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._export_preferences",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reset_to_defaults",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reset_to_defaults",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reload_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reload_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reload_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.load_household_data",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reload_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_success",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._show_error",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.load_household_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.load_household_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._update_user_dropdown",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.refresh_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._load_reference_data",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.refresh_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.load_household_data",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.clear_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.clear_data",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView._reset_to_defaults",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::preferences_view::PreferencesView",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.on_view_activated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.on_view_activated",
+      "to": "repo::Client_Side/ui_new/views/preferences_view.py::PreferencesView.refresh_data",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

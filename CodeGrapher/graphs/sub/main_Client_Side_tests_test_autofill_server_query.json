@@ -1,0 +1,455 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_autofill_server_query.py",
+  "stats": {
+    "nodes": 28,
+    "edges": 27
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "type": "file",
+      "label": "test_autofill_server_query.py",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "type": "type",
+      "label": "TestBuildAnonymousQuery",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 23,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_build_anonymous_query_creates_request",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_build_anonymous_query_creates_request",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 26,
+      "language": "python",
+      "is_test": true,
+      "x": 58.38269223478943,
+      "y": 13.83695224454641
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_contains_only_anonymous_fields",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_query_contains_only_anonymous_fields",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 45,
+      "language": "python",
+      "is_test": true,
+      "x": 53.61795841940474,
+      "y": 26.92795081202773
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_does_not_contain_pii",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_query_does_not_contain_pii",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 80,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_values_are_numeric_ids",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_query_values_are_numeric_ids",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 115,
+      "language": "python",
+      "is_test": true,
+      "x": 35.82951550216717,
+      "y": 48.127391565302624
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_batch_size_is_fixed_for_privacy",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_batch_size_is_fixed_for_privacy",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 155,
+      "language": "python",
+      "is_test": true,
+      "x": 23.764785962349414,
+      "y": 55.09296641281644
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_obfuscation_adds_decoy_data",
+      "type": "symbol",
+      "label": "TestBuildAnonymousQuery.test_obfuscation_adds_decoy_data",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 172,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::test_autofill_server_query::TestQueryExecution",
+      "type": "type",
+      "label": "TestQueryExecution",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 209,
+      "language": "python",
+      "is_test": true,
+      "x": -3.4886897346285464,
+      "y": 59.89848949627609
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_execute_recipe_query_sends_post",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_execute_recipe_query_sends_post",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 212,
+      "language": "python",
+      "is_test": true,
+      "x": -17.208193962665412,
+      "y": 57.47937073892933
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_200_response_with_recipes",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_handles_200_response_with_recipes",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 243,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_402_insufficient_tokens",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_handles_402_insufficient_tokens",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 274,
+      "language": "python",
+      "is_test": true,
+      "x": -41.17449827212401,
+      "y": 43.64241849438293
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_404_invalid_account",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_handles_404_invalid_account",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 300,
+      "language": "python",
+      "is_test": true,
+      "x": -50.12926868477618,
+      "y": 32.970538684248375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_network_timeout",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_handles_network_timeout",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 324,
+      "language": "python",
+      "is_test": true,
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_connection_error",
+      "type": "symbol",
+      "label": "TestQueryExecution.test_handles_connection_error",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 344,
+      "language": "python",
+      "is_test": true,
+      "x": -59.59430146451658,
+      "y": 6.965574847513795
+    },
+    {
+      "id": "repo::test_autofill_server_query::TestResponseParsing",
+      "type": "type",
+      "label": "TestResponseParsing",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 369,
+      "language": "python",
+      "is_test": true,
+      "x": -59.59430146451658,
+      "y": -6.965574847513808
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_parse_query_response_extracts_recipes",
+      "type": "symbol",
+      "label": "TestResponseParsing.test_parse_query_response_extracts_recipes",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 372,
+      "language": "python",
+      "is_test": true,
+      "x": -56.38155724715451,
+      "y": -20.521208599540092
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_validates_recipe_structure",
+      "type": "symbol",
+      "label": "TestResponseParsing.test_validates_recipe_structure",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 409,
+      "language": "python",
+      "is_test": true,
+      "x": -50.12926868477619,
+      "y": -32.97053868424836
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_tracks_tokens_deducted",
+      "type": "symbol",
+      "label": "TestResponseParsing.test_tracks_tokens_deducted",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 438,
+      "language": "python",
+      "is_test": true,
+      "x": -41.17449827212402,
+      "y": -43.642418494382916
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_handles_empty_recipes_list",
+      "type": "symbol",
+      "label": "TestResponseParsing.test_handles_empty_recipes_list",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 457,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::test_autofill_server_query::TestAnonymousQueryRequest",
+      "type": "type",
+      "label": "TestAnonymousQueryRequest",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 481,
+      "language": "python",
+      "is_test": true,
+      "x": -17.20819396266544,
+      "y": -57.479370738929326
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_dataclass_creation",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_dataclass_creation",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 484,
+      "language": "python",
+      "is_test": true,
+      "x": -3.4886897346285743,
+      "y": -59.89848949627609
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_to_dict_method",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_to_dict_method",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 505,
+      "language": "python",
+      "is_test": true,
+      "x": 10.41889066001585,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_default_values",
+      "type": "symbol",
+      "label": "TestAnonymousQueryRequest.test_default_values",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 524,
+      "language": "python",
+      "is_test": true,
+      "x": 23.76478596234939,
+      "y": -55.09296641281645
+    },
+    {
+      "id": "repo::test_autofill_server_query::TestTokenManagement",
+      "type": "type",
+      "label": "TestTokenManagement",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 547,
+      "language": "python",
+      "is_test": true,
+      "x": 35.82951550216715,
+      "y": -48.12739156530264
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_check_token_balance_before_query",
+      "type": "symbol",
+      "label": "TestTokenManagement.test_check_token_balance_before_query",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 550,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_query_fails_with_insufficient_balance",
+      "type": "symbol",
+      "label": "TestTokenManagement.test_query_fails_with_insufficient_balance",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 577,
+      "language": "python",
+      "is_test": true,
+      "x": 53.61795841940473,
+      "y": -26.927950812027746
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_consume_tokens_updates_balance",
+      "type": "symbol",
+      "label": "TestTokenManagement.test_consume_tokens_updates_balance",
+      "file": "Client_Side/tests/test_autofill_server_query.py",
+      "line": 595,
+      "language": "python",
+      "is_test": true,
+      "x": 58.382692234789445,
+      "y": -13.836952244546374
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "to": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_build_anonymous_query_creates_request",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_contains_only_anonymous_fields",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_does_not_contain_pii",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_query_values_are_numeric_ids",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_batch_size_is_fixed_for_privacy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestBuildAnonymousQuery",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestBuildAnonymousQuery.test_obfuscation_adds_decoy_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "to": "repo::test_autofill_server_query::TestQueryExecution",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_execute_recipe_query_sends_post",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_200_response_with_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_402_insufficient_tokens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_404_invalid_account",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_network_timeout",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestQueryExecution",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestQueryExecution.test_handles_connection_error",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "to": "repo::test_autofill_server_query::TestResponseParsing",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestResponseParsing",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_parse_query_response_extracts_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestResponseParsing",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_validates_recipe_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestResponseParsing",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_tracks_tokens_deducted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestResponseParsing",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestResponseParsing.test_handles_empty_recipes_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "to": "repo::test_autofill_server_query::TestAnonymousQueryRequest",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_dataclass_creation",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_to_dict_method",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestAnonymousQueryRequest",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestAnonymousQueryRequest.test_default_values",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_server_query.py",
+      "to": "repo::test_autofill_server_query::TestTokenManagement",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestTokenManagement",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_check_token_balance_before_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestTokenManagement",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_query_fails_with_insufficient_balance",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_server_query::TestTokenManagement",
+      "to": "repo::Client_Side/tests/test_autofill_server_query.py::TestTokenManagement.test_consume_tokens_updates_balance",
+      "relation": "contains"
+    }
+  ]
+}

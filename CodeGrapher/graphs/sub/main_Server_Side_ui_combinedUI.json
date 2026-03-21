@@ -1,0 +1,376 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/ui/combinedUI.py",
+  "stats": {
+    "nodes": 19,
+    "edges": 32
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py",
+      "type": "file",
+      "label": "combinedUI.py",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::combinedUI::DatabaseManager",
+      "type": "type",
+      "label": "DatabaseManager",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 6,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.__init__",
+      "type": "symbol",
+      "label": "DatabaseManager.__init__",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 7,
+      "language": "python",
+      "x": 56.381557247154504,
+      "y": 20.521208599540124
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_connection",
+      "type": "symbol",
+      "label": "DatabaseManager.get_connection",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 27,
+      "language": "python",
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.load_cuisines_hierarchy",
+      "type": "symbol",
+      "label": "DatabaseManager.load_cuisines_hierarchy",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 30,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_allergens",
+      "type": "symbol",
+      "label": "DatabaseManager.get_allergens",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 90,
+      "language": "python",
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::combinedUI::CollapsibleFrame",
+      "type": "type",
+      "label": "CollapsibleFrame",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 144,
+      "language": "python",
+      "x": -10.418890660015819,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.__init__",
+      "type": "symbol",
+      "label": "CollapsibleFrame.__init__",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 145,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.toggle",
+      "type": "symbol",
+      "label": "CollapsibleFrame.toggle",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 175,
+      "language": "python",
+      "x": -45.96266658713867,
+      "y": 38.56725658119237
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_label",
+      "type": "symbol",
+      "label": "CollapsibleFrame.update_label",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 182,
+      "language": "python",
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_children",
+      "type": "symbol",
+      "label": "CollapsibleFrame.update_children",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 187,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::combinedUI::PreferenceApp",
+      "type": "type",
+      "label": "PreferenceApp",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 203,
+      "language": "python",
+      "x": -56.381557247154504,
+      "y": -20.52120859954012
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.__init__",
+      "type": "symbol",
+      "label": "PreferenceApp.__init__",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 204,
+      "language": "python",
+      "x": -45.9626665871387,
+      "y": -38.56725658119233
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "type": "symbol",
+      "label": "PreferenceApp.setup_ui",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 217,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "type": "symbol",
+      "label": "PreferenceApp.create_cuisine_hierarchy",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 240,
+      "language": "python",
+      "x": -10.418890660015819,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_allergens_section",
+      "type": "symbol",
+      "label": "PreferenceApp.create_allergens_section",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 248,
+      "language": "python",
+      "x": 10.418890660015798,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.filter_allergens",
+      "type": "symbol",
+      "label": "PreferenceApp.filter_allergens",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 311,
+      "language": "python",
+      "x": 29.99999999999996,
+      "y": -51.96152422706634
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_availability_section",
+      "type": "symbol",
+      "label": "PreferenceApp.create_availability_section",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 356,
+      "language": "python",
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.save_preferences",
+      "type": "symbol",
+      "label": "PreferenceApp.save_preferences",
+      "file": "Server_Side/ui/combinedUI.py",
+      "line": 372,
+      "language": "python",
+      "x": 56.381557247154504,
+      "y": -20.521208599540117
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py",
+      "to": "repo::combinedUI::DatabaseManager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::combinedUI::DatabaseManager",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.__init__",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_connection",
+      "relation": "calls",
+      "seq": 4
+    },
+    {
+      "from": "repo::combinedUI::DatabaseManager",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_connection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::combinedUI::DatabaseManager",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.load_cuisines_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.load_cuisines_hierarchy",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::combinedUI::DatabaseManager",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_allergens",
+      "to": "repo::Server_Side/ui/combinedUI.py::DatabaseManager.get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py",
+      "to": "repo::combinedUI::CollapsibleFrame",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::combinedUI::CollapsibleFrame",
+      "to": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::combinedUI::CollapsibleFrame",
+      "to": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.toggle",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::combinedUI::CollapsibleFrame",
+      "to": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_label",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_label",
+      "to": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_children",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::combinedUI::CollapsibleFrame",
+      "to": "repo::Server_Side/ui/combinedUI.py::CollapsibleFrame.update_children",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py",
+      "to": "repo::combinedUI::PreferenceApp",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.__init__",
+      "to": "repo::combinedUI::DatabaseManager",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.__init__",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "to": "repo::combinedUI::CollapsibleFrame",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "relation": "calls",
+      "seq": 9
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_allergens_section",
+      "relation": "calls",
+      "seq": 10
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.setup_ui",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_availability_section",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "to": "repo::combinedUI::CollapsibleFrame",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_cuisine_hierarchy",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_allergens_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_allergens_section",
+      "to": "repo::combinedUI::CollapsibleFrame",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_allergens_section",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.filter_allergens",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.filter_allergens",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.create_availability_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::combinedUI::PreferenceApp",
+      "to": "repo::Server_Side/ui/combinedUI.py::PreferenceApp.save_preferences",
+      "relation": "contains"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "feature": "repo",
+  "entry_point": "printing_information/print_csv_headers.py",
+  "stats": {
+    "nodes": 7,
+    "edges": 6
+  },
+  "nodes": [
+    {
+      "id": "repo::printing_information/print_csv_headers.py",
+      "type": "file",
+      "label": "print_csv_headers.py",
+      "file": "printing_information/print_csv_headers.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::print_csv_info",
+      "type": "symbol",
+      "label": "print_csv_info",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 10,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::analyze_fao_data_concise",
+      "type": "symbol",
+      "label": "analyze_fao_data_concise",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 20,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::comprehensive_fao_analysis",
+      "type": "symbol",
+      "label": "comprehensive_fao_analysis",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 68,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::analyze_fao_data_strategically",
+      "type": "symbol",
+      "label": "analyze_fao_data_strategically",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 275,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::debug_fao_month_format",
+      "type": "symbol",
+      "label": "debug_fao_month_format",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 528,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::printing_information/print_csv_headers.py::find_month_columns_alternative",
+      "type": "symbol",
+      "label": "find_month_columns_alternative",
+      "file": "printing_information/print_csv_headers.py",
+      "line": 613,
+      "language": "python",
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::print_csv_info",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::analyze_fao_data_concise",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::comprehensive_fao_analysis",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::analyze_fao_data_strategically",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::debug_fao_month_format",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_csv_headers.py",
+      "to": "repo::printing_information/print_csv_headers.py::find_month_columns_alternative",
+      "relation": "defines"
+    }
+  ]
+}

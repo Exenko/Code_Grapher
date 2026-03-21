@@ -1,0 +1,59 @@
+[
+  {
+    "fsm_name": "ProducerFSM",
+    "file": "CodeGrapherStressTest/producer/main.cc",
+    "dispatch_function": "producer_fsm_run",
+    "states": ["P_IDLE", "P_ENCODING", "P_TRANSMITTING", "P_WAITING_ACK", "P_ERROR", "P_FATAL"],
+    "transitions": [
+      {"from": "P_IDLE", "trigger": "trigger_event()", "to": "P_ENCODING"},
+      {"from": "P_ENCODING", "trigger": "auto", "to": "P_TRANSMITTING"},
+      {"from": "P_TRANSMITTING", "trigger": "auto", "to": "P_WAITING_ACK"},
+      {"from": "P_WAITING_ACK", "trigger": "ack_received_event()", "to": "P_IDLE", "guard": "ack_received == 1"},
+      {"from": "P_WAITING_ACK", "trigger": "timeout_event()", "to": "P_ERROR"},
+      {"from": "P_ERROR", "trigger": "retry", "to": "P_IDLE", "guard": "retry_count < retry_limit"},
+      {"from": "P_ERROR", "trigger": "retry exhausted", "to": "P_FATAL"}
+    ]
+  },
+  {
+    "fsm_name": "BrokerFSM",
+    "file": "CodeGrapherStressTest/broker/main.cc",
+    "dispatch_function": "broker_fsm_run",
+    "states": ["B_LISTENING", "B_ROUTING", "B_FORWARDING", "B_ERROR_RECOVERY"],
+    "transitions": [
+      {"from": "B_LISTENING", "trigger": "message arrives", "to": "B_ROUTING", "guard": "incoming != NULL"},
+      {"from": "B_ROUTING", "trigger": "auto", "to": "B_FORWARDING"},
+      {"from": "B_FORWARDING", "trigger": "forward_message() success", "to": "B_LISTENING", "guard": "forward_message() == 1"},
+      {"from": "B_FORWARDING", "trigger": "forward_message() fail", "to": "B_ERROR_RECOVERY", "guard": "forward_message() == 0"},
+      {"from": "B_ERROR_RECOVERY", "trigger": "retry or max retries", "to": "B_LISTENING", "guard": "retry_count < max_retries"}
+    ]
+  },
+  {
+    "fsm_name": "ConsumerFSM",
+    "file": "CodeGrapherStressTest/consumer/main.cc",
+    "dispatch_function": "consumer_fsm_run",
+    "states": ["C_WAITING", "C_DECODING", "C_PROCESSING", "C_WRITING", "C_ERROR"],
+    "transitions": [
+      {"from": "C_WAITING", "trigger": "on_msg_received() / MSG_FORWARDED", "to": "C_DECODING"},
+      {"from": "C_DECODING", "trigger": "decode_message() success", "to": "C_PROCESSING", "guard": "decode_message() != NULL"},
+      {"from": "C_DECODING", "trigger": "decode_message() fail", "to": "C_ERROR", "guard": "decode_message() == NULL"},
+      {"from": "C_PROCESSING", "trigger": "process_payload() success", "to": "C_WRITING", "guard": "process_payload() != NULL"},
+      {"from": "C_PROCESSING", "trigger": "process_payload() fail", "to": "C_ERROR", "guard": "process_payload() == NULL"},
+      {"from": "C_WRITING", "trigger": "write_output() success", "to": "C_WAITING", "guard": "write_output() == 1"},
+      {"from": "C_WRITING", "trigger": "write_output() fail", "to": "C_ERROR", "guard": "write_output() == 0"},
+      {"from": "C_ERROR", "trigger": "auto recovery", "to": "C_WAITING"}
+    ]
+  },
+  {
+    "fsm_name": "ProcessingSubFSM",
+    "file": "CodeGrapherStressTest/consumer/processor.cc",
+    "dispatch_function": "process_payload",
+    "note": "Linear sub-FSM within ConsumerFSM C_PROCESSING state — procedural, no switch dispatch",
+    "states": ["PROC_VALIDATING", "PROC_TRANSFORMING", "PROC_ENRICHING", "PROC_ERROR"],
+    "transitions": [
+      {"from": "PROC_VALIDATING", "trigger": "validate() success", "to": "PROC_TRANSFORMING", "guard": "validate() == 1"},
+      {"from": "PROC_VALIDATING", "trigger": "validate() fail", "to": "PROC_ERROR", "guard": "validate() == 0"},
+      {"from": "PROC_TRANSFORMING", "trigger": "auto", "to": "PROC_ENRICHING"},
+      {"from": "PROC_ENRICHING", "trigger": "auto", "to": "complete"}
+    ]
+  }
+]

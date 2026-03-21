@@ -1,0 +1,1175 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_autofill_engine.py",
+  "stats": {
+    "nodes": 73,
+    "edges": 72
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py",
+      "type": "file",
+      "label": "test_autofill_engine.py",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::test_autofill_engine::TestScoringFunctions",
+      "type": "type",
+      "label": "TestScoringFunctions",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 62,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_min",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_seasonal_score_calculation_min",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 65,
+      "language": "python",
+      "is_test": true,
+      "x": 59.771681885504734,
+      "y": 5.22934456485949
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_max",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_seasonal_score_calculation_max",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 77,
+      "language": "python",
+      "is_test": true,
+      "x": 59.088465180732484,
+      "y": 10.418890660015819
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_partial",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_seasonal_score_calculation_partial",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 89,
+      "language": "python",
+      "is_test": true,
+      "x": 57.9555495773441,
+      "y": 15.529142706151244
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_very_comfortable",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_time_fit_very_comfortable",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 101,
+      "language": "python",
+      "is_test": true,
+      "x": 56.381557247154504,
+      "y": 20.521208599540124
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_good",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_time_fit_good",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 113,
+      "language": "python",
+      "is_test": true,
+      "x": 54.378467222199,
+      "y": 25.357095704441967
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_exact",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_time_fit_exact",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 125,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_too_long_penalty",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_time_fit_too_long_penalty",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 144,
+      "language": "python",
+      "is_test": true,
+      "x": 49.14912265733951,
+      "y": 34.41458618106276
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_empty_tracker",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_overlap_bonus_empty_tracker",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 156,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713868,
+      "y": 38.56725658119235
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_full_match",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_overlap_bonus_full_match",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 167,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_partial_match",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_overlap_bonus_partial_match",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 188,
+      "language": "python",
+      "is_test": true,
+      "x": 38.56725658119236,
+      "y": 45.96266658713868
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_cuisine_preference_bonus",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_cuisine_preference_bonus",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 208,
+      "language": "python",
+      "is_test": true,
+      "x": 34.41458618106277,
+      "y": 49.149122657339504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_skill_match_bonus_perfect",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_skill_match_bonus_perfect",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 224,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_meal_prep_bonus_applies",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_meal_prep_bonus_applies",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 239,
+      "language": "python",
+      "is_test": true,
+      "x": 25.357095704441967,
+      "y": 54.378467222199
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_meal_prep_bonus_not_applies_without_tag",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_meal_prep_bonus_not_applies_without_tag",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 251,
+      "language": "python",
+      "is_test": true,
+      "x": 20.52120859954013,
+      "y": 56.3815572471545
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_storage_bonus_freezer_friendly",
+      "type": "symbol",
+      "label": "TestScoringFunctions.test_storage_bonus_freezer_friendly",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 263,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151259,
+      "y": 57.955549577344094
+    },
+    {
+      "id": "repo::test_autofill_engine::TestAssignmentLogic",
+      "type": "type",
+      "label": "TestAssignmentLogic",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 280,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015824,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assign_single_recipe_single_session",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_assign_single_recipe_single_session",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 283,
+      "language": "python",
+      "is_test": true,
+      "x": 5.229344564859488,
+      "y": 59.771681885504734
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assign_multiple_recipes_multiple_sessions",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_assign_multiple_recipes_multiple_sessions",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 303,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_no_duplicate_recipe_assignments",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_no_duplicate_recipe_assignments",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 325,
+      "language": "python",
+      "is_test": true,
+      "x": -5.229344564859481,
+      "y": 59.771681885504734
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_unassigned_session_with_empty_recipes",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_unassigned_session_with_empty_recipes",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 349,
+      "language": "python",
+      "is_test": true,
+      "x": -10.418890660015819,
+      "y": 59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assignment_updates_ingredient_tracker",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_assignment_updates_ingredient_tracker",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 366,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151251,
+      "y": 57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_greedy_algorithm_picks_highest_score",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_greedy_algorithm_picks_highest_score",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 388,
+      "language": "python",
+      "is_test": true,
+      "x": -20.52120859954011,
+      "y": 56.381557247154504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_session_order_respects_greedy_approach",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_session_order_respects_greedy_approach",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 409,
+      "language": "python",
+      "is_test": true,
+      "x": -25.35709570444196,
+      "y": 54.378467222199006
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_ingredient_tracker_accumulates_across_assignments",
+      "type": "symbol",
+      "label": "TestAssignmentLogic.test_ingredient_tracker_accumulates_across_assignments",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 432,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::test_autofill_engine::TestIngredientTracking",
+      "type": "type",
+      "label": "TestIngredientTracking",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 467,
+      "language": "python",
+      "is_test": true,
+      "x": -34.41458618106277,
+      "y": 49.149122657339504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_initialization_empty",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_initialization_empty",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 470,
+      "language": "python",
+      "is_test": true,
+      "x": -38.56725658119236,
+      "y": 45.96266658713868
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_add_fixed_ingredient",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_add_fixed_ingredient",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 475,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_add_substitutable_ingredient",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_add_substitutable_ingredient",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 483,
+      "language": "python",
+      "is_test": true,
+      "x": -45.96266658713867,
+      "y": 38.56725658119237
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_skip_optional_ingredient",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_skip_optional_ingredient",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 493,
+      "language": "python",
+      "is_test": true,
+      "x": -49.14912265733952,
+      "y": 34.41458618106276
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_ignore_empty_ingredient_names",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_ignore_empty_ingredient_names",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 503,
+      "language": "python",
+      "is_test": true,
+      "x": -51.961524227066306,
+      "y": 30.00000000000002
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_ignore_non_dict_ingredients",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_ignore_non_dict_ingredients",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 514,
+      "language": "python",
+      "is_test": true,
+      "x": -54.378467222199,
+      "y": 25.35709570444197
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_zero_with_no_shared_ingredients",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_overlap_bonus_zero_with_no_shared_ingredients",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 525,
+      "language": "python",
+      "is_test": true,
+      "x": -56.3815572471545,
+      "y": 20.52120859954013
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_full_with_all_shared_fixed",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_overlap_bonus_full_with_all_shared_fixed",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 536,
+      "language": "python",
+      "is_test": true,
+      "x": -57.9555495773441,
+      "y": 15.529142706151234
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_with_substitutable_match",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_overlap_bonus_with_substitutable_match",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 553,
+      "language": "python",
+      "is_test": true,
+      "x": -59.088465180732484,
+      "y": 10.418890660015817
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_skips_optional_ingredients",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_overlap_bonus_skips_optional_ingredients",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 569,
+      "language": "python",
+      "is_test": true,
+      "x": -59.771681885504734,
+      "y": 5.229344564859492
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_count_ingredient_uses",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_count_ingredient_uses",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 584,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_overlap_ratio",
+      "type": "symbol",
+      "label": "TestIngredientTracking.test_tracker_overlap_ratio",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 594,
+      "language": "python",
+      "is_test": true,
+      "x": -59.771681885504734,
+      "y": -5.229344564859477
+    },
+    {
+      "id": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "type": "type",
+      "label": "TestMealRequirementCompilation",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 615,
+      "language": "python",
+      "is_test": true,
+      "x": -59.088465180732484,
+      "y": -10.418890660015801
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_compile_meal_requirements_basic_structure",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_compile_meal_requirements_basic_structure",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 618,
+      "language": "python",
+      "is_test": true,
+      "x": -57.95554957734411,
+      "y": -15.529142706151221
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_multiple_eaters",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_meal_requirement_multiple_eaters",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 628,
+      "language": "python",
+      "is_test": true,
+      "x": -56.381557247154504,
+      "y": -20.52120859954012
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_no_cook_available",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_meal_requirement_no_cook_available",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 638,
+      "language": "python",
+      "is_test": true,
+      "x": -54.37846722219901,
+      "y": -25.35709570444193
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_time_available_tracking",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_meal_requirement_time_available_tracking",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 649,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706631,
+      "y": -30.000000000000007
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_entree",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_classify_recipe_meal_type_entree",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 655,
+      "language": "python",
+      "is_test": true,
+      "x": -49.14912265733952,
+      "y": -34.41458618106275
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_breakfast",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_classify_recipe_meal_type_breakfast",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 663,
+      "language": "python",
+      "is_test": true,
+      "x": -45.9626665871387,
+      "y": -38.56725658119233
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_dessert",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_classify_recipe_meal_type_dessert",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 673,
+      "language": "python",
+      "is_test": true,
+      "x": -42.42640687119286,
+      "y": -42.426406871192846
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_side",
+      "type": "symbol",
+      "label": "TestMealRequirementCompilation.test_classify_recipe_meal_type_side",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 684,
+      "language": "python",
+      "is_test": true,
+      "x": -38.56725658119237,
+      "y": -45.96266658713867
+    },
+    {
+      "id": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "type": "type",
+      "label": "TestCookingOpportunityCalculation",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 699,
+      "language": "python",
+      "is_test": true,
+      "x": -34.41458618106274,
+      "y": -49.149122657339525
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_single_opportunity",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_single_opportunity",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 702,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_multiple_opportunities",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_multiple_opportunities",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 723,
+      "language": "python",
+      "is_test": true,
+      "x": -25.357095704441996,
+      "y": -54.378467222198985
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_respects_max_servings",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_respects_max_servings",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 737,
+      "language": "python",
+      "is_test": true,
+      "x": -20.521208599540113,
+      "y": -56.381557247154504
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_accept",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_accept",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 756,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151237,
+      "y": -57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_reject",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_reject",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 775,
+      "language": "python",
+      "is_test": true,
+      "x": -10.418890660015819,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_invalid_family_size",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_calculate_sessions_invalid_family_size",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 793,
+      "language": "python",
+      "is_test": true,
+      "x": -5.229344564859495,
+      "y": -59.771681885504734
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_cooking_session_properties",
+      "type": "symbol",
+      "label": "TestCookingOpportunityCalculation.test_cooking_session_properties",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 805,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::test_autofill_engine::TestFallbackChains",
+      "type": "type",
+      "label": "TestFallbackChains",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 828,
+      "language": "python",
+      "is_test": true,
+      "x": 5.229344564859473,
+      "y": -59.771681885504734
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_score_with_none_ingredients",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_score_with_none_ingredients",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 831,
+      "language": "python",
+      "is_test": true,
+      "x": 10.418890660015798,
+      "y": -59.088465180732484
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_score_with_missing_recipe_fields",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_score_with_missing_recipe_fields",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 844,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151218,
+      "y": -57.95554957734411
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_assignment_with_no_viable_recipes",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_assignment_with_no_viable_recipes",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 861,
+      "language": "python",
+      "is_test": true,
+      "x": 20.521208599540138,
+      "y": -56.3815572471545
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_recipe_score_clamping",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_recipe_score_clamping",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 876,
+      "language": "python",
+      "is_test": true,
+      "x": 25.35709570444193,
+      "y": -54.37846722219901
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_empty_cuisine_history_handling",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_empty_cuisine_history_handling",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 896,
+      "language": "python",
+      "is_test": true,
+      "x": 29.99999999999996,
+      "y": -51.96152422706634
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_scoring_with_extreme_household_skill",
+      "type": "symbol",
+      "label": "TestFallbackChains.test_scoring_with_extreme_household_skill",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 912,
+      "language": "python",
+      "is_test": true,
+      "x": 34.41458618106276,
+      "y": -49.14912265733951
+    },
+    {
+      "id": "repo::test_autofill_engine::TestOutputGeneration",
+      "type": "type",
+      "label": "TestOutputGeneration",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 933,
+      "language": "python",
+      "is_test": true,
+      "x": 38.56725658119235,
+      "y": -45.962666587138685
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_recipe_score_explain_method",
+      "type": "symbol",
+      "label": "TestOutputGeneration.test_recipe_score_explain_method",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 936,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_assigned_session_structure",
+      "type": "symbol",
+      "label": "TestOutputGeneration.test_assigned_session_structure",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 952,
+      "language": "python",
+      "is_test": true,
+      "x": 45.96266658713867,
+      "y": -38.567256581192375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_assigned_session_unassigned",
+      "type": "symbol",
+      "label": "TestOutputGeneration.test_assigned_session_unassigned",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 968,
+      "language": "python",
+      "is_test": true,
+      "x": 49.1491226573395,
+      "y": -34.41458618106279
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_recipe_score_all_fields_populated",
+      "type": "symbol",
+      "label": "TestOutputGeneration.test_recipe_score_all_fields_populated",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 981,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706633,
+      "y": -29.99999999999998
+    },
+    {
+      "id": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "type": "type",
+      "label": "TestEndToEndAutofill",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 1008,
+      "language": "python",
+      "is_test": true,
+      "x": 54.378467222198985,
+      "y": -25.357095704442
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_full_workflow_single_session",
+      "type": "symbol",
+      "label": "TestEndToEndAutofill.test_full_workflow_single_session",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 1011,
+      "language": "python",
+      "is_test": true,
+      "x": 56.381557247154504,
+      "y": -20.521208599540117
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_full_workflow_weekly_plan",
+      "type": "symbol",
+      "label": "TestEndToEndAutofill.test_full_workflow_weekly_plan",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 1029,
+      "language": "python",
+      "is_test": true,
+      "x": 57.9555495773441,
+      "y": -15.52914270615124
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_workflow_handles_constraint_conflicts",
+      "type": "symbol",
+      "label": "TestEndToEndAutofill.test_workflow_handles_constraint_conflicts",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 1053,
+      "language": "python",
+      "is_test": true,
+      "x": 59.088465180732484,
+      "y": -10.418890660015823
+    },
+    {
+      "id": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_workflow_with_diverse_recipes",
+      "type": "symbol",
+      "label": "TestEndToEndAutofill.test_workflow_with_diverse_recipes",
+      "file": "Client_Side/tests/test_autofill_engine.py",
+      "line": 1075,
+      "language": "python",
+      "is_test": true,
+      "x": 59.771681885504734,
+      "y": -5.229344564859499
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestScoringFunctions",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_min",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_max",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_seasonal_score_calculation_partial",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_very_comfortable",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_good",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_exact",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_time_fit_too_long_penalty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_empty_tracker",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_full_match",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_overlap_bonus_partial_match",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_cuisine_preference_bonus",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_skill_match_bonus_perfect",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_meal_prep_bonus_applies",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_meal_prep_bonus_not_applies_without_tag",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestScoringFunctions",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestScoringFunctions.test_storage_bonus_freezer_friendly",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestAssignmentLogic",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assign_single_recipe_single_session",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assign_multiple_recipes_multiple_sessions",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_no_duplicate_recipe_assignments",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_unassigned_session_with_empty_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_assignment_updates_ingredient_tracker",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_greedy_algorithm_picks_highest_score",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_session_order_respects_greedy_approach",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestAssignmentLogic",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestAssignmentLogic.test_ingredient_tracker_accumulates_across_assignments",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestIngredientTracking",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_initialization_empty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_add_fixed_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_add_substitutable_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_skip_optional_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_ignore_empty_ingredient_names",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_ignore_non_dict_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_zero_with_no_shared_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_full_with_all_shared_fixed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_with_substitutable_match",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_overlap_bonus_skips_optional_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_count_ingredient_uses",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestIngredientTracking",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestIngredientTracking.test_tracker_overlap_ratio",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_compile_meal_requirements_basic_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_multiple_eaters",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_no_cook_available",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_meal_requirement_time_available_tracking",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_entree",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_breakfast",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_dessert",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestMealRequirementCompilation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestMealRequirementCompilation.test_classify_recipe_meal_type_side",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_single_opportunity",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_multiple_opportunities",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_respects_max_servings",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_accept",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_leftover_preference_reject",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_calculate_sessions_invalid_family_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestCookingOpportunityCalculation",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestCookingOpportunityCalculation.test_cooking_session_properties",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestFallbackChains",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_score_with_none_ingredients",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_score_with_missing_recipe_fields",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_assignment_with_no_viable_recipes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_recipe_score_clamping",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_empty_cuisine_history_handling",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestFallbackChains",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestFallbackChains.test_scoring_with_extreme_household_skill",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestOutputGeneration",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestOutputGeneration",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_recipe_score_explain_method",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestOutputGeneration",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_assigned_session_structure",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestOutputGeneration",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_assigned_session_unassigned",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestOutputGeneration",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestOutputGeneration.test_recipe_score_all_fields_populated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_autofill_engine.py",
+      "to": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_full_workflow_single_session",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_full_workflow_weekly_plan",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_workflow_handles_constraint_conflicts",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_autofill_engine::TestEndToEndAutofill",
+      "to": "repo::Client_Side/tests/test_autofill_engine.py::TestEndToEndAutofill.test_workflow_with_diverse_recipes",
+      "relation": "contains"
+    }
+  ]
+}

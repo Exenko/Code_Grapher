@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/first_boot/migrate_add_meal_pattern.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/first_boot/migrate_add_meal_pattern.py",
+      "type": "file",
+      "label": "migrate_add_meal_pattern.py",
+      "file": "Client_Side/first_boot/migrate_add_meal_pattern.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/first_boot/migrate_add_meal_pattern.py::migrate_add_meal_pattern",
+      "type": "symbol",
+      "label": "migrate_add_meal_pattern",
+      "file": "Client_Side/first_boot/migrate_add_meal_pattern.py",
+      "line": 12,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/first_boot/migrate_add_meal_pattern.py",
+      "to": "repo::Client_Side/first_boot/migrate_add_meal_pattern.py::migrate_add_meal_pattern",
+      "relation": "defines"
+    }
+  ]
+}

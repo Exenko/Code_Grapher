@@ -1,0 +1,791 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_availability_grid_ui.py",
+  "stats": {
+    "nodes": 49,
+    "edges": 48
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "type": "file",
+      "label": "test_availability_grid_ui.py",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::qapp",
+      "type": "symbol",
+      "label": "qapp",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 30,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::test_db_manager",
+      "type": "symbol",
+      "label": "test_db_manager",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 39,
+      "language": "python",
+      "is_test": true,
+      "x": 59.48669168242862,
+      "y": 7.831571533203094
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "type": "type",
+      "label": "TestAvailabilityGridWidget",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 83,
+      "language": "python",
+      "is_test": true,
+      "x": 57.9555495773441,
+      "y": 15.529142706151244
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_renders_7_days_x_3_meals_grid",
+      "type": "symbol",
+      "label": "TestAvailabilityGridWidget.test_renders_7_days_x_3_meals_grid",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 86,
+      "language": "python",
+      "is_test": true,
+      "x": 55.43277195067721,
+      "y": 22.961005941905388
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_toggle_not_eat_cook_states",
+      "type": "symbol",
+      "label": "TestAvailabilityGridWidget.test_toggle_not_eat_cook_states",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 107,
+      "language": "python",
+      "is_test": true,
+      "x": 51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_time_duration_input_when_cook_selected",
+      "type": "symbol",
+      "label": "TestAvailabilityGridWidget.test_time_duration_input_when_cook_selected",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 140,
+      "language": "python",
+      "is_test": true,
+      "x": 47.60120041747411,
+      "y": 36.52568574052324
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_availability_changed_signal_emitted",
+      "type": "symbol",
+      "label": "TestAvailabilityGridWidget.test_availability_changed_signal_emitted",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 166,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119285,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_reset_clears_all_slots",
+      "type": "symbol",
+      "label": "TestAvailabilityGridWidget.test_reset_clears_all_slots",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 188,
+      "language": "python",
+      "is_test": true,
+      "x": 36.52568574052324,
+      "y": 47.60120041747411
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "type": "type",
+      "label": "TestWeeklyMealScheduleGrid",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 214,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": 51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_renders_7_days_x_3_meals_grid",
+      "type": "symbol",
+      "label": "TestWeeklyMealScheduleGrid.test_renders_7_days_x_3_meals_grid",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 217,
+      "language": "python",
+      "is_test": true,
+      "x": 22.96100594190539,
+      "y": 55.43277195067721
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_tristate_button_states",
+      "type": "symbol",
+      "label": "TestWeeklyMealScheduleGrid.test_tristate_button_states",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 227,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151244,
+      "y": 57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_cooking_details_requested_signal",
+      "type": "symbol",
+      "label": "TestWeeklyMealScheduleGrid.test_cooking_details_requested_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 247,
+      "language": "python",
+      "is_test": true,
+      "x": 7.831571533203102,
+      "y": 59.48669168242862
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_cooking_details_storage",
+      "type": "symbol",
+      "label": "TestWeeklyMealScheduleGrid.test_cooking_details_storage",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 259,
+      "language": "python",
+      "is_test": true,
+      "x": 3.67394039744206e-15,
+      "y": 60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_schedule_changed_signal",
+      "type": "symbol",
+      "label": "TestWeeklyMealScheduleGrid.test_schedule_changed_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 284,
+      "language": "python",
+      "is_test": true,
+      "x": -7.831571533203096,
+      "y": 59.48669168242862
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "type": "type",
+      "label": "TestCookingDetailsPanel",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 310,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151237,
+      "y": 57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_time_spinbox_range",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_time_spinbox_range",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 313,
+      "language": "python",
+      "is_test": true,
+      "x": -22.96100594190537,
+      "y": 55.432771950677214
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_sides_spinbox_range",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_sides_spinbox_range",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 327,
+      "language": "python",
+      "is_test": true,
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_max_servings_enabled_by_scale_checkbox",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_max_servings_enabled_by_scale_checkbox",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 340,
+      "language": "python",
+      "is_test": true,
+      "x": -36.52568574052324,
+      "y": 47.60120041747411
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_leftover_preference_options",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_leftover_preference_options",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 354,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192846,
+      "y": 42.42640687119285
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_details_changed_signal",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_details_changed_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 365,
+      "language": "python",
+      "is_test": true,
+      "x": -47.601200417474104,
+      "y": 36.52568574052325
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_reset_to_defaults",
+      "type": "symbol",
+      "label": "TestCookingDetailsPanel.test_reset_to_defaults",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 375,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706632,
+      "y": 29.999999999999996
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "type": "type",
+      "label": "TestEquipmentSelector",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 403,
+      "language": "python",
+      "is_test": true,
+      "x": -55.43277195067721,
+      "y": 22.961005941905395
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_renders_equipment_checkboxes",
+      "type": "symbol",
+      "label": "TestEquipmentSelector.test_renders_equipment_checkboxes",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 406,
+      "language": "python",
+      "is_test": true,
+      "x": -57.955549577344094,
+      "y": 15.52914270615126
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_get_selected_equipment",
+      "type": "symbol",
+      "label": "TestEquipmentSelector.test_get_selected_equipment",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 417,
+      "language": "python",
+      "is_test": true,
+      "x": -59.48669168242862,
+      "y": 7.831571533203119
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_equipment_changed_signal",
+      "type": "symbol",
+      "label": "TestEquipmentSelector.test_equipment_changed_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 430,
+      "language": "python",
+      "is_test": true,
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_select_all_deselect_all",
+      "type": "symbol",
+      "label": "TestEquipmentSelector.test_select_all_deselect_all",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 443,
+      "language": "python",
+      "is_test": true,
+      "x": -59.48669168242862,
+      "y": -7.831571533203106
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_reset",
+      "type": "symbol",
+      "label": "TestEquipmentSelector.test_reset",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 460,
+      "language": "python",
+      "is_test": true,
+      "x": -57.9555495773441,
+      "y": -15.529142706151248
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "type": "type",
+      "label": "TestHouseholdPreferencesUI",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 481,
+      "language": "python",
+      "is_test": true,
+      "x": -55.432771950677214,
+      "y": -22.96100594190538
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_renders_allergen_checkboxes",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_renders_allergen_checkboxes",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 484,
+      "language": "python",
+      "is_test": true,
+      "x": -51.96152422706633,
+      "y": -29.999999999999982
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_renders_dietary_checkboxes",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_renders_dietary_checkboxes",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 493,
+      "language": "python",
+      "is_test": true,
+      "x": -47.60120041747411,
+      "y": -36.52568574052324
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_spice_slider_range",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_spice_slider_range",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 502,
+      "language": "python",
+      "is_test": true,
+      "x": -42.426406871192874,
+      "y": -42.426406871192825
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_get_preferences_data",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_get_preferences_data",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 517,
+      "language": "python",
+      "is_test": true,
+      "x": -36.52568574052325,
+      "y": -47.6012004174741
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_preferences_changed_signal",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_preferences_changed_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 538,
+      "language": "python",
+      "is_test": true,
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_reset_to_defaults",
+      "type": "symbol",
+      "label": "TestHouseholdPreferencesUI.test_reset_to_defaults",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 548,
+      "language": "python",
+      "is_test": true,
+      "x": -22.96100594190537,
+      "y": -55.432771950677214
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "type": "type",
+      "label": "TestPreferenceSlider",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 574,
+      "language": "python",
+      "is_test": true,
+      "x": -15.529142706151237,
+      "y": -57.9555495773441
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_get_set_value",
+      "type": "symbol",
+      "label": "TestPreferenceSlider.test_get_set_value",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 577,
+      "language": "python",
+      "is_test": true,
+      "x": -7.831571533203098,
+      "y": -59.48669168242862
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_follow_parent_checkbox",
+      "type": "symbol",
+      "label": "TestPreferenceSlider.test_follow_parent_checkbox",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 590,
+      "language": "python",
+      "is_test": true,
+      "x": -1.1021821192326178e-14,
+      "y": -60.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_value_changed_signal",
+      "type": "symbol",
+      "label": "TestPreferenceSlider.test_value_changed_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 603,
+      "language": "python",
+      "is_test": true,
+      "x": 7.831571533203076,
+      "y": -59.48669168242863
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_get_preference_data",
+      "type": "symbol",
+      "label": "TestPreferenceSlider.test_get_preference_data",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 613,
+      "language": "python",
+      "is_test": true,
+      "x": 15.529142706151218,
+      "y": -57.95554957734411
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "type": "type",
+      "label": "TestCollapsibleFrame",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 632,
+      "language": "python",
+      "is_test": true,
+      "x": 22.96100594190535,
+      "y": -55.43277195067722
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_toggle_collapse",
+      "type": "symbol",
+      "label": "TestCollapsibleFrame.test_toggle_collapse",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 635,
+      "language": "python",
+      "is_test": true,
+      "x": 30.000000000000007,
+      "y": -51.96152422706631
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_expand_collapse_methods",
+      "type": "symbol",
+      "label": "TestCollapsibleFrame.test_expand_collapse_methods",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 653,
+      "language": "python",
+      "is_test": true,
+      "x": 36.525685740523194,
+      "y": -47.601200417474146
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_toggled_signal",
+      "type": "symbol",
+      "label": "TestCollapsibleFrame.test_toggled_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 666,
+      "language": "python",
+      "is_test": true,
+      "x": 42.42640687119284,
+      "y": -42.42640687119286
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_set_title",
+      "type": "symbol",
+      "label": "TestCollapsibleFrame.test_set_title",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 676,
+      "language": "python",
+      "is_test": true,
+      "x": 47.6012004174741,
+      "y": -36.52568574052326
+    },
+    {
+      "id": "repo::test_availability_grid_ui::TestAutofillPreferencesView",
+      "type": "type",
+      "label": "TestAutofillPreferencesView",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 691,
+      "language": "python",
+      "is_test": true,
+      "x": 51.961524227066306,
+      "y": -30.00000000000003
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_view_has_all_tabs",
+      "type": "symbol",
+      "label": "TestAutofillPreferencesView.test_view_has_all_tabs",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 694,
+      "language": "python",
+      "is_test": true,
+      "x": 55.432771950677214,
+      "y": -22.961005941905373
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_collect_all_preferences",
+      "type": "symbol",
+      "label": "TestAutofillPreferencesView.test_collect_all_preferences",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 711,
+      "language": "python",
+      "is_test": true,
+      "x": 57.95554957734409,
+      "y": -15.529142706151294
+    },
+    {
+      "id": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_generate_meal_plan_signal",
+      "type": "symbol",
+      "label": "TestAutofillPreferencesView.test_generate_meal_plan_signal",
+      "file": "Client_Side/tests/test_availability_grid_ui.py",
+      "line": 727,
+      "language": "python",
+      "is_test": true,
+      "x": 59.48669168242862,
+      "y": -7.8315715332031015
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::qapp",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::test_db_manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_renders_7_days_x_3_meals_grid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_toggle_not_eat_cook_states",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_time_duration_input_when_cook_selected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_availability_changed_signal_emitted",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAvailabilityGridWidget",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAvailabilityGridWidget.test_reset_clears_all_slots",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_renders_7_days_x_3_meals_grid",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_tristate_button_states",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_cooking_details_requested_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_cooking_details_storage",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestWeeklyMealScheduleGrid",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestWeeklyMealScheduleGrid.test_schedule_changed_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_time_spinbox_range",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_sides_spinbox_range",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_max_servings_enabled_by_scale_checkbox",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_leftover_preference_options",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_details_changed_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCookingDetailsPanel",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCookingDetailsPanel.test_reset_to_defaults",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_renders_equipment_checkboxes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_get_selected_equipment",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_equipment_changed_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_select_all_deselect_all",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestEquipmentSelector",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestEquipmentSelector.test_reset",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_renders_allergen_checkboxes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_renders_dietary_checkboxes",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_spice_slider_range",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_get_preferences_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_preferences_changed_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestHouseholdPreferencesUI",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestHouseholdPreferencesUI.test_reset_to_defaults",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_get_set_value",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_follow_parent_checkbox",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_value_changed_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestPreferenceSlider",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestPreferenceSlider.test_get_preference_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_toggle_collapse",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_expand_collapse_methods",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_toggled_signal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestCollapsibleFrame",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestCollapsibleFrame.test_set_title",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_availability_grid_ui.py",
+      "to": "repo::test_availability_grid_ui::TestAutofillPreferencesView",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAutofillPreferencesView",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_view_has_all_tabs",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAutofillPreferencesView",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_collect_all_preferences",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_availability_grid_ui::TestAutofillPreferencesView",
+      "to": "repo::Client_Side/tests/test_availability_grid_ui.py::TestAutofillPreferencesView.test_generate_meal_plan_signal",
+      "relation": "contains"
+    }
+  ]
+}

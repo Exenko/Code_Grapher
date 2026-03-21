@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "text": "Diagram contains on_msg_received node",
+      "passed": true,
+      "evidence": "skill_output.md contains 'on_msg_received' as a named node in the flowchart with calls edges to inspect_header, lookup_route, forward_message, and dispatch_event."
+    },
+    {
+      "text": "Diagram contains dispatch_event node",
+      "passed": true,
+      "evidence": "skill_output.md contains 'dispatch_event' as a node with produces/consumes RawBytes and a calls edge to EventBus."
+    },
+    {
+      "text": "Diagram contains forward_message node",
+      "passed": true,
+      "evidence": "skill_output.md contains 'fwd_msg' (forward_message) as a node with produces/consumes RawBytes edges."
+    },
+    {
+      "text": "Diagram contains RoutingKey or Header type node",
+      "passed": true,
+      "evidence": "skill_output.md contains both RoutingKey and Header as type nodes. RoutingKey produced by inspect_header, consumed by lookup_route."
+    },
+    {
+      "text": "Tool call log exists and is non-empty",
+      "passed": true,
+      "evidence": "tool_calls.json exists with 6 entries documenting graph queries for broker nodes, edges, RoutingKey, Session, EventBus, and relay pattern."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "qualitative_notes": {
+    "strengths": [
+      "Full 4-hop broker call chain captured: on_msg_received -> inspect_header -> lookup_route -> forward_message -> dispatch_event",
+      "relay:true pattern correctly identified via symmetric produces+consumes on RawBytes",
+      "EventBus bridge captured via calls edge from dispatch_event",
+      "RoutingKey and RoutingTable data flow through inspect_header -> lookup_route correctly represented",
+      "XML config (broker_config.xml) correctly identified as control-role input to lookup_route via RoutingTable",
+      "Session type and lifecycle (session_create/destroy) present"
+    ],
+    "gaps": [
+      "Header type not shown as standalone broker type — only appears via Session.header uses_type edge; ground truth shows it more prominently",
+      "relay:true encoding in graph is symmetric produces+consumes (not a boolean flag) — an agent must infer relay semantics from this pattern",
+      "broker_fsm_run and FSM state handlers shown but ground truth focuses on the core 4-hop chain more cleanly"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The 'relay:true annotation present' check should be an explicit assertion — it is CodeGrapher's key differentiator for broker semantics and the skill output does capture it."
+      }
+    ],
+    "overall": "Strong pass. All 5 assertions met. Skill output captures the core broker chain accurately."
+  }
+}

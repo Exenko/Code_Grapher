@@ -1,0 +1,289 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/ui_new/views/settings_view.py",
+  "stats": {
+    "nodes": 16,
+    "edges": 22
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py",
+      "type": "file",
+      "label": "settings_view.py",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::settings_view::SettingsView",
+      "type": "type",
+      "label": "SettingsView",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 40,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.__init__",
+      "type": "symbol",
+      "label": "SettingsView.__init__",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 58,
+      "language": "python",
+      "x": 54.812727458556054,
+      "y": 24.40419858454801
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "type": "symbol",
+      "label": "SettingsView._setup_ui",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 68,
+      "language": "python",
+      "x": 40.14783638153149,
+      "y": 44.58868952864365
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_account_section",
+      "type": "symbol",
+      "label": "SettingsView._create_account_section",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 95,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_appearance_section",
+      "type": "symbol",
+      "label": "SettingsView._create_appearance_section",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 136,
+      "language": "python",
+      "x": -6.2717077960592,
+      "y": 59.67131372209641
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._on_theme_changed",
+      "type": "symbol",
+      "label": "SettingsView._on_theme_changed",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 189,
+      "language": "python",
+      "x": -29.999999999999986,
+      "y": 51.96152422706632
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._update_theme_preview",
+      "type": "symbol",
+      "label": "SettingsView._update_theme_preview",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 203,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_about_section",
+      "type": "symbol",
+      "label": "SettingsView._create_about_section",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 223,
+      "language": "python",
+      "x": -58.68885604402834,
+      "y": 12.47470144906556
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._handle_logout",
+      "type": "symbol",
+      "label": "SettingsView._handle_logout",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 264,
+      "language": "python",
+      "x": -58.68885604402834,
+      "y": -12.474701449065543
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._switch_user",
+      "type": "symbol",
+      "label": "SettingsView._switch_user",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 281,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._open_docs",
+      "type": "symbol",
+      "label": "SettingsView._open_docs",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 289,
+      "language": "python",
+      "x": -30.00000000000003,
+      "y": -51.961524227066306
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._send_feedback",
+      "type": "symbol",
+      "label": "SettingsView._send_feedback",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 297,
+      "language": "python",
+      "x": -6.271707796059254,
+      "y": -59.6713137220964
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.refresh_data",
+      "type": "symbol",
+      "label": "SettingsView.refresh_data",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 307,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.clear_data",
+      "type": "symbol",
+      "label": "SettingsView.clear_data",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 334,
+      "language": "python",
+      "x": 40.147836381531505,
+      "y": -44.58868952864364
+    },
+    {
+      "id": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.on_view_activated",
+      "type": "symbol",
+      "label": "SettingsView.on_view_activated",
+      "file": "Client_Side/ui_new/views/settings_view.py",
+      "line": 339,
+      "language": "python",
+      "x": 54.81272745855606,
+      "y": -24.40419858454801
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py",
+      "to": "repo::settings_view::SettingsView",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.__init__",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_account_section",
+      "relation": "calls",
+      "seq": 11
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_appearance_section",
+      "relation": "calls",
+      "seq": 13
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._setup_ui",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_about_section",
+      "relation": "calls",
+      "seq": 15
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_account_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_appearance_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_appearance_section",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._update_theme_preview",
+      "relation": "calls",
+      "seq": 34
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._on_theme_changed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._on_theme_changed",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._update_theme_preview",
+      "relation": "calls",
+      "seq": 5
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._update_theme_preview",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._create_about_section",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._handle_logout",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._switch_user",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._open_docs",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView._send_feedback",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.refresh_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.clear_data",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::settings_view::SettingsView",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.on_view_activated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.on_view_activated",
+      "to": "repo::Client_Side/ui_new/views/settings_view.py::SettingsView.refresh_data",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}

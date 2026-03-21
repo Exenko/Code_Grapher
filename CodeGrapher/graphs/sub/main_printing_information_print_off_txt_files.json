@@ -1,0 +1,109 @@
+{
+  "feature": "repo",
+  "entry_point": "printing_information/print_off_txt_files.py",
+  "stats": {
+    "nodes": 6,
+    "edges": 7
+  },
+  "nodes": [
+    {
+      "id": "repo::printing_information/print_off_txt_files.py",
+      "type": "file",
+      "label": "print_off_txt_files.py",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/print_off_txt_files.py::find_seasonal_indicators_in_usda",
+      "type": "symbol",
+      "label": "find_seasonal_indicators_in_usda",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": 9,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::printing_information/print_off_txt_files.py::search_for_planting_harvest_data",
+      "type": "symbol",
+      "label": "search_for_planting_harvest_data",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": 144,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::printing_information/print_off_txt_files.py::extract_weekly_seasonal_data",
+      "type": "symbol",
+      "label": "extract_weekly_seasonal_data",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": 199,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::printing_information/print_off_txt_files.py::analyze_crop_seasons",
+      "type": "symbol",
+      "label": "analyze_crop_seasons",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": 298,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::printing_information/print_off_txt_files.py::run_complete_analysis",
+      "type": "symbol",
+      "label": "run_complete_analysis",
+      "file": "printing_information/print_off_txt_files.py",
+      "line": 386,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::printing_information/print_off_txt_files.py",
+      "to": "repo::printing_information/print_off_txt_files.py::find_seasonal_indicators_in_usda",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py",
+      "to": "repo::printing_information/print_off_txt_files.py::search_for_planting_harvest_data",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py",
+      "to": "repo::printing_information/print_off_txt_files.py::extract_weekly_seasonal_data",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py",
+      "to": "repo::printing_information/print_off_txt_files.py::analyze_crop_seasons",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py",
+      "to": "repo::printing_information/print_off_txt_files.py::run_complete_analysis",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py::run_complete_analysis",
+      "to": "repo::printing_information/print_off_txt_files.py::extract_weekly_seasonal_data",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::printing_information/print_off_txt_files.py::run_complete_analysis",
+      "to": "repo::printing_information/print_off_txt_files.py::analyze_crop_seasons",
+      "relation": "calls",
+      "seq": 2
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/first_boot/create_local_tables.py",
+  "stats": {
+    "nodes": 2,
+    "edges": 1
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/first_boot/create_local_tables.py",
+      "type": "file",
+      "label": "create_local_tables.py",
+      "file": "Client_Side/first_boot/create_local_tables.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/first_boot/create_local_tables.py::create_local_tables",
+      "type": "symbol",
+      "label": "create_local_tables",
+      "file": "Client_Side/first_boot/create_local_tables.py",
+      "line": 3,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/first_boot/create_local_tables.py",
+      "to": "repo::Client_Side/first_boot/create_local_tables.py::create_local_tables",
+      "relation": "defines"
+    }
+  ]
+}

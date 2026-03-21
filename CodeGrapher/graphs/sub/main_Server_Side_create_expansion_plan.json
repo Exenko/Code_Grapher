@@ -1,0 +1,109 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/create_expansion_plan.py",
+  "stats": {
+    "nodes": 6,
+    "edges": 7
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py",
+      "type": "file",
+      "label": "create_expansion_plan.py",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py::load_yaml",
+      "type": "symbol",
+      "label": "load_yaml",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": 10,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py::count_terms_recursive",
+      "type": "symbol",
+      "label": "count_terms_recursive",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": 14,
+      "language": "python",
+      "x": 18.541019662496847,
+      "y": 57.06339097770921
+    },
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py::analyze_hierarchy",
+      "type": "symbol",
+      "label": "analyze_hierarchy",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": 26,
+      "language": "python",
+      "x": -48.54101966249684,
+      "y": 35.267115137548394
+    },
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py::identify_missing_categories",
+      "type": "symbol",
+      "label": "identify_missing_categories",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": 81,
+      "language": "python",
+      "x": -48.54101966249685,
+      "y": -35.26711513754838
+    },
+    {
+      "id": "repo::Server_Side/create_expansion_plan.py::create_agent_assignment_file",
+      "type": "symbol",
+      "label": "create_agent_assignment_file",
+      "file": "Server_Side/create_expansion_plan.py",
+      "line": 137,
+      "language": "python",
+      "x": 18.541019662496833,
+      "y": -57.06339097770922
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py",
+      "to": "repo::Server_Side/create_expansion_plan.py::load_yaml",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py",
+      "to": "repo::Server_Side/create_expansion_plan.py::count_terms_recursive",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py::count_terms_recursive",
+      "to": "repo::Server_Side/create_expansion_plan.py::count_terms_recursive",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py",
+      "to": "repo::Server_Side/create_expansion_plan.py::analyze_hierarchy",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py::analyze_hierarchy",
+      "to": "repo::Server_Side/create_expansion_plan.py::count_terms_recursive",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py",
+      "to": "repo::Server_Side/create_expansion_plan.py::identify_missing_categories",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/create_expansion_plan.py",
+      "to": "repo::Server_Side/create_expansion_plan.py::create_agent_assignment_file",
+      "relation": "defines"
+    }
+  ]
+}

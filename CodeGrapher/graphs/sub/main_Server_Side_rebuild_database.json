@@ -1,0 +1,58 @@
+{
+  "feature": "repo",
+  "entry_point": "Server_Side/rebuild_database.py",
+  "stats": {
+    "nodes": 3,
+    "edges": 3
+  },
+  "nodes": [
+    {
+      "id": "repo::Server_Side/rebuild_database.py",
+      "type": "file",
+      "label": "rebuild_database.py",
+      "file": "Server_Side/rebuild_database.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/rebuild_database.py::rebuild_database",
+      "type": "symbol",
+      "label": "rebuild_database",
+      "file": "Server_Side/rebuild_database.py",
+      "line": 38,
+      "language": "python",
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Server_Side/rebuild_database.py::main",
+      "type": "symbol",
+      "label": "main",
+      "file": "Server_Side/rebuild_database.py",
+      "line": 150,
+      "language": "python",
+      "x": -60.0,
+      "y": 7.34788079488412e-15
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Server_Side/rebuild_database.py",
+      "to": "repo::Server_Side/rebuild_database.py::rebuild_database",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/rebuild_database.py",
+      "to": "repo::Server_Side/rebuild_database.py::main",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Server_Side/rebuild_database.py::main",
+      "to": "repo::Server_Side/rebuild_database.py::rebuild_database",
+      "relation": "calls",
+      "seq": 4
+    }
+  ]
+}

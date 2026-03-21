@@ -1,0 +1,1159 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/tests/test_meal_plan_manager.py",
+  "stats": {
+    "nodes": 72,
+    "edges": 71
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "type": "file",
+      "label": "test_meal_plan_manager.py",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": null,
+      "language": "python",
+      "is_test": true,
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::db_path",
+      "type": "symbol",
+      "label": "db_path",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 38,
+      "language": "python",
+      "is_test": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::manager",
+      "type": "symbol",
+      "label": "manager",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 61,
+      "language": "python",
+      "is_test": true,
+      "x": 59.76520932449669,
+      "y": 5.302806275840549
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::week_start",
+      "type": "symbol",
+      "label": "week_start",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 67,
+      "language": "python",
+      "is_test": true,
+      "x": 59.06267485336353,
+      "y": 10.56411090276217
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::household_id",
+      "type": "symbol",
+      "label": "household_id",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 73,
+      "language": "python",
+      "is_test": true,
+      "x": 57.8978948713686,
+      "y": 15.742737038518747
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::user_id",
+      "type": "symbol",
+      "label": "user_id",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 79,
+      "language": "python",
+      "is_test": true,
+      "x": 56.279985361138046,
+      "y": 20.79815491215716
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "type": "type",
+      "label": "TestMainMealAssignment",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 86,
+      "language": "python",
+      "is_test": true,
+      "x": 54.221608658232235,
+      "y": 25.690799024427314
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_breakfast",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_assign_breakfast",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 89,
+      "language": "python",
+      "is_test": true,
+      "x": 51.738874351201666,
+      "y": 30.382377801458635
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_lunch",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_assign_lunch",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 108,
+      "language": "python",
+      "is_test": true,
+      "x": 48.85121320221445,
+      "y": 34.836173278243244
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_dinner",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_assign_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 119,
+      "language": "python",
+      "is_test": true,
+      "x": 45.58122507499709,
+      "y": 39.01732846649622
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_dessert",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_assign_dessert",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 130,
+      "language": "python",
+      "is_test": true,
+      "x": 41.95450206025885,
+      "y": 42.89312015784975
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_all_main_meals_all_days",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_assign_all_main_meals_all_days",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 141,
+      "language": "python",
+      "is_test": true,
+      "x": 37.999428182882816,
+      "y": 46.433215027326405
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_meal_type_rejected",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_invalid_meal_type_rejected",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 161,
+      "language": "python",
+      "is_test": true,
+      "x": 33.74695725844684,
+      "y": 49.60990703273452
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_meal_type_snack",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_invalid_meal_type_snack",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 168,
+      "language": "python",
+      "is_test": true,
+      "x": 29.230370637647788,
+      "y": 52.39833425201356
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_day_of_week_negative",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_invalid_day_of_week_negative",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 175,
+      "language": "python",
+      "is_test": true,
+      "x": 24.485016734607893,
+      "y": 54.77667346148332
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_day_of_week_too_high",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_invalid_day_of_week_too_high",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 182,
+      "language": "python",
+      "is_test": true,
+      "x": 19.54803437760705,
+      "y": 56.72631093215821
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_replace_existing_meal",
+      "type": "symbol",
+      "label": "TestMainMealAssignment.test_replace_existing_meal",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 189,
+      "language": "python",
+      "is_test": true,
+      "x": 14.458062147396879,
+      "y": 58.23198810741403
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestVariableSides",
+      "type": "type",
+      "label": "TestVariableSides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 200,
+      "language": "python",
+      "is_test": true,
+      "x": 9.254935977918143,
+      "y": 59.28192102188184
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_single_side_to_dinner",
+      "type": "symbol",
+      "label": "TestVariableSides.test_assign_single_side_to_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 203,
+      "language": "python",
+      "is_test": true,
+      "x": 3.979377386106229,
+      "y": 59.867892526954265
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_multiple_sides_to_dinner",
+      "type": "symbol",
+      "label": "TestVariableSides.test_assign_multiple_sides_to_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 219,
+      "language": "python",
+      "is_test": true,
+      "x": -1.3273252291912065,
+      "y": 59.98531660111458
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_sides_are_ordered",
+      "type": "symbol",
+      "label": "TestVariableSides.test_sides_are_ordered",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 232,
+      "language": "python",
+      "is_test": true,
+      "x": -6.623639724916176,
+      "y": 59.633274241773044
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_side_with_explicit_order",
+      "type": "symbol",
+      "label": "TestVariableSides.test_assign_side_with_explicit_order",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 246,
+      "language": "python",
+      "is_test": true,
+      "x": -11.868115259131036,
+      "y": 58.81452065770817
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_remove_specific_side",
+      "type": "symbol",
+      "label": "TestVariableSides.test_remove_specific_side",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 258,
+      "language": "python",
+      "is_test": true,
+      "x": -17.0197067000578,
+      "y": 57.53546370582241
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_remove_all_sides_from_dinner",
+      "type": "symbol",
+      "label": "TestVariableSides.test_remove_all_sides_from_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 273,
+      "language": "python",
+      "is_test": true,
+      "x": -22.038095859885395,
+      "y": 55.80611374097378
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_dinner_with_zero_sides",
+      "type": "symbol",
+      "label": "TestVariableSides.test_dinner_with_zero_sides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 285,
+      "language": "python",
+      "is_test": true,
+      "x": -26.884007039254705,
+      "y": 53.640005271376545
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_get_dinner_with_sides",
+      "type": "symbol",
+      "label": "TestVariableSides.test_get_dinner_with_sides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 292,
+      "language": "python",
+      "is_test": true,
+      "x": -31.519514412857937,
+      "y": 51.054091032723726
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_update_side",
+      "type": "symbol",
+      "label": "TestVariableSides.test_update_side",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 307,
+      "language": "python",
+      "is_test": true,
+      "x": -35.90833885044344,
+      "y": 48.06860931004489
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_sides_linked_to_correct_dinner",
+      "type": "symbol",
+      "label": "TestVariableSides.test_sides_linked_to_correct_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 322,
+      "language": "python",
+      "is_test": true,
+      "x": -40.016131850199045,
+      "y": 44.706925545685706
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "type": "type",
+      "label": "TestWeeklyPlanRetrieval",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 344,
+      "language": "python",
+      "is_test": true,
+      "x": -43.81074436235005,
+      "y": 40.995349473041614
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_empty",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_get_weekly_plan_empty",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 347,
+      "language": "python",
+      "is_test": true,
+      "x": -47.26247839906309,
+      "y": 36.962929207221855
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_with_main_meals",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_get_weekly_plan_with_main_meals",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 359,
+      "language": "python",
+      "is_test": true,
+      "x": -50.344319461466924,
+      "y": 32.64122390416392
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_with_sides",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_get_weekly_plan_with_sides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 374,
+      "language": "python",
+      "is_test": true,
+      "x": -53.03214796473365,
+      "y": 28.064056767448935
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_mixed",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_get_weekly_plan_mixed",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 386,
+      "language": "python",
+      "is_test": true,
+      "x": -55.3049280065327,
+      "y": 23.267250335874145
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_detailed",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_get_weekly_plan_detailed",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 407,
+      "language": "python",
+      "is_test": true,
+      "x": -57.144872001487876,
+      "y": 18.2883461235172
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_clear_weekly_plan",
+      "type": "symbol",
+      "label": "TestWeeklyPlanRetrieval.test_clear_weekly_plan",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 422,
+      "language": "python",
+      "is_test": true,
+      "x": -58.53757989315041,
+      "y": 13.16631080648763
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestMealStats",
+      "type": "type",
+      "label": "TestMealStats",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 439,
+      "language": "python",
+      "is_test": true,
+      "x": -59.47215185396488,
+      "y": 7.94123125585333
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_empty_plan",
+      "type": "symbol",
+      "label": "TestMealStats.test_stats_empty_plan",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 442,
+      "language": "python",
+      "is_test": true,
+      "x": -59.94127359119842,
+      "y": 2.6540008035227576
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_main_meals_only",
+      "type": "symbol",
+      "label": "TestMealStats.test_stats_main_meals_only",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 452,
+      "language": "python",
+      "is_test": true,
+      "x": -59.94127359119842,
+      "y": -2.6540008035227163
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_with_sides",
+      "type": "symbol",
+      "label": "TestMealStats.test_stats_with_sides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 466,
+      "language": "python",
+      "is_test": true,
+      "x": -59.472151853964874,
+      "y": -7.941231255853343
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_meals_per_day",
+      "type": "symbol",
+      "label": "TestMealStats.test_stats_meals_per_day",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 481,
+      "language": "python",
+      "is_test": true,
+      "x": -58.537579893150415,
+      "y": -13.166310806487616
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_full_week",
+      "type": "symbol",
+      "label": "TestMealStats.test_stats_full_week",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 496,
+      "language": "python",
+      "is_test": true,
+      "x": -57.14487200148788,
+      "y": -18.28834612351719
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "type": "type",
+      "label": "TestShoppingListWithSides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 512,
+      "language": "python",
+      "is_test": true,
+      "x": -55.304928006532705,
+      "y": -23.26725033587413
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_single_recipe",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_shopping_list_single_recipe",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 515,
+      "language": "python",
+      "is_test": true,
+      "x": -53.03214796473369,
+      "y": -28.064056767448875
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_includes_sides",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_shopping_list_includes_sides",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 535,
+      "language": "python",
+      "is_test": true,
+      "x": -50.34431946146692,
+      "y": -32.64122390416394
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_variable_sides_count",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_shopping_list_variable_sides_count",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 576,
+      "language": "python",
+      "is_test": true,
+      "x": -47.262478399063106,
+      "y": -36.96292920722184
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_scales_by_household_size",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_shopping_list_scales_by_household_size",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 599,
+      "language": "python",
+      "is_test": true,
+      "x": -43.81074436235008,
+      "y": -40.995349473041585
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_check_off_ingredient",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_check_off_ingredient",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 628,
+      "language": "python",
+      "is_test": true,
+      "x": -40.016131850199045,
+      "y": -44.70692554568572
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_empty_shopping_list",
+      "type": "symbol",
+      "label": "TestShoppingListWithSides.test_empty_shopping_list",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 642,
+      "language": "python",
+      "is_test": true,
+      "x": -35.90833885044345,
+      "y": -48.06860931004488
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestRecipeScaling",
+      "type": "type",
+      "label": "TestRecipeScaling",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 653,
+      "language": "python",
+      "is_test": true,
+      "x": -31.5195144128579,
+      "y": -51.05409103272375
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_up",
+      "type": "symbol",
+      "label": "TestRecipeScaling.test_scale_up",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 656,
+      "language": "python",
+      "is_test": true,
+      "x": -26.884007039254694,
+      "y": -53.64000527137655
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_down",
+      "type": "symbol",
+      "label": "TestRecipeScaling.test_scale_down",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 669,
+      "language": "python",
+      "is_test": true,
+      "x": -22.038095859885455,
+      "y": -55.80611374097376
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_invalid_servings",
+      "type": "symbol",
+      "label": "TestRecipeScaling.test_scale_invalid_servings",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 679,
+      "language": "python",
+      "is_test": true,
+      "x": -17.019706700057814,
+      "y": -57.53546370582241
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestMealUpdatesAndRemoval",
+      "type": "type",
+      "label": "TestMealUpdatesAndRemoval",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 690,
+      "language": "python",
+      "is_test": true,
+      "x": -11.868115259131065,
+      "y": -58.814520657708165
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_update_main_meal",
+      "type": "symbol",
+      "label": "TestMealUpdatesAndRemoval.test_update_main_meal",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 693,
+      "language": "python",
+      "is_test": true,
+      "x": -6.623639724916178,
+      "y": -59.633274241773044
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_remove_main_meal",
+      "type": "symbol",
+      "label": "TestMealUpdatesAndRemoval.test_remove_main_meal",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 707,
+      "language": "python",
+      "is_test": true,
+      "x": -1.327325229191221,
+      "y": -59.98531660111458
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_remove_meal_rejects_side_type",
+      "type": "symbol",
+      "label": "TestMealUpdatesAndRemoval.test_remove_meal_rejects_side_type",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 719,
+      "language": "python",
+      "is_test": true,
+      "x": 3.979377386106215,
+      "y": -59.867892526954265
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "type": "type",
+      "label": "TestUtilityMethods",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 727,
+      "language": "python",
+      "is_test": true,
+      "x": 9.254935977918153,
+      "y": -59.28192102188184
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_monday",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_get_week_start_date_from_monday",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 730,
+      "language": "python",
+      "is_test": true,
+      "x": 14.458062147396863,
+      "y": -58.23198810741404
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_wednesday",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_get_week_start_date_from_wednesday",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 735,
+      "language": "python",
+      "is_test": true,
+      "x": 19.548034377607035,
+      "y": -56.72631093215822
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_sunday",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_get_week_start_date_from_sunday",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 741,
+      "language": "python",
+      "is_test": true,
+      "x": 24.485016734607917,
+      "y": -54.77667346148331
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_meals_by_recipe",
+      "type": "symbol",
+      "label": "TestUtilityMethods.test_get_meals_by_recipe",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 747,
+      "language": "python",
+      "is_test": true,
+      "x": 29.2303706376478,
+      "y": -52.398334252013555
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestHouseholdIsolation",
+      "type": "type",
+      "label": "TestHouseholdIsolation",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 765,
+      "language": "python",
+      "is_test": true,
+      "x": 33.74695725844679,
+      "y": -49.60990703273456
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestHouseholdIsolation.test_different_households_isolated",
+      "type": "symbol",
+      "label": "TestHouseholdIsolation.test_different_households_isolated",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 768,
+      "language": "python",
+      "is_test": true,
+      "x": 37.9994281828828,
+      "y": -46.43321502732642
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestPrivacyCompliance",
+      "type": "type",
+      "label": "TestPrivacyCompliance",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 800,
+      "language": "python",
+      "is_test": true,
+      "x": 41.95450206025882,
+      "y": -42.89312015784978
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_no_network_imports",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_no_network_imports",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 803,
+      "language": "python",
+      "is_test": true,
+      "x": 45.58122507499709,
+      "y": -39.01732846649622
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_all_data_local",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_all_data_local",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 814,
+      "language": "python",
+      "is_test": true,
+      "x": 48.851213202214446,
+      "y": -34.83617327824325
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_shopping_list_local",
+      "type": "symbol",
+      "label": "TestPrivacyCompliance.test_shopping_list_local",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 828,
+      "language": "python",
+      "is_test": true,
+      "x": 51.73887435120165,
+      "y": -30.382377801458656
+    },
+    {
+      "id": "repo::test_meal_plan_manager::TestEdgeCases",
+      "type": "type",
+      "label": "TestEdgeCases",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 845,
+      "language": "python",
+      "is_test": true,
+      "x": 54.221608658232235,
+      "y": -25.690799024427307
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_many_sides_per_dinner",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_many_sides_per_dinner",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 848,
+      "language": "python",
+      "is_test": true,
+      "x": 56.279985361138046,
+      "y": -20.79815491215717
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_sides_without_dinner_assigned",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_sides_without_dinner_assigned",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 858,
+      "language": "python",
+      "is_test": true,
+      "x": 57.89789487136861,
+      "y": -15.742737038518715
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_remove_nonexistent_side",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_remove_nonexistent_side",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 867,
+      "language": "python",
+      "is_test": true,
+      "x": 59.06267485336354,
+      "y": -10.564110902762156
+    },
+    {
+      "id": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_update_nonexistent_side",
+      "type": "symbol",
+      "label": "TestEdgeCases.test_update_nonexistent_side",
+      "file": "Client_Side/tests/test_meal_plan_manager.py",
+      "line": 872,
+      "language": "python",
+      "is_test": true,
+      "x": 59.76520932449668,
+      "y": -5.302806275840601
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::db_path",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::manager",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::week_start",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::household_id",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::user_id",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_breakfast",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_lunch",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_dessert",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_assign_all_main_meals_all_days",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_meal_type_rejected",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_meal_type_snack",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_day_of_week_negative",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_invalid_day_of_week_too_high",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMainMealAssignment",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMainMealAssignment.test_replace_existing_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestVariableSides",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_single_side_to_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_multiple_sides_to_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_sides_are_ordered",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_assign_side_with_explicit_order",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_remove_specific_side",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_remove_all_sides_from_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_dinner_with_zero_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_get_dinner_with_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_update_side",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestVariableSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestVariableSides.test_sides_linked_to_correct_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_empty",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_with_main_meals",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_with_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_mixed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_get_weekly_plan_detailed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestWeeklyPlanRetrieval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestWeeklyPlanRetrieval.test_clear_weekly_plan",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestMealStats",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealStats",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_empty_plan",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealStats",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_main_meals_only",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealStats",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_with_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealStats",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_meals_per_day",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealStats",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealStats.test_stats_full_week",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_single_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_includes_sides",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_variable_sides_count",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_shopping_list_scales_by_household_size",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_check_off_ingredient",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestShoppingListWithSides",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestShoppingListWithSides.test_empty_shopping_list",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestRecipeScaling",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestRecipeScaling",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_up",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestRecipeScaling",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_down",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestRecipeScaling",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestRecipeScaling.test_scale_invalid_servings",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestMealUpdatesAndRemoval",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealUpdatesAndRemoval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_update_main_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealUpdatesAndRemoval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_remove_main_meal",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestMealUpdatesAndRemoval",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestMealUpdatesAndRemoval.test_remove_meal_rejects_side_type",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_monday",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_wednesday",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_week_start_date_from_sunday",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestUtilityMethods",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestUtilityMethods.test_get_meals_by_recipe",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestHouseholdIsolation",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestHouseholdIsolation",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestHouseholdIsolation.test_different_households_isolated",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestPrivacyCompliance",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_no_network_imports",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_all_data_local",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestPrivacyCompliance",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestPrivacyCompliance.test_shopping_list_local",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/tests/test_meal_plan_manager.py",
+      "to": "repo::test_meal_plan_manager::TestEdgeCases",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_many_sides_per_dinner",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_sides_without_dinner_assigned",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_remove_nonexistent_side",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::test_meal_plan_manager::TestEdgeCases",
+      "to": "repo::Client_Side/tests/test_meal_plan_manager.py::TestEdgeCases.test_update_nonexistent_side",
+      "relation": "contains"
+    }
+  ]
+}

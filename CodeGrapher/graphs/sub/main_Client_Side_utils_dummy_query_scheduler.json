@@ -1,0 +1,458 @@
+{
+  "feature": "repo",
+  "entry_point": "Client_Side/utils/dummy_query_scheduler.py",
+  "stats": {
+    "nodes": 24,
+    "edges": 37
+  },
+  "nodes": [
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py",
+      "type": "file",
+      "label": "dummy_query_scheduler.py",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": null,
+      "language": "python",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::dummy_query_scheduler::ScheduledQuery",
+      "type": "type",
+      "label": "ScheduledQuery",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 24,
+      "language": "python",
+      "is_dataclass": true,
+      "x": 60.0,
+      "y": 0.0
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.query_id",
+      "type": "symbol",
+      "label": "ScheduledQuery.query_id",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 26,
+      "language": "python",
+      "annotation": "int",
+      "x": 57.77503724086796,
+      "y": 16.187806269421458
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.household_id",
+      "type": "symbol",
+      "label": "ScheduledQuery.household_id",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 27,
+      "language": "python",
+      "annotation": "int",
+      "x": 51.26516427278931,
+      "y": 31.175037002126015
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.scheduled_time",
+      "type": "symbol",
+      "label": "ScheduledQuery.scheduled_time",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 28,
+      "language": "python",
+      "annotation": "datetime",
+      "x": 40.95318859311925,
+      "y": 43.85015785668744
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.is_dummy",
+      "type": "symbol",
+      "label": "ScheduledQuery.is_dummy",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 29,
+      "language": "python",
+      "annotation": "bool",
+      "x": 27.60390226386913,
+      "y": 53.27311310414251
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.executed",
+      "type": "symbol",
+      "label": "ScheduledQuery.executed",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 30,
+      "language": "python",
+      "annotation": "bool",
+      "x": 12.207360783158025,
+      "y": 58.74504526093938
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.execution_time",
+      "type": "symbol",
+      "label": "ScheduledQuery.execution_time",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 31,
+      "language": "python",
+      "annotation": "Optional[datetime]",
+      "x": -4.094544801880253,
+      "y": 59.86012615143235
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.to_dict",
+      "type": "symbol",
+      "label": "ScheduledQuery.to_dict",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 33,
+      "language": "python",
+      "x": -20.09277673025917,
+      "y": 56.535655327129234
+    },
+    {
+      "id": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "type": "type",
+      "label": "DummyQueryScheduler",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 45,
+      "language": "python",
+      "x": -34.60081932689202,
+      "y": 49.01819358062652
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.__init__",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.__init__",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 48,
+      "language": "python",
+      "x": -46.54267744226518,
+      "y": 37.86527665956318
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "type": "symbol",
+      "label": "DummyQueryScheduler._get_connection",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 58,
+      "language": "python",
+      "x": -55.03267809032718,
+      "y": 23.904065390774484
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._ensure_schedule_table",
+      "type": "symbol",
+      "label": "DummyQueryScheduler._ensure_schedule_table",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 64,
+      "language": "python",
+      "x": -59.44115676217984,
+      "y": 8.169998945774825
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_weekly_dummy_queries",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.schedule_weekly_dummy_queries",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 95,
+      "language": "python",
+      "x": -59.441156762179844,
+      "y": -8.169998945774784
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._add_scheduled_query",
+      "type": "symbol",
+      "label": "DummyQueryScheduler._add_scheduled_query",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 130,
+      "language": "python",
+      "x": -55.032678090327174,
+      "y": -23.904065390774495
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.add_timing_delay",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.add_timing_delay",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 150,
+      "language": "python",
+      "x": -46.54267744226519,
+      "y": -37.865276659563165
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_real_query_with_delay",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.schedule_real_query_with_delay",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 171,
+      "language": "python",
+      "x": -34.60081932689203,
+      "y": -49.018193580626516
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.get_pending_queries",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 202,
+      "language": "python",
+      "x": -20.09277673025918,
+      "y": -56.53565532712923
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.mark_query_executed",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.mark_query_executed",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 249,
+      "language": "python",
+      "x": -4.094544801880228,
+      "y": -59.860126151432354
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.should_execute_query",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.should_execute_query",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 277,
+      "language": "python",
+      "x": 12.207360783157998,
+      "y": -58.74504526093938
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.generate_dummy_query_params",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.generate_dummy_query_params",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 296,
+      "language": "python",
+      "x": 27.603902263869095,
+      "y": -53.27311310414253
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cleanup_old_queries",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.cleanup_old_queries",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 331,
+      "language": "python",
+      "x": 40.95318859311925,
+      "y": -43.85015785668744
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_query_statistics",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.get_query_statistics",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 358,
+      "language": "python",
+      "x": 51.26516427278931,
+      "y": -31.175037002126015
+    },
+    {
+      "id": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cancel_query",
+      "type": "symbol",
+      "label": "DummyQueryScheduler.cancel_query",
+      "file": "Client_Side/utils/dummy_query_scheduler.py",
+      "line": 414,
+      "language": "python",
+      "x": 57.77503724086794,
+      "y": -16.187806269421515
+    }
+  ],
+  "edges": [
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py",
+      "to": "repo::dummy_query_scheduler::ScheduledQuery",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.query_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.household_id",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.scheduled_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.is_dummy",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.executed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.execution_time",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::ScheduledQuery",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::ScheduledQuery.to_dict",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py",
+      "to": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "relation": "defines"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.__init__",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.__init__",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._ensure_schedule_table",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._ensure_schedule_table",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._ensure_schedule_table",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_weekly_dummy_queries",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_weekly_dummy_queries",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._add_scheduled_query",
+      "relation": "calls",
+      "seq": 6
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._add_scheduled_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._add_scheduled_query",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.add_timing_delay",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_real_query_with_delay",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_real_query_with_delay",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.add_timing_delay",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.schedule_real_query_with_delay",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._add_scheduled_query",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "to": "repo::dummy_query_scheduler::ScheduledQuery",
+      "relation": "produces",
+      "via": "return_value"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "to": "repo::dummy_query_scheduler::ScheduledQuery",
+      "relation": "calls",
+      "seq": 7
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.mark_query_executed",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.mark_query_executed",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 2
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.should_execute_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.should_execute_query",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_pending_queries",
+      "relation": "calls",
+      "seq": 1
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.generate_dummy_query_params",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cleanup_old_queries",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cleanup_old_queries",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_query_statistics",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.get_query_statistics",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 3
+    },
+    {
+      "from": "repo::dummy_query_scheduler::DummyQueryScheduler",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cancel_query",
+      "relation": "contains"
+    },
+    {
+      "from": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler.cancel_query",
+      "to": "repo::Client_Side/utils/dummy_query_scheduler.py::DummyQueryScheduler._get_connection",
+      "relation": "calls",
+      "seq": 1
+    }
+  ]
+}
