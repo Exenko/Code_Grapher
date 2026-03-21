@@ -69,8 +69,6 @@ def main() -> None:
 
     root = Path(args.root).resolve()
     feature = args.feature
-    cg_dir = _HERE  # CodeGrapher/ directory
-
     # Resolve files from --files and --dir, combining and deduplicating results
     all_files_set: set[Path] = set()
     if args.files:
@@ -156,7 +154,7 @@ def main() -> None:
     # ------------------------------------------------------------------
     # Write graph JSON
     # ------------------------------------------------------------------
-    graphs_dir = cg_dir / "graphs"
+    graphs_dir = Path.cwd() / "graphs"
     out_path = graphs_dir / f"feature_{feature}.json"
     feature_graph.save(out_path)
     print(f"Graph written -> {out_path}")
@@ -188,16 +186,16 @@ def main() -> None:
     if standalone is None:
         standalone = feature_graph.node_count() < 1000
 
-    viewer_template = cg_dir / "viewer" / "index.html"
+    viewer_template = _HERE / "viewer" / "index.html"
     if standalone:
         viewer_out = graphs_dir / f"viewer_{feature}.html"
         if viewer_template.exists():
-            _build_standalone_viewer(feature_graph, viewer_template, cg_dir / "viewer", viewer_out)
+            _build_standalone_viewer(feature_graph, viewer_template, _HERE / "viewer", viewer_out)
             print(f"Viewer  -> {viewer_out}")
         else:
             print(f"[WARN] viewer/index.html not found -- skipping viewer")
     else:
-        print(f"Run:  py CodeGrapher/serve.py --graphs {graphs_dir}")
+        print(f"Run:  py CodeGrapher/serve.py --graphs {graphs_dir.relative_to(Path.cwd())}")
         print(f"Then: http://localhost:5000")
 
     # ------------------------------------------------------------------
