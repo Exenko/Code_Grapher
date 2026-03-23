@@ -36,6 +36,9 @@ from parser_python import parse_file as parse_python, resolve_calls, _annotation
 from parser_cpp import parse_file as parse_cpp
 from parser_proto import parse_file as parse_proto
 from parser_xml import parse_file as parse_xml
+from parser_typescript import parse_file as parse_typescript, resolve_calls as resolve_calls_ts
+from parser_java import parse_file as parse_java, resolve_calls as resolve_calls_java
+from parser_kotlin import parse_file as parse_kotlin, resolve_calls as resolve_calls_kotlin
 from tiered_builder import build_tiers
 
 
@@ -45,17 +48,25 @@ from tiered_builder import build_tiers
 
 def _parse_one(feature: str, root: Path, filepath: Path,
                known_symbol_ids: set | None = None,
-               known_return_types: dict | None = None) -> CodeGraph | None:
+               known_return_types: dict | None = None,
+               known_file_ids: dict | None = None,
+               filter_stdlib: bool = False) -> CodeGraph | None:
     """Dispatch to appropriate parser based on file suffix."""
     suffix = filepath.suffix.lower()
     if suffix == '.py':
-        return parse_python(feature, root, filepath, known_symbol_ids, known_return_types)
+        return parse_python(feature, root, filepath, known_symbol_ids, known_return_types, known_file_ids, filter_stdlib=filter_stdlib)
     elif suffix in ('.cc', '.c', '.h', '.hpp', '.cpp'):
         return parse_cpp(feature, root, filepath, known_symbol_ids)
     elif suffix == '.proto':
         return parse_proto(feature, root, filepath, known_symbol_ids)
     elif suffix == '.xml':
         return parse_xml(feature, root, filepath, known_symbol_ids)
+    elif suffix in ('.ts', '.tsx', '.js', '.jsx'):
+        return parse_typescript(feature, root, filepath, known_symbol_ids, known_return_types, known_file_ids, filter_stdlib=filter_stdlib)
+    elif suffix == '.java':
+        return parse_java(feature, root, filepath, known_symbol_ids, None, known_file_ids, filter_stdlib=filter_stdlib)
+    elif suffix in ('.kt', '.kts'):
+        return parse_kotlin(feature, root, filepath, known_symbol_ids, None, known_file_ids, filter_stdlib=filter_stdlib)
     else:
         return None
 
@@ -69,6 +80,7 @@ def main() -> None:
 
     root = Path(args.root).resolve()
     feature = args.feature
+    filter_stdlib = args.no_stdlib_calls
     # Resolve files from --files and --dir, combining and deduplicating results
     all_files_set: set[Path] = set()
     if args.files:
@@ -89,13 +101,33 @@ def main() -> None:
         print(f"    {rel}")
     print()
 
+    # Build mapping: module name/stem -> file_id, for local file import detection
+    # Maps both stem (e.g. "barcode_database") and dotted path (e.g. "src.barcode_database")
+    from schema import file_id as make_file_id
+    known_file_ids: dict[str, str] = {}
+    for filepath in all_files:
+        if filepath.suffix.lower() != '.py':
+            continue
+        rel_path = str(filepath.relative_to(root)).replace("\\", "/")
+        fid = make_file_id(feature, rel_path)
+
+        # Map 1: file stem (e.g. "barcode_database" from "household-inventory/src/barcode_database.py")
+        stem = filepath.stem
+        known_file_ids[stem] = fid
+
+        # Map 2: dotted module path without extension
+        # e.g. "src.barcode_database" or "household_inventory.src.barcode_database"
+        # Convert path separators to dots, remove .py extension
+        dotted_path = rel_path.replace("\\", "/").replace("/", ".").replace(".py", "")
+        known_file_ids[dotted_path] = fid
+
     # ------------------------------------------------------------------
     # Pass 1: Parse all files, collect symbol registry
     # ------------------------------------------------------------------
     print("Pass 1: Parsing files...")
     per_file_graphs: list[CodeGraph] = []
     for filepath in all_files:
-        g = _parse_one(feature, root, filepath, known_symbol_ids=None)
+        g = _parse_one(feature, root, filepath, known_symbol_ids=None, known_file_ids=known_file_ids, filter_stdlib=filter_stdlib)
         if g is not None:
             per_file_graphs.append(g)
 
@@ -141,7 +173,9 @@ def main() -> None:
     for filepath in all_files:
         g = _parse_one(feature, root, filepath,
                        known_symbol_ids=registry,
-                       known_return_types=return_type_map)
+                       known_return_types=return_type_map,
+                       known_file_ids=known_file_ids,
+                       filter_stdlib=filter_stdlib)
         if g is not None:
             feature_graph.merge(g)
 
@@ -150,6 +184,24 @@ def main() -> None:
 
     # Collapse forward-declared duplicates to a single canonical type node
     feature_graph.dedup_type_nodes_by_label()
+
+    # Strip edges to unresolved phantom endpoints (unresolved::X, _unresolved_.X)
+    dropped = feature_graph.drop_ghost_nodes()
+    if dropped:
+        print(f"  Stripped {dropped} unresolved ghost endpoints\n")
+
+    # Propagate RN root component entry points across file boundaries.
+    # index.js stores "rn_root::<ComponentName>" in the file node annotation;
+    # the component itself lives in another file and must be marked here.
+    for node in feature_graph.nodes:
+        if node.annotation and node.annotation.startswith("rn_root::"):
+            comp_name = node.annotation[len("rn_root::"):]
+            suffix = f"::{comp_name}"
+            for n in feature_graph.nodes:
+                if n.type == NodeType.SYMBOL and (
+                    n.label == comp_name or n.id.endswith(suffix)
+                ):
+                    n.entry_point = True
 
     # ------------------------------------------------------------------
     # Write graph JSON
@@ -228,6 +280,8 @@ def _parse_args() -> argparse.Namespace:
                    help="Entry file for --analyze flow (e.g. Client_Side/main.py). If omitted, uses first detected entry point from toc.json")
     p.add_argument("--type", default=None, dest="type_name",
                    help="Type/class name for --analyze type (e.g. CookingSession)")
+    p.add_argument("--no-stdlib-calls", action="store_true", default=False,
+                   help="Suppress call edges to stdlib receivers (console, Math, JSON, etc.) in TS/JS files")
     args = p.parse_args()
     if not args.files and not args.dir:
         p.error("At least one of --files or --dir must be provided")
@@ -237,7 +291,7 @@ def _parse_args() -> argparse.Namespace:
 def _resolve_globs(root: Path, patterns: list[str]) -> list[Path]:
     """Expand glob patterns relative to root, return sorted unique Paths."""
     matched: set[Path] = set()
-    supported_suffixes = {'.py', '.cc', '.c', '.h', '.hpp', '.cpp', '.proto', '.xml'}
+    supported_suffixes = {'.py', '.cc', '.c', '.h', '.hpp', '.cpp', '.proto', '.xml', '.ts', '.tsx', '.js', '.jsx', '.java', '.kt', '.kts'}
     for pattern in patterns:
         # Use glob_module with the full path
         full_pattern = str(root / pattern)
@@ -249,17 +303,23 @@ def _resolve_globs(root: Path, patterns: list[str]) -> list[Path]:
     return sorted(matched)
 
 
+_EXCLUDED_DIRS = frozenset({
+    "node_modules", ".venv", "venv", "env", "__pycache__",
+    ".git", "dist", "build", ".tox", "site-packages",
+})
+
+
 def _resolve_dirs(root: Path, dirs: list[str]) -> list[Path]:
     """Recursively find all supported source files in given directories relative to root, return sorted unique Paths."""
     matched: set[Path] = set()
-    patterns = ["*.py", "*.cc", "*.c", "*.h", "*.hpp", "*.cpp", "*.proto", "*.xml"]
+    patterns = ["*.py", "*.cc", "*.c", "*.h", "*.hpp", "*.cpp", "*.proto", "*.xml", "*.ts", "*.tsx", "*.js", "*.jsx", "*.java", "*.kt", "*.kts"]
     for dir_path in dirs:
         full_dir = root / dir_path
         if full_dir.is_dir():
             for pattern in patterns:
                 for src_file in full_dir.rglob(pattern):
                     p = src_file.resolve()
-                    if p.is_file():
+                    if p.is_file() and not any(part in _EXCLUDED_DIRS for part in p.parts):
                         matched.add(p)
     return sorted(matched)
 

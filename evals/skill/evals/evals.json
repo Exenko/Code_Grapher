@@ -201,6 +201,126 @@
         }
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "name": "eval-java-orchestrator",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at graphs/), find the symbol ServiceOrchestrator.start in the stress-test graph. Produce a Mermaid flowchart LR showing its call chain (all direct calls from start, and their direct callees). Use only MCP tools — do NOT read source files. Save diagram to outputs/skill_output.md and tool call log to outputs/tool_calls.json.",
+      "expected_output": "Flowchart containing ServiceOrchestrator.start calling client.connect (MessageClient.connect) and registerSubscriptions, with registerSubscriptions calling subscriber.subscribe.",
+      "assertions": [
+        {
+          "text": "Diagram contains ServiceOrchestrator.start node",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["start", "ServiceOrchestrator"]
+        },
+        {
+          "text": "Diagram contains connect call (MessageClient.connect)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "connect"
+        },
+        {
+          "text": "Diagram contains registerSubscriptions node",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "registerSubscriptions"
+        },
+        {
+          "text": "Diagram contains subscribe call (EventSubscriber.subscribe)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "subscribe"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "eval-kotlin-androidbridge",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at graphs/), find the symbol AndroidBridge.onCreate in the stress-test graph. Produce a Mermaid flowchart LR showing its direct call chain (all symbols called from onCreate). Use only MCP tools. Save diagram to outputs/skill_output.md and tool call log to outputs/tool_calls.json.",
+      "expected_output": "Flowchart showing AndroidBridge.onCreate calling initConnection, initProcessor, initSessionManager, and registerEventHandlers.",
+      "assertions": [
+        {
+          "text": "Diagram contains AndroidBridge.onCreate or onCreate node",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["onCreate", "AndroidBridge"]
+        },
+        {
+          "text": "Diagram contains initConnection call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "initConnection"
+        },
+        {
+          "text": "Diagram contains initProcessor call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "initProcessor"
+        },
+        {
+          "text": "Diagram contains initSessionManager call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "initSessionManager"
+        },
+        {
+          "text": "Diagram contains registerEventHandlers call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "registerEventHandlers"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "name": "eval-kotlin-eventprocessor",
+      "prompt": "Using the CodeGrapher MCP server (already running, graphs at graphs/), find the symbol EventProcessor.process in the stress-test graph. Produce a Mermaid flowchart LR showing its direct call chain (all symbols called from process). Use only MCP tools. Save diagram to outputs/skill_output.md and tool call log to outputs/tool_calls.json.",
+      "expected_output": "Flowchart showing EventProcessor.process calling passesFilters, route, and subscriber.onEvent (EventSubscriber.onEvent — cross-Java call).",
+      "assertions": [
+        {
+          "text": "Diagram contains EventProcessor.process or process node",
+          "check": "any_substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substrings": ["process", "EventProcessor"]
+        },
+        {
+          "text": "Diagram contains passesFilters call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "passesFilters"
+        },
+        {
+          "text": "Diagram contains route call",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "route"
+        },
+        {
+          "text": "Diagram contains onEvent call (cross-Java EventSubscriber.onEvent)",
+          "check": "substring_in_file",
+          "file": "outputs/skill_output.md",
+          "substring": "onEvent"
+        },
+        {
+          "text": "Tool call log exists and is non-empty",
+          "check": "file_exists_nonempty",
+          "file": "outputs/tool_calls.json"
+        }
+      ],
+      "files": []
     }
   ]
 }

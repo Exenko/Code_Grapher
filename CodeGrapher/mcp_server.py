@@ -174,6 +174,21 @@ class FindTypeInput(BaseModel):
     type_name: str = Field(description="Type name substring to search for (case-insensitive)")
 
 
+class FindSymbolInput(BaseModel):
+    """Input for find_symbol tool."""
+    name_substring: str = Field(description="Symbol name substring to search for (case-insensitive)")
+
+
+class GetFileSymbolsInput(BaseModel):
+    """Input for get_file_symbols tool."""
+    file_path: str = Field(description="File path substring to match (case-insensitive, e.g. 'broker/relay.cc')")
+
+
+class SearchInput(BaseModel):
+    """Input for search tool."""
+    name_substring: str = Field(description="Label substring to search for across both SYMBOL and TYPE nodes (case-insensitive)")
+
+
 class TraceDataFlowInput(BaseModel):
     """Input for trace_data_flow tool."""
     from_node_id: str = Field(description="Source node ID")
@@ -193,6 +208,10 @@ class SummarizeEntryPointInput(BaseModel):
     max_hops: int = Field(
         default=3,
         description="Maximum call-edge hops to traverse from the entry point (default: 3)"
+    )
+    follow_relations: list[str] = Field(
+        default=["calls"],
+        description="Edge relation types to follow during BFS (default: ['calls']). Include 'produces' and 'consumes' for data-pipeline style codebases."
     )
 
 
@@ -476,6 +495,233 @@ def _bfs_typedef_chain(
 
 
 @mcp.tool(
+    name="find_symbol",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def find_symbol(input: FindSymbolInput) -> list[dict[str, Any]]:
+    """
+    Find all symbol nodes matching a name substring (case-insensitive).
+
+    For each match, return:
+    - Full node details (id, type, label, file, line, language, etc.)
+    - Outgoing edges (what this symbol calls/produces/references)
+    - Incoming edges (what calls/references this symbol)
+
+    Useful when you know a function or method name but not its full node ID.
+
+    Returns empty list if no matches found.
+    """
+    search_term = input.name_substring.lower()
+    tier_symbol_data = _get_tier("symbol")
+    index = _get_index("symbol")
+    nodes_by_id = index.get("nodes_by_id", {})
+    outgoing = index.get("outgoing", {})
+    incoming = index.get("incoming", {})
+
+    nodes = tier_symbol_data.get("nodes", [])
+    matching = [
+        n for n in nodes
+        if n.get("type") == "symbol" and search_term in n.get("label", "").lower()
+    ]
+
+    results = []
+    for sym_node in matching:
+        sym_id = sym_node["id"]
+
+        outgoing_edges = []
+        for edge in outgoing.get(sym_id, []):
+            target_id = edge.get("to")
+            target_node = nodes_by_id.get(target_id, {})
+            outgoing_edges.append({
+                "relation": edge.get("relation", ""),
+                "target_id": target_id,
+                "target_label": target_node.get("label", ""),
+                "target_type": target_node.get("type", ""),
+            })
+
+        incoming_edges = []
+        for edge in incoming.get(sym_id, []):
+            source_id = edge.get("from")
+            source_node = nodes_by_id.get(source_id, {})
+            incoming_edges.append({
+                "relation": edge.get("relation", ""),
+                "source_id": source_id,
+                "source_label": source_node.get("label", ""),
+                "source_type": source_node.get("type", ""),
+            })
+
+        results.append({
+            "node": sym_node,
+            "outgoing": outgoing_edges,
+            "incoming": incoming_edges,
+        })
+
+    return results
+
+
+@mcp.tool(
+    name="search",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def search(input: SearchInput) -> dict[str, Any]:
+    """
+    Search for nodes matching a label substring across both SYMBOL and TYPE nodes (case-insensitive).
+
+    Returns two lists:
+    - symbols: matching symbol nodes with their incoming/outgoing edges
+    - types: matching type nodes with their incoming/outgoing edges
+
+    Use this when you don't know whether the thing you're looking for is a
+    symbol (function/class/method) or a type (message/struct/alias).
+    Use find_symbol or find_type if you already know which kind.
+
+    Returns empty lists if no matches found.
+    """
+    search_term = input.name_substring.lower()
+    tier_symbol_data = _get_tier("symbol")
+    index = _get_index("symbol")
+    nodes_by_id = index.get("nodes_by_id", {})
+    outgoing = index.get("outgoing", {})
+    incoming = index.get("incoming", {})
+
+    nodes = tier_symbol_data.get("nodes", [])
+    matching = [
+        n for n in nodes
+        if n.get("type") in ("symbol", "type") and search_term in n.get("label", "").lower()
+    ]
+
+    def _format_node(node: dict) -> dict:
+        nid = node["id"]
+        out_edges = []
+        for edge in outgoing.get(nid, []):
+            target_id = edge.get("to")
+            target_node = nodes_by_id.get(target_id, {})
+            out_edges.append({
+                "relation": edge.get("relation", ""),
+                "target_id": target_id,
+                "target_label": target_node.get("label", ""),
+                "target_type": target_node.get("type", ""),
+            })
+        in_edges = []
+        for edge in incoming.get(nid, []):
+            source_id = edge.get("from")
+            source_node = nodes_by_id.get(source_id, {})
+            in_edges.append({
+                "relation": edge.get("relation", ""),
+                "source_id": source_id,
+                "source_label": source_node.get("label", ""),
+                "source_type": source_node.get("type", ""),
+            })
+        return {"node": node, "outgoing": out_edges, "incoming": in_edges}
+
+    symbols = [_format_node(n) for n in matching if n.get("type") == "symbol"]
+    types = [_format_node(n) for n in matching if n.get("type") == "type"]
+
+    return {
+        "symbols": symbols,
+        "types": types,
+        "symbol_count": len(symbols),
+        "type_count": len(types),
+        "total_count": len(symbols) + len(types),
+    }
+
+
+@mcp.tool(
+    name="get_file_symbols",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
+    """
+    Return all symbols defined in a file (matched by file path substring).
+
+    For each symbol, return its full node details and outgoing edges.
+    Also returns any type nodes defined in the matched file.
+
+    Useful as a one-call shortcut instead of get_feature_summary + repeated expand_node calls.
+
+    Returns error if no file matches the path substring.
+    """
+    search_term = input.file_path.lower()
+    tier_symbol_data = _get_tier("symbol")
+    index = _get_index("symbol")
+    nodes_by_id = index.get("nodes_by_id", {})
+    outgoing = index.get("outgoing", {})
+
+    nodes = tier_symbol_data.get("nodes", [])
+
+    # Find matching file nodes
+    matched_files = [
+        n for n in nodes
+        if n.get("type") == "file" and search_term in n.get("file", "").lower()
+    ]
+
+    if not matched_files:
+        return {
+            "error": f"No file found matching: {input.file_path}",
+            "hint": "Use get_feature_summary to list all files with their paths",
+        }
+
+    results = []
+    for file_node in matched_files:
+        file_id = file_node["id"]
+
+        # Symbols defined in this file: outgoing 'defines' edges from the file node,
+        # or symbol nodes whose 'file' attribute matches this file
+        file_path_val = file_node.get("file", "")
+        symbols = [
+            n for n in nodes
+            if n.get("type") == "symbol" and n.get("file", "") == file_path_val
+        ]
+        types = [
+            n for n in nodes
+            if n.get("type") == "type" and n.get("file", "") == file_path_val
+        ]
+
+        symbol_details = []
+        for sym in symbols:
+            sym_id = sym["id"]
+            edges = []
+            for edge in outgoing.get(sym_id, []):
+                target_id = edge.get("to")
+                target_node = nodes_by_id.get(target_id, {})
+                edges.append({
+                    "relation": edge.get("relation", ""),
+                    "target_id": target_id,
+                    "target_label": target_node.get("label", ""),
+                    "target_type": target_node.get("type", ""),
+                })
+            symbol_details.append({
+                "node": sym,
+                "outgoing": edges,
+            })
+
+        results.append({
+            "file": file_node,
+            "symbols": symbol_details,
+            "types": types,
+            "symbol_count": len(symbols),
+            "type_count": len(types),
+        })
+
+    return {"matches": results, "file_count": len(results)}
+
+
+@mcp.tool(
     name="trace_data_flow",
     annotations={
         "readOnlyHint": True,
@@ -593,11 +839,14 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     if those fields are absent.
 
     Tip: start with max_hops=2 for an overview; increase to 3-4 for detail.
+    Use follow_relations=["calls","produces","consumes"] for data-pipeline
+    codebases where data flow edges are as important as call edges.
     The cross_file_edges list is the most useful output for understanding
     multi-file features — it shows exactly where control crosses boundaries.
     """
     entry_id = input.entry_point_id
     max_hops = input.max_hops
+    follow_relations = input.follow_relations
 
     tier_symbol_data = _get_tier("symbol")
     index = _get_index("symbol")
@@ -641,14 +890,15 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     # hop_nodes[hop] = list of node_ids first reached at this hop
     hop_nodes: dict[int, list[str]] = {0: list(seed_ids)}
 
-    # BFS over calls edges only
+    # BFS following specified edge relations
     queue = deque([(sid, 0) for sid in seed_ids])
+    follow_set = set(follow_relations)
     while queue:
         node_id, depth = queue.popleft()
         if depth >= max_hops:
             continue
         for edge in outgoing.get(node_id, []):
-            if edge.get("relation") != "calls":
+            if edge.get("relation") not in follow_set:
                 continue
             next_id = edge.get("to")
             if not next_id or next_id in visited:

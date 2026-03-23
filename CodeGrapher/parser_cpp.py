@@ -27,7 +27,7 @@ Reusable across any C/C++ project.
 from __future__ import annotations
 import re
 from pathlib import Path
-from typing import Optional, Set, Dict, Tuple
+from typing import List, Optional, Set, Dict, Tuple
 
 from schema import (
     Node, Edge, NodeType, EdgeRelation,
@@ -59,6 +59,28 @@ def parse_file(feature: str, root: Path, filepath: Path,
     is_header = filepath.suffix.lower() in {".h", ".hpp", ".hxx"}
     is_implementation = filepath.suffix.lower() in {".cc", ".cpp", ".cxx", ".c"}
 
+    # Extract member variable types from corresponding header (if parsing implementation)
+    member_var_types: Dict[str, str] = {}
+    class_bases: Dict[str, List[str]] = {}
+    if is_implementation:
+        # Pre-pass: find corresponding header and extract member variable types
+        for ext in ('.h', '.hpp'):
+            candidate = filepath.with_suffix(ext)
+            if candidate.exists():
+                header_source = candidate.read_text(encoding='utf-8', errors='replace')
+                header_rel = _rel(root, candidate)
+                _hparser = _HeaderParser(
+                    feature=feature,
+                    rel_path=header_rel,
+                    module_name=_module_name(header_rel),
+                    is_test=is_test_file(header_rel),
+                    known_symbol_ids=known_symbol_ids or set(),
+                )
+                _hparser.parse(header_source)
+                member_var_types = _hparser._member_var_types
+                class_bases = _hparser._class_bases
+                break
+
     if is_header:
         parser = _HeaderParser(
             feature=feature,
@@ -66,6 +88,7 @@ def parse_file(feature: str, root: Path, filepath: Path,
             module_name=_module_name(rel_path),
             is_test=is_test_file(rel_path),
             known_symbol_ids=known_symbol_ids or set(),
+            member_var_types=member_var_types,
         )
     elif is_implementation:
         parser = _ImplementationParser(
@@ -74,6 +97,8 @@ def parse_file(feature: str, root: Path, filepath: Path,
             module_name=_module_name(rel_path),
             is_test=is_test_file(rel_path),
             known_symbol_ids=known_symbol_ids or set(),
+            member_var_types=member_var_types,
+            class_bases=class_bases,
         )
     else:
         # Fallback: treat as header
@@ -83,10 +108,44 @@ def parse_file(feature: str, root: Path, filepath: Path,
             module_name=_module_name(rel_path),
             is_test=is_test_file(rel_path),
             known_symbol_ids=known_symbol_ids or set(),
+            member_var_types=member_var_types,
         )
 
     parser.parse(source)
     return parser.graph
+
+
+# ---------------------------------------------------------------------------
+# Helper function for multi-line parameter parsing
+# ---------------------------------------------------------------------------
+
+def _find_matching_paren(source: str, open_pos: int) -> Tuple[str, int]:
+    """
+    Starting at open_pos (which must be the index of '(' in source),
+    scan forward to find the matching ')'.
+
+    Returns (params_str, close_pos) where:
+      - params_str is the content between the parens (may span multiple lines)
+      - close_pos is the index of the closing ')'
+
+    If no matching paren is found, returns ("", open_pos).
+    """
+    if open_pos >= len(source) or source[open_pos] != '(':
+        return "", open_pos
+    depth = 1
+    pos = open_pos + 1
+    while pos < len(source) and depth > 0:
+        ch = source[pos]
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+        pos += 1
+    if depth != 0:
+        return "", open_pos
+    close_pos = pos - 1  # index of the matching ')'
+    params_str = source[open_pos + 1:close_pos]
+    return params_str, close_pos
 
 
 # ---------------------------------------------------------------------------
@@ -97,7 +156,9 @@ class _BaseParser:
     """Shared functionality for header and implementation parsers."""
 
     def __init__(self, feature: str, rel_path: str, module_name: str,
-                 is_test: bool, known_symbol_ids: Set[str]):
+                 is_test: bool, known_symbol_ids: Set[str],
+                 member_var_types: Dict[str, str] | None = None,
+                 class_bases: Dict[str, List[str]] | None = None):
         self.feature = feature
         self.rel_path = rel_path
         self.module_name = module_name
@@ -107,6 +168,15 @@ class _BaseParser:
 
         # Local cache: type name -> type_id
         self.known_types: Dict[str, str] = {}
+
+        # Cross-file member variable type map: var_name -> type_name
+        # Populated by header parser from class member declarations.
+        # Used by implementation parser to resolve obj.method() calls.
+        self._member_var_types: Dict[str, str] = member_var_types if member_var_types is not None else {}
+
+        # Inheritance map: class_name -> [base_class_name, ...]
+        # Seeded from header pre-parse, extended by _extract_classes.
+        self._class_bases: Dict[str, List[str]] = dict(class_bases) if class_bases else {}
 
         # Check if this file should have relay=True on produces edges
         rel_dir = str(rel_path).replace("\\", "/").split("/")[0] if "/" in rel_path else ""
@@ -178,10 +248,187 @@ class _HeaderParser(_BaseParser):
 
     def parse(self, source: str) -> None:
         """Parse header source and populate graph."""
+        self._extract_classes(source)
         self._extract_structs(source)
         self._extract_enums(source)
         self._extract_typedefs(source)
         self._extract_function_declarations(source)
+
+    def _extract_classes(self, source: str) -> None:
+        """Extract class definitions and their method declarations."""
+        # Match: class ClassName [: public Base, ...] {
+        # Capture the inheritance clause (group 2) so we can extract base class names.
+        pattern = r'\bclass\s+(\w+)\s*(?::([^{]*))?\{'
+        for match in re.finditer(pattern, source):
+            class_name = match.group(1)
+            inheritance_clause = match.group(2) or ""
+            class_start = match.start()
+
+            # Parse base class names from inheritance clause.
+            # e.g. ": public Base, protected Mixin" -> ["Base", "Mixin"]
+            bases: List[str] = []
+            if inheritance_clause:
+                for part in inheritance_clause.split(','):
+                    tokens = part.strip().split()
+                    # Strip access specifiers and 'virtual'
+                    base_name = next(
+                        (t for t in tokens
+                         if t not in ('public', 'private', 'protected', 'virtual')
+                         and t.isidentifier()),
+                        None
+                    )
+                    if base_name:
+                        bases.append(base_name)
+            self._class_bases[class_name] = bases
+
+            # Find the closing brace
+            brace_count = 1
+            pos = match.end()
+            while pos < len(source) and brace_count > 0:
+                if source[pos] == '{':
+                    brace_count += 1
+                elif source[pos] == '}':
+                    brace_count -= 1
+                pos += 1
+            class_end = pos - 1
+
+            class_body = source[match.end():class_end]
+
+            # Create TYPE node for class
+            tid = type_id(self.feature, self.module_name, class_name)
+            self.known_types[class_name] = tid
+
+            self.graph.add_node(Node(
+                id=tid,
+                type=NodeType.TYPE,
+                label=class_name,
+                file=self.rel_path,
+                line=source[:class_start].count('\n') + 1,
+                language="cpp",
+                is_test=self.is_test,
+            ))
+            self.graph.add_edge(Edge(
+                from_id=self._file_node_id,
+                to_id=tid,
+                relation=EdgeRelation.DEFINES,
+            ))
+
+            # Extract method declarations from class body
+            self._extract_class_methods(class_body, class_name, tid,
+                                        source[:class_start].count('\n') + 1)
+
+            # Extract member variable declarations
+            self._extract_member_variables(class_body, class_name)
+
+    def _extract_class_methods(self, class_body: str, class_name: str,
+                               class_type_id: str, base_line: int) -> None:
+        """Extract method declarations from a class body."""
+        # Match method signatures up to the opening paren.
+        # Params extracted separately so multi-line signatures are handled.
+        pattern = re.compile(
+            r'^\s*(?:(?:virtual|static|explicit|inline|override)\s+)*'
+            r'(\w[\w\s\*&:<>]*?)\s+'   # return type (group 1)
+            r'(\w+)\s*'                 # method name (group 2)
+            r'\(',                       # opening paren
+            re.MULTILINE
+        )
+
+        for match in pattern.finditer(class_body):
+            return_type = match.group(1).strip()
+            method_name = match.group(2)
+
+            if _is_likely_builtin_cpp(method_name):
+                continue
+            if method_name in ('public', 'private', 'protected', 'class', 'struct',
+                               'return', 'if', 'for', 'while', 'switch'):
+                continue
+
+            # Find matching close paren
+            open_paren_pos = match.end() - 1
+            params_str, close_paren_pos = _find_matching_paren(class_body, open_paren_pos)
+            if close_paren_pos == open_paren_pos:
+                continue
+
+            # After ')': expect optional const/override then ; or {
+            after_close = class_body[close_paren_pos + 1:]
+            stripped = after_close.lstrip(' \t\r\n')
+            # Strip const/override qualifiers
+            qualifier_re = re.compile(r'^(?:const\s+|override\s+)*')
+            q_match = qualifier_re.match(stripped)
+            rest = stripped[q_match.end():] if q_match else stripped
+            if not rest or rest[0] not in (';', '{'):
+                continue
+
+            qualified_name = f"{class_name}.{method_name}"
+            sid = symbol_id(self.feature, self.rel_path, qualified_name)
+            line_num = base_line + class_body[:match.start()].count('\n')
+
+            self.graph.add_node(Node(
+                id=sid,
+                type=NodeType.SYMBOL,
+                label=qualified_name,
+                file=self.rel_path,
+                line=line_num,
+                language="cpp",
+                is_test=self.is_test,
+            ))
+            self.graph.add_edge(Edge(
+                from_id=class_type_id,
+                to_id=sid,
+                relation=EdgeRelation.CONTAINS,
+            ))
+            self.graph.add_edge(Edge(
+                from_id=self._file_node_id,
+                to_id=sid,
+                relation=EdgeRelation.DEFINES,
+            ))
+
+            params_normalized = ' '.join(params_str.split())
+            self._process_function_signature(qualified_name, return_type, params_normalized, sid)
+
+    def _extract_member_variables(self, class_body: str, class_name: str) -> None:
+        """Extract member variable declarations from a class body.
+
+        Handles:
+          TypeName varName;
+          TypeName* varName;
+          TypeName varName = ...;
+          std::unique_ptr<TypeName> varName;
+
+        Skips: primitives, juce:: types, std::function, bool/float/int/double/void
+        """
+        # Pattern 1: std::unique_ptr<TypeName> varName  or  TypeName* varName  or  TypeName varName
+        # We extract the inner type name (stripping ptr/ref/template wrappers)
+        lines = class_body.split('\n')
+        for line in lines:
+            line = line.strip()
+            # Skip access specifiers, macros, method declarations, comments
+            if not line or line.startswith('//') or line.startswith('*') or line.startswith('#'):
+                continue
+            if any(kw in line for kw in ('virtual', 'static', 'explicit', 'inline', 'override',
+                                          'JUCE_', '(', 'operator', 'return', 'friend')):
+                continue
+            if not line.endswith(';'):
+                continue
+
+            # Try unique_ptr<T> varName[...];
+            m = re.match(r'std::unique_ptr\s*<\s*([\w:]+)\s*>\s+(\w+)', line)
+            if m:
+                type_name = m.group(1).split('::')[-1]
+                var_name = m.group(2)
+                if not _is_builtin_cpp_type(type_name) and not _is_likely_builtin_cpp(type_name):
+                    self._member_var_types[var_name] = type_name
+                continue
+
+            # Try plain: TypeName[*] varName[...];   (no template, no std::)
+            # Must start with a capital letter (project types) or known type
+            m = re.match(r'^([A-Z]\w*)\s*\*?\s+(\w+)\s*(?:[={].*)?;', line)
+            if m:
+                type_name = m.group(1)
+                var_name = m.group(2)
+                if not _is_builtin_cpp_type(type_name) and not _is_likely_builtin_cpp(type_name):
+                    self._member_var_types[var_name] = type_name
+                continue
 
     def _extract_structs(self, source: str) -> None:
         """Extract struct definitions and their fields."""
@@ -371,19 +618,37 @@ class _HeaderParser(_BaseParser):
 
     def _extract_function_declarations(self, source: str) -> None:
         """Extract function declarations (signatures without implementations)."""
-        # Match: ReturnType FunctionName(params);
-        # Stop at semicolon, not brace (to avoid matching implementations in .h)
-        pattern = r'^(\w[\w\s\*]*?)\s+(\w+)\s*\(([^)]*)\)\s*;'
+        # Match up to opening paren; extract params via _find_matching_paren
+        # so multi-line signatures are handled correctly.
+        pattern = re.compile(
+            r'^(\w[\w\s\*]*?)\s+'  # return type (group 1)
+            r'(\w+)\s*'             # function name (group 2)
+            r'\(',                   # opening paren
+            re.MULTILINE
+        )
 
-        for match in re.finditer(pattern, source, re.MULTILINE):
+        for match in pattern.finditer(source):
             return_type = match.group(1).strip()
             func_name = match.group(2)
-            params_str = match.group(3)
 
             if _is_likely_builtin_cpp(func_name):
                 continue
 
-            # Create SYMBOL node
+            # Find matching close paren
+            open_paren_pos = match.end() - 1
+            params_str, close_paren_pos = _find_matching_paren(source, open_paren_pos)
+            if close_paren_pos == open_paren_pos:
+                continue
+
+            # After ')': must end with ; (declaration, not definition)
+            after_close = source[close_paren_pos + 1:]
+            stripped = after_close.lstrip(' \t\r\n')
+            qualifier_re = re.compile(r'^(?:const\s+|override\s+)*')
+            q_match = qualifier_re.match(stripped)
+            rest = stripped[q_match.end():] if q_match else stripped
+            if not rest or rest[0] != ';':
+                continue
+
             sid = symbol_id(self.feature, self.rel_path, func_name)
             line_num = source[:match.start()].count('\n') + 1
 
@@ -402,8 +667,8 @@ class _HeaderParser(_BaseParser):
                 relation=EdgeRelation.DEFINES,
             ))
 
-            # Process return type (produces edge if non-void)
-            self._process_function_signature(func_name, return_type, params_str, sid)
+            params_normalized = ' '.join(params_str.split())
+            self._process_function_signature(func_name, return_type, params_normalized, sid)
 
     def _process_function_signature(self, func_name: str, return_type: str,
                                    params_str: str, func_id: str) -> None:
@@ -550,18 +815,63 @@ class _ImplementationParser(_BaseParser):
 
     def _extract_function_definitions(self, source: str) -> None:
         """Extract function definitions with bodies."""
-        # Match: ReturnType FunctionName(params) {
-        pattern = r'^(\w[\w\s\*]*?)\s+(\w+)\s*\(([^)]*)\)\s*\{'
+        # Match C++ function definition signatures up to the opening paren.
+        # Params are extracted separately via _find_matching_paren so that
+        # multi-line parameter lists are handled correctly.
+        # Pattern: ReturnType [ClassName::]FunctionName(
+        pattern = re.compile(
+            r'^([\w][\w\s\*&:<>]*?)\s+'  # return type (group 1)
+            r'(?:(\w+)::)?'               # optional class qualifier (group 2)
+            r'(\w+)\s*'                   # function name (group 3)
+            r'\(',                         # opening paren (not captured)
+            re.MULTILINE
+        )
 
-        for match in re.finditer(pattern, source, re.MULTILINE):
+        seen_names = set()
+
+        for match in pattern.finditer(source):
             return_type = match.group(1).strip()
-            func_name = match.group(2)
-            params_str = match.group(3)
-            func_start = match.start()
-            brace_pos = match.end() - 1
+            class_qualifier = match.group(2)
+            func_name = match.group(3)
 
             if _is_likely_builtin_cpp(func_name):
                 continue
+            if func_name in ('public', 'private', 'protected', 'class', 'struct',
+                             'return', 'if', 'for', 'while', 'switch', 'namespace'):
+                continue
+
+            # Find matching close paren (handles multi-line params)
+            open_paren_pos = match.end() - 1  # position of '('
+            params_str, close_paren_pos = _find_matching_paren(source, open_paren_pos)
+            if close_paren_pos == open_paren_pos:
+                continue  # unmatched paren, skip
+
+            # Scan after ')' for optional qualifiers then '{'
+            # Skip: const, override, noexcept, whitespace, newlines
+            after_close = source[close_paren_pos + 1:]
+            # Strip trailing qualifiers before brace
+            qualifier_pattern = re.compile(r'^[\s\n]*(const\s+|override\s+|noexcept\s*(?:\([^)]*\))?\s+)*')
+            q_match = qualifier_pattern.match(after_close)
+            skip = q_match.end() if q_match else 0
+            rest = after_close[skip:]
+
+            # Next non-whitespace must be '{'
+            stripped = rest.lstrip(' \t\r\n')
+            if not stripped or stripped[0] != '{':
+                continue
+
+            brace_pos = close_paren_pos + 1 + skip + (len(rest) - len(stripped))
+
+            # Use qualified name if class qualifier present
+            if class_qualifier:
+                qualified_name = f"{class_qualifier}.{func_name}"
+            else:
+                qualified_name = func_name
+
+            # Deduplicate
+            if qualified_name in seen_names:
+                continue
+            seen_names.add(qualified_name)
 
             # Find the matching closing brace
             brace_count = 1
@@ -573,17 +883,17 @@ class _ImplementationParser(_BaseParser):
                     brace_count -= 1
                 pos += 1
             func_end = pos - 1
-
             func_body = source[brace_pos + 1:func_end]
 
             # Create SYMBOL node
-            sid = symbol_id(self.feature, self.rel_path, func_name)
+            func_start = match.start()
+            sid = symbol_id(self.feature, self.rel_path, qualified_name)
             line_num = source[:func_start].count('\n') + 1
 
             self.graph.add_node(Node(
                 id=sid,
                 type=NodeType.SYMBOL,
-                label=func_name,
+                label=qualified_name,
                 file=self.rel_path,
                 line=line_num,
                 language="cpp",
@@ -595,11 +905,10 @@ class _ImplementationParser(_BaseParser):
                 relation=EdgeRelation.DEFINES,
             ))
 
-            # Process signature (return type, parameters)
-            self._process_function_signature(func_name, return_type, params_str, sid)
-
-            # Process body (calls)
-            self._process_function_body(func_body, sid)
+            # Normalize multi-line params to single line for processing
+            params_normalized = ' '.join(params_str.split())
+            self._process_function_signature(qualified_name, return_type, params_normalized, sid)
+            self._process_function_body(func_body, sid, params_normalized, class_qualifier or "")
 
     def _process_function_signature(self, func_name: str, return_type: str,
                                    params_str: str, func_id: str) -> None:
@@ -682,11 +991,35 @@ class _ImplementationParser(_BaseParser):
                     unresolved=unresolved,
                 ))
 
-    def _process_function_body(self, body: str, func_id: str) -> None:
+    def _process_function_body(self, body: str, func_id: str, params_str: str = "",
+                               class_name: str = "") -> None:
         """Scan function body for calls and emit CALLS edges."""
         # Track which call locations we've already processed to avoid duplicates
         processed_positions = set()
         call_seq = 0
+
+        # ------------------------------------------------------------------
+        # Build parameter type map from function signature.
+        # Pattern: TypeName[*] paramname
+        # ------------------------------------------------------------------
+        param_var_types: Dict[str, str] = {}
+        if params_str:
+            params = [p.strip() for p in params_str.split(',') if p.strip()]
+            for param in params:
+                if param == "void" or param == "":
+                    continue
+                # Extract parameter name (last identifier) and type (all but last)
+                parts = param.split()
+                if len(parts) < 1:
+                    continue
+                param_name = parts[-1].lstrip('*&')
+                param_type_str = " ".join(parts[:-1])
+                # Extract base type: remove qualifiers and pointer/reference markers
+                base_type = re.sub(r'\b(?:const|volatile|static|extern|register)\b', '', param_type_str)
+                base_type = re.sub(r'[\*&\[\]]', ' ', base_type)
+                base_type = base_type.split()[0] if base_type.split() else ""
+                if base_type and not _is_builtin_cpp_type(base_type) and not _is_likely_builtin_cpp(base_type):
+                    param_var_types[param_name] = base_type
 
         # ------------------------------------------------------------------
         # Gap 3: Build a local variable type map from explicit declarations
@@ -703,8 +1036,9 @@ class _ImplementationParser(_BaseParser):
             if not _is_builtin_cpp_type(type_name) and not _is_likely_builtin_cpp(type_name):
                 local_var_types[var_name] = type_name
 
-        # Merge file-scope and local type maps; local declarations take precedence
-        effective_var_types: Dict[str, str] = {**self.var_types, **local_var_types}
+        # Merge member variable types from headers, parameter types, file-scope, and local type maps;
+        # local declarations take precedence
+        effective_var_types: Dict[str, str] = {**self._member_var_types, **self.var_types, **param_var_types, **local_var_types}
 
         # Find simple function calls: identifier(
         simple_pattern = r'\b([A-Za-z_]\w*)\s*\('
@@ -729,6 +1063,13 @@ class _ImplementationParser(_BaseParser):
 
             # Try to resolve the call target
             resolved = self._resolve_call_target(call_name)
+            # Inheritance fallback: try Base.method for each base class of the
+            # enclosing class. Only fires when class_name is known (impl files).
+            if resolved is None and class_name:
+                for base in self._class_bases.get(class_name, []):
+                    resolved = self._resolve_call_target(f"{base}.{call_name}")
+                    if resolved is not None:
+                        break
             if resolved is None:
                 final_target: str = f"unresolved::{call_name}"
                 unresolved = True
@@ -769,8 +1110,8 @@ class _ImplementationParser(_BaseParser):
             resolved2: Optional[str] = None
             declared_type = effective_var_types.get(namespace_or_obj)
             if declared_type:
-                # 1. Try TypeName::method (most specific)
-                resolved2 = self._resolve_call_target(f"{declared_type}::{method_name}")
+                # 1. Try TypeName.method (most specific — matches label format)
+                resolved2 = self._resolve_call_target(f"{declared_type}.{method_name}")
                 if resolved2 is None:
                     resolved2 = self._resolve_call_target(method_name)
 
@@ -778,9 +1119,9 @@ class _ImplementationParser(_BaseParser):
             if resolved2 is None:
                 resolved2 = self._resolve_call_target(method_name)
 
-            # 3. Try the qualified form (namespace::method)
+            # 3. Try the qualified form (namespace.method — matches label format)
             if resolved2 is None:
-                resolved2 = self._resolve_call_target(f"{namespace_or_obj}::{method_name}")
+                resolved2 = self._resolve_call_target(f"{namespace_or_obj}.{method_name}")
 
             if resolved2 is not None:
                 final_target2: str = resolved2

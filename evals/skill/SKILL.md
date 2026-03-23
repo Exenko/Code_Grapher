@@ -11,19 +11,22 @@ The core dev loop: **run parser → compare against ground truth → identify ga
 ## Quick orientation
 
 ```
-Repo root: c:\Users\Mike\Documents\GitHub\SmartRecipeApp\
+Repo root: c:\Users\Mike\Documents\GitHub\Code_Grapher\
 
-Stress-test codebase:  CodeGrapherStressTest/         (C++, proto, XML)
-Ground truth:          CodeGrapherStressTest/GROUND_TRUTH.md
+Stress-test codebase:  stress_tests/         (C++, proto, XML, Java, Kotlin)
+Ground truth:          GT/stress_tests/GROUND_TRUTH.md
 Parser sources:        CodeGrapher/parser_cpp.py
                        CodeGrapher/parser_proto.py
                        CodeGrapher/parser_xml.py
                        CodeGrapher/parser_python.py
+                       CodeGrapher/parser_java.py
+                       CodeGrapher/parser_kotlin.py
+                       CodeGrapher/parser_typescript.py
 Graph engine:          CodeGrapher/graph.py
 Schema:                CodeGrapher/schema.py
 MCP server:            CodeGrapher/mcp_server.py
 
-Graph output dir:      CodeGrapher/graphs/
+Graph output dir:      graphs/
   feature_stress.json  <- the stress-test graph (always rebuild before checking)
   toc.json             <- index, loaded by MCP server at startup
   tier_*.json          <- LOD tiers
@@ -34,37 +37,39 @@ Graph output dir:      CodeGrapher/graphs/
 
 ```bash
 # Rebuild stress-test graph
-py CodeGrapher/run.py --feature stress --root . --dir CodeGrapherStressTest
+py CodeGrapher/run.py --feature stress --root . --dir stress_tests
 
-# Rebuild full repo graph
+# Rebuild full repo graph (project-specific path)
 py CodeGrapher/run.py --feature repo --root . --dir Client_Side Server_Side test_scripts
 
 # Start MCP server (for eval agent queries)
-py CodeGrapher/mcp_server.py --graphs CodeGrapher/graphs
+py CodeGrapher/mcp_server.py --graphs graphs
 
 # Start LOD viewer
-py CodeGrapher/serve.py --graphs CodeGrapher/graphs   # http://localhost:5000
+py CodeGrapher/serve.py --graphs graphs   # http://localhost:5000
 ```
 
 ## Ground truth checklist
 
-After each rebuild, verify against `CodeGrapherStressTest/GROUND_TRUTH.md`:
+After each rebuild, verify against `GT/stress_tests/GROUND_TRUTH.md`:
 
 | Assertion | Expected |
 |---|---|
-| File nodes | 33 |
-| Symbol nodes | 179 |
-| Type nodes | 39 |
-| `calls` edges | 70 |
+| File nodes | 44 |
+| Symbol nodes | 328 |
+| Type nodes | 60 |
+| `calls` edges | 247 |
 | `typedef_of` edges | 4 |
 | `maps_to` edges | 6 |
+| `modifies` edges | 100 |
+| `unresolved` call edges | 72 (stdlib + intra-feature) |
 | Entry points | 3 (producer/main.cc, broker/main.cc, consumer/main.cc) |
 
 Quick Python check:
 ```python
 import json
 from collections import Counter
-d = json.load(open("CodeGrapher/graphs/feature_stress.json"))
+d = json.load(open("graphs/feature_stress.json"))
 print("nodes:", Counter(n["type"] for n in d["nodes"]))
 print("edges:", Counter(e["relation"] for e in d["edges"]))
 ```
@@ -88,6 +93,8 @@ print("edges:", Counter(e["relation"] for e in d["edges"]))
 | `parser_proto.py` | `.proto` | messages, enums; generates/defines/contains/maps_to |
 | `parser_xml.py` | WSDL/XSD/config `.xml` | complexType→TYPE; portType→SYMBOL; configures/maps_to |
 | `parser_python.py` | Python | 2-pass AST; Tier 1 (signature) + Tier 2 (body walking); produces/consumes/relay/seq |
+| `parser_java.py` | Java `.java` | 2-pass regex; class/method/field nodes; calls, consumes, produces, uses_type |
+| `parser_kotlin.py` | Kotlin `.kt` `.kts` | 2-pass regex; data class, sealed class, companion object, suspend fun; same edge set as Java |
 
 Edge semantics: `produces` = data emitter, `consumes` = data consumer, `calls` = control flow, `modifies` = in-place mutation of a typed parameter, `typedef_of` = type alias chain, `maps_to` = cross-format equivalence (proto↔WSDL↔C++), `relay:true` = broker/pass-through node.
 

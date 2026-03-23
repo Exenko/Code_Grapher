@@ -38,7 +38,9 @@ from graph import CodeGraph
 
 def parse_file(feature: str, root: Path, filepath: Path,
                known_symbol_ids: Set[str] | None = None,
-               known_return_types: Dict[str, str] | None = None) -> CodeGraph:
+               known_return_types: Dict[str, str] | None = None,
+               known_file_ids: Dict[str, str] | None = None,
+               filter_stdlib: bool = False) -> CodeGraph:
     """
     Parse a single Python file and return a CodeGraph.
 
@@ -53,6 +55,8 @@ def parse_file(feature: str, root: Path, filepath: Path,
                             built from Pass 1 across all files.  Used to resolve
                             instance method calls like db.execute() when db was
                             assigned from a typed factory function.
+        known_file_ids:     Dict mapping module name/stem → file_id, for detecting
+                            local project imports and distinguishing them from stdlib.
     """
     rel_path = _rel(root, filepath)
     source = filepath.read_text(encoding="utf-8", errors="replace")
@@ -70,6 +74,8 @@ def parse_file(feature: str, root: Path, filepath: Path,
         is_test=is_test_file(rel_path),
         known_symbol_ids=known_symbol_ids or set(),
         known_return_types=known_return_types or {},
+        known_file_ids=known_file_ids or {},
+        filter_stdlib=filter_stdlib,
     )
     visitor.visit(tree)
     return visitor.graph
@@ -96,13 +102,16 @@ def resolve_calls(graph: CodeGraph, known_symbol_ids: Set[str]) -> None:
 class _FileVisitor(ast.NodeVisitor):
     def __init__(self, feature: str, rel_path: str, module_name: str,
                  is_test: bool, known_symbol_ids: Set[str],
-                 known_return_types: Dict[str, str] | None = None):
+                 known_return_types: Dict[str, str] | None = None,
+                 known_file_ids: Dict[str, str] | None = None,
+                 filter_stdlib: bool = False):
         self.feature = feature
         self.rel_path = rel_path
         self.module_name = module_name
         self.is_test = is_test
         self.known = known_symbol_ids
         self.graph = CodeGraph(feature)
+        self._filter_stdlib = filter_stdlib
 
         # State for tracking current class context
         self._current_class: Optional[str] = None      # class name
@@ -132,6 +141,20 @@ class _FileVisitor(ast.NodeVisitor):
         # Used after body-walk to decide consumes vs. modifies per annotated param.
         self._mutated_params: Set[str] = set()
 
+        # Mapping: module name/stem → file_id, for local file import detection.
+        # Distinguishes local imports from stdlib (e.g. barcode_database from logging).
+        self._known_file_ids: Dict[str, str] = known_file_ids or {}
+
+        # Maps local alias → module name for unresolved call annotation.
+        # e.g. "import numpy as np" → {"np": "numpy"}
+        # e.g. "import logging" → {"logging": "logging"}
+        # e.g. "from os import path" → {"path": "os"}
+        self._import_module_of: Dict[str, str] = {}
+
+        # Per-class: self.attr_name → type class name, built from __init__ body.
+        # Populated by: self.x = ClassName() and annotated __init__ params assigned to self.x
+        self._instance_attr_types: Dict[str, str] = {}
+
         # File node
         self._file_node_id = file_id(feature, rel_path)
         self.graph.add_node(Node(
@@ -147,9 +170,32 @@ class _FileVisitor(ast.NodeVisitor):
     # Imports
     # ------------------------------------------------------------------
 
+    def _resolve_module_id(self, module_name: str) -> str:
+        """
+        Resolve a module name to its file_id or stdlib_module_id.
+
+        For a module name like "barcode_database" or "household_inventory.src.barcode_database":
+        - Check full dotted path match in known_file_ids
+        - Also check stem-only match (last component after splitting by ".")
+        - If either matches, return the corresponding file_id
+        - Otherwise fall through to stdlib_module_id (for true stdlib modules)
+        """
+        # Try full dotted path match
+        if module_name in self._known_file_ids:
+            return self._known_file_ids[module_name]
+
+        # Try stem-only match (last component)
+        stem = module_name.split(".")[-1]
+        if stem in self._known_file_ids:
+            return self._known_file_ids[stem]
+
+        # Not a known local file, fall back to stdlib
+        return stdlib_module_id(module_name)
+
     def visit_Import(self, node: ast.Import) -> None:
         for alias in node.names:
-            mod_id = stdlib_module_id(alias.name)
+            # Check if this is a local file import (in known_file_ids)
+            mod_id = self._resolve_module_id(alias.name)
             self.graph.add_node(Node(
                 id=mod_id,
                 type=NodeType.FILE,
@@ -162,11 +208,15 @@ class _FileVisitor(ast.NodeVisitor):
                 to_id=mod_id,
                 relation=EdgeRelation.IMPORTS,
             ))
+            # Track alias → module name for via_module annotation on unresolved calls
+            local_name = alias.asname if alias.asname else alias.name.split(".")[0]
+            self._import_module_of[local_name] = alias.name
         self.generic_visit(node)
 
     def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
         if node.module:
-            mod_id = stdlib_module_id(node.module)
+            # Check if this is a local file import (in known_file_ids)
+            mod_id = self._resolve_module_id(node.module)
             self.graph.add_node(Node(
                 id=mod_id,
                 type=NodeType.FILE,
@@ -184,7 +234,11 @@ class _FileVisitor(ast.NodeVisitor):
         for alias in node.names:
             local_name = alias.asname if alias.asname else alias.name
             # Only record the simple name portion (e.g. "get_theme_manager" not "module.fn")
-            self._import_names.add(local_name.split(".")[-1])
+            simple = local_name.split(".")[-1]
+            self._import_names.add(simple)
+            # Track alias → module name for via_module annotation on unresolved calls
+            if node.module:
+                self._import_module_of[simple] = node.module
         self.generic_visit(node)
 
     # ------------------------------------------------------------------
@@ -219,6 +273,7 @@ class _FileVisitor(ast.NodeVisitor):
         for child in node.body:
             self.visit(child)
 
+        self._instance_attr_types = {}
         self._current_class = prev_class
         self._current_class_id = prev_class_id
 
@@ -271,6 +326,13 @@ class _FileVisitor(ast.NodeVisitor):
                     relation=EdgeRelation.USES_TYPE,
                 ))
 
+        # Seed instance attribute type map so self.field.method() calls in other
+        # methods can resolve against the declared type (e.g. conn: DatabaseConnection).
+        for tname in _annotation_names(node.annotation):
+            if not _is_builtin_type(tname):
+                self._instance_attr_types[field_name] = tname
+                break
+
     # ------------------------------------------------------------------
     # Function / method definitions → symbol nodes
     # ------------------------------------------------------------------
@@ -281,6 +343,75 @@ class _FileVisitor(ast.NodeVisitor):
     def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
         self._handle_function(node)
 
+    def visit_If(self, node: ast.If) -> None:
+        """
+        Detect if __name__ == "__main__": blocks at module level.
+        When found, mark the called function (if any) as an entry point.
+
+        Handles two patterns:
+          1. Bare-name call: main()
+          2. Instance-construction: app = MyClass(); app.run()
+        """
+        # Only process top-level if statements (not nested inside functions/classes)
+        if self._current_func is not None or self._current_class is not None:
+            self.generic_visit(node)
+            return
+
+        if not _is_main_check(node.test):
+            self.generic_visit(node)
+            return
+
+        # Map: local_var_name → class_name for assignments like `app = MyClass()`
+        instance_vars: Dict[str, str] = {}
+
+        # First pass: collect instance assignments (var = ClassName())
+        for stmt in node.body:
+            if (isinstance(stmt, ast.Assign)
+                    and len(stmt.targets) == 1
+                    and isinstance(stmt.targets[0], ast.Name)
+                    and isinstance(stmt.value, ast.Call)
+                    and isinstance(stmt.value.func, ast.Name)):
+                var_name = stmt.targets[0].id
+                class_name = stmt.value.func.id
+                instance_vars[var_name] = class_name
+
+        # Second pass: mark entry points from calls in the __main__ body
+        for stmt in node.body:
+            if not (isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call)):
+                continue
+            call_func = stmt.value.func
+
+            # Pattern 1: bare-name call — main(), run(), etc.
+            if isinstance(call_func, ast.Name):
+                call_name = call_func.id
+                if call_name:
+                    target_id = self._resolve_call_target(call_name, skip_same_file=False)
+                    if target_id:
+                        for n in self.graph.nodes:
+                            if n.id == target_id:
+                                n.entry_point = True
+                                break
+
+            # Pattern 2: instance method call — app.run_interactive_mode()
+            elif (isinstance(call_func, ast.Attribute)
+                    and isinstance(call_func.value, ast.Name)):
+                receiver_name = call_func.value.id
+                method_name = call_func.attr
+                class_name = instance_vars.get(receiver_name)
+                if class_name:
+                    # Try to resolve ClassName.method_name
+                    qualified = f"{class_name}.{method_name}"
+                    target_id = self._resolve_call_target(qualified, skip_same_file=False)
+                    if target_id is None:
+                        target_id = self._resolve_call_target(method_name, skip_same_file=False)
+                    if target_id:
+                        for n in self.graph.nodes:
+                            if n.id == target_id:
+                                n.entry_point = True
+                                break
+
+        self.generic_visit(node)
+
     def _handle_function(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> None:
         if self._current_class:
             qualified_name = f"{self._current_class}.{node.name}"
@@ -288,6 +419,7 @@ class _FileVisitor(ast.NodeVisitor):
             qualified_name = node.name
 
         sid = symbol_id(self.feature, self.rel_path, qualified_name)
+        is_route = _is_route_handler(node)
 
         self.graph.add_node(Node(
             id=sid,
@@ -296,6 +428,7 @@ class _FileVisitor(ast.NodeVisitor):
             file=self.rel_path,
             line=node.lineno,
             is_test=self.is_test or node.name.startswith("test_"),
+            entry_point=is_route,
         ))
 
         if self._current_class_id:
@@ -367,6 +500,45 @@ class _FileVisitor(ast.NodeVisitor):
         self._local_var_types = dict(annotated_params)
         self._mutated_params = set()
 
+        # For __init__, seed instance attr types from annotated parameters.
+        # Pattern B: def __init__(self, db: DatabaseManager) → self.db_manager = db
+        # We can't track which param maps to which self.attr statically without
+        # reading the body, so we scan the body for `self.x = param_name` assignments
+        # where param_name is in annotated_params.
+        if node.name == "__init__" and self._current_class:
+            for stmt in ast.walk(node):
+                if (isinstance(stmt, ast.Assign)
+                        and len(stmt.targets) == 1
+                        and isinstance(stmt.targets[0], ast.Attribute)
+                        and isinstance(stmt.targets[0].value, ast.Name)
+                        and stmt.targets[0].value.id == "self"):
+                    attr_name = stmt.targets[0].attr
+                    val = stmt.value
+                    # Pattern C: self.x = factory_func(...) where factory_func has
+                    # a known annotated return type (checked before Pattern A so that
+                    # factory function names don't get recorded as the type).
+                    if (isinstance(val, ast.Call)
+                            and isinstance(val.func, ast.Name)):
+                        call_name = val.func.id
+                        ret_type = (self._known_return_types.get(call_name)
+                                    or self._return_types.get(call_name))
+                        if ret_type:
+                            self._instance_attr_types[attr_name] = ret_type
+                        else:
+                            # Pattern A: self.x = ClassName(...)
+                            self._instance_attr_types[attr_name] = call_name
+                    # Pattern A (attribute): self.x = module.ClassName(...)
+                    elif (isinstance(val, ast.Call)
+                            and isinstance(val.func, ast.Attribute)):
+                        call_name = val.func.attr
+                        ret_type = (self._known_return_types.get(call_name)
+                                    or self._return_types.get(call_name))
+                        self._instance_attr_types[attr_name] = ret_type if ret_type else call_name
+                    # Pattern B: self.x = param_name where param_name has annotation
+                    elif (isinstance(val, ast.Name)
+                            and val.id in annotated_params):
+                        self._instance_attr_types[attr_name] = annotated_params[val.id]
+
         self._walk_body(node.body, param_arg_names, sid)
         self._detect_relay_from_return(node, param_arg_names, sid)
 
@@ -429,7 +601,49 @@ class _FileVisitor(ast.NodeVisitor):
         if name is None:
             return
 
+        # Drop bare self()/cls() calls — PyTorch modules call self(inputs) to invoke
+        # __call__. We have no way to resolve this and it produces unresolved::self noise.
+        if name in ("self", "cls") and isinstance(node.func, ast.Name):
+            return
+
         receiver, chain_depth = _extract_call_receiver(node.func)
+
+        if self._filter_stdlib and receiver in _STDLIB_RECEIVERS:
+            return
+
+        # ------------------------------------------------------------------
+        # Instance attribute method call: self.attr.method()
+        # receiver == "self" or "cls", chain_depth == 2, name is method
+        # Look up self.attr type from _instance_attr_types
+        if (receiver in ("self", "cls")
+                and chain_depth == 2
+                and isinstance(node.func, ast.Attribute)
+                and isinstance(node.func.value, ast.Attribute)
+                and isinstance(node.func.value.value, ast.Name)):
+            attr_name = node.func.value.attr
+            type_name = self._instance_attr_types.get(attr_name)
+            if type_name:
+                qualified = f"{type_name}.{name}"
+                resolved = self._resolve_call_target(qualified, skip_same_file=True)
+                if resolved is None:
+                    resolved = self._resolve_call_target(name, skip_same_file=True)
+                if resolved is None:
+                    if _is_likely_builtin(name):
+                        return
+                    final_target_ia: str = f"unresolved::{type_name}::{name}"
+                    unresolved_ia = True
+                else:
+                    final_target_ia = resolved
+                    unresolved_ia = False
+                self._call_seq += 1
+                self.graph.add_edge(Edge(
+                    from_id=self._current_func_id,
+                    to_id=final_target_ia,
+                    relation=EdgeRelation.CALLS,
+                    unresolved=unresolved_ia,
+                    seq=self._call_seq,
+                ))
+                return
 
         # ------------------------------------------------------------------
         # Gap 1: Instance method resolution via local variable type map.
@@ -456,9 +670,11 @@ class _FileVisitor(ast.NodeVisitor):
                     return
                 final_target: str = f"unresolved::{type_name}::{name}"
                 unresolved = True
+                _via_module: Optional[str] = self._import_module_of.get(receiver)
             else:
                 final_target = resolved
                 unresolved = False
+                _via_module = None
             self._call_seq += 1
             self.graph.add_edge(Edge(
                 from_id=self._current_func_id,
@@ -466,6 +682,7 @@ class _FileVisitor(ast.NodeVisitor):
                 relation=EdgeRelation.CALLS,
                 unresolved=unresolved,
                 seq=self._call_seq,
+                via_module=_via_module if unresolved else None,
             ))
             return
 
@@ -490,9 +707,16 @@ class _FileVisitor(ast.NodeVisitor):
                 return
             final_target2: str = f"unresolved::{name}"
             unresolved = True
+            # Annotate with originating module when the name is a known import alias
+            _via_module2: Optional[str] = (
+                self._import_module_of.get(receiver)
+                if receiver is not None
+                else self._import_module_of.get(name)
+            )
         else:
             final_target2 = resolved
             unresolved = False
+            _via_module2 = None
 
         self._call_seq += 1
         self.graph.add_edge(Edge(
@@ -501,6 +725,7 @@ class _FileVisitor(ast.NodeVisitor):
             relation=EdgeRelation.CALLS,
             unresolved=unresolved,
             seq=self._call_seq,
+            via_module=_via_module2 if unresolved else None,
         ))
 
     def _walk_body(
@@ -765,6 +990,46 @@ def _has_decorator(node: ast.ClassDef | ast.FunctionDef, name: str) -> bool:
     return False
 
 
+def _is_main_check(node: ast.expr) -> bool:
+    """Return True if node is: __name__ == "__main__" or "__main__" == __name__."""
+    if not isinstance(node, ast.Compare):
+        return False
+    if len(node.ops) != 1 or not isinstance(node.ops[0], ast.Eq):
+        return False
+    left = node.left
+    right = node.comparators[0] if node.comparators else None
+    if not right:
+        return False
+    if (isinstance(left, ast.Name) and left.id == "__name__"
+            and isinstance(right, ast.Constant) and right.value == "__main__"):
+        return True
+    if (isinstance(left, ast.Constant) and left.value == "__main__"
+            and isinstance(right, ast.Name) and right.id == "__name__"):
+        return True
+    return False
+
+
+def _is_route_handler(node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    """Return True if the function has a web-framework route decorator.
+
+    Detects Flask (@app.route), FastAPI/aiohttp (@router.get, @app.post, etc.),
+    and WebSocket handlers.
+    """
+    route_attrs = {"route", "get", "post", "put", "delete", "patch", "websocket"}
+    for dec in node.decorator_list:
+        if isinstance(dec, ast.Name) and dec.id in route_attrs:
+            return True
+        elif isinstance(dec, ast.Call):
+            func = dec.func
+            if isinstance(func, ast.Attribute) and func.attr in route_attrs:
+                return True
+            if isinstance(func, ast.Name) and func.id in route_attrs:
+                return True
+        elif isinstance(dec, ast.Attribute) and dec.attr in route_attrs:
+            return True
+    return False
+
+
 def _extract_call_name(node: ast.expr) -> Optional[str]:
     """Extract a simple name from a call expression's func node."""
     if isinstance(node, ast.Name):
@@ -833,6 +1098,26 @@ def _annotation_names(node: ast.expr) -> list[str]:
     return names
 
 
+# Stdlib module/namespace receivers — when filter_stdlib is on, method calls
+# whose receiver matches one of these are suppressed entirely (no edge emitted).
+_STDLIB_RECEIVERS: frozenset = frozenset({
+    "logging", "logger", "log",
+    "os", "sys", "re", "io", "abc",
+    "json", "csv", "xml", "html", "urllib", "http",
+    "math", "random", "statistics",
+    "time", "datetime", "calendar",
+    "pathlib", "shutil", "glob", "tempfile",
+    "collections", "itertools", "functools", "operator",
+    "threading", "multiprocessing", "subprocess", "socket",
+    "hashlib", "hmac", "base64", "struct", "codecs",
+    "unittest", "pytest", "mock",
+    "traceback", "warnings", "gc", "inspect",
+    "pickle", "shelve", "sqlite3",
+    "copy", "pprint", "textwrap",
+    "argparse", "configparser", "enum",
+    "typing",
+})
+
 _BUILTIN_TYPES = frozenset({
     "int", "str", "float", "bool", "bytes", "None", "NoneType",
     "list", "dict", "set", "tuple", "type", "object",
@@ -850,9 +1135,18 @@ _BUILTIN_FUNCS = frozenset({
     "repr", "id", "hash", "abs", "max", "min", "sum", "round", "pow",
     "divmod", "open", "input", "format", "iter", "next", "any", "all",
     "callable", "staticmethod", "classmethod", "property",
+    # container mutators
     "append", "extend", "update", "get", "items", "keys", "values",
-    "join", "split", "strip", "replace", "format", "encode", "decode",
-    "copy", "deepcopy",
+    "pop", "popitem", "remove", "discard", "add", "clear", "insert",
+    # string methods
+    "join", "split", "strip", "lstrip", "rstrip", "replace", "encode",
+    "decode", "lower", "upper", "title", "capitalize", "casefold",
+    "startswith", "endswith", "find", "rfind", "index", "rindex",
+    "count", "zfill", "ljust", "rjust", "center", "expandtabs",
+    "splitlines", "partition", "rpartition", "isdigit", "isalpha",
+    "isalnum", "isspace", "isupper", "islower", "istitle",
+    # misc builtins
+    "copy", "deepcopy", "format",
 })
 
 

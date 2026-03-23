@@ -154,6 +154,53 @@ class CodeGraph:
                 new_edges[key] = edge
         self._edges = new_edges
 
+    def drop_ghost_nodes(self) -> int:
+        """Remove unresolved phantom edge endpoints and any edges that reference them.
+
+        Parsers emit edges to synthetic IDs when a call or type target cannot be
+        resolved at parse time.  Two patterns exist:
+
+          unresolved::<name>          — C++, Python, TS, Proto
+          <feature>::<path>::_unresolved_.<name>  — Java, Kotlin
+
+        These IDs never get add_node() calls, so they only appear as edge endpoints
+        (not in _nodes).  Edges referencing them pollute the viewer and MCP since
+        the tier builder indexes all edge endpoints regardless of node existence.
+
+        Returns the number of ghost edge endpoints removed (distinct IDs).
+        """
+        def _is_ghost(node_id: str) -> bool:
+            if node_id.startswith("unresolved::"):
+                return True
+            # Java/Kotlin pattern: feature::path/file.java::_unresolved_.methodName
+            last = node_id.split("::")[-1]
+            if last.startswith("_unresolved_."):
+                return True
+            return False
+
+        # Collect ghost IDs from both node registry and edge endpoints
+        ghost_ids: set[str] = {nid for nid in self._nodes if _is_ghost(nid)}
+        for edge in self._edges.values():
+            if _is_ghost(edge.from_id):
+                ghost_ids.add(edge.from_id)
+            if _is_ghost(edge.to_id):
+                ghost_ids.add(edge.to_id)
+
+        if not ghost_ids:
+            return 0
+
+        # Remove ghost nodes (if any were somehow registered)
+        for gid in list(ghost_ids):
+            self._nodes.pop(gid, None)
+
+        # Remove any edge that references a ghost endpoint
+        self._edges = {
+            key: edge for key, edge in self._edges.items()
+            if edge.from_id not in ghost_ids and edge.to_id not in ghost_ids
+        }
+
+        return len(ghost_ids)
+
     # ------------------------------------------------------------------
     # Serialization
     # ------------------------------------------------------------------

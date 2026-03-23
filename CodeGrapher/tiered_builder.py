@@ -93,6 +93,19 @@ def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]
             return True
         return False
 
+    def _file_has_exports(file_id: str) -> bool:
+        """Return True if the file node has at least one defines or contains edge."""
+        for edge in graph.edges:
+            if edge.from_id == file_id and edge.relation in (EdgeRelation.DEFINES, EdgeRelation.CONTAINS):
+                return True
+        return False
+
+    # Collect files that contain symbols explicitly marked entry_point=True
+    entry_point_files: dict[str, str] = {}  # file_path -> symbol label
+    for n in graph.nodes:
+        if n.type == NodeType.SYMBOL and getattr(n, "entry_point", False) and n.file:
+            entry_point_files.setdefault(n.file, n.label)
+
     entry_points = []
     seen_files = set()
 
@@ -120,13 +133,24 @@ def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]
             seen_files.add(file_path)
             continue
 
-        # Rule 2: __init__.py (package surface)
-        if filename == "__init__.py":
+        # Rule 2: file contains a symbol marked entry_point=True (route handlers, etc.)
+        if file_path in entry_point_files:
             slug = _make_slug(file_path)
             entry_points.append({
                 "slug": slug,
                 "file": file_path,
-                "reason": "package surface (__init__.py)",
+                "reason": f"contains entry point: {entry_point_files[file_path]}",
+            })
+            seen_files.add(file_path)
+            continue
+
+        # Rule 3: __init__.py with meaningful content (has defines/contains edges)
+        if filename == "__init__.py" and _file_has_exports(node_id):
+            slug = _make_slug(file_path)
+            entry_points.append({
+                "slug": slug,
+                "file": file_path,
+                "reason": "package surface with exports (__init__.py)",
             })
             seen_files.add(file_path)
             continue

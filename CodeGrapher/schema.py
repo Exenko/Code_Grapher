@@ -46,6 +46,7 @@ class Node:
     ref: Optional[str] = None
     count: Optional[int] = None
     annotation: Optional[str] = None  # type annotation text for field nodes (e.g. "List[Tuple[str,str]]")
+    entry_point: bool = False          # marks nodes as application entry points (main, route handlers, etc.)
 
     def to_dict(self) -> dict:
         d = {
@@ -66,6 +67,8 @@ class Node:
             d["count"] = self.count
         if self.annotation is not None:
             d["annotation"] = self.annotation
+        if self.entry_point:
+            d["entry_point"] = True
         return d
 
 
@@ -85,6 +88,8 @@ class Edge:
     ptr_depth: Optional[int] = None # 0=direct, 1=pointer, 2=pointer-to-pointer
     # sequencing metadata (body analysis)
     seq: Optional[int] = None       # relative call order within parent function body
+    # module context for unresolved calls (e.g. "numpy" for np.array)
+    via_module: Optional[str] = None
 
     def to_dict(self) -> dict:
         d = {
@@ -106,6 +111,8 @@ class Edge:
             d["ptr_depth"] = self.ptr_depth
         if self.seq is not None:
             d["seq"] = self.seq
+        if self.via_module is not None:
+            d["via_module"] = self.via_module
         return d
 
     def key(self) -> tuple:

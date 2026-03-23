@@ -1,100 +1,179 @@
-# CodeGrapher — Next Session Operating Procedure
+# CodeGrapher — Next Session Prompt
 
-## Step 1: Read the handoff first
+## Context
 
-Before doing anything else, read `CodeGrapher/HANDOFF_PRODUCER_CONSUMER.md` in full.
-It contains the current state of every component, what was verified, what was not, and what is open.
-Do not rely on memory or this file alone — the handoff is the ground truth.
+CodeGrapher is an AST-based codebase cartography tool. It parses Python, C/C++, Protobuf, XML,
+TypeScript/JavaScript, Java, and Kotlin into a graph of nodes (files, symbols, types) and edges
+(calls, defines, imports, modifies, etc.), then serves them as tiered JSON and an interactive
+LOD viewer.
 
----
+Repo layout:
 
-## Ground rules (enforce for every session, no exceptions)
+```text
+Code_Grapher/
+  CodeGrapher/        ← all tool source (run.py, parsers, serve.py, mcp_server.py, etc.)
+    parser_typescript.py
+    parser_java.py
+    parser_kotlin.py
+    analyze/          ← flow_trace.py, type_expander.py
+    viewer/           ← D3 LOD viewer static assets
+  stress_tests/       ← multi-language stress test corpus
+    broker/           ← C++ broker (relay, router, state machine)
+    consumer/         ← C++ consumer (decoder, processor, output)
+    producer/         ← C++ producer (encoder, callbacks, state machine)
+    proto/            ← Protobuf messages (messages.proto, events.proto, legacy.proto)
+    wsdl/             ← XML/WSDL (legacy_service.xml, legacy_types.xml)
+    config/           ← XML config (broker_config.xml, producer_config.xml)
+    inherit/          ← C++ inheritance stress test (base.h, derived.h, derived.cc)
+    java/             ← Java client layer (MessageClient, EventSubscriber, LegacyAdapter, ServiceOrchestrator)
+    kotlin/           ← Kotlin Android bridge layer (BrokerConnection, EventProcessor, SessionManager, AndroidBridge)
+  evals/
+    skill/            ← SKILL.md and eval harness for the codegrapher-loop LLM eval
+    workspace/        ← iterations 1-10 of eval runs (ground truth + outputs)
+    skill_outputs/    ← 3 sample skill outputs from SmartRecipeApp
+  docs/               ← SPEC.md, design.md, HANDOFF notes
+  GT/                 ← gitignored, ground truth working files
+    stress_tests/     ← GROUND_TRUTH.md for the stress test corpus
+```
 
-### CodeGrapher is language-agnostic and project-agnostic
+Key run commands:
 
-This is the single most important invariant. CodeGrapher must work equally well on any codebase.
+```bash
+py CodeGrapher/run.py --feature <name> --root . --dir <dirs>
+py CodeGrapher/serve.py --graphs graphs
+py CodeGrapher/mcp_server.py --graphs graphs
+```
 
-Prohibited in any `CodeGrapher/` source file (`*.py`, `*.js`, `*.html`, `*.md` that drives logic):
-- Hardcoded paths: no `Client_Side`, `Server_Side`, `test_scripts`, or any path specific to SmartRecipeApp
-- Hardcoded names: no `autofill_engine`, `SmartRecipe`, `household`, or any symbol specific to SmartRecipeApp
-- Hardcoded patterns: no detection logic whose thresholds or heuristics were tuned to pass on SmartRecipeApp specifically
+Graphs output to `./graphs/` (CWD-relative, gitignored).
 
-The SmartRecipeApp repository is only the test bed. Every fix must be justified by general correctness, not by "it works on this repo."
+Note: `--dir` is relative to `--root`. To run against an external project:
 
-If a heuristic must exist (e.g., entry point detection), it must be expressed as a configurable rule or a documented general principle, not a magic list of project-specific strings.
+```bash
+py CodeGrapher/run.py --feature full --root C:/path/to/project --dir .
+```
 
-### No new files without explicit agreement
+Optional flag (TS/JS and Python):
 
-Before creating any new file, state what the file will be, why it cannot be added to an existing file, and wait for the user to agree. This applies to source files, test files, and documentation files alike.
-
-### Sub-agents for all exploration and implementation
-
-Use Haiku sub-agents for:
-- Reading and exploring files
-- Running commands and inspecting output
-- Writing or editing code
-
-Use the main context (Claude Sonnet) for:
-- Deciding what to do and why
-- Evaluating whether a proposed fix is general vs. project-specific
-- Making architectural decisions
-- Reviewing sub-agent output before accepting it
-
-Do not run Bash commands or read files directly from the main context unless the output is short and the intent is critical-path decision-making.
-
----
-
-## Refinement loop (follow this every session)
-
-Each session should iterate through this loop at least once:
-
-1. **Build the graph** against the current test codebase (see checklist below).
-2. **Inspect the output** — look at `tier_symbol.json`, `toc.json`, sub-graphs, and `analyze/` output. Identify what looks wrong, incomplete, or suspiciously project-specific.
-3. **Diagnose the root cause** — is the problem in the parser, the builder, the analyzer, or the schema? Is the fix general or a patch for SmartRecipeApp specifically?
-4. **Fix the underlying logic** so it is more correct in general. Do not patch symptoms.
-5. **Re-run and compare** — rebuild the graph and verify the fix improved the output. Check that counts and shapes are plausible (not inflated, not empty).
-6. **Update the handoff** — before ending the session, rewrite the relevant sections of `HANDOFF_PRODUCER_CONSUMER.md` to reflect current state. Mark items as done, partially done, or open with updated notes.
-
----
-
-## Open problems in priority order
-
-1. **Browser smoke test**: Start LOD server, open browser, verify: (a) edge colors are correct by relation type, (b) relay edges are dashed, (c) control edges are violet, (d) clicking a node and pressing "Data Flow Trace" shows the trace layout
-2. **Type display quality**: Methods are currently included in type expansion alongside fields (both are `contains` children). Consider filtering `_collect_fields` to exclude methods (labels with a dot AND more than one dot component that match the class methods pattern)
-3. **Larger graph test**: Run against the full repo (`--dir Client_Side Server_Side`) and check LOD server performance with per-file sub-graph loading
+```bash
+py CodeGrapher/run.py --feature full --root C:/path/to/project --dir . --no-stdlib-calls
+```
 
 ---
 
-## Primary use cases (keep these in mind for every decision)
+## Phase Status
 
-**Human use:** A developer wants to visually trace how a feature works across many files without reading all the code. They need a diagram that shows the execution path and the type structure — not a hairball of every edge in the codebase.
-
-**LLM use:** An LLM agent calls CodeGrapher to get a compact structured map of a feature and loads it into context instead of raw source files. The output must be token-efficient, structured, and machine-readable.
-
-Every design decision should be evaluated against both use cases. If a change makes the output larger without making it more informative, reconsider it.
-
----
-
-## Target output format
-
-The primary output targets are:
-
-- **`stateDiagram-v2`** (Mermaid) — execution flow: which function calls which, in what order, across which files
-- **`classDiagram`** (Mermaid) — type structure: which type contains which fields, with pointer depth
-
-These are the outputs that serve both use cases above.
-
-The force graph viewer (`viewer/graph.js`, served by `serve.py`) is secondary and legacy. It is useful for exploration but is not the primary deliverable. Do not let viewer work crowd out analysis output quality.
-
-When `analyze/flow_trace.py` or `analyze/type_expander.py` produce Mermaid output, that is the canonical output for the feature. Viewer rendering is a bonus.
+- Phase 1 complete — all parsers + graph engine
+- Phase 2 complete — MCP server with 8 tools
+- Phase 3 complete — eval harness (codegrapher-loop skill), 10 iterations, 100% pass rate
+- Phase 4 in progress — language support complete for Python, C/C++, Proto, XML, TS/JS, Java, Kotlin; improvements ongoing
 
 ---
 
-## Testing checklist (start of each session)
+## What Was Done Last Session (2026-03-22)
 
-1. Rebuild: `py CodeGrapher/run.py --feature autofill --root . --dir Client_Side/utils Client_Side/first_boot`
-2. Verify flow trace: `--analyze flow --entry Client_Side/utils/autofill_engine.py` → entry should be `run_autofill_pipeline`
-3. Verify type expansion: `--analyze type --type CookingSession` → should show all 8 fields with type annotations
-4. Start LOD server: `py CodeGrapher/serve.py --graphs CodeGrapher/graphs` → open browser, zoom in, verify edge colors and per-file symbol loading
-5. Project-specificity grep: all hits must be in comments/docstrings only
-6. Update handoff at session end
+### MCP server — 2 new tools
+
+- `find_symbol(name_substring)` — searches all SYMBOL nodes by label substring (case-insensitive),
+  returns matching nodes with their full incoming/outgoing edge sets. Mirrors `find_type`.
+- `get_file_symbols(file_path)` — given a file path substring, returns all symbols and types
+  defined in the matched file(s) with outgoing edges. One-call shortcut vs. repeated `expand_node`.
+- MCP server now has 8 tools total.
+
+### Ghost node filter — `drop_ghost_nodes()` in `graph.py`
+
+- Added `CodeGraph.drop_ghost_nodes()`: strips all edges whose endpoints match the two unresolved
+  patterns: `unresolved::*` (C++, Python, TS, Proto) and `*::_unresolved_.*` (Java, Kotlin).
+- Called in `run.py` after `dedup_type_nodes_by_label()` and before `save()`.
+- Effect on stress corpus: 68 ghost endpoints stripped, removing all unresolved call edges that
+  pointed to synthetic targets. Viewer and MCP no longer see dangling edge endpoints.
+- Side effect: regression target updated (see below) — the old `calls=340` included unresolved
+  edges; the new `calls=245` reflects only edges between real nodes.
+
+### SKILL.md ground truth updated
+
+- Node counts corrected: 44 file / 328 symbol / 60 type.
+- `calls` edges updated, `modifies=100` row added.
+- Run path corrected to `--dir stress_tests`.
+
+### Regression target updated
+
+```text
+calls=247, typedef_of=4, maps_to=6, modifies=100, unresolved=72
+```
+
+Run: `py CodeGrapher/run.py --feature stress --root . --dir stress_tests`
+
+Notes on the current regression numbers:
+- `calls=247` — resolved calls only. +2 from super.method() resolution (AndroidBridge.onCreate/onTerminate → ApplicationBase).
+- `unresolved=72` — 43 `stdlib::` (Java/Kotlin external packages) + 29 `stress::` intra-feature
+  edges that pass-2 couldn't resolve (pre-existing gap, not a regression).
+- `modifies=100`, `consumes=100`, `produces=55` also visible in summary output.
+
+### Session 2026-03-22 continued — full backlog completed
+
+- `search` MCP tool added — unified SYMBOL+TYPE label search in one call. MCP server now has 9 tools.
+- `summarize_entry_point` gains `follow_relations` param (default `["calls"]`); data-pipeline codebases can add `produces`/`consumes`.
+- Python `self.member.method()` resolution — `visit_AnnAssign` now seeds `_instance_attr_types` from class-level type annotations (e.g. `conn: DatabaseConnection`), enabling resolution in all methods of the class.
+- TypeScript MODIFIES edges — `_is_mutable_ref_type` (Ref<T>, MutableRefObject<T>, Dispatch<T>, etc.) and `_is_mutating_param_name` (set*, update*, mutate*, etc.) helpers wired into `_process_params`. Zero regression impact (stress corpus has no TS MODIFIES candidates by design).
+- Java/Kotlin eval ground truth — 3 new eval cases added to `evals/skill/evals/evals.json` (IDs 4–6): ServiceOrchestrator.start, AndroidBridge.onCreate, EventProcessor.process.
+- Java/Kotlin `super.method()` resolution — both parsers now build `class_supertypes` map during class parsing; resolution tries each supertype before falling back to same-class lookup. +2 resolved edges in stress corpus.
+- SKILL.md updated: corrected repo root, paths, calls count (247), added Java/Kotlin parser rows.
+- Regression target: `calls=247, typedef_of=4, maps_to=6, modifies=100, unresolved=72`.
+
+---
+
+## Prioritized Improvement Backlog
+
+All backlog items completed. Remaining gaps are fundamental AST limitations (unannotated DI, chained property calls through destructuring, C++ `->` chains through containers) — not fixable without type inference.
+
+---
+
+## Known Limitations (permanent / out of scope)
+
+**Python:**
+
+- Unannotated dependency injection — requires type inference, not AST-solvable
+- Method chains on untyped member variables — same root cause (backlog item 5 covers the *typed* case)
+
+**C++:**
+
+- Inherited method calls from out-of-scope base classes (JUCE framework) — expected
+- `->` dereference chains through containers — would require nested struct member tracking
+
+**TypeScript/JS:**
+
+- Chained property calls (`vescState.setters.setXXX()`) unresolved — requires type inference
+  through destructuring, same class as Python unannotated DI
+- External package symbols (RN, third-party) unresolved — expected/correct
+
+---
+
+## Ground Rules
+
+### Language-agnostic and project-agnostic
+
+Every fix must be justified by general correctness. No hardcoded project names, paths, or
+heuristics tuned to a specific codebase. The stress test corpus (`stress_tests/`) is the
+canonical regression target.
+
+### Orchestration model
+
+- Main context (Sonnet): decisions — what to fix, whether a fix is general vs. tailored,
+  reviewing diffs, grading output quality
+- Haiku sub-agents: all file reading, exploration, command execution, code edits
+- Delegate aggressively to keep main context clean
+
+### Regression gate
+
+After every engine change, run:
+
+```bash
+py CodeGrapher/run.py --feature stress --root . --dir stress_tests
+```
+
+Verify: `calls=247, typedef_of=4, maps_to=6, modifies=100, unresolved=72`.
+Any change is a regression until proven otherwise.
+
+### No new files without agreement
+
+State what the file will be and why it can't go in an existing file. Wait for confirmation.
