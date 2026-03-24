@@ -1392,7 +1392,11 @@ def _format_path(
 # Main
 # ============================================================================
 
-if __name__ == "__main__":
+def main():
     args = _parse_args()
     _init(Path(args.graphs), args.max_cached_tiers)
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()

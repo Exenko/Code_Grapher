@@ -247,7 +247,7 @@ def main() -> None:
         else:
             print(f"[WARN] viewer/index.html not found -- skipping viewer")
     else:
-        print(f"Run:  py CodeGrapher/serve.py --graphs {graphs_dir.relative_to(Path.cwd())}")
+        print(f"Run:  codegrapher-serve --graphs {graphs_dir}")
         print(f"Then: http://localhost:5000")
 
     # ------------------------------------------------------------------
