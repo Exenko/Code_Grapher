@@ -3,6 +3,23 @@ CodeGrapher MCP Server
 
 Provides LLM-accessible tools for navigating pre-built graph JSON files without re-parsing.
 Implements lazy loading with LRU cache, node expansion, type tracing, and data flow analysis.
+
+Graph layout expected under --graphs root:
+    <graphs_root>/
+        <project>/
+            <graph-name>/
+                toc.json
+                tier_*.json
+                sub/*.json
+
+Graph selection (two modes, composable):
+  - Active graph: call set_active_graph(project, graph) once; all subsequent tool calls
+    use it automatically. Good for focused exploration of one graph.
+  - Per-call override: pass graph="project/graph-name" on any individual tool call to
+    target that graph for that call only, without changing the active graph. Good for
+    spot comparisons or when orchestrating across multiple graphs.
+
+If neither is set, tools return a helpful error with instructions.
 """
 
 import argparse
@@ -14,6 +31,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 from mcp.server.fastmcp import FastMCP
+from mcp.types import ToolAnnotations
 from pydantic import BaseModel, Field
 
 
@@ -24,7 +42,7 @@ from pydantic import BaseModel, Field
 class LRUCache:
     """OrderedDict-based LRU cache for tier data."""
 
-    def __init__(self, max_size: int = 6):
+    def __init__(self, max_size: int = 12):
         self.max_size = max_size
         self.cache: OrderedDict[str, Any] = OrderedDict()
 
@@ -50,9 +68,16 @@ class LRUCache:
 
 mcp = FastMCP(name="codegrapher_mcp")
 
-# Initialized by _init()
-toc: dict[str, Any] = {}
-graphs_dir: Path = Path()
+# Root of the multi-project graphs directory (set at startup from --graphs)
+graphs_root: Path = Path()
+
+# Active graph selection: ("project", "graph-name") or None if not set.
+# NOTE: This is process-level state shared across all sessions connected to
+# this server instance. set_active_graph affects all concurrent callers.
+active_graph: Optional[tuple[str, str]] = None
+
+# LRU cache — keys are "project/graph-name/tier_name" to avoid collisions
+# across graphs. Default size 12 covers ~2-3 graphs with all tiers cached.
 cache: LRUCache = LRUCache()
 
 
@@ -67,60 +92,106 @@ def _parse_args() -> argparse.Namespace:
         "--graphs",
         type=str,
         default="./graphs",
-        help="Path to graphs directory (default: ./graphs)",
+        help="Path to graphs root directory containing project subdirectories (default: ./graphs)",
     )
     parser.add_argument(
         "--max-cached-tiers",
         type=int,
-        default=6,
-        help="Maximum number of tier files to cache in memory (default: 6)",
+        default=12,
+        help="Maximum number of tier files to cache in memory (default: 12)",
     )
     return parser.parse_args()
 
 
 def _init(graphs_path: Path, max_cached_tiers: int) -> None:
-    """Load toc.json and initialize cache. Raises RuntimeError if toc.json missing."""
-    global toc, graphs_dir, cache
+    """Validate graphs root and initialize cache. Does NOT load any graph."""
+    global graphs_root, cache
 
-    graphs_dir = graphs_path
+    if not graphs_path.exists():
+        # Non-fatal: server starts, tools return errors until graphs are built
+        print(f"[WARN] Graphs root directory not found: {graphs_path}", file=sys.stderr)
+
+    graphs_root = graphs_path
     cache = LRUCache(max_cached_tiers)
 
-    toc_path = graphs_dir / "toc.json"
+
+def _resolve_graph(graph_override: Optional[str] = None) -> tuple[Path, dict[str, Any]]:
+    """
+    Resolve which graph to use for a tool call.
+
+    Priority: graph_override param > active_graph global > error.
+
+    Args:
+        graph_override: Optional "project/graph-name" string from the tool call.
+
+    Returns:
+        (graph_dir, toc) — graph_dir is the Path to the graph directory,
+        toc is the parsed toc.json for that graph.
+
+    Raises:
+        ValueError: If no graph is selected and no override is provided.
+        FileNotFoundError: If the resolved path has no toc.json.
+    """
+    global graphs_root, active_graph
+
+    if graph_override:
+        parts = graph_override.strip("/").split("/")
+        if len(parts) != 2:
+            raise ValueError(
+                f"Invalid graph parameter '{graph_override}'. "
+                "Expected format: 'project/graph-name' (e.g. 'myproject/overview')"
+            )
+        project, graph = parts
+    elif active_graph is not None:
+        project, graph = active_graph
+    else:
+        raise ValueError(
+            "No graph selected. Use set_active_graph(project, graph) to set one for this "
+            "session, or pass graph='project/graph-name' on individual tool calls. "
+            "Use list_projects() to see available projects."
+        )
+
+    graph_dir = graphs_root / project / graph
+    toc_path = graph_dir / "toc.json"
     if not toc_path.exists():
-        raise RuntimeError(f"toc.json not found at {toc_path}")
+        raise FileNotFoundError(
+            f"toc.json not found at {toc_path}. "
+            f"Check that '{project}/{graph}' is a valid graph path under {graphs_root}. "
+            "Use list_graphs(project) to see available graphs."
+        )
 
     with open(toc_path, "r") as f:
         toc = json.load(f)
 
+    return graph_dir, toc
 
-def _get_tier(tier_name: str) -> dict[str, Any]:
+
+def _get_tier(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str, Any]:
     """
     Retrieve tier data from cache or disk.
     Builds and caches adjacency indices (nodes_by_id, outgoing, incoming).
+    Cache key includes graph path to avoid collisions across graphs.
     """
-    # Check cache first
-    cached = cache.get(tier_name)
+    cache_key = f"{graph_dir.relative_to(graphs_root).as_posix()}/{tier_name}"
+
+    cached = cache.get(cache_key)
     if cached is not None:
         return cached
 
-    # Load from disk
     tier_files = toc.get("tier_files", {})
     filename = tier_files.get(tier_name)
     if not filename:
         raise ValueError(f"Tier '{tier_name}' not found in toc.json")
 
-    tier_path = graphs_dir / filename
+    tier_path = graph_dir / filename
     if not tier_path.exists():
         raise FileNotFoundError(f"Tier file not found: {tier_path}")
 
     with open(tier_path, "r") as f:
         tier_data = json.load(f)
 
-    # Build and cache indices
     _build_index(tier_data)
-
-    # Store in cache
-    cache.put(tier_name, tier_data)
+    cache.put(cache_key, tier_data)
     return tier_data
 
 
@@ -154,9 +225,9 @@ def _build_index(tier_data: dict[str, Any]) -> None:
     }
 
 
-def _get_index(tier_name: str) -> dict[str, Any]:
-    """Retrieve indices for a tier."""
-    tier_data = _get_tier(tier_name)
+def _get_index(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str, Any]:
+    """Retrieve adjacency indices for a tier."""
+    tier_data = _get_tier(tier_name, graph_dir, toc)
     return tier_data.get("_index", {})
 
 
@@ -164,33 +235,42 @@ def _get_index(tier_name: str) -> dict[str, Any]:
 # Tool Input Models
 # ============================================================================
 
+_GRAPH_FIELD = Field(
+    default=None,
+    description=(
+        "Graph to query, as 'project/graph-name' (e.g. 'myproject/overview'). "
+        "Overrides the active graph for this call only. "
+        "If omitted, uses the active graph set by set_active_graph."
+    ),
+)
+
+
 class ExpandNodeInput(BaseModel):
-    """Input for expand_node tool."""
     node_id: str = Field(description="Full node ID (e.g., 'stress::path/file.cc::SymbolName')")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class FindTypeInput(BaseModel):
-    """Input for find_type tool."""
     type_name: str = Field(description="Type name substring to search for (case-insensitive)")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class FindSymbolInput(BaseModel):
-    """Input for find_symbol tool."""
     name_substring: str = Field(description="Symbol name substring to search for (case-insensitive)")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class GetFileSymbolsInput(BaseModel):
-    """Input for get_file_symbols tool."""
     file_path: str = Field(description="File path substring to match (case-insensitive, e.g. 'broker/relay.cc')")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class SearchInput(BaseModel):
-    """Input for search tool."""
     name_substring: str = Field(description="Label substring to search for across both SYMBOL and TYPE nodes (case-insensitive)")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class TraceDataFlowInput(BaseModel):
-    """Input for trace_data_flow tool."""
     from_node_id: str = Field(description="Source node ID")
     to_node_id: str = Field(description="Target node ID (ignored for topological algorithm)")
     algorithm: str = Field(
@@ -198,10 +278,10 @@ class TraceDataFlowInput(BaseModel):
         description="Pathfinding algorithm: data_flow|bfs|dfs|bidirectional_bfs|dijkstra|topological",
     )
     max_depth: int = Field(default=10, description="Maximum search depth")
+    graph: Optional[str] = _GRAPH_FIELD
 
 
 class SummarizeEntryPointInput(BaseModel):
-    """Input for summarize_entry_point tool."""
     entry_point_id: str = Field(
         description="Node ID of the entry point file or symbol (e.g., 'repo::Client_Side/main.py')"
     )
@@ -213,10 +293,197 @@ class SummarizeEntryPointInput(BaseModel):
         default=["calls"],
         description="Edge relation types to follow during BFS (default: ['calls']). Include 'produces' and 'consumes' for data-pipeline style codebases."
     )
+    graph: Optional[str] = _GRAPH_FIELD
+
+
+class ListGraphsInput(BaseModel):
+    project: str = Field(description="Project name (a directory under the graphs root)")
+
+
+class SetActiveGraphInput(BaseModel):
+    project: str = Field(description="Project name (directory under graphs root)")
+    graph: str = Field(description="Graph name (directory under the project, e.g. 'overview' or 'auth-subsystem')")
 
 
 # ============================================================================
-# Tool Implementations
+# Graph Navigation Tools
+# ============================================================================
+
+@mcp.tool(
+    name="list_projects",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def list_projects() -> dict[str, Any]:
+    """
+    List all project directories under the graphs root.
+
+    Returns the names of every subdirectory directly under the graphs root.
+    Each name is a valid 'project' argument for list_graphs and set_active_graph.
+
+    Use this as the starting point when you don't know which projects are available,
+    or to confirm a project name before calling list_graphs.
+    """
+    if not graphs_root.exists():
+        return {"error": f"Graphs root not found: {graphs_root}"}
+    projects = sorted(d.name for d in graphs_root.iterdir() if d.is_dir())
+    return {"graphs_root": str(graphs_root), "projects": projects, "count": len(projects)}
+
+
+@mcp.tool(
+    name="list_graphs",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def list_graphs(input: ListGraphsInput) -> dict[str, Any]:
+    """
+    List all graphs available under a project, with metadata from each graph's toc.json.
+
+    For each graph directory found under '<graphs_root>/<project>/', returns:
+    - graph_name: directory name — use as the 'graph' part of 'project/graph-name'
+    - feature: feature name stored in toc.json
+    - generated: build timestamp from toc.json
+    - entry_point_count: number of detected entry points
+    - tier_files: list of tier names available (e.g. ["file", "symbol", "directory", "repo"])
+
+    Use list_projects() first to discover valid project names.
+    """
+    project_dir = graphs_root / input.project
+    if not project_dir.exists():
+        return {
+            "error": f"Project '{input.project}' not found under {graphs_root}",
+            "hint": "Use list_projects() to see available projects",
+        }
+    graphs = []
+    for d in sorted(project_dir.iterdir()):
+        if not d.is_dir():
+            continue
+        toc_path = d / "toc.json"
+        if not toc_path.exists():
+            continue
+        with open(toc_path, "r") as f:
+            t = json.load(f)
+        graphs.append({
+            "graph_name": d.name,
+            "feature": t.get("feature", ""),
+            "generated": t.get("generated", ""),
+            "entry_point_count": len(t.get("entry_points", [])),
+            "tier_files": list(t.get("tier_files", {}).keys()),
+        })
+    return {"project": input.project, "graphs": graphs, "count": len(graphs)}
+
+
+@mcp.tool(
+    name="set_active_graph",
+    annotations={
+        "readOnlyHint": False,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def set_active_graph(input: SetActiveGraphInput) -> dict[str, Any]:
+    """
+    Set the active graph for all subsequent tool calls in this session.
+
+    Once set, all query tools (find_symbol, expand_node, search, etc.) will use
+    this graph automatically without requiring a 'graph' parameter on each call.
+    This is the preferred mode for focused exploration of a single graph.
+
+    Individual tools can still override this for a single call by passing their
+    own graph='project/graph-name' parameter — that override does not change
+    the active graph.
+
+    Validates that the target graph directory exists and contains a valid toc.json
+    before accepting the selection.
+
+    NOTE: The active graph is process-level state. If multiple Claude sessions share
+    one MCP server process, set_active_graph affects all of them simultaneously.
+    Use per-call graph= overrides if working across multiple graphs concurrently.
+    """
+    global active_graph
+    graph_dir = graphs_root / input.project / input.graph
+    toc_path = graph_dir / "toc.json"
+    if not toc_path.exists():
+        return {
+            "error": f"Graph '{input.project}/{input.graph}' not found or has no toc.json",
+            "hint": "Use list_graphs(project) to see available graphs",
+        }
+    active_graph = (input.project, input.graph)
+    with open(toc_path, "r") as f:
+        toc = json.load(f)
+    return {
+        "active_graph": f"{input.project}/{input.graph}",
+        "feature": toc.get("feature", ""),
+        "generated": toc.get("generated", ""),
+        "entry_point_count": len(toc.get("entry_points", [])),
+        "tier_files": list(toc.get("tier_files", {}).keys()),
+        "graph_dir": str(graph_dir),
+    }
+
+
+@mcp.tool(
+    name="get_active_graph",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def get_active_graph() -> dict[str, Any]:
+    """
+    Return the currently active graph and its toc.json summary.
+
+    Shows which graph will be used by all query tools when no 'graph' parameter
+    is explicitly provided on a call. Returns status='not_set' with instructions
+    if no active graph has been selected yet.
+
+    Use this at the start of a session to confirm which graph is loaded, or
+    after set_active_graph to verify the selection took effect.
+    """
+    if active_graph is None:
+        return {
+            "status": "not_set",
+            "message": (
+                "No active graph selected. "
+                "Call set_active_graph(project, graph) to select one for this session, "
+                "or pass graph='project/graph-name' on individual tool calls. "
+                "Use list_projects() to see available projects."
+            ),
+        }
+    project, graph = active_graph
+    graph_dir = graphs_root / project / graph
+    toc_path = graph_dir / "toc.json"
+    if not toc_path.exists():
+        return {
+            "status": "stale",
+            "active_graph": f"{project}/{graph}",
+            "error": "Previously active graph no longer exists on disk. Call set_active_graph again.",
+        }
+    with open(toc_path, "r") as f:
+        toc = json.load(f)
+    return {
+        "status": "active",
+        "active_graph": f"{project}/{graph}",
+        "graph_dir": str(graph_dir),
+        "feature": toc.get("feature", ""),
+        "generated": toc.get("generated", ""),
+        "entry_point_count": len(toc.get("entry_points", [])),
+        "tier_files": list(toc.get("tier_files", {}).keys()),
+    }
+
+
+# ============================================================================
+# Graph Query Tools
 # ============================================================================
 
 @mcp.tool(
@@ -228,15 +495,23 @@ class SummarizeEntryPointInput(BaseModel):
         "openWorldHint": False,
     },
 )
-async def list_entry_points() -> dict[str, Any]:
+async def list_entry_points(graph: Optional[str] = None) -> dict[str, Any]:
     """
     List all entry points detected in the analyzed codebase.
 
-    This is typically the first tool to call, providing an LLM with the main
-    symbols and files that serve as starting points for graph exploration.
+    This is typically the first query tool to call after set_active_graph,
+    providing the main symbols and files that serve as starting points for
+    graph exploration.
 
     Returns entry_points list from toc.json without loading tier files.
+
+    Args:
+        graph: Optional 'project/graph-name' override for this call only.
     """
+    try:
+        graph_dir, toc = _resolve_graph(graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
     return {
         "feature": toc.get("feature", ""),
         "generated": toc.get("generated", ""),
@@ -253,9 +528,9 @@ async def list_entry_points() -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def get_feature_summary() -> dict[str, Any]:
+async def get_feature_summary(graph: Optional[str] = None) -> dict[str, Any]:
     """
-    Get high-level summary of the analyzed feature.
+    Get high-level summary of the analyzed feature/graph.
 
     Provides:
     - feature name and generation timestamp
@@ -265,13 +540,19 @@ async def get_feature_summary() -> dict[str, Any]:
     - list of all files with their language and type
 
     Uses tier_file (for file/symbol nodes) and tier_symbol (for edge count).
+
+    Args:
+        graph: Optional 'project/graph-name' override for this call only.
     """
-    # Get file list from tier_file (cheap, one node per file)
-    tier_file_data = _get_tier("file")
+    try:
+        graph_dir, toc = _resolve_graph(graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
+
+    tier_file_data = _get_tier("file", graph_dir, toc)
     file_nodes = [n for n in tier_file_data.get("nodes", []) if n.get("type") == "file"]
 
-    # Get symbol/type counts and edge count from tier_symbol (authoritative)
-    tier_symbol_data = _get_tier("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     symbol_nodes = [n for n in tier_symbol_data.get("nodes", []) if n.get("type") == "symbol"]
     type_nodes = [n for n in tier_symbol_data.get("nodes", []) if n.get("type") == "type"]
     edge_count = len(tier_symbol_data.get("edges", []))
@@ -324,16 +605,18 @@ async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
 
     Returns an error if the node does not exist in the symbol tier.
     """
-    node_id = input.node_id
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
 
-    # Load symbol tier and indices
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    node_id = input.node_id
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
     incoming = index.get("incoming", {})
 
-    # Find node
     node = nodes_by_id.get(node_id)
     if not node:
         return {
@@ -341,7 +624,6 @@ async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
             "hint": "Use list_entry_points or get_feature_summary to find valid node IDs",
         }
 
-    # Gather outgoing edges
     outgoing_formatted = []
     for edge in outgoing.get(node_id, []):
         target_id = edge.get("to")
@@ -353,7 +635,6 @@ async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
             "target_type": target_node.get("type", ""),
         })
 
-    # Gather incoming edges
     incoming_formatted = []
     for edge in incoming.get(node_id, []):
         source_id = edge.get("from")
@@ -396,14 +677,18 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
 
     Returns empty list if no matches found.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return [{"error": str(e)}]
+
     search_term = input.type_name.lower()
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
     incoming = index.get("incoming", {})
 
-    # Find matching type nodes
     nodes = tier_symbol_data.get("nodes", [])
     matching_types = [
         n for n in nodes
@@ -411,11 +696,9 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
     ]
 
     results = []
-
     for type_node in matching_types:
         type_id = type_node["id"]
 
-        # Find producers (edges with relation='produces' pointing TO this node)
         producers = []
         for edge in incoming.get(type_id, []):
             if edge.get("relation") == "produces":
@@ -427,7 +710,6 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
                     "type": source_node.get("type", ""),
                 })
 
-        # Find consumers (edges with relation='consumes' pointing TO this node)
         consumers = []
         for edge in incoming.get(type_id, []):
             if edge.get("relation") == "consumes":
@@ -439,7 +721,6 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
                     "type": source_node.get("type", ""),
                 })
 
-        # Find typedef chain (BFS following typedef_of edges, max depth 10)
         typedef_chain = _bfs_typedef_chain(type_id, nodes_by_id, outgoing, incoming, max_depth=10)
 
         results.append({
@@ -475,7 +756,6 @@ def _bfs_typedef_chain(
         node = nodes_by_id.get(node_id, {})
         result.append({"id": node_id, "label": node.get("label", "")})
 
-        # Follow typedef_of edges outgoing (this node points to another typedef)
         for edge in outgoing.get(node_id, []):
             if edge.get("relation") == "typedef_of":
                 next_id = edge.get("to")
@@ -483,7 +763,6 @@ def _bfs_typedef_chain(
                     visited.add(next_id)
                     queue.append((next_id, depth + 1))
 
-        # Follow typedef_of edges incoming (another node points to this)
         for edge in incoming.get(node_id, []):
             if edge.get("relation") == "typedef_of":
                 next_id = edge.get("from")
@@ -516,9 +795,14 @@ async def find_symbol(input: FindSymbolInput) -> list[dict[str, Any]]:
 
     Returns empty list if no matches found.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return [{"error": str(e)}]
+
     search_term = input.name_substring.lower()
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
     incoming = index.get("incoming", {})
@@ -587,9 +871,14 @@ async def search(input: SearchInput) -> dict[str, Any]:
 
     Returns empty lists if no matches found.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
+
     search_term = input.name_substring.lower()
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
     incoming = index.get("incoming", {})
@@ -656,15 +945,19 @@ async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
 
     Returns error if no file matches the path substring.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
+
     search_term = input.file_path.lower()
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
 
     nodes = tier_symbol_data.get("nodes", [])
 
-    # Find matching file nodes
     matched_files = [
         n for n in nodes
         if n.get("type") == "file" and search_term in n.get("file", "").lower()
@@ -678,10 +971,6 @@ async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
 
     results = []
     for file_node in matched_files:
-        file_id = file_node["id"]
-
-        # Symbols defined in this file: outgoing 'defines' edges from the file node,
-        # or symbol nodes whose 'file' attribute matches this file
         file_path_val = file_node.get("file", "")
         symbols = [
             n for n in nodes
@@ -751,19 +1040,22 @@ async def trace_data_flow(input: TraceDataFlowInput) -> dict[str, Any]:
 
     For topological, to_node_id is ignored; the path represents all reachable nodes.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
+
     from_id = input.from_node_id
     to_id = input.to_node_id
     algorithm = input.algorithm
     max_depth = input.max_depth
 
-    # Load symbol tier
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
     incoming = index.get("incoming", {})
 
-    # Validate nodes exist
     if from_id not in nodes_by_id:
         return {
             "algorithm": algorithm,
@@ -782,7 +1074,6 @@ async def trace_data_flow(input: TraceDataFlowInput) -> dict[str, Any]:
             "message": f"Target node not found: {to_id}",
         }
 
-    # Route to algorithm
     if algorithm == "data_flow":
         result = _trace_data_flow(from_id, to_id, nodes_by_id, outgoing, incoming, max_depth)
     elif algorithm == "bfs":
@@ -844,19 +1135,22 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     The cross_file_edges list is the most useful output for understanding
     multi-file features — it shows exactly where control crosses boundaries.
     """
+    try:
+        graph_dir, toc = _resolve_graph(input.graph)
+    except (ValueError, FileNotFoundError) as e:
+        return {"error": str(e)}
+
     entry_id = input.entry_point_id
     max_hops = input.max_hops
     follow_relations = input.follow_relations
 
-    tier_symbol_data = _get_tier("symbol")
-    index = _get_index("symbol")
+    tier_symbol_data = _get_tier("symbol", graph_dir, toc)
+    index = _get_index("symbol", graph_dir, toc)
     nodes_by_id = index.get("nodes_by_id", {})
     outgoing = index.get("outgoing", {})
 
-    # Resolve entry point: accept file node ID or symbol node ID
     entry_node = nodes_by_id.get(entry_id)
     if not entry_node:
-        # Try fuzzy match on label or file path substring
         matches = [
             n for n in tier_symbol_data.get("nodes", [])
             if entry_id in n.get("id", "") or entry_id in n.get("file", "")
@@ -870,10 +1164,8 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
         entry_id = entry_node["id"]
 
     entry_file = entry_node.get("file", "")
-
-    # BFS from entry point, tracking hop depth
-    # Seed: all nodes in the same file as the entry point
     entry_file_normalized = entry_file.replace("\\", "/")
+
     seed_ids: list[str] = []
     for node in tier_symbol_data.get("nodes", []):
         node_file = (node.get("file") or "").replace("\\", "/")
@@ -883,14 +1175,12 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     if not seed_ids:
         seed_ids = [entry_id]
 
-    visited: dict[str, int] = {}  # node_id -> first-seen hop
+    visited: dict[str, int] = {}
     for sid in seed_ids:
         visited[sid] = 0
 
-    # hop_nodes[hop] = list of node_ids first reached at this hop
     hop_nodes: dict[int, list[str]] = {0: list(seed_ids)}
 
-    # BFS following specified edge relations
     queue = deque([(sid, 0) for sid in seed_ids])
     follow_set = set(follow_relations)
     while queue:
@@ -908,7 +1198,6 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
             hop_nodes.setdefault(next_hop, []).append(next_id)
             queue.append((next_id, next_hop))
 
-    # Build files_touched: distinct files, sorted by min hop
     file_min_hop: dict[str, int] = {}
     for node_id, hop in visited.items():
         node = nodes_by_id.get(node_id, {})
@@ -922,7 +1211,6 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
         key=lambda x: (x["first_reached_at_hop"], x["file"])
     )
 
-    # Build call_tree: per-hop, only NEW nodes at that depth
     call_tree: dict[str, list[dict]] = {}
     for hop in range(0, max_hops + 1):
         nodes_at_hop = hop_nodes.get(hop, [])
@@ -938,7 +1226,6 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
         if hop_entries:
             call_tree[f"hop_{hop}"] = hop_entries
 
-    # Build cross_file_edges: edges that cross file boundaries
     cross_file_edges: list[dict] = []
     seen_cross: set[tuple[str, str]] = set()
     for node_id in visited:
@@ -964,7 +1251,6 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
                 "hop": visited.get(from_id, -1),
             })
 
-    # Sort cross_file_edges by hop then from_file
     cross_file_edges.sort(key=lambda x: (x["hop"], x["from_file"], x["to_file"]))
 
     return {
@@ -986,6 +1272,10 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     }
 
 
+# ============================================================================
+# Pathfinding Helpers (unchanged)
+# ============================================================================
+
 def _trace_data_flow(
     from_id: str,
     to_id: str,
@@ -994,17 +1284,14 @@ def _trace_data_flow(
     incoming: dict[str, list[dict]],
     max_depth: int,
 ) -> dict[str, Any]:
-    """
-    Edge-typed BFS prioritizing data flow edges (produces/consumes) over calls.
-    """
+    """Edge-typed BFS prioritizing data flow edges (produces/consumes) over calls."""
     visited = {from_id}
-    queue = deque([(from_id, 0, [])])  # (node_id, depth, path_with_relations)
+    queue = deque([(from_id, 0, [])])
 
     while queue:
         node_id, depth, path = queue.popleft()
 
         if node_id == to_id:
-            # Found target
             formatted_path = _format_path(path, nodes_by_id)
             return {
                 "algorithm": "data_flow",
@@ -1017,7 +1304,6 @@ def _trace_data_flow(
         if depth >= max_depth:
             continue
 
-        # Get and sort neighbors: data flow edges first, calls second
         neighbors = outgoing.get(node_id, [])
         data_flow_edges = [e for e in neighbors if e.get("relation") in {"produces", "consumes"}]
         call_edges = [e for e in neighbors if e.get("relation") == "calls"]
@@ -1089,12 +1375,7 @@ def _trace_dfs(
     outgoing: dict[str, list[dict]],
     max_depth: int,
 ) -> dict[str, Any]:
-    """Iterative DFS, returns first path found.
-    Uses per-path visited sets (stored as frozenset in stack) to allow
-    backtracking — a node blocked on one branch may be the correct route
-    on another.
-    """
-    # Stack entries: (node_id, depth, path_edges, visited_on_this_branch)
+    """Iterative DFS, returns first path found."""
     stack = [(from_id, 0, [], frozenset({from_id}))]
     truncated = False
 
@@ -1148,20 +1429,17 @@ def _trace_bidirectional_bfs(
             "message": "Source and target are the same node",
         }
 
-    # Forward search from from_id (using outgoing edges)
     forward_visited = {from_id}
     forward_queue = deque([(from_id, 0, [])])
-    forward_parents = {from_id: []}
+    forward_parents: dict[str, Optional[tuple[str, Optional[str]]]] = {from_id: None}
 
-    # Backward search from to_id (using incoming edges)
     backward_visited = {to_id}
     backward_queue = deque([(to_id, 0, [])])
-    backward_parents = {to_id: []}
+    backward_parents: dict[str, Optional[tuple[str, Optional[str]]]] = {to_id: None}
 
     meeting_point = None
 
     while forward_queue or backward_queue:
-        # Forward step
         if forward_queue:
             node_id, depth, path = forward_queue.popleft()
             if depth < max_depth:
@@ -1171,12 +1449,10 @@ def _trace_bidirectional_bfs(
                         forward_visited.add(next_id)
                         forward_parents[next_id] = (node_id, edge.get("relation"))
                         forward_queue.append((next_id, depth + 1, path + [(node_id, edge.get("relation"), next_id)]))
-
                         if next_id in backward_visited:
                             meeting_point = next_id
                             break
 
-        # Backward step
         if backward_queue:
             node_id, depth, path = backward_queue.popleft()
             if depth < max_depth:
@@ -1186,7 +1462,6 @@ def _trace_bidirectional_bfs(
                         backward_visited.add(prev_id)
                         backward_parents[prev_id] = (node_id, edge.get("relation"))
                         backward_queue.append((prev_id, depth + 1, path + [(prev_id, edge.get("relation"), node_id)]))
-
                         if prev_id in forward_visited:
                             meeting_point = prev_id
                             break
@@ -1195,18 +1470,17 @@ def _trace_bidirectional_bfs(
             break
 
     if meeting_point:
-        # Reconstruct path
         forward_path = []
         node = meeting_point
-        while node in forward_parents and forward_parents[node]:
-            prev_node, relation = forward_parents[node]
+        while node in forward_parents and forward_parents[node] is not None:
+            prev_node, relation = forward_parents[node]  # type: ignore[misc]
             forward_path.insert(0, (prev_node, relation, node))
             node = prev_node
 
         backward_path = []
         node = meeting_point
-        while node in backward_parents and backward_parents[node]:
-            next_node, relation = backward_parents[node]
+        while node in backward_parents and backward_parents[node] is not None:
+            next_node, relation = backward_parents[node]  # type: ignore[misc]
             backward_path.append((node, relation, next_node))
             node = next_node
 
@@ -1248,7 +1522,7 @@ def _trace_dijkstra(
 
     dist = {from_id: 0}
     parent = {from_id: None}
-    heap = [(0, from_id, 0)]  # (distance, node_id, depth)
+    heap = [(0, from_id, 0)]
     visited = set()
 
     while heap:
@@ -1259,7 +1533,6 @@ def _trace_dijkstra(
         visited.add(node_id)
 
         if node_id == to_id:
-            # Reconstruct path
             path = []
             current = to_id
             while parent.get(current) is not None:
@@ -1306,10 +1579,7 @@ def _trace_topological(
     outgoing: dict[str, list[dict]],
     max_depth: int,
 ) -> dict[str, Any]:
-    """
-    Reachability BFS from from_id. Returns all nodes reachable within max_depth.
-    Ignores to_node_id. Tracks whether any node was not expanded due to depth limit.
-    """
+    """Reachability BFS from from_id. Returns all nodes reachable within max_depth."""
     visited = {from_id}
     queue = deque([(from_id, 0)])
     path = []
@@ -1335,7 +1605,6 @@ def _trace_topological(
         elif queue:
             truncated = True
 
-    # Update relation_to_next for each node in path
     id_to_idx = {node["node_id"]: i for i, node in enumerate(path)}
     for i, node_dict in enumerate(path):
         node_id = node_dict["node_id"]
@@ -1359,10 +1628,7 @@ def _format_path(
     path: list[tuple[str, str, str]],
     nodes_by_id: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """
-    Convert path (list of (from_id, relation, to_id) tuples) to formatted path.
-    Returns list of {"node_id": ..., "label": ..., "type": ..., "relation_to_next": ...}
-    """
+    """Convert path (list of (from_id, relation, to_id) tuples) to formatted path."""
     if not path:
         return []
 

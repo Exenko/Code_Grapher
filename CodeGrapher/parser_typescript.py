@@ -92,6 +92,10 @@ def _is_mutating_param_name(param_name: str) -> bool:
     """Return True if the param name follows a setter/mutator naming convention."""
     return bool(_MUTATING_NAME_RE.match(param_name))
 
+_BODY_MUTATION_RE = re.compile(
+    r'\b(\w+)(?:\.[\w.]+)?\s*(?:=(?!=)|\.(?:push|pop|splice|shift|unshift|delete|set|clear|add|remove|append|reset)\s*\(|\+=|-=|\*=|/=|\|=|&=)'
+)
+
 def _rel(root: str, filepath: str) -> str:
     try:
         r = os.path.relpath(filepath, root).replace("\\", "/")
@@ -479,9 +483,11 @@ class _TSParser:
                         local_var_types[assign.group(1)] = nm.group(1)
             # Emit constructor as a symbol
             ctor_line = class_line + body[:ctor_m.start()].count('\n')
-            self._emit_class_method("constructor", class_name, class_nid, "", "", ctor_line)
+            ctor_body = ""
             if brace_pos != -1:
                 ctor_body, _ = self._extract_block(body, brace_pos)
+            self._emit_class_method("constructor", class_name, class_nid, "", "", ctor_line, ctor_body)
+            if brace_pos != -1 and ctor_body:
                 ctor_sym = symbol_id(ctx.feature, ctx.rel, f"{class_name}.constructor")
                 self._parse_calls(ctor_body, ctor_sym, local_var_types.copy(), class_name)
 
@@ -505,12 +511,15 @@ class _TSParser:
             return_type = (m.group(3) or "").strip()
             line = class_line + body[:m.start()].count('\n')
 
-            sym_nid = self._emit_class_method(
-                mname, class_name, class_nid, params_str, return_type, line)
-
             brace_pos = body.find('{', m.end() - 1)
+            method_body = ""
             if brace_pos != -1 and not body[m.end()-1:m.end()].strip() == ';':
                 method_body, _ = self._extract_block(body, brace_pos)
+
+            sym_nid = self._emit_class_method(
+                mname, class_name, class_nid, params_str, return_type, line, method_body)
+
+            if method_body:
                 self._parse_calls(method_body, sym_nid, local_var_types.copy(), class_name)
 
         # Pattern 2: arrow function class fields — methodName = async (...) => { }
@@ -543,9 +552,7 @@ class _TSParser:
             line = class_line + body[:m.start()].count('\n')
             params_str = body[paren_pos+1:params_end-1] if params_end > paren_pos else ""
 
-            sym_nid = self._emit_class_method(
-                mname, class_name, class_nid, params_str, "", line)
-
+            method_body = ""
             # find the arrow body
             arrow_pos = body.find('=>', params_end)
             if arrow_pos != -1:
@@ -553,10 +560,15 @@ class _TSParser:
                 if after_arrow and after_arrow[0] == '{':
                     abs_brace = arrow_pos + 2 + (len(body[arrow_pos+2:]) - len(after_arrow))
                     method_body, _ = self._extract_block(body, abs_brace)
-                    self._parse_calls(method_body, sym_nid, local_var_types.copy(), class_name)
+
+            sym_nid = self._emit_class_method(
+                mname, class_name, class_nid, params_str, "", line, method_body)
+
+            if method_body:
+                self._parse_calls(method_body, sym_nid, local_var_types.copy(), class_name)
 
     def _emit_class_method(self, mname: str, class_name: str, class_nid: str,
-                           params_str: str, return_type: str, line: int) -> str:
+                           params_str: str, return_type: str, line: int, body: str = "") -> str:
         ctx = self.ctx
         g   = ctx.graph
         sym_nid = symbol_id(ctx.feature, ctx.rel, f"{class_name}.{mname}")
@@ -568,7 +580,7 @@ class _TSParser:
         ))
         g.add_edge(Edge(from_id=class_nid, to_id=sym_nid, relation=EdgeRelation.DEFINES))
         g.add_edge(Edge(from_id=ctx.file_node_id, to_id=sym_nid, relation=EdgeRelation.CONTAINS))
-        self._process_params(params_str, sym_nid)
+        self._process_params(params_str, sym_nid, body)
         if return_type and return_type not in ("void", ""):
             clean_rt = re.sub(r'<.*?>', '', return_type).strip()
             if clean_rt and not _is_builtin(clean_rt):
@@ -597,11 +609,15 @@ class _TSParser:
             return_type = (m.group(3) or "").strip()
             line = stripped[:m.start()].count('\n') + 1
             ctx.func_names.add(name)
-            sym_nid = self._emit_function(name, params_str, return_type, line)
 
+            body = ""
             brace_pos = stripped.find('{', m.end() - 1)
             if brace_pos != -1:
                 body, _ = self._extract_block(stripped, brace_pos)
+
+            sym_nid = self._emit_function(name, params_str, return_type, line, body=body)
+
+            if body:
                 local_var_types = self._extract_local_var_types(body)
                 self._parse_calls(body, sym_nid, local_var_types, "")
                 self._parse_jsx(body, sym_nid)
@@ -639,8 +655,6 @@ class _TSParser:
             is_component = name[0].isupper()
             line = stripped[:m.start()].count('\n') + 1
             ctx.func_names.add(name)
-            sym_nid = self._emit_function(name, params_str, return_type, line,
-                                          is_component=is_component)
 
             # extract arrow body
             after_arrow = stripped[arrow_pos + 2:].lstrip()
@@ -662,8 +676,14 @@ class _TSParser:
             if unwrapped is not None:
                 inner_params, body = unwrapped
                 if inner_params is not None:
-                    # Re-emit params from the inner function signature
-                    self._process_params(inner_params, sym_nid)
+                    sym_nid = self._emit_function(name, inner_params, return_type, line,
+                                                  is_component=is_component, body=body)
+                else:
+                    sym_nid = self._emit_function(name, params_str, return_type, line,
+                                                  is_component=is_component, body=body)
+            else:
+                sym_nid = self._emit_function(name, params_str, return_type, line,
+                                              is_component=is_component, body=body)
 
             local_var_types = self._extract_local_var_types(body)
             self._parse_calls(body, sym_nid, local_var_types, "")
@@ -793,7 +813,7 @@ class _TSParser:
                         n.entry_point = True
 
     def _emit_function(self, name: str, params_str: str, return_type: str,
-                       line: int, is_component: bool = False) -> str:
+                       line: int, is_component: bool = False, body: str = "") -> str:
         ctx = self.ctx
         g   = ctx.graph
         sym_nid = symbol_id(ctx.feature, ctx.rel, name)
@@ -814,7 +834,7 @@ class _TSParser:
             ))
             g.add_edge(Edge(from_id=ctx.file_node_id, to_id=type_nid, relation=EdgeRelation.DEFINES))
 
-        self._process_params(params_str, sym_nid)
+        self._process_params(params_str, sym_nid, body)
 
         if return_type and return_type not in ("void", ""):
             clean_rt = re.sub(r'<.*?>', '', return_type).strip()
@@ -829,11 +849,17 @@ class _TSParser:
     # parameter processing
     # ------------------------------------------------------------------
 
-    def _process_params(self, params_str: str, sym_nid: str) -> None:
+    def _process_params(self, params_str: str, sym_nid: str, body: str = "") -> None:
         ctx = self.ctx
         g   = ctx.graph
         if not params_str.strip():
             return
+
+        # Detect which params are mutated in the body (if body provided)
+        mutated_params: Set[str] = set()
+        if body:
+            mutated_params = self._detect_body_mutations(body)
+
         for param in self._split_params(params_str):
             param = param.strip()
             if not param:
@@ -854,9 +880,11 @@ class _TSParser:
             if type_name:
                 t_nid = self._resolve_type_node(type_name)
                 if t_nid:
+                    # Check if mutable via annotation, naming convention, or body mutation
                     is_mutable = (
                         _is_mutable_ref_type(raw_annotation)
                         or _is_mutating_param_name(param_name)
+                        or param_name in mutated_params
                     )
                     if is_mutable:
                         g.add_edge(Edge(
@@ -899,6 +927,25 @@ class _TSParser:
         if current:
             result.append(''.join(current))
         return result
+
+    def _detect_body_mutations(self, body: str) -> Set[str]:
+        """Scan body for patterns where a parameter is mutated (assigned to or mutating method called).
+
+        Returns set of parameter names that are demonstrably mutated in the body.
+        Patterns detected:
+        - param.attr = value  (any assignment operator)
+        - param.attr += value
+        - param.push(...) / pop / splice / etc.
+
+        The regex matches the IMMEDIATE object (before the dot), which could be a property
+        of the parameter or the parameter itself. This is intentional: any mutation in the
+        chain indicates the root parameter is being modified.
+        """
+        mutated = set()
+        for m in _BODY_MUTATION_RE.finditer(body):
+            obj_name = m.group(1)
+            mutated.add(obj_name)
+        return mutated
 
     # ------------------------------------------------------------------
     # call parsing

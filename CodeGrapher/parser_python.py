@@ -759,6 +759,18 @@ class _FileVisitor(ast.NodeVisitor):
                                     or self._known_return_types.get(call_name))
                         if ret_type:
                             self._local_var_types[var_name] = ret_type
+                # Gap 1b: Track local variable type from instance attribute assignment.
+                # Pattern: x = self.attr or x = cls.attr where attr is in _instance_attr_types.
+                # This enables resolution of x.method() calls when x is assigned from an instance attribute.
+                elif (len(stmt.targets) == 1
+                        and isinstance(stmt.targets[0], ast.Name)
+                        and isinstance(stmt.value, ast.Attribute)
+                        and isinstance(stmt.value.value, ast.Name)
+                        and stmt.value.value.id in ("self", "cls")):
+                    var_name = stmt.targets[0].id
+                    attr_name = stmt.value.attr
+                    if attr_name in self._instance_attr_types:
+                        self._local_var_types[var_name] = self._instance_attr_types[attr_name]
 
             # Attribute mutation: obj.field = x  or  obj.field += x
             if isinstance(stmt, (ast.Assign, ast.AugAssign)):

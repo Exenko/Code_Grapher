@@ -1165,17 +1165,52 @@
     // -----------------------------------------------------------------------
     document.getElementById("search").addEventListener("input", function () {
       const q = this.value.trim().toLowerCase();
-      if (!q) { clearSel(); return; }
-      const hits = new Set(nodes.filter(n => n.label.toLowerCase().includes(q)).map(n => n.id));
-      nodeSel2.classed("dimmed", n => !hits.has(n.id)).classed("highlighted", n => hits.has(n.id));
+      if (!q) {
+        // Clear search highlighting
+        nodeSel2.classed("search-highlight", false)
+                .classed("dimmed", false);
+        linkSel2.classed("dimmed", false);
+        document.getElementById("sidebar-content").innerHTML = "";
+        return;
+      }
+      const hits = new Set(nodes.filter(n => {
+        const label = (n.label || "").toLowerCase();
+        const id = (n.id || "").toLowerCase();
+        return label.includes(q) || id.includes(q);
+      }).map(n => n.id));
+
+      // Dim non-matching nodes to 25% opacity
+      nodeSel2.classed("search-highlight", n => hits.has(n.id))
+              .classed("dimmed", n => !hits.has(n.id))
+              .style("opacity", n => hits.has(n.id) ? 1 : 0.25);
+
+      // Dim edges that don't connect matching nodes
       linkSel2.classed("dimmed", lk => !hits.has(lk.source.id) && !hits.has(lk.target.id))
-              .classed("highlighted", false);
+              .style("opacity", lk => {
+                if (hits.has(lk.source.id) || hits.has(lk.target.id)) return 1;
+                return 0.05;
+              });
+
+      // If exactly 1 match, pan/zoom to center on it
+      if (hits.size === 1) {
+        const matchId = Array.from(hits)[0];
+        const matchNode = nodeById.get(matchId);
+        if (matchNode && matchNode.x != null && matchNode.y != null) {
+          const pad = 100;
+          const sc = 2.0;  // zoom in 2x on the node
+          const tx = width / 2 - matchNode.x * sc;
+          const ty = height / 2 - matchNode.y * sc;
+          svg.transition().duration(600)
+             .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(sc));
+        }
+      }
+
       document.getElementById("sidebar-content").innerHTML =
         `<div class="sb-label">Search</div><div class="sb-value">${hits.size} match(es)</div>`;
     });
 
     // -----------------------------------------------------------------------
-    // Filter buttons
+    // Filter buttons — node type filters
     // -----------------------------------------------------------------------
     document.querySelectorAll(".filter-btn[data-type]").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -1188,6 +1223,27 @@
         linkSel2.style("display", lk => {
           const st = lk.source.type, tt = lk.target.type;
           return (hidden.has(st) || hidden.has(tt)) ? "none" : null;
+        });
+      });
+    });
+
+    // -----------------------------------------------------------------------
+    // Filter buttons — edge relation filters
+    // -----------------------------------------------------------------------
+    const hiddenEdgeRelations = new Set();
+    document.querySelectorAll(".filter-btn[data-relation]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const relation = btn.dataset.relation;
+        if (btn.classList.contains("active")) {
+          hiddenEdgeRelations.add(relation);
+        } else {
+          hiddenEdgeRelations.delete(relation);
+        }
+        // Just hide/show the edges, don't remove from DOM
+        linkSel2.style("display", lk => {
+          if (hiddenEdgeRelations.has(lk.relation)) return "none";
+          return null;
         });
       });
     });

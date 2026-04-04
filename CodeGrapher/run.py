@@ -206,7 +206,11 @@ def main() -> None:
     # ------------------------------------------------------------------
     # Write graph JSON
     # ------------------------------------------------------------------
-    graphs_dir = Path.cwd() / "graphs"
+    if args.output_dir:
+        graphs_dir = Path(args.output_dir).resolve()
+    else:
+        graphs_dir = Path.cwd() / "graphs"
+    graphs_dir.mkdir(parents=True, exist_ok=True)
     out_path = graphs_dir / f"feature_{feature}.json"
     feature_graph.save(out_path)
     print(f"Graph written -> {out_path}")
@@ -247,7 +251,7 @@ def main() -> None:
         else:
             print(f"[WARN] viewer/index.html not found -- skipping viewer")
     else:
-        print(f"Run:  codegrapher-serve --graphs {graphs_dir}")
+        print(f"Run:  codegrapher-serve --graphs \"{graphs_dir}\"")
         print(f"Then: http://localhost:5000")
 
     # ------------------------------------------------------------------
@@ -282,6 +286,8 @@ def _parse_args() -> argparse.Namespace:
                    help="Type/class name for --analyze type (e.g. CookingSession)")
     p.add_argument("--no-stdlib-calls", action="store_true", default=False,
                    help="Suppress call edges to stdlib receivers (console, Math, JSON, etc.) in TS/JS files")
+    p.add_argument("--output-dir", default=None,
+                   help="Directory to write graph output (default: ./graphs relative to cwd). E.g. C:/Users/Mike/graphs/myproject/myfeature")
     args = p.parse_args()
     if not args.files and not args.dir:
         p.error("At least one of --files or --dir must be provided")

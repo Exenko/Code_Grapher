@@ -1,6 +1,9 @@
 # Generated graph output
 graphs/
 
+# Claude Code session memory
+.claude/
+
 # Ground truth eval working files (not for publication)
 GT/
 
