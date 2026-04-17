@@ -24,7 +24,7 @@ const GRAPH_DATA = null;
       <span id="diagram-title" style="color:#8899bb;font-family:monospace;font-size:12px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
       <label style="color:#8899bb;font-family:monospace;font-size:11px;white-space:nowrap;">
         zoom
-        <input id="diagram-zoom" type="range" min="20" max="200" value="100" style="width:90px;vertical-align:middle;accent-color:#6a3aaf;">
+        <input id="diagram-zoom" type="range" min="20" max="500" value="100" style="width:90px;vertical-align:middle;accent-color:#6a3aaf;">
         <span id="diagram-zoom-val" style="color:#ccd;min-width:32px;display:inline-block;">100%</span>
       </label>
       <button id="diagram-zoom-reset" style="background:#1e2236;color:#8899bb;border:1px solid #2a3050;padding:3px 7px;border-radius:3px;cursor:pointer;font-family:monospace;font-size:11px;" title="Reset zoom">1:1</button>
@@ -80,7 +80,7 @@ const GRAPH_DATA = null;
   </div>
 
   <!-- Mermaid for state/class diagrams -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
   <!-- D3 v7 from CDN — requires internet on first load only -->
   <script src="d3.min.js"></script>
   <script src="graph.js"></script>

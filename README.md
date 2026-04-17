@@ -16,17 +16,19 @@ Requires Python 3.10+.
 
 ---
 
-## Quick start
+## Quick start (human viewer)
 
 ```bash
-# 1. Generate the graph (run from your project root, or use absolute paths)
-codegrapher --feature myapp --root . --dir .
+# 1. Parse your project into a graph
+codegrapher --feature myapp --root /path/to/project --dir src
 
-# 2. Open the viewer
+# 2. Open the interactive viewer
 codegrapher-serve --graphs ./graphs
 ```
 
-The viewer opens automatically in your browser at `http://localhost:5000`.
+The viewer opens at `http://localhost:5000`. Navigate from repo → directories → files → symbols using the force-directed graph. Click any node to expand it, use the search bar to find symbols, and use the edge-type filters to focus on calls, types, or data flow.
+
+For large graphs, start at the repo or directory tier and drill down — the viewer loads each level on demand so it stays fast.
 
 ---
 
@@ -34,12 +36,12 @@ The viewer opens automatically in your browser at `http://localhost:5000`.
 
 ### `codegrapher` — parse a codebase into a graph
 
-```
+```text
 codegrapher --feature NAME --root PATH --dir SUBDIR [options]
 ```
 
 | Argument | Description |
-|---|---|
+| --- | --- |
 | `--feature NAME` | Label for this graph (used in output filenames) |
 | `--root PATH` | Root directory of the project to parse |
 | `--dir SUBDIR` | Subdirectory to scan, relative to `--root`. Use `.` for the whole project |
@@ -47,7 +49,7 @@ codegrapher --feature NAME --root PATH --dir SUBDIR [options]
 | `--no-stdlib-calls` | Suppress edges to stdlib/built-in symbols (Python, TS/JS) |
 | `--standalone` | Bake the graph into a self-contained HTML file (auto: on if <1000 nodes) |
 
-Output goes to `./graphs/` in the current working directory.
+Output goes to `./graphs/` by default. Use `--output-dir PATH` to write elsewhere.
 
 **Examples:**
 
@@ -66,34 +68,43 @@ codegrapher --feature frontend --root . --dir src --no-stdlib-calls
 
 ### `codegrapher-serve` — interactive web viewer
 
-```
+```text
 codegrapher-serve --graphs PATH [--port PORT]
 ```
 
-Serves the graph viewer with progressive level-of-detail loading. Navigate from repo → directories → files → symbols without loading the entire graph at once.
+Serves the graph viewer with progressive level-of-detail loading.
 
 ```bash
 codegrapher-serve --graphs ./graphs
-codegrapher-serve --graphs /path/to/project/graphs --port 8080
+codegrapher-serve --graphs /path/to/graphs --port 8080
 ```
+
+**Viewer features:**
+
+- Force-directed D3 graph with zoom/pan
+- Level-of-detail tiers: repo → directory → file → symbol
+- Click any node to see its edges and details
+- Search bar to highlight matching nodes
+- Edge-type filter buttons (calls, modifies, uses_type, etc.)
+- State diagram and type diagram panels for selected nodes
+- Zoom up to 500% for dense graphs
 
 ---
 
 ### `codegrapher-mcp` — MCP server for LLM integration
 
-```
+```text
 codegrapher-mcp --graphs PATH
 ```
 
-Starts a [Model Context Protocol](https://modelcontextprotocol.io) server exposing 9 tools for LLM-assisted codebase exploration. Connect any MCP-compatible client (Claude Desktop, Claude Code, etc.) to let an LLM navigate the graph.
-
-**Available tools:** `get_overview`, `expand_node`, `find_type`, `find_symbol`, `get_file_symbols`, `search`, `summarize_entry_point`, `trace_data_flow`, `follow_relations`
+Starts a [Model Context Protocol](https://modelcontextprotocol.io) server exposing 13 tools for LLM-assisted codebase exploration. Connect any MCP-compatible client (Claude Desktop, Claude Code, etc.) to let an LLM navigate the graph programmatically.
 
 ```bash
-# Generate graphs first, then start the MCP server
 codegrapher --feature myapp --root . --dir .
 codegrapher-mcp --graphs ./graphs
 ```
+
+See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for full MCP setup and tool reference.
 
 ---
 
@@ -107,18 +118,28 @@ codegrapher --feature myapp --root . --dir .
 
 # Explore in browser
 codegrapher-serve --graphs ./graphs
-
-# (Optional) Connect an LLM via MCP
-codegrapher-mcp --graphs ./graphs
 ```
 
 The `graphs/` directory is self-contained — you can copy it anywhere and re-run `codegrapher-serve` against it.
 
 ---
 
+## Output files
+
+After running `codegrapher`, the output directory contains:
+
+| File | Purpose |
+| --- | --- |
+| `toc.json` | Table of contents — entry points, tier file paths, metadata |
+| `tier_symbol.json` | All symbols, types, and edges (most detailed tier) |
+| `tier_file.json` | Files, directories, file-level edges |
+| `viewer_NAME.html` | Self-contained viewer baked with the graph data (if < 1000 nodes) |
+
+---
+
 ## Known limitations
 
-- **Python:** Unannotated dependency injection and untyped method chains are not resolved (requires type inference beyond AST)
+- **Python:** Unannotated dependency injection and untyped method chains are not resolved
 - **C++:** Inherited methods from out-of-scope base classes and deep `->` dereference chains are not resolved
 - **TypeScript/JS:** Chained property calls through destructuring and external package symbols are not resolved
-- These are fundamental AST limitations, not bugs — everything that can be statically resolved without a full type system is resolved
+- These are fundamental AST limitations — everything that can be statically resolved without a full type system is resolved

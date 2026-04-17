@@ -82,7 +82,24 @@
 
     content.innerHTML = tabBar + diagramDivs;
 
-    // Wire tab switching
+    const rendered = new Set();
+
+    function renderDiagram(i) {
+      if (rendered.has(i)) return;
+      rendered.add(i);
+      const el = document.getElementById(`mermaid-${ts}-${i}`);
+      if (!el) return;
+      mermaid.run({ nodes: [el] }).catch(err => {
+        el.outerHTML = `<div style="margin-bottom:24px;">
+          <div style="color:#e6a817;font-family:monospace;font-size:11px;margin-bottom:4px;">
+            ⚠ Mermaid render error: ${esc(err.message)} — raw source below (copy to <a href="https://mermaid.live" target="_blank" style="color:#6a9eff;">mermaid.live</a>)
+          </div>
+          <pre style="color:#ccd;font-size:11px;background:#111420;padding:10px;border-radius:4px;overflow:auto;white-space:pre;">${esc(diagrams[i])}</pre>
+        </div>`;
+      });
+    }
+
+    // Wire tab switching — render on first show so Mermaid has visible dimensions
     content.querySelectorAll(".diag-tab").forEach(btn => {
       btn.addEventListener("click", () => {
         const idx = +btn.dataset.idx;
@@ -93,23 +110,12 @@
         content.querySelectorAll(".diag-page").forEach(p => {
           p.style.display = p.dataset.idx == idx ? "block" : "none";
         });
+        renderDiagram(idx);
       });
     });
 
-    // Render each diagram independently so one failure doesn't block the others
-    diagrams.forEach((diagSrc, i) => {
-      const el = document.getElementById(`mermaid-${ts}-${i}`);
-      if (!el) return;
-      mermaid.run({ nodes: [el] }).catch(err => {
-        // Replace failed render with copyable source text
-        el.outerHTML = `<div style="margin-bottom:24px;">
-          <div style="color:#e6a817;font-family:monospace;font-size:11px;margin-bottom:4px;">
-            ⚠ Mermaid render error: ${esc(err.message)} — raw source below (copy to <a href="https://mermaid.live" target="_blank" style="color:#6a9eff;">mermaid.live</a>)
-          </div>
-          <pre style="color:#ccd;font-size:11px;background:#111420;padding:10px;border-radius:4px;overflow:auto;white-space:pre;">${esc(diagSrc)}</pre>
-        </div>`;
-      });
-    });
+    // Only render the first (visible) diagram immediately
+    renderDiagram(0);
   }
 
   function hideDiagramPanel() {
