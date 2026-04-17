@@ -1,1 +1,0 @@
-{"fsms": [], "reason": "No explicit FSMs in Server_Side — database-focused with data processing pipelines (indexers, loaders, FastAPI endpoints), stateless request/response architecture. No state attributes, state enums, or dispatch loops found across 67 files."}
