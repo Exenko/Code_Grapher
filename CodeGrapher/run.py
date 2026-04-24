@@ -16,13 +16,12 @@ Output:
   - viewer/index.html                  (updated with embedded GRAPH_DATA)
 """
 
-from __future__ import annotations
 import argparse
 import glob as glob_module
 import json
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, List, Set
 
 # Ensure CodeGrapher directory is on path when run from project root
 _HERE = Path(__file__).parent
@@ -47,10 +46,10 @@ from tiered_builder import build_tiers
 # ---------------------------------------------------------------------------
 
 def _parse_one(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: set | None = None,
-               known_return_types: dict | None = None,
-               known_file_ids: dict | None = None,
-               filter_stdlib: bool = False) -> CodeGraph | None:
+               known_symbol_ids: Optional[Set[str]] = None,
+               known_return_types: Optional[Dict[str, str]] = None,
+               known_file_ids: Optional[Dict[str, str]] = None,
+               filter_stdlib: bool = False) -> Optional[CodeGraph]:
     """Dispatch to appropriate parser based on file suffix."""
     suffix = filepath.suffix.lower()
     if suffix == '.py':
@@ -82,7 +81,7 @@ def main() -> None:
     feature = args.feature
     filter_stdlib = args.no_stdlib_calls
     # Resolve files from --files and --dir, combining and deduplicating results
-    all_files_set: set[Path] = set()
+    all_files_set: Set[Path] = set()
     if args.files:
         all_files_set.update(_resolve_globs(root, args.files))
     if args.dir:
@@ -104,7 +103,7 @@ def main() -> None:
     # Build mapping: module name/stem -> file_id, for local file import detection
     # Maps both stem (e.g. "barcode_database") and dotted path (e.g. "src.barcode_database")
     from schema import file_id as make_file_id
-    known_file_ids: dict[str, str] = {}
+    known_file_ids: Dict[str, str] = {}
     for filepath in all_files:
         if filepath.suffix.lower() != '.py':
             continue
@@ -125,14 +124,14 @@ def main() -> None:
     # Pass 1: Parse all files, collect symbol registry
     # ------------------------------------------------------------------
     print("Pass 1: Parsing files...")
-    per_file_graphs: list[CodeGraph] = []
+    per_file_graphs: List[CodeGraph] = []
     for filepath in all_files:
         g = _parse_one(feature, root, filepath, known_symbol_ids=None, known_file_ids=known_file_ids, filter_stdlib=filter_stdlib)
         if g is not None:
             per_file_graphs.append(g)
 
     # Build cross-file symbol registry from Pass 1 results
-    registry: set[str] = set()
+    registry: Set[str] = set()
     for g in per_file_graphs:
         registry.update(g.all_symbol_ids())
 
@@ -146,7 +145,7 @@ def main() -> None:
     # Used in Pass 2 to resolve instance method calls like:
     #   db = get_database()   # get_database -> PostgresDatabaseUtility
     #   db.execute(query)     # resolved to PostgresDatabaseUtility.execute
-    return_type_map: dict[str, str] = {}
+    return_type_map: Dict[str, str] = {}
     for filepath in all_files:
         if filepath.suffix.lower() != '.py':
             continue
@@ -294,9 +293,9 @@ def _parse_args() -> argparse.Namespace:
     return args
 
 
-def _resolve_globs(root: Path, patterns: list[str]) -> list[Path]:
+def _resolve_globs(root: Path, patterns: List[str]) -> List[Path]:
     """Expand glob patterns relative to root, return sorted unique Paths."""
-    matched: set[Path] = set()
+    matched: Set[Path] = set()
     supported_suffixes = {'.py', '.cc', '.c', '.h', '.hpp', '.cpp', '.proto', '.xml', '.ts', '.tsx', '.js', '.jsx', '.java', '.kt', '.kts'}
     for pattern in patterns:
         # Use glob_module with the full path
@@ -315,9 +314,9 @@ _EXCLUDED_DIRS = frozenset({
 })
 
 
-def _resolve_dirs(root: Path, dirs: list[str]) -> list[Path]:
+def _resolve_dirs(root: Path, dirs: List[str]) -> List[Path]:
     """Recursively find all supported source files in given directories relative to root, return sorted unique Paths."""
-    matched: set[Path] = set()
+    matched: Set[Path] = set()
     patterns = ["*.py", "*.cc", "*.c", "*.h", "*.hpp", "*.cpp", "*.proto", "*.xml", "*.ts", "*.tsx", "*.js", "*.jsx", "*.java", "*.kt", "*.kts"]
     for dir_path in dirs:
         full_dir = root / dir_path
@@ -506,7 +505,7 @@ def _annotate_graph(graphs_dir: Path) -> None:
     edges = data.get("edges", [])
 
     # Build file lookup: node_id -> file path
-    node_file: dict[str, str] = {}
+    node_file: Dict[str, str] = {}
     for node in nodes:
         nid = node.get("id", "")
         file_path = node.get("file") or ""
@@ -526,20 +525,20 @@ def _annotate_graph(graphs_dir: Path) -> None:
     # Step 1: find entry point symbol IDs from toc entry_points
     # An entry point file's symbols have entry_distance = 0 if they're
     # directly in the entry point file; the file node itself = 0.
-    entry_files: set[str] = set()
+    entry_files: Set[str] = set()
     for ep in toc.get("entry_points", []):
         ep_file = ep.get("file", "").replace("\\", "/")
         if ep_file:
             entry_files.add(ep_file)
 
     # Seed: all nodes whose file is an entry point file get distance 0
-    node_ids_by_file: dict[str, list[str]] = {}
+    node_ids_by_file: Dict[str, List[str]] = {}
     for node in nodes:
         f = (node.get("file") or "").replace("\\", "/")
         node_ids_by_file.setdefault(f, []).append(node["id"])
 
-    entry_distance: dict[str, int] = {}
-    seed_ids: list[str] = []
+    entry_distance: Dict[str, int] = {}
+    seed_ids: List[str] = []
     for ep_file in entry_files:
         for nid in node_ids_by_file.get(ep_file, []):
             entry_distance[nid] = 0
@@ -547,7 +546,7 @@ def _annotate_graph(graphs_dir: Path) -> None:
 
     # Step 2: BFS outward over 'calls' edges
     from collections import deque
-    outgoing_calls: dict[str, list[str]] = {}
+    outgoing_calls: Dict[str, List[str]] = {}
     for edge in edges:
         if edge.get("relation") == "calls":
             src = edge.get("from", "")

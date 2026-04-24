@@ -8,6 +8,7 @@ Creates maps_to edges across language boundaries using name matching heuristics.
 
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Optional, Set
 from schema import Node, Edge, NodeType, EdgeRelation, file_id, symbol_id, type_id
 
 
@@ -15,7 +16,7 @@ def parse_file(
     feature: str,
     root: Path,
     filepath: Path,
-    known_symbol_ids: set | None = None,
+    known_symbol_ids: Optional[Set[str]] = None,
 ) -> "CodeGraph":
     """
     Parse an XML file and extract nodes/edges.
@@ -290,7 +291,7 @@ def _parse_config(g, feature: str, rel_path: str, filepath: Path, file_node_id: 
         ))
 
 
-def _create_maps_to_edges(g, known_symbol_ids: set) -> None:
+def _create_maps_to_edges(g, known_symbol_ids: Set[str]) -> None:
     """
     Create maps_to edges across language boundaries using name matching.
 

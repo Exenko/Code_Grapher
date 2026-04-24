@@ -4,10 +4,9 @@ graph.py — Core graph object: dedup, merge, serialize.
 Reusable across any project. No project-specific logic here.
 """
 
-from __future__ import annotations
 import json
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional, Set
 from schema import Node, Edge, NodeType, EdgeRelation
 
 
@@ -58,7 +57,7 @@ class CodeGraph:
     def has_node(self, node_id: str) -> bool:
         return node_id in self._nodes
 
-    def get_node(self, node_id: str) -> Node | None:
+    def get_node(self, node_id: str) -> Optional[Node]:
         return self._nodes.get(node_id)
 
     def all_symbol_ids(self) -> set:
@@ -66,7 +65,7 @@ class CodeGraph:
         return {
             nid for nid, node in self._nodes.items()
             if node.type in (NodeType.SYMBOL, NodeType.TYPE)
-        }
+        }  # type: set
 
     # ------------------------------------------------------------------
     # Merge (Phase 2 use: stitch multiple feature graphs)
@@ -179,7 +178,7 @@ class CodeGraph:
             return False
 
         # Collect ghost IDs from both node registry and edge endpoints
-        ghost_ids: set[str] = {nid for nid in self._nodes if _is_ghost(nid)}
+        ghost_ids: Set[str] = {nid for nid in self._nodes if _is_ghost(nid)}
         for edge in self._edges.values():
             if _is_ghost(edge.from_id):
                 ghost_ids.add(edge.from_id)

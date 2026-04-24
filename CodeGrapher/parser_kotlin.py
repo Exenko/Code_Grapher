@@ -31,8 +31,6 @@ Pass 2: resolve_calls() — upgrades unresolved calls using cross-file registry.
 Reusable across any Kotlin/Android project.
 """
 
-from __future__ import annotations
-
 import re
 import os
 from pathlib import Path
@@ -218,9 +216,9 @@ _RE_ANON_OBJECT = re.compile(r'\bobject\s*:\s*([\w.<>, ]+?)\s*\{')
 # ---------------------------------------------------------------------------
 
 def parse_file(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: Set[str] | None = None,
-               known_return_types: Dict[str, str] | None = None,
-               known_file_ids: Dict[str, str] | None = None,
+               known_symbol_ids: Optional[Set[str]] = None,
+               known_return_types: Optional[Dict[str, str]] = None,
+               known_file_ids: Optional[Dict[str, str]] = None,
                filter_stdlib: bool = False) -> CodeGraph:
     """Parse a single Kotlin file and return a CodeGraph."""
     rel_path = _rel(root, filepath)

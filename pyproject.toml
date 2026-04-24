@@ -6,10 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "codegrapher"
 version = "0.1.0"
 description = "AST-based codebase cartography tool — parse any project into an interactive graph"
-requires-python = ">=3.10"
+requires-python = ">=3.6"
 dependencies = [
     "mcp[cli]",
     "pydantic",
+    "dataclasses; python_version < '3.7'",
 ]
 
 [project.scripts]

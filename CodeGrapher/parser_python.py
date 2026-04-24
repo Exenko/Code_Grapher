@@ -20,10 +20,9 @@ Pass 2: resolve_calls() — re-walks call edges, upgrades unresolved ones
 Reusable across any Python project.
 """
 
-from __future__ import annotations
 import ast
 from pathlib import Path
-from typing import Optional, Set, Dict
+from typing import Optional, Set, Dict, List, Tuple, Union
 
 from schema import (
     Node, Edge, NodeType, EdgeRelation,
@@ -37,9 +36,9 @@ from graph import CodeGraph
 # ---------------------------------------------------------------------------
 
 def parse_file(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: Set[str] | None = None,
-               known_return_types: Dict[str, str] | None = None,
-               known_file_ids: Dict[str, str] | None = None,
+               known_symbol_ids: Optional[Set[str]] = None,
+               known_return_types: Optional[Dict[str, str]] = None,
+               known_file_ids: Optional[Dict[str, str]] = None,
                filter_stdlib: bool = False) -> CodeGraph:
     """
     Parse a single Python file and return a CodeGraph.
@@ -102,8 +101,8 @@ def resolve_calls(graph: CodeGraph, known_symbol_ids: Set[str]) -> None:
 class _FileVisitor(ast.NodeVisitor):
     def __init__(self, feature: str, rel_path: str, module_name: str,
                  is_test: bool, known_symbol_ids: Set[str],
-                 known_return_types: Dict[str, str] | None = None,
-                 known_file_ids: Dict[str, str] | None = None,
+                 known_return_types: Optional[Dict[str, str]] = None,
+                 known_file_ids: Optional[Dict[str, str]] = None,
                  filter_stdlib: bool = False):
         self.feature = feature
         self.rel_path = rel_path
@@ -412,7 +411,7 @@ class _FileVisitor(ast.NodeVisitor):
 
         self.generic_visit(node)
 
-    def _handle_function(self, node: ast.FunctionDef | ast.AsyncFunctionDef) -> None:
+    def _handle_function(self, node: Union[ast.FunctionDef, ast.AsyncFunctionDef]) -> None:
         if self._current_class:
             qualified_name = f"{self._current_class}.{node.name}"
         else:
@@ -730,8 +729,8 @@ class _FileVisitor(ast.NodeVisitor):
 
     def _walk_body(
         self,
-        stmts: list,
-        param_names: set[str],
+        stmts: List,
+        param_names: Set[str],
         func_id: str,
     ) -> None:
         """Walk function body statements in order for calls and mutation detection."""
@@ -821,13 +820,13 @@ class _FileVisitor(ast.NodeVisitor):
 
     def _detect_relay_from_return(
         self,
-        node: ast.FunctionDef | ast.AsyncFunctionDef,
-        param_names: set[str],
+        node: Union[ast.FunctionDef, ast.AsyncFunctionDef],
+        param_names: Set[str],
         func_id: str,
     ) -> None:
         """Upgrade relay=True on produces edges where return value is a param name."""
         # Find all return statements that return a bare name matching a param
-        returned_params: set[str] = set()
+        returned_params: Set[str] = set()
         for child in ast.walk(node):
             if isinstance(child, ast.Return) and child.value:
                 name = _bare_name(child.value)
@@ -851,9 +850,9 @@ class _FileVisitor(ast.NodeVisitor):
 
     def _extract_return_type_edges(
         self,
-        node: ast.FunctionDef | ast.AsyncFunctionDef,
+        node: Union[ast.FunctionDef, ast.AsyncFunctionDef],
         from_id: str,
-        param_type_names: list[str],
+        param_type_names: List[str],
     ) -> None:
         """Emit produces(via:return_value) edge for the function's return annotation.
 
@@ -992,7 +991,7 @@ def _module_name(rel_path: str) -> str:
     return name
 
 
-def _has_decorator(node: ast.ClassDef | ast.FunctionDef, name: str) -> bool:
+def _has_decorator(node: Union[ast.ClassDef, ast.FunctionDef], name: str) -> bool:
     """Check if a class or function has a specific decorator by name."""
     for dec in node.decorator_list:
         if isinstance(dec, ast.Name) and dec.id == name:
@@ -1021,7 +1020,7 @@ def _is_main_check(node: ast.expr) -> bool:
     return False
 
 
-def _is_route_handler(node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+def _is_route_handler(node: Union[ast.FunctionDef, ast.AsyncFunctionDef]) -> bool:
     """Return True if the function has a web-framework route decorator.
 
     Detects Flask (@app.route), FastAPI/aiohttp (@router.get, @app.post, etc.),
@@ -1051,7 +1050,7 @@ def _extract_call_name(node: ast.expr) -> Optional[str]:
     return None
 
 
-def _extract_call_receiver(node: ast.expr) -> tuple[Optional[str], int]:
+def _extract_call_receiver(node: ast.expr) -> Tuple[Optional[str], int]:
     """
     Extract the receiver name and chain depth from an attribute call expression.
     Returns (root_name, depth) where depth is the number of attribute hops.
@@ -1089,7 +1088,7 @@ def _is_super_call(node: ast.expr) -> bool:
     return False
 
 
-def _annotation_names(node: ast.expr) -> list[str]:
+def _annotation_names(node: ast.expr) -> List[str]:
     """Extract type names from an annotation AST node."""
     names = []
     if isinstance(node, ast.Name):
@@ -1209,7 +1208,7 @@ def _bare_name(node: ast.expr) -> Optional[str]:
     return None
 
 
-def _child_statement_lists(stmt: ast.stmt) -> list[list]:
+def _child_statement_lists(stmt: ast.stmt) -> List[List]:
     """Return all nested statement lists from a compound statement."""
     result = []
     for _, value in ast.iter_fields(stmt):

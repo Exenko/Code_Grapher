@@ -8,7 +8,6 @@ Usage:
     py CodeGrapher/serve.py --graphs CodeGrapher/graphs --port 5000
 """
 
-from __future__ import annotations
 import argparse
 import json
 import mimetypes
@@ -18,6 +17,7 @@ import threading
 import webbrowser
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
+from typing import Optional, Dict, Tuple
 from urllib.parse import urlparse, parse_qs, unquote
 
 # Import analyze module functions
@@ -26,12 +26,12 @@ from analyze import flow_trace, type_expander
 
 
 # Module-level JSON cache: abs_path_str -> parsed dict
-_cache: dict = {}
+_cache: Dict = {}
 _graphs_dir: Path = Path("graphs")
 _viewer_dir: Path = Path(__file__).parent / "viewer"
 
 
-def _load_json(path: Path) -> dict | None:
+def _load_json(path: Path) -> Optional[Dict]:
     """Load and cache a JSON file. Returns None if file not found."""
     key = str(path.resolve())
     if key not in _cache:
@@ -42,7 +42,7 @@ def _load_json(path: Path) -> dict | None:
     return _cache[key]
 
 
-def _safe_resolve(base: Path, rel: str) -> Path | None:
+def _safe_resolve(base: Path, rel: str) -> Optional[Path]:
     """Resolve rel path under base, return None if it escapes base."""
     try:
         resolved = (base / rel).resolve()
@@ -53,7 +53,7 @@ def _safe_resolve(base: Path, rel: str) -> Path | None:
         return None
 
 
-def _neighbors_response(node_id: str) -> tuple[int, dict]:
+def _neighbors_response(node_id: str) -> Tuple[int, Dict]:
     """
     Parse node_id, load appropriate graph file, find node + neighbors.
     Returns (status_code, response_dict).

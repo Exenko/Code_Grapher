@@ -24,7 +24,6 @@ Role:control rule: if parameter type matches *Config/*Table/*Policy/*Options/*Se
 Reusable across any C/C++ project.
 """
 
-from __future__ import annotations
 import re
 from pathlib import Path
 from typing import List, Optional, Set, Dict, Tuple
@@ -41,7 +40,7 @@ from graph import CodeGraph
 # ---------------------------------------------------------------------------
 
 def parse_file(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: Set[str] | None = None) -> CodeGraph:
+               known_symbol_ids: Optional[Set[str]] = None) -> CodeGraph:
     """
     Parse a single C/C++ file (.h or .cc) and return a CodeGraph.
 
@@ -157,8 +156,8 @@ class _BaseParser:
 
     def __init__(self, feature: str, rel_path: str, module_name: str,
                  is_test: bool, known_symbol_ids: Set[str],
-                 member_var_types: Dict[str, str] | None = None,
-                 class_bases: Dict[str, List[str]] | None = None):
+                 member_var_types: Optional[Dict[str, str]] = None,
+                 class_bases: Optional[Dict[str, List[str]]] = None):
         self.feature = feature
         self.rel_path = rel_path
         self.module_name = module_name
@@ -1186,7 +1185,7 @@ class _ImplementationParser(_BaseParser):
                 any_match.append(nid)
 
         # Helper: prefer .cc/.cpp/.c over .h/.hpp/.hxx
-        def _prefer_implementation_over_declaration(candidates: list) -> Optional[str]:
+        def _prefer_implementation_over_declaration(candidates: List[str]) -> Optional[str]:
             """From a list of candidates, prefer implementation files."""
             if not candidates:
                 return None

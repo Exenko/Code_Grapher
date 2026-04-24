@@ -26,13 +26,11 @@ Out of scope for v1
 - Template literal types / conditional / mapped types
 """
 
-from __future__ import annotations
-
 import re
 import os
 from pathlib import Path
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple, Union
 
 from schema import (
     Node, Edge,
@@ -689,7 +687,7 @@ class _TSParser:
             self._parse_calls(body, sym_nid, local_var_types, "")
             self._parse_jsx(body, sym_nid)
 
-    def _unwrap_hook_body(self, body: str) -> Optional[Tuple[Optional[str], str]]:
+    def _unwrap_hook_body(self, body: str) -> Optional[Tuple[Optional[str], str]]:  # type: ignore
         """If body is `useCallback(innerFn, deps)` or `useMemo(innerFn, deps)`,
         return (inner_params_str_or_None, inner_body_str).
         Returns None if the body is not a hook wrapper."""
@@ -1023,7 +1021,7 @@ class _TSParser:
                 unresolved=target_id[1],
             ))
 
-    def _resolve_call(self, name: str, from_sym_id: str) -> Tuple[str, bool]:
+    def _resolve_call(self, name: str, from_sym_id: str) -> Tuple[str, bool]:  # type: ignore
         """Return (target_id, unresolved)."""
         ctx = self.ctx
         # Try exact match in known symbols
@@ -1086,7 +1084,7 @@ class _TSParser:
     # block extraction
     # ------------------------------------------------------------------
 
-    def _extract_block(self, src: str, open_brace: int) -> Tuple[str, int]:
+    def _extract_block(self, src: str, open_brace: int) -> Tuple[str, int]:  # type: ignore
         """Extract content between matching braces starting at open_brace."""
         depth = 0
         i = open_brace

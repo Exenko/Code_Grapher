@@ -14,7 +14,6 @@ Uses regex-based parsing (no external proto library).
 Reusable across any project with .proto files.
 """
 
-from __future__ import annotations
 import re
 from pathlib import Path
 from typing import Optional, Set, Dict, List, Tuple
@@ -31,7 +30,7 @@ from graph import CodeGraph
 # ---------------------------------------------------------------------------
 
 def parse_file(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: Set[str] | None = None) -> CodeGraph:
+               known_symbol_ids: Optional[Set[str]] = None) -> CodeGraph:
     """
     Parse a single Protocol Buffer (.proto) file and return a CodeGraph.
 

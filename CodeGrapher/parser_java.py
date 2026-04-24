@@ -18,8 +18,6 @@ Pass 2: resolve_calls() — upgrades unresolved calls using cross-file registry.
 Reusable across any Java project — no project-specific logic here.
 """
 
-from __future__ import annotations
-
 import re
 import os
 from pathlib import Path
@@ -203,9 +201,9 @@ def _find_class_body(source: str, open_brace_pos: int) -> Tuple[int, int]:
 # ---------------------------------------------------------------------------
 
 def parse_file(feature: str, root: Path, filepath: Path,
-               known_symbol_ids: Set[str] | None = None,
-               known_return_types: Dict[str, str] | None = None,
-               known_file_ids: Dict[str, str] | None = None,
+               known_symbol_ids: Optional[Set[str]] = None,
+               known_return_types: Optional[Dict[str, str]] = None,
+               known_file_ids: Optional[Dict[str, str]] = None,
                filter_stdlib: bool = False) -> CodeGraph:
     """
     Parse a single Java file and return a CodeGraph.

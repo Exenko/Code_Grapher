@@ -28,7 +28,7 @@ import sys
 from collections import OrderedDict, deque
 from heapq import heappush, heappop
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
@@ -74,7 +74,7 @@ graphs_root: Path = Path()
 # Active graph selection: ("project", "graph-name") or None if not set.
 # NOTE: This is process-level state shared across all sessions connected to
 # this server instance. set_active_graph affects all concurrent callers.
-active_graph: Optional[tuple[str, str]] = None
+active_graph: Optional[Tuple[str, str]] = None
 
 # LRU cache — keys are "project/graph-name/tier_name" to avoid collisions
 # across graphs. Default size 12 covers ~2-3 graphs with all tiers cached.
@@ -115,7 +115,7 @@ def _init(graphs_path: Path, max_cached_tiers: int) -> None:
     cache = LRUCache(max_cached_tiers)
 
 
-def _resolve_graph(graph_override: Optional[str] = None) -> tuple[Path, dict[str, Any]]:
+def _resolve_graph(graph_override: Optional[str] = None) -> Tuple[Path, Dict[str, Any]]:
     """
     Resolve which graph to use for a tool call.
 
@@ -166,7 +166,7 @@ def _resolve_graph(graph_override: Optional[str] = None) -> tuple[Path, dict[str
     return graph_dir, toc
 
 
-def _get_tier(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str, Any]:
+def _get_tier(tier_name: str, graph_dir: Path, toc: Dict[str, Any]) -> Dict[str, Any]:
     """
     Retrieve tier data from cache or disk.
     Builds and caches adjacency indices (nodes_by_id, outgoing, incoming).
@@ -195,7 +195,7 @@ def _get_tier(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str,
     return tier_data
 
 
-def _build_index(tier_data: dict[str, Any]) -> None:
+def _build_index(tier_data: Dict[str, Any]) -> None:
     """
     Build adjacency indices for fast node/edge lookups.
     Stores as tier_data["_index"] = {"nodes_by_id": ..., "outgoing": ..., "incoming": ...}
@@ -204,8 +204,8 @@ def _build_index(tier_data: dict[str, Any]) -> None:
     edges = tier_data.get("edges", [])
 
     nodes_by_id = {node["id"]: node for node in nodes}
-    outgoing: dict[str, list[dict]] = {node["id"]: [] for node in nodes}
-    incoming: dict[str, list[dict]] = {node["id"]: [] for node in nodes}
+    outgoing: Dict[str, List[Dict]] = {node["id"]: [] for node in nodes}
+    incoming: Dict[str, List[Dict]] = {node["id"]: [] for node in nodes}
 
     for edge in edges:
         from_id = edge.get("from")
@@ -225,7 +225,7 @@ def _build_index(tier_data: dict[str, Any]) -> None:
     }
 
 
-def _get_index(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str, Any]:
+def _get_index(tier_name: str, graph_dir: Path, toc: Dict[str, Any]) -> Dict[str, Any]:
     """Retrieve adjacency indices for a tier."""
     tier_data = _get_tier(tier_name, graph_dir, toc)
     return tier_data.get("_index", {})
@@ -289,7 +289,7 @@ class SummarizeEntryPointInput(BaseModel):
         default=3,
         description="Maximum call-edge hops to traverse from the entry point (default: 3)"
     )
-    follow_relations: list[str] = Field(
+    follow_relations: List[str] = Field(
         default=["calls"],
         description="Edge relation types to follow during BFS (default: ['calls']). Include 'produces' and 'consumes' for data-pipeline style codebases."
     )
@@ -318,7 +318,7 @@ class SetActiveGraphInput(BaseModel):
         "openWorldHint": False,
     },
 )
-async def list_projects() -> dict[str, Any]:
+async def list_projects() -> Dict[str, Any]:
     """
     List all project directories under the graphs root.
 
@@ -343,7 +343,7 @@ async def list_projects() -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def list_graphs(input: ListGraphsInput) -> dict[str, Any]:
+async def list_graphs(input: ListGraphsInput) -> Dict[str, Any]:
     """
     List all graphs available under a project, with metadata from each graph's toc.json.
 
@@ -390,7 +390,7 @@ async def list_graphs(input: ListGraphsInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def set_active_graph(input: SetActiveGraphInput) -> dict[str, Any]:
+async def set_active_graph(input: SetActiveGraphInput) -> Dict[str, Any]:
     """
     Set the active graph for all subsequent tool calls in this session.
 
@@ -439,7 +439,7 @@ async def set_active_graph(input: SetActiveGraphInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def get_active_graph() -> dict[str, Any]:
+async def get_active_graph() -> Dict[str, Any]:
     """
     Return the currently active graph and its toc.json summary.
 
@@ -495,7 +495,7 @@ async def get_active_graph() -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def list_entry_points(graph: Optional[str] = None) -> dict[str, Any]:
+async def list_entry_points(graph: Optional[str] = None) -> Dict[str, Any]:
     """
     List all entry points detected in the analyzed codebase.
 
@@ -528,7 +528,7 @@ async def list_entry_points(graph: Optional[str] = None) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def get_feature_summary(graph: Optional[str] = None) -> dict[str, Any]:
+async def get_feature_summary(graph: Optional[str] = None) -> Dict[str, Any]:
     """
     Get high-level summary of the analyzed feature/graph.
 
@@ -591,7 +591,7 @@ async def get_feature_summary(graph: Optional[str] = None) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
+async def expand_node(input: ExpandNodeInput) -> Dict[str, Any]:
     """
     Expand a single node to show all incoming and outgoing edges.
 
@@ -663,7 +663,7 @@ async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
+async def find_type(input: FindTypeInput) -> List[Dict[str, Any]]:
     """
     Find all type nodes matching a substring (case-insensitive).
 
@@ -735,11 +735,11 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
 
 def _bfs_typedef_chain(
     start_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
-    incoming: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
+    incoming: Dict[str, List[Dict]],
     max_depth: int = 10,
-) -> list[dict[str, Any]]:
+) -> List[Dict[str, Any]]:
     """
     BFS following typedef_of edges in both directions (up to max_depth).
     Returns flat list of reachable nodes.
@@ -782,7 +782,7 @@ def _bfs_typedef_chain(
         "openWorldHint": False,
     },
 )
-async def find_symbol(input: FindSymbolInput) -> list[dict[str, Any]]:
+async def find_symbol(input: FindSymbolInput) -> List[Dict[str, Any]]:
     """
     Find all symbol nodes matching a name substring (case-insensitive).
 
@@ -857,7 +857,7 @@ async def find_symbol(input: FindSymbolInput) -> list[dict[str, Any]]:
         "openWorldHint": False,
     },
 )
-async def search(input: SearchInput) -> dict[str, Any]:
+async def search(input: SearchInput) -> Dict[str, Any]:
     """
     Search for nodes matching a label substring across both SYMBOL and TYPE nodes (case-insensitive).
 
@@ -889,7 +889,7 @@ async def search(input: SearchInput) -> dict[str, Any]:
         if n.get("type") in ("symbol", "type") and search_term in n.get("label", "").lower()
     ]
 
-    def _format_node(node: dict) -> dict:
+    def _format_node(node: Dict) -> Dict:
         nid = node["id"]
         out_edges = []
         for edge in outgoing.get(nid, []):
@@ -934,7 +934,7 @@ async def search(input: SearchInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
+async def get_file_symbols(input: GetFileSymbolsInput) -> Dict[str, Any]:
     """
     Return all symbols defined in a file (matched by file path substring).
 
@@ -1019,7 +1019,7 @@ async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def trace_data_flow(input: TraceDataFlowInput) -> dict[str, Any]:
+async def trace_data_flow(input: TraceDataFlowInput) -> Dict[str, Any]:
     """
     Find a path between two nodes using one of six algorithms.
 
@@ -1107,7 +1107,7 @@ async def trace_data_flow(input: TraceDataFlowInput) -> dict[str, Any]:
         "openWorldHint": False,
     },
 )
-async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, Any]:
+async def summarize_entry_point(input: SummarizeEntryPointInput) -> Dict[str, Any]:
     """
     Summarize the call structure of an entry point up to max_hops deep.
 
@@ -1166,7 +1166,7 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     entry_file = entry_node.get("file", "")
     entry_file_normalized = entry_file.replace("\\", "/")
 
-    seed_ids: list[str] = []
+    seed_ids: List[str] = []
     for node in tier_symbol_data.get("nodes", []):
         node_file = (node.get("file") or "").replace("\\", "/")
         if node_file == entry_file_normalized:
@@ -1175,11 +1175,11 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
     if not seed_ids:
         seed_ids = [entry_id]
 
-    visited: dict[str, int] = {}
+    visited: Dict[str, int] = {}
     for sid in seed_ids:
         visited[sid] = 0
 
-    hop_nodes: dict[int, list[str]] = {0: list(seed_ids)}
+    hop_nodes: Dict[int, List[str]] = {0: list(seed_ids)}
 
     queue = deque([(sid, 0) for sid in seed_ids])
     follow_set = set(follow_relations)
@@ -1198,7 +1198,7 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
             hop_nodes.setdefault(next_hop, []).append(next_id)
             queue.append((next_id, next_hop))
 
-    file_min_hop: dict[str, int] = {}
+    file_min_hop: Dict[str, int] = {}
     for node_id, hop in visited.items():
         node = nodes_by_id.get(node_id, {})
         f = (node.get("file") or "").replace("\\", "/")
@@ -1211,7 +1211,7 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
         key=lambda x: (x["first_reached_at_hop"], x["file"])
     )
 
-    call_tree: dict[str, list[dict]] = {}
+    call_tree: Dict[str, List[Dict]] = {}
     for hop in range(0, max_hops + 1):
         nodes_at_hop = hop_nodes.get(hop, [])
         hop_entries = []
@@ -1226,8 +1226,8 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
         if hop_entries:
             call_tree[f"hop_{hop}"] = hop_entries
 
-    cross_file_edges: list[dict] = []
-    seen_cross: set[tuple[str, str]] = set()
+    cross_file_edges: List[Dict] = []
+    seen_cross: set = set()
     for node_id in visited:
         for edge in outgoing.get(node_id, []):
             if not edge.get("cross_file", False):
@@ -1279,11 +1279,11 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
 def _trace_data_flow(
     from_id: str,
     to_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
-    incoming: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
+    incoming: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """Edge-typed BFS prioritizing data flow edges (produces/consumes) over calls."""
     visited = {from_id}
     queue = deque([(from_id, 0, [])])
@@ -1328,10 +1328,10 @@ def _trace_data_flow(
 def _trace_bfs(
     from_id: str,
     to_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """Standard BFS over all edge types."""
     visited = {from_id}
     queue = deque([(from_id, 0, [])])
@@ -1371,10 +1371,10 @@ def _trace_bfs(
 def _trace_dfs(
     from_id: str,
     to_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """Iterative DFS, returns first path found."""
     stack = [(from_id, 0, [], frozenset({from_id}))]
     truncated = False
@@ -1414,11 +1414,11 @@ def _trace_dfs(
 def _trace_bidirectional_bfs(
     from_id: str,
     to_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
-    incoming: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
+    incoming: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """BFS from both endpoints simultaneously. Meet in the middle."""
     if from_id == to_id:
         return {
@@ -1431,11 +1431,11 @@ def _trace_bidirectional_bfs(
 
     forward_visited = {from_id}
     forward_queue = deque([(from_id, 0, [])])
-    forward_parents: dict[str, Optional[tuple[str, Optional[str]]]] = {from_id: None}
+    forward_parents: Dict[str, Optional[Tuple[str, Optional[str]]]] = {from_id: None}
 
     backward_visited = {to_id}
     backward_queue = deque([(to_id, 0, [])])
-    backward_parents: dict[str, Optional[tuple[str, Optional[str]]]] = {to_id: None}
+    backward_parents: Dict[str, Optional[Tuple[str, Optional[str]]]] = {to_id: None}
 
     meeting_point = None
 
@@ -1506,10 +1506,10 @@ def _trace_bidirectional_bfs(
 def _trace_dijkstra(
     from_id: str,
     to_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """Weighted shortest path using heapq."""
     relation_weights = {
         "produces": 1,
@@ -1575,10 +1575,10 @@ def _trace_dijkstra(
 
 def _trace_topological(
     from_id: str,
-    nodes_by_id: dict[str, Any],
-    outgoing: dict[str, list[dict]],
+    nodes_by_id: Dict[str, Any],
+    outgoing: Dict[str, List[Dict]],
     max_depth: int,
-) -> dict[str, Any]:
+) -> Dict[str, Any]:
     """Reachability BFS from from_id. Returns all nodes reachable within max_depth."""
     visited = {from_id}
     queue = deque([(from_id, 0)])
@@ -1625,9 +1625,9 @@ def _trace_topological(
 
 
 def _format_path(
-    path: list[tuple[str, str, str]],
-    nodes_by_id: dict[str, Any],
-) -> list[dict[str, Any]]:
+    path: List[Tuple[str, str, str]],
+    nodes_by_id: Dict[str, Any],
+) -> List[Dict[str, Any]]:
     """Convert path (list of (from_id, relation, to_id) tuples) to formatted path."""
     if not path:
         return []

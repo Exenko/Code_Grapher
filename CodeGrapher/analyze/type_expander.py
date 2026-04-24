@@ -11,13 +11,14 @@ Language-agnostic; depends only on Python stdlib.
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Dict, List, Optional, Set, Tuple, Union
 
 
 # ---------------------------------------------------------------------------
 # Graph loading and index construction
 # ---------------------------------------------------------------------------
 
-def _load_graph(graph_path: str) -> tuple[dict, dict, dict, dict, dict, dict]:
+def _load_graph(graph_path: str) -> Tuple[Dict, Dict, Dict, Dict, Dict, Dict]:
     """
     Load tier_symbol.json and build lookup structures.
 
@@ -32,20 +33,20 @@ def _load_graph(graph_path: str) -> tuple[dict, dict, dict, dict, dict, dict]:
     with open(graph_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    nodes_by_id: dict = {}
+    nodes_by_id: Dict = {}
     for node in data.get("nodes", []):
         nodes_by_id[node["id"]] = node
 
     # contains_from: node_id -> list of target node dicts (all contains targets)
-    contains_from: dict = defaultdict(list)
+    contains_from: Dict = defaultdict(list)
     # uses_type_from: node_id -> list of target type node dicts
-    uses_type_from: dict = defaultdict(list)
+    uses_type_from: Dict = defaultdict(list)
     # ptr_depth on contains edges keyed by (from_id, to_id)
-    ptr_depth_map: dict = {}
+    ptr_depth_map: Dict = {}
     # typedef_from: type_id -> list of type nodes aliased by this type (downward chain)
-    typedef_from: dict = defaultdict(list)
+    typedef_from: Dict = defaultdict(list)
     # typedef_to: type_id -> list of type nodes that alias this type (upward chain)
-    typedef_to: dict = defaultdict(list)
+    typedef_to: Dict = defaultdict(list)
 
     for edge in data.get("edges", []):
         relation = edge.get("relation", "")
@@ -79,7 +80,7 @@ def _load_graph(graph_path: str) -> tuple[dict, dict, dict, dict, dict, dict]:
 # Type node lookup
 # ---------------------------------------------------------------------------
 
-def _find_type_node(nodes_by_id: dict, type_name: str) -> dict | None:
+def _find_type_node(nodes_by_id: Dict, type_name: str) -> Optional[Dict]:
     """
     Find a node with type=="type" and label==type_name.
 
@@ -100,7 +101,7 @@ def _find_type_node(nodes_by_id: dict, type_name: str) -> dict | None:
     return None
 
 
-def list_types(graph_path: str) -> list[str]:
+def list_types(graph_path: str) -> List[str]:
     """Return all type names available in the graph, sorted."""
     with open(graph_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -136,10 +137,10 @@ def _field_name(symbol_node: dict) -> str:
 
 
 def _resolve_field_type(
-    symbol_node: dict,
-    uses_type_from: dict,
-    nodes_by_id: dict,
-) -> dict | None:
+    symbol_node: Dict,
+    uses_type_from: Dict,
+    nodes_by_id: Dict,
+) -> Optional[Dict]:
     """
     Given a field symbol node, look for a "uses_type" edge pointing to a type
     node.  Returns the target type node dict, or None if the field has no
@@ -158,15 +159,15 @@ def _resolve_field_type(
 # ---------------------------------------------------------------------------
 
 def _expand_typedef_chain(
-    type_node: dict,
-    typedef_from: dict,
-    typedef_to: dict,
-    nodes_by_id: dict,
-    ptr_depth_map: dict,
-    visited: set,
+    type_node: Dict,
+    typedef_from: Dict,
+    typedef_to: Dict,
+    nodes_by_id: Dict,
+    ptr_depth_map: Dict,
+    visited: Set,
     indent: int,
-    lines: list,
-    relations: list,
+    lines: List,
+    relations: List,
     render_mode: str,
 ) -> None:
     """
@@ -253,10 +254,10 @@ def _expand_typedef_chain(
 # ---------------------------------------------------------------------------
 
 def _collect_fields(
-    type_node: dict,
-    contains_from: dict,
-    nodes_by_id: dict,
-) -> list[dict]:
+    type_node: Dict,
+    contains_from: Dict,
+    nodes_by_id: Dict,
+) -> List[Dict]:
     """
     Return the direct field symbol nodes of a type node.
     Only symbol children (class fields/attributes) are returned; methods are
@@ -274,15 +275,15 @@ def _collect_fields(
 
 
 def _expand_type(
-    type_node: dict,
-    contains_from: dict,
-    uses_type_from: dict,
-    nodes_by_id: dict,
-    ptr_depth_map: dict,
-    visited: set,
+    type_node: Dict,
+    contains_from: Dict,
+    uses_type_from: Dict,
+    nodes_by_id: Dict,
+    ptr_depth_map: Dict,
+    visited: Set,
     indent: int,
-    lines: list,
-    relations: list,          # mermaid only: list of (from_label, to_label, field_name)
+    lines: List,
+    relations: List,          # mermaid only: list of (from_label, to_label, field_name)
     render_mode: str,
 ) -> None:
     """
@@ -390,13 +391,13 @@ def _expand_type(
 # ---------------------------------------------------------------------------
 
 def _render_text(
-    root_type: dict,
-    contains_from: dict,
-    uses_type_from: dict,
-    nodes_by_id: dict,
-    ptr_depth_map: dict,
-    typedef_from: dict,
-    typedef_to: dict,
+    root_type: Dict,
+    contains_from: Dict,
+    uses_type_from: Dict,
+    nodes_by_id: Dict,
+    ptr_depth_map: Dict,
+    typedef_from: Dict,
+    typedef_to: Dict,
 ) -> str:
     """
     Render the fully expanded type tree as an indented text tree.
@@ -411,7 +412,7 @@ def _render_text(
         <<typedefs (aliases)>>
           AliasName (file.py:123)
     """
-    lines: list[str] = []
+    lines: List[str] = []
     _expand_type(
         root_type,
         contains_from,
@@ -449,13 +450,13 @@ def _render_text(
 # ---------------------------------------------------------------------------
 
 def _render_mermaid(
-    root_type: dict,
-    contains_from: dict,
-    uses_type_from: dict,
-    nodes_by_id: dict,
-    ptr_depth_map: dict,
-    typedef_from: dict,
-    typedef_to: dict,
+    root_type: Dict,
+    contains_from: Dict,
+    uses_type_from: Dict,
+    nodes_by_id: Dict,
+    ptr_depth_map: Dict,
+    typedef_from: Dict,
+    typedef_to: Dict,
 ) -> str:
     """
     Render the fully expanded type structure as a Mermaid classDiagram.
@@ -472,14 +473,14 @@ def _render_mermaid(
     """
     # --- Pass 1: collect all involved types and relations via the same
     #     recursive walker (mermaid mode accumulates into `relations` list)
-    relations: list[tuple[str, str, str, str]] = []  # (from_type, to_type, field_name, ptr_stars)
-    visited_collect: set = set()
+    relations: List[Tuple[str, str, str, str]] = []  # (from_type, to_type, field_name, ptr_stars)
+    visited_collect: Set = set()
 
     # We need to also collect all type nodes that will appear in the diagram.
     # Use a separate set that persists (unlike the recursion-scoped visited set).
-    types_seen: dict[str, dict] = {}  # label -> type_node
+    types_seen: Dict[str, Dict] = {}  # label -> type_node
 
-    def _collect(type_node: dict, rel_list: list, v: set) -> None:
+    def _collect(type_node: Dict, rel_list: List, v: Set) -> None:
         """Wrapper that records types_seen and delegates to _expand_type."""
         label = type_node.get("label", type_node["id"])
         types_seen[label] = type_node
@@ -524,7 +525,7 @@ def _render_mermaid(
     #     Also gather field symbols per type for primitive fields.
     # For the class bodies we need all fields (primitive + custom typed).
     # Build a map: type_label -> list of (field_name, type_annotation_or_None)
-    type_fields: dict[str, list[tuple[str, str | None]]] = defaultdict(list)
+    type_fields: Dict[str, List[Tuple[str, Optional[str]]]] = defaultdict(list)
 
     for type_label, type_node in types_seen.items():
         field_symbols = _collect_fields(type_node, contains_from, nodes_by_id)
@@ -552,7 +553,7 @@ def _render_mermaid(
         output_lines.append("    }")
 
     # Deduplicate relations while preserving order
-    seen_rels: set = set()
+    seen_rels: Set = set()
     for from_lbl, to_lbl, field_name, ptr_stars in relations:
         key = (from_lbl, to_lbl, field_name)
         if key not in seen_rels:

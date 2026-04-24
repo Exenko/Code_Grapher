@@ -12,6 +12,7 @@ Language-agnostic; depends only on Python stdlib.
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Callable, Dict, List, Optional, Set, Tuple
 
 
 # ---------------------------------------------------------------------------
@@ -36,7 +37,7 @@ def _make_id_generator():
 # Graph loading and index construction
 # ---------------------------------------------------------------------------
 
-def _load_graph(graph_path: str) -> tuple[dict, dict, dict]:
+def _load_graph(graph_path: str) -> Tuple[Dict, Dict, Dict]:
     """
     Load tier_symbol.json and build lookup structures.
 
@@ -48,18 +49,18 @@ def _load_graph(graph_path: str) -> tuple[dict, dict, dict]:
     with open(graph_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    nodes_by_id: dict = {}
+    nodes_by_id: Dict = {}
     for node in data.get("nodes", []):
         nodes_by_id[node["id"]] = node
 
     # Build file_of for symbol nodes
-    file_of: dict = {}
+    file_of: Dict = {}
     for node_id, node in nodes_by_id.items():
         if node.get("type") == "symbol" and node.get("file"):
             file_of[node_id] = node["file"]
 
     # Build calls_from: only "calls" edges, sorted by seq
-    calls_from: dict = defaultdict(list)
+    calls_from: Dict = defaultdict(list)
     for edge in data.get("edges", []):
         if edge.get("relation") == "calls":
             src = edge["from"]
@@ -78,7 +79,7 @@ def _load_graph(graph_path: str) -> tuple[dict, dict, dict]:
 # Entry symbol resolution
 # ---------------------------------------------------------------------------
 
-def _find_entry_symbol(nodes_by_id: dict, file_of: dict, calls_from: dict, entry_file: str, symbol_name: str | None = None) -> str | None:
+def _find_entry_symbol(nodes_by_id: Dict, file_of: Dict, calls_from: Dict, entry_file: str, symbol_name: Optional[str] = None) -> Optional[str]:
     """
     Find the best entry symbol in the given file.
 
@@ -146,7 +147,7 @@ def _find_entry_symbol(nodes_by_id: dict, file_of: dict, calls_from: dict, entry
 # Directory prefix helpers (Change 2)
 # ---------------------------------------------------------------------------
 
-def _common_dir_prefix(files: list) -> str:
+def _common_dir_prefix(files: List) -> str:
     """
     Given a list of forward-slash file paths, return the deepest directory
     prefix shared by all of them. Empty string if nothing is shared.
@@ -214,11 +215,11 @@ def _is_callback_boundary(label: str) -> bool:
 
 def _walk(
     entry_id: str,
-    calls_from: dict,
-    nodes_by_id: dict,
-    file_of: dict,
+    calls_from: Dict,
+    nodes_by_id: Dict,
+    file_of: Dict,
     max_depth: int = 6,
-) -> list[dict]:
+) -> List[Dict]:
     """
     Walk the call graph via DFS from entry_id, collecting steps.
 
@@ -234,9 +235,9 @@ def _walk(
     Max depth is enforced to prevent run-away traversal.
     Visited symbol ids are tracked to prevent cycles.
     """
-    steps: list[dict] = []
-    visited: set = set()
-    callback_annotated: set = set()
+    steps: List[Dict] = []
+    visited: Set = set()
+    callback_annotated: Set = set()
 
     def _dfs(current_id: str, depth: int) -> None:
         if depth > max_depth:
@@ -304,7 +305,7 @@ def _walk(
 # Mermaid rendering — file level
 # ---------------------------------------------------------------------------
 
-def _render_file_level(steps: list[dict], entry_file: str, state_id) -> str:
+def _render_file_level(steps: List[Dict], entry_file: str, state_id: Callable) -> str:
     """
     Build the file-level Mermaid stateDiagram-v2 section.
 
@@ -325,9 +326,9 @@ def _render_file_level(steps: list[dict], entry_file: str, state_id) -> str:
     lines.append("")
 
     # Collect unique file states and ordered file->file transitions
-    seen_states: set = set()
-    seen_transitions: set = set()
-    file_transitions: list[tuple[str, str, bool]] = []  # (from_file, to_file, is_cycle)
+    seen_states: Set = set()
+    seen_transitions: Set = set()
+    file_transitions: List[Tuple[str, str, bool]] = []  # (from_file, to_file, is_cycle)
 
     # Seed with entry file
     seen_states.add(entry_file)
@@ -387,11 +388,11 @@ def _render_file_level(steps: list[dict], entry_file: str, state_id) -> str:
 # ---------------------------------------------------------------------------
 
 def _render_symbol_level(
-    steps: list[dict],
+    steps: List[Dict],
     entry_id: str,
     entry_file: str,
-    nodes_by_id: dict,
-    state_id,
+    nodes_by_id: Dict,
+    state_id: Callable,
 ) -> str:
     """
     Build the symbol-level Mermaid stateDiagram-v2 section.
@@ -408,7 +409,7 @@ def _render_symbol_level(
 
     # Collect all symbols involved
     # symbol_id -> (label, file)
-    symbols_seen: dict[str, tuple[str, str]] = {}
+    symbols_seen: Dict[str, Tuple[str, str]] = {}
 
     # Seed with entry
     entry_node = nodes_by_id.get(entry_id, {})
@@ -418,7 +419,7 @@ def _render_symbol_level(
     # We need the original symbol ids for state IDs.
     # Build a mapping: (label, file) -> original_id for step lookup.
     # Since steps use labels, we reconstruct ids by walking nodes_by_id.
-    label_file_to_id: dict[tuple[str, str], str] = {}
+    label_file_to_id: Dict[Tuple[str, str], str] = {}
     for nid, node in nodes_by_id.items():
         if node.get("type") == "symbol":
             nfile = (node.get("file") or "").replace("\\", "/")
@@ -439,7 +440,7 @@ def _render_symbol_level(
         symbols_seen[to_id] = (step["to_symbol"], step["to_file"])
 
     # Group by file
-    file_to_symbols: dict[str, list[tuple[str, str]]] = defaultdict(list)  # file -> [(symbol_id, label)]
+    file_to_symbols: Dict[str, List[Tuple[str, str]]] = defaultdict(list)  # file -> [(symbol_id, label)]
     for sym_id, (label, file) in symbols_seen.items():
         file_to_symbols[file].append((sym_id, label))
 
@@ -461,7 +462,7 @@ def _render_symbol_level(
         lines.append("")
 
     # Emit transitions (skip unresolved/empty targets)
-    seen_sym_transitions: set = set()
+    seen_sym_transitions: Set = set()
     for step in steps:
         if not step["to_file"]:
             continue
@@ -488,7 +489,7 @@ def _render_symbol_level(
 # Public API
 # ---------------------------------------------------------------------------
 
-def trace(graph_path: str, entry_file: str, output: str = "mermaid", symbol_name: str | None = None) -> str:
+def trace(graph_path: str, entry_file: str, output: str = "mermaid", symbol_name: Optional[str] = None) -> str:
     """
     Given a tier_symbol.json path and an entry file path (e.g. "Client_Side/main.py"),
     find the entry symbol in that file, walk calls edges by seq, and return a Mermaid

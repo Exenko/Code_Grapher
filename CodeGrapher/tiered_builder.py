@@ -10,7 +10,6 @@ Takes a fully-built flat CodeGraph and produces:
 All output paths use forward slashes (normalized for JSON).
 """
 
-from __future__ import annotations
 import json
 import math
 from collections import defaultdict, Counter
@@ -101,7 +100,7 @@ def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]
         return False
 
     # Collect files that contain symbols explicitly marked entry_point=True
-    entry_point_files: dict[str, str] = {}  # file_path -> symbol label
+    entry_point_files: Dict[str, str] = {}  # file_path -> symbol label
     for n in graph.nodes:
         if n.type == NodeType.SYMBOL and getattr(n, "entry_point", False) and n.file:
             entry_point_files.setdefault(n.file, n.label)
