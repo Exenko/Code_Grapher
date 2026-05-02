@@ -478,11 +478,28 @@ def _render_mermaid(
     # We need to also collect all type nodes that will appear in the diagram.
     # Use a separate set that persists (unlike the recursion-scoped visited set).
     types_seen: dict[str, dict] = {}  # label -> type_node
+    # Build field list during collection pass (Pass 1), not in a separate pass later
+    type_fields: dict[str, list[tuple[str, str | None]]] = defaultdict(list)
 
     def _collect(type_node: dict, rel_list: list, v: set) -> None:
         """Wrapper that records types_seen and delegates to _expand_type."""
         label = type_node.get("label", type_node["id"])
-        types_seen[label] = type_node
+        if label not in types_seen:
+            types_seen[label] = type_node
+            # Build field list once, here, not in a separate pass later
+            field_symbols = _collect_fields(type_node, contains_from, nodes_by_id)
+            for sym in field_symbols:
+                field = _field_name(sym)
+                referred = _resolve_field_type(sym, uses_type_from, nodes_by_id)
+                if referred is not None:
+                    pd = ptr_depth_map.get((type_node["id"], referred["id"]), 0) or 0
+                    ptr_stars = "*" * pd
+                    type_fields[label].append((field, ptr_stars + referred.get("label", "")))
+                    # Also ensure referred type gets collected
+                    if referred.get("label", "") not in types_seen:
+                        _collect(referred, rel_list, v)
+                else:
+                    type_fields[label].append((field, sym.get("annotation") or None))
         _expand_type(
             type_node,
             contains_from,
@@ -520,26 +537,7 @@ def _render_mermaid(
         render_mode="mermaid",
     )
 
-    # --- Pass 2: build per-type field lists from the relations
-    #     Also gather field symbols per type for primitive fields.
-    # For the class bodies we need all fields (primitive + custom typed).
-    # Build a map: type_label -> list of (field_name, type_annotation_or_None)
-    type_fields: dict[str, list[tuple[str, str | None]]] = defaultdict(list)
-
-    for type_label, type_node in types_seen.items():
-        field_symbols = _collect_fields(type_node, contains_from, nodes_by_id)
-        for sym in field_symbols:
-            field = _field_name(sym)
-            referred = _resolve_field_type(sym, uses_type_from, nodes_by_id)
-            if referred is not None:
-                pd = ptr_depth_map.get((type_node["id"], referred["id"]), 0) or 0
-                ptr_stars = "*" * pd
-                type_fields[type_label].append((field, ptr_stars + referred.get("label", "")))
-            else:
-                # Use stored annotation text for primitive/builtin fields
-                type_fields[type_label].append((field, sym.get("annotation") or None))
-
-    # --- Pass 3: emit Mermaid text
+    # --- Pass 2: emit Mermaid text
     output_lines = ["classDiagram"]
 
     for type_label in sorted(types_seen.keys()):

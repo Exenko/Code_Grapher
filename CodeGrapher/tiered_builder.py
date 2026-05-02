@@ -18,9 +18,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Set, Tuple, Optional
 
-from schema import Node, Edge, NodeType, EdgeRelation
-from schema import file_id, symbol_id, dir_id, repo_id, is_test_file
-from graph import CodeGraph
+from .schema import Node, Edge, NodeType, EdgeRelation
+from .schema import file_id, symbol_id, dir_id, repo_id, is_test_file
+from .graph import CodeGraph
 
 
 # =============================================================================
@@ -642,12 +642,21 @@ def _build_toc(
             "graph": f"sub/{slug}.json"
         }
 
+    # dirs: sorted unique directory paths derived from all file paths
+    dir_set: set[str] = set()
+    for fp in toc_files:
+        parts = fp.split("/")
+        for i in range(1, len(parts)):
+            dir_set.add("/".join(parts[:i]))
+    toc_dirs = sorted(dir_set)
+
     return {
         "generated": datetime.utcnow().isoformat() + "Z",
         "feature": feature,
         "tiers": ["repo", "directory", "file", "symbol"],
         "entry_points": toc_entry_points,
         "files": toc_files,
+        "dirs": toc_dirs,
         "tier_files": {
             "symbol": "tier_symbol.json",
             "file": "tier_file.json",
@@ -701,7 +710,7 @@ def build_tiers(feature_graph: CodeGraph, graphs_dir: Path, feature: str) -> Non
     ep_files = {ep["file"] for ep in entry_points}
     all_file_nodes = [
         n for n in feature_graph.nodes
-        if hasattr(n, "type") and n.type.value == "file" and n.file and n.file.endswith(".py")
+        if hasattr(n, "type") and n.type.value == "file" and n.file
     ]
     all_file_slugs: Dict[str, str] = {}  # file_path -> slug
 

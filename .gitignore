@@ -4,8 +4,10 @@ graphs/
 # Claude Code session memory
 .claude/
 
-# Ground truth eval working files (not for publication)
+# Development-only directories (not for publication)
 GT/
+evals/
+stress_tests/
 
 # Python
 __pycache__/

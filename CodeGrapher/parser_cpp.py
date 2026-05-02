@@ -29,11 +29,11 @@ import re
 from pathlib import Path
 from typing import List, Optional, Set, Dict, Tuple
 
-from schema import (
+from .schema import (
     Node, Edge, NodeType, EdgeRelation,
     file_id, symbol_id, type_id, is_test_file,
 )
-from graph import CodeGraph
+from .graph import CodeGraph
 
 
 # ---------------------------------------------------------------------------
@@ -395,7 +395,7 @@ class _HeaderParser(_BaseParser):
           TypeName varName = ...;
           std::unique_ptr<TypeName> varName;
 
-        Skips: primitives, juce:: types, std::function, bool/float/int/double/void
+        Skips: primitives, juce:: types, bool/float/int/double/void
         """
         # Pattern 1: std::unique_ptr<TypeName> varName  or  TypeName* varName  or  TypeName varName
         # We extract the inner type name (stripping ptr/ref/template wrappers)
@@ -406,9 +406,18 @@ class _HeaderParser(_BaseParser):
             if not line or line.startswith('//') or line.startswith('*') or line.startswith('#'):
                 continue
             if any(kw in line for kw in ('virtual', 'static', 'explicit', 'inline', 'override',
-                                          'JUCE_', '(', 'operator', 'return', 'friend')):
+                                          'JUCE_', 'operator', 'return', 'friend')):
                 continue
             if not line.endswith(';'):
+                continue
+
+            # Try std::function<Ret(Args)> varName;
+            # Store with a special "__callable__" prefix so assignment tracing can recognise it.
+            m = re.match(r'std::function\s*<\s*(.+?)\s*>\s+(\w+)', line)
+            if m:
+                signature = m.group(1)  # e.g. "void(int, float)"
+                var_name = m.group(2)
+                self._member_var_types[var_name] = f"__callable__{signature}"
                 continue
 
             # Try unique_ptr<T> varName[...];
@@ -420,15 +429,16 @@ class _HeaderParser(_BaseParser):
                     self._member_var_types[var_name] = type_name
                 continue
 
-            # Try plain: TypeName[*] varName[...];   (no template, no std::)
+            # Try plain: TypeName[*] varName[...];   (no template, no std::, no '(')
             # Must start with a capital letter (project types) or known type
-            m = re.match(r'^([A-Z]\w*)\s*\*?\s+(\w+)\s*(?:[={].*)?;', line)
-            if m:
-                type_name = m.group(1)
-                var_name = m.group(2)
-                if not _is_builtin_cpp_type(type_name) and not _is_likely_builtin_cpp(type_name):
-                    self._member_var_types[var_name] = type_name
-                continue
+            if '(' not in line:
+                m = re.match(r'^([A-Z]\w*)\s*\*?\s+(\w+)\s*(?:[={].*)?;', line)
+                if m:
+                    type_name = m.group(1)
+                    var_name = m.group(2)
+                    if not _is_builtin_cpp_type(type_name) and not _is_likely_builtin_cpp(type_name):
+                        self._member_var_types[var_name] = type_name
+                    continue
 
     def _extract_structs(self, source: str) -> None:
         """Extract struct definitions and their fields."""
@@ -1149,6 +1159,77 @@ class _ImplementationParser(_BaseParser):
                 seq=call_seq,
             ))
             processed_positions.add(pos)
+
+        # ------------------------------------------------------------------
+        # Callback assignment tracing.
+        # Patterns:
+        #   obj.member = handler_name;
+        #   obj->member = handler_name;
+        #   member = handler_name;          (bare field assignment)
+        # Emits CALLS edge when:
+        #   - RHS resolves to a known symbol, OR
+        #   - LHS field is a known std::function member (tracked as __callable__)
+        # Also handles function-pointer assignment:
+        #   member = &ClassName::method;
+        # ------------------------------------------------------------------
+        assign_pattern = re.compile(
+            r'\b(?:(\w+)\s*(?:->|\.)\s*)?(\w+)\s*=\s*(?:&[\w:]+::)?(\w+)\s*;'
+        )
+        for m in re.finditer(assign_pattern, body):
+            obj = m.group(1)       # may be None for bare assignments
+            field = m.group(2)
+            handler = m.group(3)
+
+            # Skip keywords, self-assignments, trivial words
+            if handler in (field, 'nullptr', 'null', 'true', 'false', '0',
+                           'this', 'self') or _is_likely_builtin_cpp(handler):
+                continue
+            if _is_likely_builtin_cpp(field):
+                continue
+
+            # Decide whether the LHS is a callable field.
+            # Check effective_var_types for obj-qualified fields.
+            is_callable_field = False
+            if obj:
+                declared_type = effective_var_types.get(obj)
+                # For obj.field, check if field is a __callable__ member.
+                # (We can't know without full symbol resolution; emit conservatively.)
+                is_callable_field = True
+            else:
+                # Bare field: check if it's tracked as __callable__
+                tracked = effective_var_types.get(field, "")
+                is_callable_field = tracked.startswith("__callable__")
+
+            if not is_callable_field:
+                continue
+
+            # Try to resolve the handler as a known symbol.
+            resolved_h = self._resolve_call_target(handler)
+            if resolved_h is None and class_name:
+                for base in self._class_bases.get(class_name, []):
+                    resolved_h = self._resolve_call_target(f"{base}.{handler}")
+                    if resolved_h is not None:
+                        break
+
+            if resolved_h is not None:
+                call_seq += 1
+                self.graph.add_edge(Edge(
+                    from_id=func_id,
+                    to_id=resolved_h,
+                    relation=EdgeRelation.CALLS,
+                    unresolved=False,
+                    seq=call_seq,
+                ))
+            else:
+                # Emit unresolved edge so the assignment is visible in the graph.
+                call_seq += 1
+                self.graph.add_edge(Edge(
+                    from_id=func_id,
+                    to_id=f"unresolved::{handler}",
+                    relation=EdgeRelation.CALLS,
+                    unresolved=True,
+                    seq=call_seq,
+                ))
 
     def _resolve_call_target(self, name: str) -> Optional[str]:
         """Try to find a known symbol matching this call name.

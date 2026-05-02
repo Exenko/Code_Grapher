@@ -34,6 +34,8 @@ from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
 from pydantic import BaseModel, Field
 
+from .graph_index import GraphIndex
+
 
 # ============================================================================
 # LRU Cache Implementation
@@ -190,45 +192,15 @@ def _get_tier(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str,
     with open(tier_path, "r") as f:
         tier_data = json.load(f)
 
-    _build_index(tier_data)
+    tier_data["_index"] = GraphIndex(tier_data)
     cache.put(cache_key, tier_data)
     return tier_data
 
 
-def _build_index(tier_data: dict[str, Any]) -> None:
-    """
-    Build adjacency indices for fast node/edge lookups.
-    Stores as tier_data["_index"] = {"nodes_by_id": ..., "outgoing": ..., "incoming": ...}
-    """
-    nodes = tier_data.get("nodes", [])
-    edges = tier_data.get("edges", [])
-
-    nodes_by_id = {node["id"]: node for node in nodes}
-    outgoing: dict[str, list[dict]] = {node["id"]: [] for node in nodes}
-    incoming: dict[str, list[dict]] = {node["id"]: [] for node in nodes}
-
-    for edge in edges:
-        from_id = edge.get("from")
-        to_id = edge.get("to")
-        if from_id and to_id:
-            if from_id not in outgoing:
-                outgoing[from_id] = []
-            if to_id not in incoming:
-                incoming[to_id] = []
-            outgoing[from_id].append(edge)
-            incoming[to_id].append(edge)
-
-    tier_data["_index"] = {
-        "nodes_by_id": nodes_by_id,
-        "outgoing": outgoing,
-        "incoming": incoming,
-    }
-
-
-def _get_index(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> dict[str, Any]:
-    """Retrieve adjacency indices for a tier."""
+def _get_index(tier_name: str, graph_dir: Path, toc: dict[str, Any]) -> GraphIndex:
+    """Retrieve adjacency index for a tier."""
     tier_data = _get_tier(tier_name, graph_dir, toc)
-    return tier_data.get("_index", {})
+    return tier_data["_index"]
 
 
 # ============================================================================
@@ -613,9 +585,9 @@ async def expand_node(input: ExpandNodeInput) -> dict[str, Any]:
     node_id = input.node_id
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
-    incoming = index.get("incoming", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
+    incoming = index.incoming
 
     node = nodes_by_id.get(node_id)
     if not node:
@@ -685,9 +657,9 @@ async def find_type(input: FindTypeInput) -> list[dict[str, Any]]:
     search_term = input.type_name.lower()
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
-    incoming = index.get("incoming", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
+    incoming = index.incoming
 
     nodes = tier_symbol_data.get("nodes", [])
     matching_types = [
@@ -803,9 +775,9 @@ async def find_symbol(input: FindSymbolInput) -> list[dict[str, Any]]:
     search_term = input.name_substring.lower()
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
-    incoming = index.get("incoming", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
+    incoming = index.incoming
 
     nodes = tier_symbol_data.get("nodes", [])
     matching = [
@@ -879,9 +851,9 @@ async def search(input: SearchInput) -> dict[str, Any]:
     search_term = input.name_substring.lower()
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
-    incoming = index.get("incoming", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
+    incoming = index.incoming
 
     nodes = tier_symbol_data.get("nodes", [])
     matching = [
@@ -953,8 +925,8 @@ async def get_file_symbols(input: GetFileSymbolsInput) -> dict[str, Any]:
     search_term = input.file_path.lower()
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
 
     nodes = tier_symbol_data.get("nodes", [])
 
@@ -1052,9 +1024,9 @@ async def trace_data_flow(input: TraceDataFlowInput) -> dict[str, Any]:
 
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
-    incoming = index.get("incoming", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
+    incoming = index.incoming
 
     if from_id not in nodes_by_id:
         return {
@@ -1146,8 +1118,8 @@ async def summarize_entry_point(input: SummarizeEntryPointInput) -> dict[str, An
 
     tier_symbol_data = _get_tier("symbol", graph_dir, toc)
     index = _get_index("symbol", graph_dir, toc)
-    nodes_by_id = index.get("nodes_by_id", {})
-    outgoing = index.get("outgoing", {})
+    nodes_by_id = index.nodes_by_id
+    outgoing = index.outgoing
 
     entry_node = nodes_by_id.get(entry_id)
     if not entry_node:

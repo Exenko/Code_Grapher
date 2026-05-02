@@ -162,3 +162,17 @@ def dir_id(feature: str, rel_dir: str) -> str:
 def repo_id(feature: str, name: str) -> str:
     """ID for a repository/root node. e.g. autofill::repo::SmartRecipeApp"""
     return f"{feature}::repo::{name}"
+
+
+def node_id_tier(node_id: str) -> str:
+    """Return the tier for a node ID: 'repo', 'dir', 'file', or 'symbol'."""
+    parts = node_id.split("::")
+    if len(parts) >= 2:
+        second = parts[1]
+        if second == "repo":
+            return "repo"
+        if second == "dir":
+            return "dir"
+    if len(parts) == 2:
+        return "file"
+    return "symbol"

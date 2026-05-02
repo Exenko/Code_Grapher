@@ -25,12 +25,12 @@ import os
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
-from schema import (
+from .schema import (
     Node, Edge,
     NodeType, EdgeRelation,
     file_id, symbol_id, type_id,
 )
-from graph import CodeGraph
+from .graph import CodeGraph
 
 
 # ---------------------------------------------------------------------------
@@ -241,16 +241,6 @@ def parse_file(feature: str, root: Path, filepath: Path,
     )
     parser.parse()
     return g
-
-
-def resolve_calls(graph: CodeGraph, known_symbol_ids: Set[str]) -> None:
-    """
-    Pass 2 in-place: upgrade unresolved calls where target is now known.
-    """
-    for edge in graph.edges:
-        if edge.relation == EdgeRelation.CALLS and edge.unresolved:
-            if edge.to_id in known_symbol_ids:
-                edge.unresolved = False
 
 
 # ---------------------------------------------------------------------------

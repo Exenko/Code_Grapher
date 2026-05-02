@@ -6,16 +6,41 @@ build-backend = "setuptools.build_meta"
 name = "codegrapher"
 version = "0.1.0"
 description = "AST-based codebase cartography tool — parse any project into an interactive graph"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Mike Harris" }]
+keywords = ["ast", "code-graph", "codebase", "visualization", "mcp", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
 requires-python = ">=3.10"
 dependencies = [
     "mcp[cli]",
     "pydantic",
 ]
 
+[project.urls]
+Repository = "https://github.com/Exenko/Code_Grapher"
+Homepage = "https://github.com/Exenko/Code_Grapher"
+
 [project.scripts]
 codegrapher       = "CodeGrapher.run:main"
 codegrapher-serve = "CodeGrapher.serve:main"
 codegrapher-mcp   = "CodeGrapher.mcp_server:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.setuptools.packages.find]
 where = ["."]
