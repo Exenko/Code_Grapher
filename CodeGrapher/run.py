@@ -30,16 +30,16 @@ sys.path.insert(0, str(_HERE))
 
 import ast as _ast_mod
 
-from schema import NodeType
-from graph import CodeGraph
-from parser_python import parse_file as parse_python, resolve_calls, _annotation_names, _is_builtin_type
-from parser_cpp import parse_file as parse_cpp
-from parser_proto import parse_file as parse_proto
-from parser_xml import parse_file as parse_xml
-from parser_typescript import parse_file as parse_typescript, resolve_calls as resolve_calls_ts
-from parser_java import parse_file as parse_java, resolve_calls as resolve_calls_java
-from parser_kotlin import parse_file as parse_kotlin, resolve_calls as resolve_calls_kotlin
-from tiered_builder import build_tiers
+from .schema import NodeType
+from .graph import CodeGraph
+from .parser_python import parse_file as parse_python, _annotation_names, _is_builtin_type
+from .parser_cpp import parse_file as parse_cpp
+from .parser_proto import parse_file as parse_proto
+from .parser_xml import parse_file as parse_xml
+from .parser_typescript import parse_file as parse_typescript
+from .parser_java import parse_file as parse_java
+from .parser_kotlin import parse_file as parse_kotlin
+from .tiered_builder import build_tiers
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +103,7 @@ def main() -> None:
 
     # Build mapping: module name/stem -> file_id, for local file import detection
     # Maps both stem (e.g. "barcode_database") and dotted path (e.g. "src.barcode_database")
-    from schema import file_id as make_file_id
+    from .schema import file_id as make_file_id
     known_file_ids: dict[str, str] = {}
     for filepath in all_files:
         if filepath.suffix.lower() != '.py':

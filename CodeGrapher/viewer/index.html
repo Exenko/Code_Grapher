@@ -5,49 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeGrapher</title>
   <link rel="stylesheet" href="styles.css">
-<script>
-// LOD fetch bootstrap — graph data is loaded progressively by graph.js
-// GRAPH_DATA is null when served via serve.py; graph.js checks and fetches accordingly
-const GRAPH_DATA = null;
-</script>
-<div id="loading" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:#8899bb;font-family:monospace;font-size:14px;z-index:999;">
-  Loading graph data…
-</div>
+  <script>
+    const GRAPH_DATA = null;
+  </script>
+  <style>
+    /* Loading screen */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: oklch(0.08 0.025 220);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      gap: 20px;
+    }
+    #loading-logo {
+      font-size: 11px;
+      color: oklch(0.45 0.05 220);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    #loading-logo span {
+      color: #2060a0;
+    }
+    #loading-bar-wrap {
+      width: 200px;
+      height: 2px;
+      background: oklch(0.18 0.04 220);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    #loading-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2060a0, #00d060);
+      border-radius: 1px;
+      animation: loading-sweep 1.8s ease-in-out infinite;
+    }
+    @keyframes loading-sweep {
+      0%   { width: 0%;   margin-left: 0%; }
+      50%  { width: 60%;  margin-left: 20%; }
+      100% { width: 0%;   margin-left: 100%; }
+    }
+    #loading-status {
+      font-size: 10px;
+      color: oklch(0.32 0.04 220);
+      letter-spacing: 0.08em;
+    }
+
+    /* Inline tree panel styles (here so they load before graph.js) */
+    #tree-panel {
+      position: fixed;
+      left: 0; top: 0; bottom: 0;
+      width: 200px;
+      background: oklch(0.11 0.025 220);
+      border-right: 1px solid oklch(0.18 0.04 220);
+      box-shadow: 4px 0 16px oklch(0 0 0 / 0.35);
+      display: flex;
+      flex-direction: column;
+      z-index: 50;
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 11px;
+      overflow: hidden;
+    }
+    #tree-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 8px;
+      border-bottom: 1px solid oklch(0.18 0.04 220);
+      color: oklch(0.45 0.05 220);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      flex-shrink: 0;
+    }
+    #tree-breadcrumb {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+    #tree-reset {
+      background: none;
+      border: none;
+      color: oklch(0.45 0.05 220);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 0 0 0 4px;
+      flex-shrink: 0;
+    }
+    #tree-reset:hover { color: #00d060; }
+    #tree-content {
+      overflow-y: auto;
+      flex: 1;
+      padding: 3px 0;
+    }
+    .tree-item {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px 8px;
+      cursor: pointer;
+      color: oklch(0.65 0.05 220);
+      user-select: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tree-item:hover { background: oklch(0.15 0.025 220); color: oklch(0.88 0.04 220); }
+    .tree-item.active { background: oklch(0.13 0.04 160); color: #00d060; }
+    .tree-item .tree-icon { flex-shrink: 0; }
+    .tree-item .tree-label { overflow: hidden; text-overflow: ellipsis; }
+    #graph-container { margin-left: 200px; }
+  </style>
 </head>
 <body>
-  <!-- Diagram overlay panel for flow/type diagrams -->
-  <div id="diagram-panel" style="display:none;position:fixed;top:0;right:0;bottom:0;width:75%;background:#0d0f1a;border-left:2px solid #2a3050;z-index:100;overflow:hidden;box-sizing:border-box;flex-direction:column;">
-    <!-- Drag-resize handle on left edge -->
-    <div id="diagram-resize" style="position:absolute;left:0;top:0;bottom:0;width:5px;cursor:ew-resize;background:transparent;z-index:101;" title="Drag to resize"></div>
-    <!-- Toolbar -->
-    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #2a3050;flex-shrink:0;flex-wrap:wrap;">
-      <span id="diagram-title" style="color:#8899bb;font-family:monospace;font-size:12px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
-      <label style="color:#8899bb;font-family:monospace;font-size:11px;white-space:nowrap;">
+
+  <!-- Loading screen -->
+  <div id="loading">
+    <div id="loading-logo">Code<span>Grapher</span></div>
+    <div id="loading-bar-wrap"><div id="loading-bar"></div></div>
+    <div id="loading-status">fetching graph data&hellip;</div>
+  </div>
+
+  <!-- Diagram overlay panel -->
+  <div id="diagram-panel" style="display:none;position:fixed;top:0;right:0;bottom:0;width:72%;background:oklch(0.08 0.025 220);border-left:1px solid oklch(0.18 0.04 220);box-shadow:-4px 0 20px oklch(0 0 0 / 0.4);z-index:100;overflow:hidden;box-sizing:border-box;flex-direction:column;">
+    <div id="diagram-resize" style="position:absolute;left:0;top:0;bottom:0;width:4px;cursor:ew-resize;background:transparent;z-index:101;" title="Drag to resize"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:7px 12px;border-bottom:1px solid oklch(0.18 0.04 220);flex-shrink:0;flex-wrap:wrap;background:oklch(0.11 0.025 220);">
+      <span style="font-family:'JetBrains Mono',Consolas,monospace;font-size:9px;color:oklch(0.32 0.04 220);text-transform:uppercase;letter-spacing:0.12em;margin-right:2px;">//</span>
+      <span id="diagram-title" style="color:oklch(0.65 0.05 220);font-family:'JetBrains Mono',Consolas,monospace;font-size:11px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+      <label style="color:oklch(0.45 0.05 220);font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;white-space:nowrap;display:flex;align-items:center;gap:5px;">
         zoom
-        <input id="diagram-zoom" type="range" min="20" max="500" value="100" style="width:90px;vertical-align:middle;accent-color:#6a3aaf;">
-        <span id="diagram-zoom-val" style="color:#ccd;min-width:32px;display:inline-block;">100%</span>
+        <input id="diagram-zoom" type="range" min="20" max="500" value="100" style="width:80px;vertical-align:middle;accent-color:#2060a0;">
+        <span id="diagram-zoom-val" style="color:oklch(0.65 0.05 220);min-width:34px;display:inline-block;font-size:10px;">100%</span>
       </label>
-      <button id="diagram-zoom-reset" style="background:#1e2236;color:#8899bb;border:1px solid #2a3050;padding:3px 7px;border-radius:3px;cursor:pointer;font-family:monospace;font-size:11px;" title="Reset zoom">1:1</button>
-      <button id="diagram-fullscreen" style="background:#1e2236;color:#8899bb;border:1px solid #2a3050;padding:3px 7px;border-radius:3px;cursor:pointer;font-family:monospace;font-size:11px;" title="Toggle full width">⤢</button>
-      <button id="diagram-close" style="background:#1e2236;color:#8899bb;border:1px solid #2a3050;padding:3px 8px;border-radius:3px;cursor:pointer;font-family:monospace;font-size:11px;">✕</button>
+      <button id="diagram-zoom-reset" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 7px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Reset zoom">1:1</button>
+      <button id="diagram-fullscreen" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 7px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Toggle full width">&#x2922;</button>
+      <button id="diagram-close" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Close [Esc]">&#x2715; esc</button>
     </div>
-    <!-- Scrollable content area -->
-    <div id="diagram-scroll" style="overflow:auto;flex:1;padding:12px;">
+    <div id="diagram-scroll" style="overflow:auto;flex:1;padding:14px;">
       <div id="diagram-content" style="transform-origin:top left;"></div>
     </div>
   </div>
 
+  <!-- VS Code-style directory tree panel -->
+  <div id="tree-panel">
+    <div id="tree-header">
+      <span id="tree-breadcrumb">explorer</span>
+      <button id="tree-reset" title="Reset filter" style="display:none;">&#x2715;</button>
+    </div>
+    <div id="tree-content"></div>
+  </div>
+
   <div id="graph-container">
     <div id="controls">
-      <input id="search" type="text" placeholder="Search nodes…" autocomplete="off">
-      <button class="filter-btn" data-type="stdlib" title="Toggle stdlib/external imports">hide stdlib</button>
-      <button class="filter-btn" data-type="symbol" title="Toggle symbol nodes">hide symbols</button>
-      <button class="filter-btn" data-relation="imports" title="Toggle imports edges">hide imports</button>
-      <button class="filter-btn" data-relation="defines" title="Toggle defines edges">hide defines</button>
-      <button class="filter-btn" data-relation="calls" title="Toggle calls edges">hide calls</button>
-      <button class="filter-btn" data-relation="contains" title="Toggle contains edges">hide contains</button>
+      <input id="search" type="text" placeholder="search nodes&hellip;" autocomplete="off" spellcheck="false">
+      <button class="filter-btn" data-type="stdlib" title="Toggle stdlib/external nodes">stdlib</button>
+      <button class="filter-btn" data-type="symbol" title="Toggle symbol nodes">symbols</button>
+      <button class="filter-btn" data-relation="imports" title="Toggle imports edges">imports</button>
+      <button class="filter-btn" data-relation="defines" title="Toggle defines edges">defines</button>
+      <button class="filter-btn" data-relation="calls" title="Toggle calls edges">calls</button>
+      <button class="filter-btn" data-relation="contains" title="Toggle contains edges">contains</button>
       <span id="stats"></span>
-      <span id="feature-title" style="font-size:11px;color:#4a5270;margin-left:8px;"></span>
+      <span id="feature-title"></span>
     </div>
     <svg id="graph"></svg>
   </div>
@@ -57,31 +181,33 @@ const GRAPH_DATA = null;
     <div id="sidebar-content"></div>
     <div id="legend">
       <div class="legend-item">
-        <div class="legend-dot" style="background:#2a4a7a;border-color:#4a90d9"></div>
+        <div class="legend-dot" style="background:#04101e;border-color:#2060a0"></div>
         <span>file</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="background:#1a3a2a;border-color:#5cb85c"></div>
+        <div class="legend-dot" style="background:#041208;border-color:#208040"></div>
         <span>symbol</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="background:#2a1a3a;border-color:#9b59b6"></div>
+        <div class="legend-dot" style="background:#0e0420;border-color:#7030a8"></div>
         <span>type</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="background:#3a2a1a;border-color:#e67e22"></div>
+        <div class="legend-dot" style="background:#160900;border-color:#d07020"></div>
         <span>test</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="background:#1e1e1e;border-color:#555"></div>
+        <div class="legend-dot" style="background:#0a0a12;border-color:#1e1e30"></div>
         <span>stdlib</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#050c1e;border-color:#1a3a70"></div>
+        <span>dir</span>
       </div>
     </div>
   </div>
 
-  <!-- Mermaid for state/class diagrams -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
-  <!-- D3 v7 from CDN — requires internet on first load only -->
   <script src="d3.min.js"></script>
   <script src="graph.js"></script>
 </body>

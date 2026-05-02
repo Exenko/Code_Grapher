@@ -461,6 +461,8 @@ def _render_symbol_level(
         lines.append("")
 
     # Emit transitions (skip unresolved/empty targets)
+    # Count call order per from-symbol for display (per-caller seq)
+    from_sym_call_count: dict[str, int] = defaultdict(int)
     seen_sym_transitions: set = set()
     for step in steps:
         if not step["to_file"]:
@@ -477,7 +479,8 @@ def _render_symbol_level(
         if trans_key in seen_sym_transitions:
             continue
         seen_sym_transitions.add(trans_key)
-        seq_label = f"seq={step['seq']}" if step["seq"] else "calls"
+        from_sym_call_count[from_ssid] += 1
+        seq_label = f"seq={from_sym_call_count[from_ssid]}"
         lines.append(f"{from_ssid} --> {to_ssid} : {seq_label}")
 
     lines.append("")

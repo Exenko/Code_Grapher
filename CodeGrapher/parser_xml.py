@@ -8,7 +8,7 @@ Creates maps_to edges across language boundaries using name matching heuristics.
 
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from schema import Node, Edge, NodeType, EdgeRelation, file_id, symbol_id, type_id
+from .schema import Node, Edge, NodeType, EdgeRelation, file_id, symbol_id, type_id
 
 
 def parse_file(
@@ -29,7 +29,7 @@ def parse_file(
     Returns:
         CodeGraph with file, symbol, and type nodes; defines/contains/maps_to edges
     """
-    from graph import CodeGraph
+    from .graph import CodeGraph
 
     g = CodeGraph(feature)
 

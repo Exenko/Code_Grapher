@@ -106,6 +106,8 @@ codegrapher-mcp --graphs ./graphs
 
 See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for full MCP setup and tool reference.
 
+> **Note:** The MCP server uses process-level global state for the active graph. Running two concurrent Claude sessions against the same `codegrapher-mcp` process will cause them to interfere. Start a separate server process per session if you need concurrent access.
+
 ---
 
 ## Typical workflow

@@ -34,12 +34,12 @@ from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Set, Tuple
 
-from schema import (
+from .schema import (
     Node, Edge,
     NodeType, EdgeRelation,
     file_id, symbol_id, type_id,
 )
-from graph import CodeGraph
+from .graph import CodeGraph
 
 # ---------------------------------------------------------------------------
 # Helpers

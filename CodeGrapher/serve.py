@@ -23,6 +23,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 # Import analyze module functions
 sys.path.insert(0, os.path.dirname(__file__))
 from analyze import flow_trace, type_expander
+from schema import node_id_tier
 
 
 # Module-level JSON cache: abs_path_str -> parsed dict
@@ -58,23 +59,20 @@ def _neighbors_response(node_id: str) -> tuple[int, dict]:
     Parse node_id, load appropriate graph file, find node + neighbors.
     Returns (status_code, response_dict).
     """
-    parts = node_id.split("::")
-
-    if len(parts) < 2:
+    if len(node_id.split("::")) < 2:
         return 400, {"error": "invalid node id", "id": node_id}
 
-    second = parts[1]
+    tier = node_id_tier(node_id)
 
-    if second == "dir":
+    if tier == "dir":
         graph_file = _graphs_dir / "tier_directory.json"
-    elif second == "repo":
+    elif tier == "repo":
         graph_file = _graphs_dir / "tier_repo.json"
-    elif len(parts) == 2:
-        # file node
+    elif tier == "file":
         graph_file = _graphs_dir / "tier_file.json"
-    elif len(parts) == 3:
-        # symbol node — find sub-graph via toc.json
-        file_path = parts[1]
+    else:
+        # symbol — find sub-graph via toc.json
+        file_path = node_id.split("::")[1]
         toc = _load_json(_graphs_dir / "toc.json")
         slug = None
         if toc:
@@ -85,9 +83,7 @@ def _neighbors_response(node_id: str) -> tuple[int, dict]:
         if slug:
             graph_file = _graphs_dir / "sub" / f"{slug}.json"
         else:
-            graph_file = _graphs_dir / "tier_file.json"
-    else:
-        graph_file = _graphs_dir / "tier_symbol.json"
+            graph_file = _graphs_dir / "tier_symbol.json"
 
     data = _load_json(graph_file)
     if data is None:
@@ -122,8 +118,8 @@ def _neighbors_response(node_id: str) -> tuple[int, dict]:
 class _Handler(BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):  # noqa: A002
-        # Suppress default per-request logging; errors still visible
-        pass
+        if args and str(args[1]).startswith(("4", "5")):
+            super().log_message(format, *args)
 
     def do_GET(self):
         parsed = urlparse(self.path)

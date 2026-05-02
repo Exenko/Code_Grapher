@@ -6,6 +6,8 @@ Extracts nodes and edges from a single .proto file:
   - message types → TYPE nodes
   - nested messages → TYPE nodes + contains edges
   - enum types → TYPE nodes
+  - service blocks → SYMBOL nodes + rpc method SYMBOL nodes
+  - rpc methods → SYMBOL nodes with type resolution for request/response
   - message fields → contains/uses_type edges for non-scalar types
   - imports → depends_on edges
   - maps_to edges for proto-to-other-language type mappings (name convention)
@@ -19,11 +21,11 @@ import re
 from pathlib import Path
 from typing import Optional, Set, Dict, List, Tuple
 
-from schema import (
+from .schema import (
     Node, Edge, NodeType, EdgeRelation,
-    file_id, type_id, is_test_file,
+    file_id, type_id, symbol_id, is_test_file,
 )
-from graph import CodeGraph
+from .graph import CodeGraph
 
 
 # ---------------------------------------------------------------------------
@@ -98,6 +100,9 @@ class _ProtoFileParser:
 
         # Extract top-level messages and enums
         self._extract_top_level_types()
+
+        # Extract top-level services
+        self._extract_services()
 
         # After all types are extracted, create maps_to edges by naming convention
         self._create_maps_to_edges()
@@ -215,6 +220,118 @@ class _ProtoFileParser:
         for match in re.finditer(r'^\s*enum\s+(\w+)\s*\{', clean_source, re.MULTILINE):
             enum_name = match.group(1)
             self._add_enum_node(enum_name)
+
+    def _extract_services(self) -> None:
+        """Extract all top-level (non-nested) service definitions."""
+        # Remove comments to avoid false matches in // comments
+        clean_source = self._remove_comments(self.source)
+
+        # Find all top-level services (not indented)
+        for match in re.finditer(r'^\s*service\s+(\w+)\s*\{', clean_source, re.MULTILINE):
+            service_name = match.group(1)
+            service_start = match.start()
+            service_end = self._find_closing_brace(clean_source, match.end() - 1)
+
+            if service_end is not None:
+                service_body = clean_source[match.end():service_end]
+                service_id = self._add_service_node(service_name)
+                self._extract_rpc_methods(service_name, service_id, service_body)
+
+    def _add_service_node(self, service_name: str) -> str:
+        """Create a SYMBOL node for a service."""
+        service_id = symbol_id(self.feature, self.rel_path, service_name)
+
+        self.graph.add_node(Node(
+            id=service_id,
+            type=NodeType.SYMBOL,
+            label=service_name,
+            file=self.rel_path,
+            line=None,
+            language="proto",
+        ))
+
+        # Create defines edge from file to service
+        self.graph.add_edge(Edge(
+            from_id=self.file_node_id,
+            to_id=service_id,
+            relation=EdgeRelation.DEFINES,
+        ))
+        return service_id
+
+    def _extract_rpc_methods(self, service_name: str, service_id: str, body: str) -> None:
+        """Extract rpc method definitions from a service body."""
+        # Captures: (1) method name, (2) request type, (3) response type
+        # stream keyword is skipped via non-capturing group
+        pattern = (
+            r'rpc\s+(\w+)\s*\(\s*(?:stream\s+)?([\w.]+)\s*\)\s*'
+            r'returns\s*\(\s*(?:stream\s+)?([\w.]+)\s*\)'
+        )
+
+        for match in re.finditer(pattern, body):
+            rpc_name = match.group(1)
+            request_type = match.group(2)
+            response_type = match.group(3)
+
+            # Create RPC method SYMBOL node: "ServiceName.RpcName"
+            rpc_label = f"{service_name}.{rpc_name}"
+            rpc_id = symbol_id(self.feature, self.rel_path, rpc_label)
+
+            self.graph.add_node(Node(
+                id=rpc_id,
+                type=NodeType.SYMBOL,
+                label=rpc_label,
+                file=self.rel_path,
+                line=None,
+                language="proto",
+            ))
+
+            # Create contains edge from service to rpc method
+            self.graph.add_edge(Edge(
+                from_id=service_id,
+                to_id=rpc_id,
+                relation=EdgeRelation.CONTAINS,
+            ))
+
+            # Create defines edge from file to rpc method
+            self.graph.add_edge(Edge(
+                from_id=self.file_node_id,
+                to_id=rpc_id,
+                relation=EdgeRelation.DEFINES,
+            ))
+
+            # Resolve request type and create edge
+            resolved_request = self._resolve_field_type(request_type, rpc_id)
+            if resolved_request:
+                self.graph.add_edge(Edge(
+                    from_id=rpc_id,
+                    to_id=resolved_request,
+                    relation=EdgeRelation.USES_TYPE,
+                ))
+            else:
+                # Unresolved request type
+                self.graph.add_edge(Edge(
+                    from_id=rpc_id,
+                    to_id=f"unresolved::{request_type}",
+                    relation=EdgeRelation.USES_TYPE,
+                    unresolved=True,
+                ))
+
+            # Resolve response type and create edge
+            resolved_response = self._resolve_field_type(response_type, rpc_id)
+            if resolved_response:
+                self.graph.add_edge(Edge(
+                    from_id=rpc_id,
+                    to_id=resolved_response,
+                    relation=EdgeRelation.USES_TYPE,
+                ))
+            else:
+                # Unresolved response type
+                self.graph.add_edge(Edge(
+                    from_id=rpc_id,
+                    to_id=f"unresolved::{response_type}",
+                    relation=EdgeRelation.USES_TYPE,
+                    unresolved=True,
+                ))
 
     def _extract_nested_types(self, parent_msg_name: str, body: str) -> None:
         """Extract nested messages and enums within a parent message."""
