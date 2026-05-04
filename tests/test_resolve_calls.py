@@ -373,3 +373,19 @@ class TestEdgeCases:
         resolve_calls_via_graph(graph, known_symbols)
 
         assert graph.edges[0].unresolved is False
+
+    def test_symbol_in_registry_but_no_matching_edge(self, feature):
+        graph = CodeGraph(feature)
+        caller = symbol_id(feature, "foo.py", "caller")
+        callee = symbol_id(feature, "bar.py", "callee")
+
+        edge = Edge(caller, callee, EdgeRelation.CALLS, unresolved=False)
+        graph.add_edge(edge)
+
+        # Put a totally different symbol in the registry — no edge points to it
+        unrelated = symbol_id(feature, "other.py", "unrelated")
+        resolve_calls_via_graph(graph, {unrelated})
+
+        assert graph.edge_count() == 1
+        assert graph.edges[0].unresolved is False
+        assert graph.edges[0].to_id == callee

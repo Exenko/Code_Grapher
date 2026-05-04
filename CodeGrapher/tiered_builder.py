@@ -27,31 +27,17 @@ from .graph import CodeGraph
 # Entry Point Detection
 # =============================================================================
 
-def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]:
-    """
-    Detect entry point files using tightened priority-ordered rules.
-
-    A file is an entry point ONLY if it meets one of:
-    1. Contains `if __name__ == "__main__"` block (scanned from disk) AND
-       does not match script/migration/setup path or filename patterns.
-    2. Is an __init__.py file (package surface).
-
-    Test files (test_*.py, conftest.py) are NEVER entry points.
-
-    Returns list of dicts: {"slug": str, "file": str, "reason": str}
-    """
-    # Path substrings that disqualify a __main__ file from being an entry point
+class EntryPointDetector:
     _SCRIPT_PATH_PATTERNS = {
         "/tests/",
         "/test_scripts/",
-        "test_scripts/",   # top-level test_scripts/ directory
+        "test_scripts/",
         "/scripts/",
         "/first_boot/",
         "/db/",
-        "/utils/",         # utility modules with dev-only __main__ blocks
+        "/utils/",
     }
 
-    # Filename prefixes that disqualify a __main__ file from being an entry point
     _SCRIPT_FILENAME_PREFIXES = (
         "test_",
         "autocomplete_",
@@ -71,11 +57,91 @@ def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]
         "export_",
     )
 
-    file_nodes = {n.id: n for n in graph.nodes if n.type == NodeType.FILE}
-    if not file_nodes:
-        return []
+    def detect(self, graph: CodeGraph, feature: str) -> List[Dict[str, str]]:
+        """
+        Detect entry point files using tightened priority-ordered rules.
 
-    def _has_main_block(file_path: str) -> bool:
+        A file is an entry point ONLY if it meets one of:
+        1. Contains `if __name__ == "__main__"` block (scanned from disk) AND
+           does not match script/migration/setup path or filename patterns.
+        2. Is an __init__.py file (package surface).
+
+        Test files (test_*.py, conftest.py) are NEVER entry points.
+
+        Returns list of dicts: {"slug": str, "file": str, "reason": str}
+        """
+        file_nodes = {n.id: n for n in graph.nodes if n.type == NodeType.FILE}
+        if not file_nodes:
+            return []
+
+        entry_point_files: dict[str, str] = {}
+        for n in graph.nodes:
+            if n.type == NodeType.SYMBOL and getattr(n, "entry_point", False) and n.file:
+                entry_point_files.setdefault(n.file, n.label)
+
+        entry_points = []
+        seen_files = set()
+
+        for node_id, node in file_nodes.items():
+            if not node.file:
+                continue
+            file_path = node.file
+            filename = file_path.replace("\\", "/").split("/")[-1]
+
+            if is_test_file(file_path):
+                continue
+
+            if file_path in seen_files:
+                continue
+
+            if self._has_main_block(file_path) and not self._is_script_file(file_path, filename):
+                slug = _make_slug(file_path)
+                entry_points.append({
+                    "slug": slug,
+                    "file": file_path,
+                    "reason": "contains if __name__ == '__main__' block",
+                })
+                seen_files.add(file_path)
+                continue
+
+            if file_path in entry_point_files:
+                slug = _make_slug(file_path)
+                entry_points.append({
+                    "slug": slug,
+                    "file": file_path,
+                    "reason": f"contains entry point: {entry_point_files[file_path]}",
+                })
+                seen_files.add(file_path)
+                continue
+
+            if filename == "__init__.py" and self._file_has_exports(graph, node_id):
+                slug = _make_slug(file_path)
+                entry_points.append({
+                    "slug": slug,
+                    "file": file_path,
+                    "reason": "package surface with exports (__init__.py)",
+                })
+                seen_files.add(file_path)
+                continue
+
+        symbol_nodes = {n.id: n for n in graph.nodes if n.type == NodeType.SYMBOL}
+        for node_id, node in symbol_nodes.items():
+            if node.label == "main" and node.file:
+                file_path = node.file
+                ext = file_path.rsplit('.', 1)[-1] if '.' in file_path else ''
+                if ext in ('cc', 'cpp', 'c'):
+                    if file_path not in seen_files:
+                        slug = _make_slug(file_path)
+                        entry_points.append({
+                            "slug": slug,
+                            "file": file_path,
+                            "reason": "C++ main() function",
+                        })
+                        seen_files.add(file_path)
+
+        return entry_points
+
+    def _has_main_block(self, file_path: str) -> bool:
         try:
             with open(file_path, "r", encoding="utf-8", errors="ignore") as fh:
                 src = fh.read()
@@ -83,95 +149,38 @@ def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]
         except OSError:
             return False
 
-    def _is_script_file(file_path: str, filename: str) -> bool:
+    def _is_script_file(self, file_path: str, filename: str) -> bool:
         """Return True if the file matches script/migration/setup patterns."""
         normalized = file_path.replace("\\", "/")
-        for pattern in _SCRIPT_PATH_PATTERNS:
+        for pattern in self._SCRIPT_PATH_PATTERNS:
             if pattern in normalized:
                 return True
-        if filename.startswith(_SCRIPT_FILENAME_PREFIXES):
+        if filename.startswith(self._SCRIPT_FILENAME_PREFIXES):
             return True
         return False
 
-    def _file_has_exports(file_id: str) -> bool:
+    def _file_has_exports(self, graph: CodeGraph, file_id: str) -> bool:
         """Return True if the file node has at least one defines or contains edge."""
         for edge in graph.edges:
             if edge.from_id == file_id and edge.relation in (EdgeRelation.DEFINES, EdgeRelation.CONTAINS):
                 return True
         return False
 
-    # Collect files that contain symbols explicitly marked entry_point=True
-    entry_point_files: dict[str, str] = {}  # file_path -> symbol label
-    for n in graph.nodes:
-        if n.type == NodeType.SYMBOL and getattr(n, "entry_point", False) and n.file:
-            entry_point_files.setdefault(n.file, n.label)
 
-    entry_points = []
-    seen_files = set()
+def _detect_entry_points(graph: CodeGraph, feature: str) -> List[Dict[str, str]]:
+    """
+    Detect entry point files using tightened priority-ordered rules.
 
-    for node_id, node in file_nodes.items():
-        if not node.file:
-            continue
-        file_path = node.file
-        filename = file_path.replace("\\", "/").split("/")[-1]
+    A file is an entry point ONLY if it meets one of:
+    1. Contains `if __name__ == "__main__"` block (scanned from disk) AND
+       does not match script/migration/setup path or filename patterns.
+    2. Is an __init__.py file (package surface).
 
-        # NEVER include test files
-        if is_test_file(file_path):
-            continue
+    Test files (test_*.py, conftest.py) are NEVER entry points.
 
-        if file_path in seen_files:
-            continue
-
-        # Rule 1: if __name__ == "__main__" block present, but not a script file
-        if _has_main_block(file_path) and not _is_script_file(file_path, filename):
-            slug = _make_slug(file_path)
-            entry_points.append({
-                "slug": slug,
-                "file": file_path,
-                "reason": "contains if __name__ == '__main__' block",
-            })
-            seen_files.add(file_path)
-            continue
-
-        # Rule 2: file contains a symbol marked entry_point=True (route handlers, etc.)
-        if file_path in entry_point_files:
-            slug = _make_slug(file_path)
-            entry_points.append({
-                "slug": slug,
-                "file": file_path,
-                "reason": f"contains entry point: {entry_point_files[file_path]}",
-            })
-            seen_files.add(file_path)
-            continue
-
-        # Rule 3: __init__.py with meaningful content (has defines/contains edges)
-        if filename == "__init__.py" and _file_has_exports(node_id):
-            slug = _make_slug(file_path)
-            entry_points.append({
-                "slug": slug,
-                "file": file_path,
-                "reason": "package surface with exports (__init__.py)",
-            })
-            seen_files.add(file_path)
-            continue
-
-    # Rule 3: C++ main() functions
-    symbol_nodes = {n.id: n for n in graph.nodes if n.type == NodeType.SYMBOL}
-    for node_id, node in symbol_nodes.items():
-        if node.label == "main" and node.file:
-            file_path = node.file
-            ext = file_path.rsplit('.', 1)[-1] if '.' in file_path else ''
-            if ext in ('cc', 'cpp', 'c'):
-                if file_path not in seen_files:
-                    slug = _make_slug(file_path)
-                    entry_points.append({
-                        "slug": slug,
-                        "file": file_path,
-                        "reason": "C++ main() function",
-                    })
-                    seen_files.add(file_path)
-
-    return entry_points
+    Returns list of dicts: {"slug": str, "file": str, "reason": str}
+    """
+    return EntryPointDetector().detect(graph, feature)
 
 
 def _make_slug(file_path: str) -> str:
@@ -259,21 +268,21 @@ def _build_sub_graph(
         )
         sub_nodes.append(entry_node.to_dict())
 
-    # 2. Add all symbols/types defined in this file
-    symbol_ids_in_file = set()
-    for n in graph.nodes:
-        if n.type in (NodeType.SYMBOL, NodeType.TYPE) and n.file == entry_file:
-            sub_nodes.append(n.to_dict())
-            symbol_ids_in_file.add(n.id)
+    # 2+3. Collect symbols in this file and internal edges via subgraph
+    symbol_ids_in_file = {
+        n.id for n in graph.nodes
+        if n.type in (NodeType.SYMBOL, NodeType.TYPE) and n.file == entry_file
+    }
+    file_subgraph = graph.subgraph_by_symbols(symbol_ids_in_file)
+    for n in file_subgraph.nodes:
+        sub_nodes.append(n.to_dict())
+    for edge in file_subgraph.edges:
+        sub_edges.append(edge.to_dict())
 
-    # 3. Add edges between nodes in this sub-graph
+    # Collect import edges going OUT of this file
     for edge in graph.edges:
         if edge.from_id in symbol_ids_in_file or edge.from_id == entry_node.id:
-            if edge.to_id in symbol_ids_in_file or edge.to_id == entry_node.id:
-                # Internal edge
-                sub_edges.append(edge.to_dict())
-            else:
-                # Outgoing edge: check if it's an import
+            if edge.to_id not in symbol_ids_in_file and edge.to_id != entry_node.id:
                 if edge.relation == EdgeRelation.IMPORTS:
                     to_file = _extract_file_from_id(edge.to_id, feature)
                     if to_file and to_file not in imported_files:

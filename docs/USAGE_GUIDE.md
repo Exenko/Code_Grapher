@@ -12,11 +12,13 @@ A practical guide for building graphs, exploring them in the browser, and option
 codegrapher --feature myfeature --root /path/to/project --dir src
 ```
 
-This parses `src/` (and all subdirectories) and writes output to `./graphs/myfeature/`.
+This parses `src/` (and all subdirectories) and writes output to `./graphs/<project>/<feature>/` where `<project>` is the name of the directory passed to `--root`.
+
+For example, running from `/home/user/myapp` with `--root . --feature overview` writes to `./graphs/myapp/overview/`.
 
 ### Output Directory
 
-By default graphs go to `./graphs/` in your working directory. Use `--output-dir` to write somewhere else:
+By default graphs go to `./graphs/<project>/<feature>/` in your working directory. Use `--output-dir` to write to a custom path instead:
 
 ```bash
 codegrapher --feature myfeature --root /path/to/project --dir src --output-dir /my/graphs/myproject/myfeature
@@ -43,9 +45,10 @@ codegrapher --feature myapp --root /path/to/project --files "src/**/*.py" "tests
 ## 2. Exploring in the Browser
 
 ```bash
-codegrapher-serve --graphs ./graphs
-# or point at any directory containing graphs:
-codegrapher-serve --graphs /my/graphs --port 8080
+# Point at the specific graph directory (containing toc.json)
+codegrapher-serve --graphs ./graphs/myapp/overview
+# or with a custom port
+codegrapher-serve --graphs ./graphs/myapp/overview --port 8080
 ```
 
 Opens at `http://localhost:5000`.
@@ -90,31 +93,76 @@ Click any node to expand it to the next tier. Click the node detail panel for ed
 
 ## 4. MCP Server (LLM Integration)
 
-If you want an LLM (Claude, etc.) to navigate the graph programmatically, start the MCP server:
+The MCP server reads pre-built graphs from disk — it does not parse code itself. Build your graphs first, then point the server at the graphs root.
 
-```bash
-codegrapher-mcp --graphs ./graphs
+### Graph layout the MCP server expects
+
 ```
+<graphs-root>/
+    <project-name>/
+        <graph-name>/
+            toc.json
+            tier_*.json
+            sub/*.json
+```
+
+`codegrapher` produces this layout by default. Running `codegrapher --feature overview --root . --dir .` in `/path/to/myapp` writes to `./graphs/myapp/overview/`. So `--graphs ./graphs` is the correct root to pass to the MCP server.
 
 ### Connect from Claude Desktop
 
-In `claude_desktop_config.json`:
+Add to `claude_desktop_config.json` (usually at `~/Library/Application Support/Claude/` on Mac or `%APPDATA%\Claude\` on Windows):
 
 ```json
 {
   "mcpServers": {
     "codegrapher": {
       "command": "codegrapher-mcp",
-      "args": ["--graphs", "/path/to/graphs"]
+      "args": ["--graphs", "/absolute/path/to/graphs"]
     }
   }
 }
 ```
 
-### Connect from Claude Code
+### Connect from Claude Code (per-project, recommended)
+
+Claude Code supports project-level MCP servers that only activate in a specific repo. This is the right pattern for per-repo graphs: one installed binary, different graph paths per project.
+
+Add a `.claude/settings.json` file at your project root:
+
+```json
+{
+  "mcpServers": {
+    "codegrapher": {
+      "command": "codegrapher-mcp",
+      "env": {
+        "CODEGRAPHER_GRAPHS": "/absolute/path/to/your/project/graphs"
+      }
+    }
+  }
+}
+```
+
+The value of `CODEGRAPHER_GRAPHS` should be the `graphs/` directory inside your project (the one containing the `<project>/<graph>/` subdirectories).
+
+On first use, Claude Code will prompt you to approve the MCP server. After approval it starts automatically whenever you open that project.
+
+### Connect from Claude Code (global, all projects)
+
+If you want codegrapher available in every project without per-project config, add it to your user-level MCP config. Run:
 
 ```bash
 claude mcp add --scope user --transport stdio codegrapher -- codegrapher-mcp --graphs /path/to/graphs
+```
+
+Note: with a global config, all projects share the same graphs root. Use the project-level approach above if you want per-repo isolation.
+
+### First steps in Claude Code after connecting
+
+```
+list_projects()                          # see available projects
+list_graphs(project="myapp")             # see graphs in a project
+set_active_graph(project="myapp", graph="overview")  # select a graph
+get_feature_summary()                    # counts and entry points
 ```
 
 ### Available MCP Tools (13)

@@ -90,6 +90,10 @@ svg#graph {
   bottom: 0;
 }
 
+/* ------------------------------------------------------------------ */
+/* Sidebar Header                                                      */
+/* ------------------------------------------------------------------ */
+
 #sidebar-header {
   padding: 10px 14px 8px;
   border-bottom: 1px solid var(--border-muted);
@@ -121,6 +125,163 @@ svg#graph {
   font-style: italic;
   font-size: 11px;
 }
+
+/* ------------------------------------------------------------------ */
+/* Diagram overlay panel                                                */
+/* ------------------------------------------------------------------ */
+
+#diagram-panel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 55%;
+  min-width: 320px;
+  background: var(--bg);
+  border-left: 1px solid var(--border-muted);
+  box-shadow: -4px 0 20px oklch(0 0 0 / 0.4);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#diagram-panel.minimized {
+  width: 32px !important;
+  min-width: 32px;
+  cursor: pointer;
+}
+
+#diagram-panel.minimized #diagram-body { display: none; }
+
+#diagram-panel.minimized #diagram-header {
+  flex-direction: column;
+  padding: 8px 4px;
+  gap: 8px;
+  writing-mode: vertical-rl;
+  align-items: center;
+}
+
+#diagram-panel.minimized .dh-prefix,
+#diagram-panel.minimized #diagram-tab-bar,
+#diagram-panel.minimized #diagram-zoom-label,
+#diagram-panel.minimized #diagram-zoom-reset,
+#diagram-panel.minimized #diagram-fullscreen,
+#diagram-panel.minimized #diagram-close { display: none; }
+
+#diagram-panel.minimized #diagram-minimize { writing-mode: horizontal-tb; }
+
+#diagram-resize {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  cursor: ew-resize;
+  z-index: 101;
+}
+
+#diagram-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-muted);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  background: var(--bg);
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.dh-prefix {
+  color: var(--text-ghost);
+  font-size: 9px;
+}
+
+#diagram-tab-bar {
+  display: flex;
+  gap: 3px;
+}
+
+.diag-tab {
+  background: var(--bg-raised);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 2px 9px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+}
+
+.diag-tab:hover { color: var(--text-muted); border-color: var(--accent-blue); }
+
+.diag-tab.active {
+  background: oklch(0.13 0.04 220);
+  color: #4a8fd0;
+  border-color: oklch(0.35 0.07 220);
+}
+
+#diagram-zoom-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-dim);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+#diagram-zoom {
+  width: 80px;
+  accent-color: var(--accent-blue);
+}
+
+#diagram-zoom-val {
+  color: var(--text-muted);
+  min-width: 34px;
+  font-size: 10px;
+}
+
+#diagram-zoom-reset, #diagram-minimize, #diagram-fullscreen, #diagram-close {
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+#diagram-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.diag-pane {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.diag-pane.active { display: flex; }
+
+.diag-scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 14px;
+  cursor: grab;
+}
+
+.diag-scroll:active { cursor: grabbing; }
+
+.diag-content { transform-origin: top left; display: inline-block; min-width: 100%; }
 
 /* ------------------------------------------------------------------ */
 /* Controls                                                             */
