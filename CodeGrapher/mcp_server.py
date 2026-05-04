@@ -26,6 +26,7 @@ import argparse
 import json
 import sys
 from collections import OrderedDict, deque
+from dataclasses import dataclass
 from heapq import heappush, heappop
 from pathlib import Path
 from typing import Any, Optional
@@ -65,6 +66,16 @@ class LRUCache:
 
 
 # ============================================================================
+# Graph Session
+# ============================================================================
+
+@dataclass
+class GraphSession:
+    """Encapsulates per-session graph state."""
+    active_graph: Optional[tuple[str, str]] = None
+
+
+# ============================================================================
 # Global State
 # ============================================================================
 
@@ -73,10 +84,10 @@ mcp = FastMCP(name="codegrapher_mcp")
 # Root of the multi-project graphs directory (set at startup from --graphs)
 graphs_root: Path = Path()
 
-# Active graph selection: ("project", "graph-name") or None if not set.
+# Session state for active graph selection.
 # NOTE: This is process-level state shared across all sessions connected to
-# this server instance. set_active_graph affects all concurrent callers.
-active_graph: Optional[tuple[str, str]] = None
+# this server instance. Setting the active graph affects all concurrent callers.
+_session: GraphSession = GraphSession()
 
 # LRU cache — keys are "project/graph-name/tier_name" to avoid collisions
 # across graphs. Default size 12 covers ~2-3 graphs with all tiers cached.
@@ -89,12 +100,13 @@ cache: LRUCache = LRUCache()
 
 def _parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
+    import os
     parser = argparse.ArgumentParser(description="CodeGrapher MCP Server")
     parser.add_argument(
         "--graphs",
         type=str,
-        default="./graphs",
-        help="Path to graphs root directory containing project subdirectories (default: ./graphs)",
+        default=os.environ.get("CODEGRAPHER_GRAPHS", "./graphs"),
+        help="Path to graphs root directory (default: $CODEGRAPHER_GRAPHS or ./graphs)",
     )
     parser.add_argument(
         "--max-cached-tiers",
@@ -134,7 +146,7 @@ def _resolve_graph(graph_override: Optional[str] = None) -> tuple[Path, dict[str
         ValueError: If no graph is selected and no override is provided.
         FileNotFoundError: If the resolved path has no toc.json.
     """
-    global graphs_root, active_graph
+    global graphs_root
 
     if graph_override:
         parts = graph_override.strip("/").split("/")
@@ -144,8 +156,8 @@ def _resolve_graph(graph_override: Optional[str] = None) -> tuple[Path, dict[str
                 "Expected format: 'project/graph-name' (e.g. 'myproject/overview')"
             )
         project, graph = parts
-    elif active_graph is not None:
-        project, graph = active_graph
+    elif _session.active_graph is not None:
+        project, graph = _session.active_graph
     else:
         raise ValueError(
             "No graph selected. Use set_active_graph(project, graph) to set one for this "
@@ -381,7 +393,6 @@ async def set_active_graph(input: SetActiveGraphInput) -> dict[str, Any]:
     one MCP server process, set_active_graph affects all of them simultaneously.
     Use per-call graph= overrides if working across multiple graphs concurrently.
     """
-    global active_graph
     graph_dir = graphs_root / input.project / input.graph
     toc_path = graph_dir / "toc.json"
     if not toc_path.exists():
@@ -389,7 +400,7 @@ async def set_active_graph(input: SetActiveGraphInput) -> dict[str, Any]:
             "error": f"Graph '{input.project}/{input.graph}' not found or has no toc.json",
             "hint": "Use list_graphs(project) to see available graphs",
         }
-    active_graph = (input.project, input.graph)
+    _session.active_graph = (input.project, input.graph)
     with open(toc_path, "r") as f:
         toc = json.load(f)
     return {
@@ -422,7 +433,7 @@ async def get_active_graph() -> dict[str, Any]:
     Use this at the start of a session to confirm which graph is loaded, or
     after set_active_graph to verify the selection took effect.
     """
-    if active_graph is None:
+    if _session.active_graph is None:
         return {
             "status": "not_set",
             "message": (
@@ -432,7 +443,7 @@ async def get_active_graph() -> dict[str, Any]:
                 "Use list_projects() to see available projects."
             ),
         }
-    project, graph = active_graph
+    project, graph = _session.active_graph
     graph_dir = graphs_root / project / graph
     toc_path = graph_dir / "toc.json"
     if not toc_path.exists():

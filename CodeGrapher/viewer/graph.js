@@ -25,11 +25,14 @@
   const ROLE_CONTROL_COLOR = "#9b3dcc";  // violet/purple
 
   // -----------------------------------------------------------------------
-  // Mermaid diagram panel
+  // Mermaid diagram overlay — 3 tabs: Flowchart | Data Flow | State
   // -----------------------------------------------------------------------
-  mermaid.initialize({ startOnLoad: false, theme: "dark", securityLevel: "loose" });
+  mermaid.initialize({ startOnLoad: false, theme: "dark", securityLevel: "loose", maxEdges: 2000, zoom: false });
 
-  // Split mermaid text (which may contain multiple diagrams) into individual chunks
+  // Per-tab lazy loaders: { flowchart: fn, dataflow: fn, state: fn }
+  // Each fn fetches and calls showDiagramPanel if the pane hasn't been loaded yet.
+  const _diagLoaders = { flowchart: null, dataflow: null, state: null };
+
   function _splitDiagrams(mermaidText) {
     const chunks = [];
     let current = [];
@@ -42,160 +45,192 @@
       current.push(line);
     }
     if (current.length > 0) chunks.push(current.join("\n"));
-    return chunks.filter(c => /stateDiagram-v2|classDiagram/.test(c));
+    return chunks.filter(c => /stateDiagram-v2|classDiagram|flowchart/.test(c));
   }
 
-  function showDiagramPanel(title, mermaidText) {
-    const panel   = document.getElementById("diagram-panel");
-    const content = document.getElementById("diagram-content");
-    const titleEl = document.getElementById("diagram-title");
-    titleEl.textContent = title;
-    panel.style.display = "flex";  // flex column layout
+  // Show the diagram overlay and render mermaidText in the given tab.
+  // tabId: "flowchart" | "dataflow" | "state"
+  function showDiagramPanel(tabId, title, mermaidText) {
+    const panel = document.getElementById("diagram-panel");
+    panel.style.display = "flex";
+    panel.classList.remove("minimized");
+    _switchDiagTab(tabId);
 
-    const diagrams = _splitDiagrams(mermaidText);
+    const pane    = document.getElementById(`pane-${tabId}`);
+    const content = pane.querySelector(".diag-content");
+    const zoomSlider = document.getElementById("diagram-zoom");
+    const zoomVal    = document.getElementById("diagram-zoom-val");
+    zoomSlider.value = 100;
+    zoomVal.textContent = "100%";
+    content.style.transform = "scale(1)";
+
+    // For flowchart/dataflow: single diagram block, no sub-tabs needed
+    // For state: may have multiple stateDiagram-v2 blocks (File Level / Symbol Level)
+    const diagrams = tabId === "state" ? _splitDiagrams(mermaidText) : [mermaidText];
+
     if (diagrams.length === 0) {
-      content.innerHTML = `<pre style="color:oklch(0.60 0.12 30);font-size:10px;font-family:'JetBrains Mono',Consolas,monospace;padding:12px;background:var(--bg-deep);border-radius:2px;border:1px solid var(--border-muted);">no diagram found in output.\n\n${mermaidText}</pre>`;
+      content.innerHTML = `<pre style="color:oklch(0.60 0.12 30);font-size:10px;padding:12px;background:var(--bg-deep);border-radius:2px;border:1px solid var(--border-muted);">no diagram found.\n\n${esc(mermaidText)}</pre>`;
       return;
     }
 
-    content.innerHTML = '<div style="color:var(--text-dim);font-family:\'JetBrains Mono\',Consolas,monospace;font-size:10px;padding:20px;letter-spacing:0.08em;">rendering&hellip;</div>';
-
-    // Build tab bar if there are multiple diagrams (File Level / Symbol Level)
-    const labels = diagrams.map((d, i) => {
-      if (/stateDiagram-v2/.test(d)) return i === 0 ? "File Level" : "Symbol Level";
-      return `Diagram ${i + 1}`;
-    });
+    content.innerHTML = '<div style="color:var(--text-dim);font-size:10px;padding:20px;letter-spacing:0.08em;">rendering…</div>';
 
     const ts = Date.now();
     let tabBar = "";
     if (diagrams.length > 1) {
-      tabBar = `<div id="diag-tabs" style="display:flex;gap:4px;margin-bottom:12px;">` +
+      const labels = diagrams.map((d, i) => /stateDiagram-v2/.test(d) ? (i === 0 ? "File Level" : "Symbol Level") : `Diagram ${i+1}`);
+      tabBar = `<div class="diag-subtabs" style="display:flex;gap:4px;margin-bottom:10px;">` +
         labels.map((lbl, i) =>
-          `<button class="diag-tab" data-idx="${i}" style="background:${i===0?"oklch(0.14 0.04 220)":"var(--bg-raised)"};color:${i===0?"#4a8fd0":"var(--text-muted)"};border:1px solid ${i===0?"oklch(0.35 0.07 220)":"var(--border)"};padding:3px 10px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:var(--shadow-sm);">${lbl}</button>`
-        ).join("") +
-        `</div>`;
+          `<button class="diag-subtab" data-idx="${i}" style="background:${i===0?"oklch(0.14 0.04 220)":"var(--bg-raised)"};color:${i===0?"#4a8fd0":"var(--text-muted)"};border:1px solid ${i===0?"oklch(0.35 0.07 220)":"var(--border)"};padding:2px 9px;border-radius:2px;cursor:pointer;font-family:inherit;font-size:10px;">${lbl}</button>`
+        ).join("") + `</div>`;
     }
-
-    const diagramDivs = diagrams.map((d, i) =>
-      `<div class="diag-page" data-idx="${i}" style="display:${i===0?"block":"none"};"><div class="mermaid" id="mermaid-${ts}-${i}">${d}</div></div>`
+    const pageDivs = diagrams.map((d, i) =>
+      `<div class="diag-subpage" data-idx="${i}" style="display:${i===0?"block":"none"};"><div class="mermaid" id="mermaid-${ts}-${i}">${d}</div></div>`
     ).join("");
-
-    content.innerHTML = tabBar + diagramDivs;
+    content.innerHTML = tabBar + pageDivs;
 
     const rendered = new Set();
-
     function renderDiagram(i) {
       if (rendered.has(i)) return;
       rendered.add(i);
       const el = document.getElementById(`mermaid-${ts}-${i}`);
       if (!el) return;
       mermaid.run({ nodes: [el] }).catch(err => {
-        el.outerHTML = `<div style="margin-bottom:24px;">
-          <div style="color:oklch(0.65 0.10 80);font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;margin-bottom:6px;">
-            [warn] mermaid render error: ${esc(err.message)} — raw source below (copy to <a href="https://mermaid.live" target="_blank" style="color:#4a8fd0;">mermaid.live</a>)
-          </div>
-          <pre style="color:var(--text-muted);font-size:10px;background:var(--bg-deep);padding:10px;border-radius:2px;overflow:auto;white-space:pre;border:1px solid var(--border-muted);">${esc(diagrams[i])}</pre>
-        </div>`;
+        el.outerHTML = `<div style="color:oklch(0.65 0.10 80);font-size:10px;margin-bottom:6px;">[warn] render error: ${esc(err.message)}</div><pre style="color:var(--text-muted);font-size:10px;background:var(--bg-deep);padding:10px;border-radius:2px;overflow:auto;white-space:pre;border:1px solid var(--border-muted);">${esc(diagrams[i])}</pre>`;
       });
     }
 
-    // Wire tab switching — render on first show so Mermaid has visible dimensions
-    content.querySelectorAll(".diag-tab").forEach(btn => {
+    content.querySelectorAll(".diag-subtab").forEach(btn => {
       btn.addEventListener("click", () => {
         const idx = +btn.dataset.idx;
-        content.querySelectorAll(".diag-tab").forEach(b => {
-          b.style.background   = b.dataset.idx == idx ? "oklch(0.14 0.04 220)" : "var(--bg-raised)";
-          b.style.color        = b.dataset.idx == idx ? "#4a8fd0" : "var(--text-muted)";
-          b.style.borderColor  = b.dataset.idx == idx ? "oklch(0.35 0.07 220)" : "var(--border)";
+        content.querySelectorAll(".diag-subtab").forEach(b => {
+          b.style.background  = b.dataset.idx == idx ? "oklch(0.14 0.04 220)" : "var(--bg-raised)";
+          b.style.color       = b.dataset.idx == idx ? "#4a8fd0" : "var(--text-muted)";
+          b.style.borderColor = b.dataset.idx == idx ? "oklch(0.35 0.07 220)" : "var(--border)";
         });
-        content.querySelectorAll(".diag-page").forEach(p => {
+        content.querySelectorAll(".diag-subpage").forEach(p => {
           p.style.display = p.dataset.idx == idx ? "block" : "none";
         });
         renderDiagram(idx);
       });
     });
-
-    // Only render the first (visible) diagram immediately
     renderDiagram(0);
+  }
+
+  function _switchDiagTab(tabId) {
+    document.querySelectorAll(".diag-tab").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.tab === tabId);
+    });
+    document.querySelectorAll(".diag-pane").forEach(pane => {
+      pane.classList.toggle("active", pane.id === `pane-${tabId}`);
+    });
+    // Lazy-load the tab if it hasn't been fetched yet for the current node
+    const pane = document.getElementById(`pane-${tabId}`);
+    const content = pane && pane.querySelector(".diag-content");
+    const isEmpty = content && content.innerHTML.trim() === "";
+    if (isEmpty && _diagLoaders[tabId]) {
+      _diagLoaders[tabId]();
+    }
   }
 
   function hideDiagramPanel() {
     document.getElementById("diagram-panel").style.display = "none";
   }
 
-  // Wire up diagram panel controls — DOM is already parsed when this script runs
-  {
-    // Close button
-    document.getElementById("diagram-close").addEventListener("click", hideDiagramPanel);
+  // Open panel to a tab without triggering lazy load (inspector buttons call their own loader)
+  function _openDiagramPanel(tabId) {
+    const panel = document.getElementById("diagram-panel");
+    panel.style.display = "flex";
+    panel.classList.remove("minimized");
+    document.querySelectorAll(".diag-tab").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.tab === tabId);
+    });
+    document.querySelectorAll(".diag-pane").forEach(pane => {
+      pane.classList.toggle("active", pane.id === `pane-${tabId}`);
+    });
+  }
 
-    // Zoom slider
+  // Wire diagram panel controls once DOM is ready
+  document.addEventListener("DOMContentLoaded", () => {
+    const panel      = document.getElementById("diagram-panel");
     const zoomSlider = document.getElementById("diagram-zoom");
     const zoomVal    = document.getElementById("diagram-zoom-val");
-    const content    = document.getElementById("diagram-content");
+
+    // Tab switching
+    document.querySelectorAll(".diag-tab").forEach(btn => {
+      btn.addEventListener("click", () => _switchDiagTab(btn.dataset.tab));
+    });
+
+    // Active pane zoom target (whichever pane is .active)
+    function activeContent() {
+      const pane = document.querySelector(".diag-pane.active");
+      return pane ? pane.querySelector(".diag-content") : null;
+    }
+
     zoomSlider.addEventListener("input", () => {
       const pct = zoomSlider.value;
       zoomVal.textContent = pct + "%";
-      content.style.transform = `scale(${pct / 100})`;
+      const c = activeContent(); if (c) c.style.transform = `scale(${pct/100})`;
     });
-
-    // Zoom reset
     document.getElementById("diagram-zoom-reset").addEventListener("click", () => {
-      zoomSlider.value = 100;
-      zoomVal.textContent = "100%";
-      content.style.transform = "scale(1)";
+      zoomSlider.value = 100; zoomVal.textContent = "100%";
+      const c = activeContent(); if (c) c.style.transform = "scale(1)";
     });
 
-    // Scroll-to-zoom on diagram scroll area
-    document.getElementById("diagram-scroll").addEventListener("wheel", e => {
-      e.preventDefault();
-      const step = e.deltaY < 0 ? 10 : -10;
-      const next = Math.max(20, Math.min(500, parseInt(zoomSlider.value) + step));
-      zoomSlider.value = next;
-      zoomVal.textContent = next + "%";
-      content.style.transform = `scale(${next / 100})`;
-    }, { passive: false });
+    // Scroll-to-zoom — attach to each pane's scroll area
+    document.querySelectorAll(".diag-scroll").forEach(scrollEl => {
+      scrollEl.addEventListener("wheel", e => {
+        e.preventDefault();
+        const step = e.deltaY < 0 ? 10 : -10;
+        const next = Math.max(20, Math.min(+zoomSlider.max, +zoomSlider.value + step));
+        zoomSlider.value = next; zoomVal.textContent = next + "%";
+        const c = scrollEl.querySelector(".diag-content");
+        if (c) c.style.transform = `scale(${next/100})`;
+      }, { passive: false });
 
-    // Drag-to-pan on diagram scroll area
-    {
-      const scrollEl = document.getElementById("diagram-scroll");
-      let _panActive = false, _panX = 0, _panY = 0;
+      // Drag-to-pan
+      let _pan = false, _px = 0, _py = 0;
       scrollEl.addEventListener("mousedown", e => {
         if (e.button !== 0) return;
-        _panActive = true;
-        _panX = e.clientX + scrollEl.scrollLeft;
-        _panY = e.clientY + scrollEl.scrollTop;
-        scrollEl.style.cursor = "grabbing";
+        _pan = true; _px = e.clientX + scrollEl.scrollLeft; _py = e.clientY + scrollEl.scrollTop;
         e.preventDefault();
       });
       document.addEventListener("mousemove", e => {
-        if (!_panActive) return;
-        scrollEl.scrollLeft = _panX - e.clientX;
-        scrollEl.scrollTop  = _panY - e.clientY;
+        if (!_pan) return;
+        scrollEl.scrollLeft = _px - e.clientX; scrollEl.scrollTop = _py - e.clientY;
       });
-      document.addEventListener("mouseup", () => {
-        if (!_panActive) return;
-        _panActive = false;
-        scrollEl.style.cursor = "";
-      });
-    }
+      document.addEventListener("mouseup", () => { _pan = false; });
+    });
+
+    // Minimize / restore
+    document.getElementById("diagram-minimize").addEventListener("click", () => {
+      panel.classList.toggle("minimized");
+    });
+    panel.addEventListener("click", e => {
+      if (panel.classList.contains("minimized") && e.target === panel) {
+        panel.classList.remove("minimized");
+      }
+    });
 
     // Full-width toggle
-    const panel = document.getElementById("diagram-panel");
     document.getElementById("diagram-fullscreen").addEventListener("click", () => {
-      panel.style.width = panel.style.width === "100%" ? "75%" : "100%";
+      panel.style.width = panel.style.width === "100%" ? "55%" : "100%";
     });
+
+    // Close
+    document.getElementById("diagram-close").addEventListener("click", hideDiagramPanel);
 
     // Drag-resize handle
     const resizeHandle = document.getElementById("diagram-resize");
-    let _dragging = false;
-    resizeHandle.addEventListener("mousedown", e => { _dragging = true; e.preventDefault(); });
+    let _drag = false;
+    resizeHandle.addEventListener("mousedown", e => { _drag = true; e.preventDefault(); });
     document.addEventListener("mousemove", e => {
-      if (!_dragging) return;
-      const newWidth = window.innerWidth - e.clientX;
-      panel.style.width = Math.max(300, Math.min(window.innerWidth - 100, newWidth)) + "px";
+      if (!_drag) return;
+      const w = window.innerWidth - e.clientX;
+      panel.style.width = Math.max(300, Math.min(window.innerWidth - 100, w)) + "px";
     });
-    document.addEventListener("mouseup", () => { _dragging = false; });
-  }
+    document.addEventListener("mouseup", () => { _drag = false; });
+  });
 
   // -----------------------------------------------------------------------
   // BFS Trace
@@ -285,11 +320,6 @@
         });
       }
     }
-
-    // Trace mode state
-    let traceMode = false;
-    let traceFromNodeId = null;
-    let activeTraceView = null; // "flowchart" | "dataflow" | null
 
     // Relation filter state — Set of relation names currently hidden
     const hiddenRelations = new Set();
@@ -1164,7 +1194,7 @@
         .classed("dimmed",      lk => lk.source.id !== d.id && lk.target.id !== d.id)
         .classed("highlighted", lk => lk.source.id === d.id || lk.target.id === d.id);
 
-      renderSidebar(d, edgesByNode.get(d.id) || [], nodeById, () => applyTrace(d.id), () => applyDataFlowTrace(d.id), () => toggleDirExpansion(d), () => expandedDirs.has(d.id), null, null);
+      renderSidebar(d, edgesByNode.get(d.id) || [], nodeById, () => toggleDirExpansion(d), () => expandedDirs.has(d.id));
     }
 
     function clearSel() {
@@ -1174,407 +1204,13 @@
       document.getElementById("sidebar-content").innerHTML = "";
     }
 
-    // Re-render sidebar for the currently selected node (used after trace switches)
-    function renderSidebarForNode(nodeId) {
-      const node = nodeById.get(nodeId);
-      if (!node) return;
-      renderSidebar(node, edgesByNode.get(nodeId) || [], nodeById,
-        () => applyTrace(nodeId),
-        () => applyDataFlowTrace(nodeId),
-        () => toggleDirExpansion(node),
-        () => expandedDirs.has(nodeId),
-        activeTraceView,
-        () => resetTrace()
-      );
-    }
-
-    // Esc: close diagram panel → exit trace/deselect in one step
+    // Esc: close diagram panel
     document.addEventListener("keydown", ev => {
       if (ev.key !== "Escape") return;
-      const diagramPanel = document.getElementById("diagram-panel");
-      if (diagramPanel && diagramPanel.style.display !== "none") {
-        hideDiagramPanel();
-      } else {
-        resetTrace();
-      }
+      hideDiagramPanel();
     });
 
-    function applyTrace(nodeId) {
-      traceMode = true;
-      traceFromNodeId = nodeId;
 
-      // BFS to get reachable nodes and assign depth levels
-      const depth = new Map();
-      depth.set(nodeId, 0);
-      const queue = [nodeId];
-      while (queue.length > 0) {
-        const cur = queue.shift();
-        for (const lk of links) {
-          const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-          const tgtId = typeof lk.target === 'object' ? lk.target.id : lk.target;
-          if (srcId === cur && !depth.has(tgtId)) {
-            depth.set(tgtId, depth.get(cur) + 1);
-            queue.push(tgtId);
-          }
-        }
-      }
-
-      const reachableIds = new Set(depth.keys());
-
-      // Group nodes by depth level
-      const byDepth = new Map();
-      for (const [id, d] of depth) {
-        if (!byDepth.has(d)) byDepth.set(d, []);
-        byDepth.get(d).push(id);
-      }
-
-      const maxDepth = Math.max(...byDepth.keys());
-      const svgEl = document.getElementById("graph");
-      const W = svgEl.clientWidth || window.innerWidth - 320;
-      const H = svgEl.clientHeight || window.innerHeight;
-      // Use fixed row height and fixed min column spacing — layout can exceed viewport (user can pan)
-      const ROW_H   = 160;
-      const MIN_COL = 160;
-      const nodeMap = new Map(nodes.map(n => [n.id, n]));
-
-      // Assign x/y positions
-      for (const [d, ids] of byDepth) {
-        // Sort ids by label for stable ordering
-        ids.sort((a, b) => {
-          const la = nodeMap.get(a)?.label || a;
-          const lb = nodeMap.get(b)?.label || b;
-          return la < lb ? -1 : la > lb ? 1 : 0;
-        });
-        const colW = Math.max(W / (ids.length + 1), MIN_COL);
-        const totalW = colW * (ids.length + 1);
-        const offsetX = totalW > W ? 0 : (W - totalW) / 2;  // center if fits, else start at 0
-        ids.forEach((id, i) => {
-          const n = nodeMap.get(id);
-          if (n) {
-            n.fx = offsetX + colW * (i + 1);
-            n.fy = 40 + d * ROW_H;
-          }
-        });
-      }
-
-      // Stop simulation and reposition
-      simulation.stop();
-      simulation.alpha(0);
-
-      // Snap nodes into position immediately (use nodeSel2 — includes merged nodes)
-      nodeSel2.attr("transform", d => `translate(${d.fx !== null ? d.fx : d.x},${d.fy !== null ? d.fy : d.y})`);
-
-      // Fade out non-reachable nodes
-      nodeSel2.style("opacity", d => reachableIds.has(d.id) ? 1 : 0.05);
-
-      // Switch links from <line> to curved <path> with labels
-      // We rebuild the link layer in trace mode
-      linkSel2.style("opacity", 0); // hide original lines
-
-      // Draw trace edges as curved paths
-      const traceEdges = links.filter(lk => {
-        const s = typeof lk.source === 'object' ? lk.source.id : lk.source;
-        const t = typeof lk.target === 'object' ? lk.target.id : lk.target;
-        return reachableIds.has(s) && reachableIds.has(t);
-      });
-
-      // Remove any previous trace layer
-      g.selectAll(".trace-layer").remove();
-      const traceLayer = g.insert("g", ".nodes").attr("class", "trace-layer");
-
-      traceEdges.forEach(lk => {
-        const sn = typeof lk.source === 'object' ? lk.source : nodeMap.get(lk.source);
-        const tn = typeof lk.target === 'object' ? lk.target : nodeMap.get(lk.target);
-        if (!sn || !tn) return;
-
-        const sx = sn.fx !== null ? sn.fx : sn.x;
-        const sy = sn.fy !== null ? sn.fy : sn.y;
-        const tx = tn.fx !== null ? tn.fx : tn.x;
-        const ty = tn.fy !== null ? tn.fy : tn.y;
-
-        const isCycle = (depth.get(sn.id) || 0) >= (depth.get(tn.id) || 0);
-        let pathD;
-        if (isCycle) {
-          // back-edge: arc out to the side
-          const mx = Math.max(sx, tx) + 80;
-          const my = (sy + ty) / 2;
-          pathD = `M${sx},${sy} Q${mx},${my} ${tx},${ty}`;
-        } else {
-          // forward edge: gentle curve
-          const cy = (sy + ty) / 2;
-          pathD = `M${sx},${sy} C${sx},${cy} ${tx},${cy} ${tx},${ty}`;
-        }
-
-        const color = RELATION_COLORS[lk.relation] || "#888";
-        const traceColor = (lk.role === "control") ? ROLE_CONTROL_COLOR : color;
-        const traceDash  = lk.relay ? "6,3" : (isCycle ? "5,3" : null);
-        const edgeId = `trace-edge-${Math.random().toString(36).slice(2)}`;
-
-        traceLayer.append("path")
-          .attr("id", edgeId)
-          .attr("d", pathD)
-          .attr("fill", "none")
-          .attr("stroke", traceColor)
-          .attr("stroke-width", isCycle ? 1.2 : 1.8)
-          .attr("stroke-dasharray", traceDash)
-          .attr("marker-end", lk.role === "control" ? "url(#arrow-trace-control)" : `url(#arrow-trace-${lk.relation})`);
-
-        // Edge label along path
-        traceLayer.append("text")
-          .attr("dy", -3)
-          .attr("font-size", "9px")
-          .attr("fill", traceColor)
-          .attr("opacity", 0.85)
-          .append("textPath")
-            .attr("href", `#${edgeId}`)
-            .attr("startOffset", "40%")
-            .text(lk.seq != null ? `${lk.relation} [${lk.seq}]` : lk.relation);
-      });
-
-      // Zoom to fit the trace subgraph
-      try {
-        const traceNodes = nodes.filter(n => reachableIds.has(n.id));
-        const xs = traceNodes.map(n => n.fx !== null ? n.fx : n.x);
-        const ys = traceNodes.map(n => n.fy !== null ? n.fy : n.y);
-        const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
-        const y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
-        const sc = Math.min(W / (x1 - x0), H / (y1 - y0), 1.5);
-        const tx2 = (W - (x1 - x0) * sc) / 2 - x0 * sc;
-        const ty2 = (H - (y1 - y0) * sc) / 2 - y0 * sc;
-        svg.transition().duration(600)
-           .call(zoom.transform, d3.zoomIdentity.translate(tx2, ty2).scale(sc));
-      } catch (_) {}
-
-      // Update sidebar — re-render with active trace indicator
-      activeTraceView = "flowchart";
-      renderSidebarForNode(nodeId);
-    }
-
-    function resetTrace() {
-      traceMode = false;
-      traceFromNodeId = null;
-      activeTraceView = null;
-
-      // Unfix all node positions so force sim can take over again
-      nodes.forEach(n => { n.fx = null; n.fy = null; });
-
-      // Remove trace layer, restore original links
-      g.selectAll(".trace-layer").remove();
-      linkSel2.style("opacity", 1);
-      nodeSel2.style("opacity", 1);
-
-      // Restart simulation
-      simulation.alpha(0.3).restart();
-
-      clearSel();
-    }
-
-    // -----------------------------------------------------------------------
-    // Data-flow trace — directed walk via produces/consumes/calls/defines in seq order
-    // -----------------------------------------------------------------------
-    function applyDataFlowTrace(nodeId) {
-      const DATA_FLOW_RELS = new Set(["produces", "consumes", "calls", "defines"]);
-      const MAX_DEPTH = 3;
-
-      const depth = new Map();
-      const seqOrder = new Map();
-
-      const seedNode = nodes.find(n => n.id === nodeId);
-      const seedType = seedNode ? seedNode.type : "symbol";
-
-      // For type nodes: show what symbols produce/consume this type (reverse BFS inward),
-      // plus the type's own fields (contains children). Outward BFS from fields is useless
-      // since field stubs have no data-flow edges.
-      if (seedType === "type") {
-        depth.set(nodeId, 1);
-        seqOrder.set(nodeId, 0);
-
-        // Collect contains children (fields) at depth 2
-        links.forEach(lk => {
-          const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-          const tgtId = typeof lk.target === 'object' ? lk.target.id : lk.target;
-          if (srcId === nodeId && lk.relation === "contains") {
-            if (!depth.has(tgtId)) { depth.set(tgtId, 2); seqOrder.set(tgtId, 9999); }
-          }
-        });
-
-        // Walk inward: symbols that produce/consume this type go at depth 0
-        // Then walk one more level back from those symbols (their callers, depth -1 → use depth 0 for callers, 1 for type)
-        const producerIds = [];
-        links.forEach(lk => {
-          const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-          const tgtId = typeof lk.target === 'object' ? lk.target.id : lk.target;
-          if (tgtId === nodeId && (lk.relation === "produces" || lk.relation === "consumes")) {
-            if (!depth.has(srcId)) { depth.set(srcId, 0); seqOrder.set(srcId, lk.seq ?? 9999); producerIds.push(srcId); }
-          }
-        });
-
-        // One level further back: who calls the producers
-        producerIds.forEach(pid => {
-          links.forEach(lk => {
-            const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-            const tgtId = typeof lk.target === 'object' ? lk.target.id : lk.target;
-            if (tgtId === pid && DATA_FLOW_RELS.has(lk.relation)) {
-              if (!depth.has(srcId)) { depth.set(srcId, -1); seqOrder.set(srcId, lk.seq ?? 9999); }
-            }
-          });
-        });
-
-        // Re-normalise depths so minimum is 0
-        const minD = Math.min(...depth.values());
-        for (const [id, d] of depth) depth.set(id, d - minD);
-
-      } else {
-        // For file/symbol nodes: forward BFS on data-flow edges
-        const expandRel = seedType === "file" ? "defines" : null;
-        let seeds = [nodeId];
-        if (expandRel) {
-          const childIds = links
-            .filter(lk => {
-              const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-              return srcId === nodeId && lk.relation === expandRel;
-            })
-            .map(lk => typeof lk.target === 'object' ? lk.target.id : lk.target);
-          if (childIds.length > 0) seeds = childIds;
-        }
-
-        depth.set(nodeId, 0);
-        seqOrder.set(nodeId, 0);
-        seeds.forEach((sid, i) => {
-          if (!depth.has(sid)) { depth.set(sid, 0); seqOrder.set(sid, i); }
-        });
-
-        const queue = seeds.map(sid => ({ id: sid, d: 0 }));
-        while (queue.length > 0) {
-          const { id: cur, d } = queue.shift();
-          if (d >= MAX_DEPTH) continue;
-          const outEdges = links
-            .filter(lk => {
-              const srcId = typeof lk.source === 'object' ? lk.source.id : lk.source;
-              return srcId === cur && DATA_FLOW_RELS.has(lk.relation);
-            })
-            .sort((a, b) => (a.seq != null ? a.seq : 9999) - (b.seq != null ? b.seq : 9999));
-          for (const lk of outEdges) {
-            const tgtId = typeof lk.target === 'object' ? lk.target.id : lk.target;
-            if (!depth.has(tgtId)) {
-              depth.set(tgtId, d + 1);
-              seqOrder.set(tgtId, lk.seq != null ? lk.seq : 9999);
-              queue.push({ id: tgtId, d: d + 1 });
-            }
-          }
-        }
-      }
-
-      const reachableIds = new Set(depth.keys());
-      const byDepth = new Map();
-      for (const [id, d] of depth) {
-        if (!byDepth.has(d)) byDepth.set(d, []);
-        byDepth.get(d).push(id);
-      }
-
-      const svgEl2 = document.getElementById("graph");
-      const W = svgEl2.clientWidth || window.innerWidth - 320;
-      const H = svgEl2.clientHeight || window.innerHeight;
-      const ROW_H = 160, MIN_COL = 160;
-      const nodeMap = new Map(nodes.map(n => [n.id, n]));
-
-      for (const [d, ids] of byDepth) {
-        ids.sort((a, b) => {
-          const sa = seqOrder.get(a) ?? 9999, sb = seqOrder.get(b) ?? 9999;
-          if (sa !== sb) return sa - sb;
-          return (nodeMap.get(a)?.label || a) < (nodeMap.get(b)?.label || b) ? -1 : 1;
-        });
-        const colW = Math.max(W / (ids.length + 1), MIN_COL);
-        const totalW = colW * (ids.length + 1);
-        const offsetX = totalW > W ? 0 : (W - totalW) / 2;
-        ids.forEach((id, i) => {
-          const n = nodeMap.get(id);
-          if (n) { n.fx = offsetX + colW * (i + 1); n.fy = 40 + d * ROW_H; }
-        });
-      }
-
-      simulation.stop();
-      simulation.alpha(0);
-      nodeSel2.attr("transform", d => `translate(${d.fx !== null ? d.fx : d.x},${d.fy !== null ? d.fy : d.y})`);
-      nodeSel2.style("opacity", d => reachableIds.has(d.id) ? 1 : 0.05);
-      linkSel2.style("opacity", 0);
-
-      const traceEdges = links.filter(lk => {
-        const s = typeof lk.source === 'object' ? lk.source.id : lk.source;
-        const t = typeof lk.target === 'object' ? lk.target.id : lk.target;
-        return reachableIds.has(s) && reachableIds.has(t) && DATA_FLOW_RELS.has(lk.relation);
-      });
-
-      g.selectAll(".trace-layer").remove();
-      const traceLayer = g.insert("g", ".nodes").attr("class", "trace-layer");
-
-      traceEdges.forEach(lk => {
-        const sn = typeof lk.source === 'object' ? lk.source : nodeMap.get(lk.source);
-        const tn = typeof lk.target === 'object' ? lk.target : nodeMap.get(lk.target);
-        if (!sn || !tn) return;
-
-        const sx = sn.fx !== null ? sn.fx : sn.x;
-        const sy = sn.fy !== null ? sn.fy : sn.y;
-        const tx = tn.fx !== null ? tn.fx : tn.x;
-        const ty = tn.fy !== null ? tn.fy : tn.y;
-
-        const isCycle = (depth.get(sn.id) || 0) >= (depth.get(tn.id) || 0);
-        let pathD;
-        if (isCycle) {
-          const mx = Math.max(sx, tx) + 80, my = (sy + ty) / 2;
-          pathD = `M${sx},${sy} Q${mx},${my} ${tx},${ty}`;
-        } else {
-          const cy = (sy + ty) / 2;
-          pathD = `M${sx},${sy} C${sx},${cy} ${tx},${cy} ${tx},${ty}`;
-        }
-
-        const color = RELATION_COLORS[lk.relation] || "#888";
-        const traceColor = lk.role === "control" ? ROLE_CONTROL_COLOR : color;
-        const edgeId = `df-edge-${Math.random().toString(36).slice(2)}`;
-
-        traceLayer.append("path")
-          .attr("id", edgeId)
-          .attr("d", pathD)
-          .attr("fill", "none")
-          .attr("stroke", traceColor)
-          .attr("stroke-width", isCycle ? 1.5 : 2.2)
-          .attr("stroke-dasharray", lk.relay ? "6,3" : (isCycle ? "5,3" : null))
-          .attr("marker-end", lk.role === "control" ? "url(#arrow-trace-control)" : `url(#arrow-trace-${lk.relation})`);
-
-        const labelParts = [lk.relation];
-        if (lk.seq  != null)       labelParts.push(`[${lk.seq}]`);
-        if (lk.via)                labelParts.push(`via:${lk.via}`);
-        if (lk.relay)              labelParts.push("relay");
-        if (lk.role === "control") labelParts.push("control");
-
-        traceLayer.append("text")
-          .attr("dy", -4)
-          .attr("font-size", "9px")
-          .attr("fill", traceColor)
-          .attr("opacity", 0.9)
-          .append("textPath")
-            .attr("href", `#${edgeId}`)
-            .attr("startOffset", "35%")
-            .text(labelParts.join(" "));
-      });
-
-      try {
-        const traceNodes = nodes.filter(n => reachableIds.has(n.id));
-        const xs = traceNodes.map(n => n.fx !== null ? n.fx : n.x);
-        const ys = traceNodes.map(n => n.fy !== null ? n.fy : n.y);
-        const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
-        const y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
-        const sc = Math.min(W / (x1 - x0), H / (y1 - y0), 1.5);
-        svg.transition().duration(600)
-           .call(zoom.transform, d3.zoomIdentity
-             .translate((W - (x1 - x0) * sc) / 2 - x0 * sc, (H - (y1 - y0) * sc) / 2 - y0 * sc)
-             .scale(sc));
-      } catch (_) {}
-
-      // Update sidebar — re-render with active trace indicator
-      activeTraceView = "dataflow";
-      renderSidebarForNode(nodeId);
-    }
 
     // -----------------------------------------------------------------------
     // Search
@@ -1684,7 +1320,7 @@
   // -----------------------------------------------------------------------
   // Sidebar
   // -----------------------------------------------------------------------
-  function renderSidebar(node, edgeEntries, nodeById, onTraceClick, onDataFlowClick, onDirToggle, isDirExpanded, activeView, onExitTrace) {
+  function renderSidebar(node, edgeEntries, nodeById, onDirToggle, isDirExpanded) {
     const el = document.getElementById("sidebar-content");
     const isStdlib = node.type === "file" && !node.file;
     const badge = isStdlib ? "stdlib" : (node.type || "symbol");
@@ -1747,99 +1383,110 @@
       h += `<button id="dir-expand-btn" style="font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;background:var(--bg-raised);color:var(--text-muted);border:1px solid var(--border);padding:5px 10px;border-radius:2px;cursor:pointer;margin-top:5px;width:100%;box-sizing:border-box;text-align:left;box-shadow:var(--shadow-sm);">${btnLabel}</button>`;
     }
 
-    const SB_BTN      = "font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;background:var(--bg-raised);color:var(--text-muted);border:1px solid var(--border);padding:5px 10px;border-radius:2px;cursor:pointer;margin-top:5px;width:100%;box-sizing:border-box;text-align:left;transition:border-color 0.12s,color 0.12s;box-shadow:var(--shadow-sm);";
-    const SB_BTN_ACT  = "font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;background:oklch(0.14 0.04 220);color:#4a8fd0;border:1px solid oklch(0.35 0.07 220);padding:5px 10px;border-radius:2px;cursor:pointer;margin-top:5px;width:100%;box-sizing:border-box;text-align:left;font-weight:600;box-shadow:var(--shadow-sm);";
+    const SB_BTN = "font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;background:var(--bg-raised);color:var(--text-muted);border:1px solid var(--border);padding:5px 10px;border-radius:2px;cursor:pointer;margin-top:5px;width:100%;box-sizing:border-box;text-align:left;transition:border-color 0.12s,color 0.12s;box-shadow:var(--shadow-sm);";
     h += `<div style="border-top:1px solid var(--border-muted);margin-top:10px;padding-top:6px;">`;
-    const flowActive = activeView === "flowchart";
-    const dfActive   = activeView === "dataflow";
-    h += `<button id="trace-btn" style="${flowActive ? SB_BTN_ACT : SB_BTN}">&#x21AA; Flowchart trace${flowActive ? " ●" : ""}</button>`;
-    if (node.type === "type" || node.type === "symbol" || node.type === "file") {
-      h += `<button id="df-trace-btn" style="${dfActive ? SB_BTN_ACT : SB_BTN}">&#x21C6; Data flow${dfActive ? " ●" : ""}</button>`;
-    }
+    h += `<button id="flowchart-btn" style="${SB_BTN}">&#x21AA; Flowchart</button>`;
+    h += `<button id="dataflow-btn" style="${SB_BTN}">&#x21C6; Data Flow</button>`;
     if (node.type === "file" || node.type === "symbol") {
       h += `<button id="state-diag-btn" style="${SB_BTN}">&#x25A6; State diagram</button>`;
     }
     if (node.type === "type") {
       h += `<button id="type-diag-btn" style="${SB_BTN}">&#x25A6; Type diagram</button>`;
     }
-    if (activeView) {
-      h += `<button id="exit-trace-btn" style="font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;background:oklch(0.12 0.04 30);color:oklch(0.65 0.12 30);border:1px solid oklch(0.25 0.06 30);padding:5px 10px;border-radius:2px;cursor:pointer;margin-top:8px;width:100%;box-sizing:border-box;text-align:left;box-shadow:var(--shadow-sm);">&#x2715; exit trace &nbsp;[esc]</button>`;
-    }
     h += `</div>`;
 
     el.innerHTML = h;
+
+    // Wire diagram buttons
+    // Clear per-tab loaders and pane contents whenever a new node is inspected
+    _diagLoaders.flowchart = null;
+    _diagLoaders.dataflow = null;
+    _diagLoaders.state = null;
+    ["flowchart", "dataflow", "state"].forEach(tab => {
+      const p = document.getElementById(`pane-${tab}`);
+      if (p) p.querySelector(".diag-content").innerHTML = "";
+    });
+
+    function _fetchDiagram(tabId, url, labelFn, mermaidKey) {
+      const pane = document.getElementById(`pane-${tabId}`);
+      const content = pane && pane.querySelector(".diag-content");
+      if (content && content.innerHTML.trim() !== "") return; // already loaded
+      if (content) content.innerHTML = '<div style="color:var(--text-dim);font-size:10px;padding:20px;letter-spacing:0.08em;">loading…</div>';
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          const text = data.error ? "Error: " + data.error : (data[mermaidKey] || data.output || "");
+          showDiagramPanel(tabId, labelFn(data), text);
+        })
+        .catch(err => showDiagramPanel(tabId, "Error", "Fetch failed: " + err.message));
+    }
+
+    const flowchartBtn = document.getElementById("flowchart-btn");
+    if (flowchartBtn) {
+      const loadFlowchart = () => _fetchDiagram(
+        "flowchart",
+        `/api/diagram/flowchart?node=${encodeURIComponent(node.id)}`,
+        () => node.label,
+        "mermaid"
+      );
+      _diagLoaders.flowchart = loadFlowchart;
+      flowchartBtn.addEventListener("click", () => {
+        _openDiagramPanel("flowchart");
+        loadFlowchart();
+      });
+    }
+
+    const dataflowBtn = document.getElementById("dataflow-btn");
+    if (dataflowBtn) {
+      const loadDataflow = () => _fetchDiagram(
+        "dataflow",
+        `/api/diagram/dataflow?node=${encodeURIComponent(node.id)}`,
+        () => node.label,
+        "mermaid"
+      );
+      _diagLoaders.dataflow = loadDataflow;
+      dataflowBtn.addEventListener("click", () => {
+        _openDiagramPanel("dataflow");
+        loadDataflow();
+      });
+    }
+
+    const stateDiagBtn = document.getElementById("state-diag-btn");
+    if (stateDiagBtn) {
+      const entryFile = node.file || node.id.split("::").slice(1, -1).join("/") || node.id;
+      const loadState = () => _fetchDiagram(
+        "state",
+        `/api/diagram/flow?entry=${encodeURIComponent(entryFile)}`,
+        data => data.error ? "Error" : "State — " + entryFile,
+        "mermaid"
+      );
+      _diagLoaders.state = loadState;
+      stateDiagBtn.addEventListener("click", () => {
+        _openDiagramPanel("state");
+        loadState();
+      });
+    }
+
+    const typeDiagBtn = document.getElementById("type-diag-btn");
+    if (typeDiagBtn) {
+      const typeName = node.label;
+      const loadType = () => _fetchDiagram(
+        "state",
+        `/api/diagram/type?type=${encodeURIComponent(typeName)}&format=mermaid`,
+        data => data.error ? "Error" : "Class — " + typeName,
+        "output"
+      );
+      _diagLoaders.state = loadType;
+      typeDiagBtn.addEventListener("click", () => {
+        _openDiagramPanel("state");
+        loadType();
+      });
+    }
 
     // Directory expand/collapse button
     const dirExpandBtn = document.getElementById("dir-expand-btn");
     if (dirExpandBtn && onDirToggle) {
       dirExpandBtn.addEventListener("click", onDirToggle);
-    }
-
-    // Attach trace button click handler
-    const traceBtn = document.getElementById("trace-btn");
-    if (traceBtn && onTraceClick) {
-      traceBtn.addEventListener("click", onTraceClick);
-    }
-    const dfTraceBtn = document.getElementById("df-trace-btn");
-    if (dfTraceBtn && onDataFlowClick) {
-      dfTraceBtn.addEventListener("click", onDataFlowClick);
-    }
-    const exitTraceBtn = document.getElementById("exit-trace-btn");
-    if (exitTraceBtn && onExitTrace) {
-      exitTraceBtn.addEventListener("click", onExitTrace);
-    }
-
-    // State diagram button
-    const stateDiagBtn = document.getElementById("state-diag-btn");
-    if (stateDiagBtn) {
-      stateDiagBtn.addEventListener("click", () => {
-        // entry param: use node.file (rel path) if available, else parse from node.id
-        const entryFile = node.file || node.id.split("::").slice(1, -1).join("/") || node.id;
-        stateDiagBtn.textContent = "Loading...";
-        stateDiagBtn.disabled = true;
-        fetch(`/api/diagram/flow?entry=${encodeURIComponent(entryFile)}`)
-          .then(r => r.json())
-          .then(data => {
-            stateDiagBtn.textContent = "State Diagram";
-            stateDiagBtn.disabled = false;
-            if (data.error) {
-              showDiagramPanel("Error", "Error: " + data.error);
-            } else {
-              showDiagramPanel("State Diagram — " + entryFile, data.mermaid);
-            }
-          })
-          .catch(err => {
-            stateDiagBtn.textContent = "State Diagram";
-            stateDiagBtn.disabled = false;
-            showDiagramPanel("Error", "Fetch failed: " + err.message);
-          });
-      });
-    }
-
-    // Type diagram button
-    const typeDiagBtn = document.getElementById("type-diag-btn");
-    if (typeDiagBtn) {
-      typeDiagBtn.addEventListener("click", () => {
-        const typeName = node.label;
-        typeDiagBtn.textContent = "Loading...";
-        typeDiagBtn.disabled = true;
-        fetch(`/api/diagram/type?type=${encodeURIComponent(typeName)}&format=mermaid`)
-          .then(r => r.json())
-          .then(data => {
-            typeDiagBtn.textContent = "Type Diagram";
-            typeDiagBtn.disabled = false;
-            if (data.error) {
-              showDiagramPanel("Error", "Error: " + data.error);
-            } else {
-              showDiagramPanel("Class Diagram — " + typeName, data.output);
-            }
-          })
-          .catch(err => {
-            typeDiagBtn.textContent = "Type Diagram";
-            typeDiagBtn.disabled = false;
-            showDiagramPanel("Error", "Fetch failed: " + err.message);
-          });
-      });
     }
   }
 

@@ -470,72 +470,37 @@ def _render_mermaid(
             RecipeScore --> SubStruct : sub_data
             RecipeScore --|> Alias : <<typedef>>
     """
-    # --- Pass 1: collect all involved types and relations via the same
-    #     recursive walker (mermaid mode accumulates into `relations` list)
+    # --- Pass 1: collect all involved types and relations
     relations: list[tuple[str, str, str, str]] = []  # (from_type, to_type, field_name, ptr_stars)
-    visited_collect: set = set()
-
-    # We need to also collect all type nodes that will appear in the diagram.
-    # Use a separate set that persists (unlike the recursion-scoped visited set).
     types_seen: dict[str, dict] = {}  # label -> type_node
-    # Build field list during collection pass (Pass 1), not in a separate pass later
     type_fields: dict[str, list[tuple[str, str | None]]] = defaultdict(list)
 
-    def _collect(type_node: dict, rel_list: list, v: set) -> None:
-        """Wrapper that records types_seen and delegates to _expand_type."""
+    def _collect_all(type_node: dict) -> None:
+        """Recursively collect types, fields, and relations in a single pass."""
         label = type_node.get("label", type_node["id"])
-        if label not in types_seen:
-            types_seen[label] = type_node
-            # Build field list once, here, not in a separate pass later
-            field_symbols = _collect_fields(type_node, contains_from, nodes_by_id)
-            for sym in field_symbols:
-                field = _field_name(sym)
-                referred = _resolve_field_type(sym, uses_type_from, nodes_by_id)
-                if referred is not None:
-                    pd = ptr_depth_map.get((type_node["id"], referred["id"]), 0) or 0
-                    ptr_stars = "*" * pd
-                    type_fields[label].append((field, ptr_stars + referred.get("label", "")))
-                    # Also ensure referred type gets collected
-                    if referred.get("label", "") not in types_seen:
-                        _collect(referred, rel_list, v)
-                else:
-                    type_fields[label].append((field, sym.get("annotation") or None))
-        _expand_type(
-            type_node,
-            contains_from,
-            uses_type_from,
-            nodes_by_id,
-            ptr_depth_map,
-            visited=v,
-            indent=0,
-            lines=[],       # unused in mermaid mode
-            relations=rel_list,
-            render_mode="mermaid",
-        )
-        # After expansion, ensure all referenced types are also in types_seen
-        for from_lbl, to_lbl, _, _ in rel_list:
-            if to_lbl not in types_seen:
-                # Find the target node by label
-                for n in nodes_by_id.values():
-                    if n.get("type") == "type" and n.get("label") == to_lbl:
-                        types_seen[to_lbl] = n
-                        break
+        if label in types_seen:
+            return
+        types_seen[label] = type_node
 
-    _collect(root_type, relations, visited_collect)
+        field_symbols = _collect_fields(type_node, contains_from, nodes_by_id)
+        for sym in field_symbols:
+            field = _field_name(sym)
+            referred = _resolve_field_type(sym, uses_type_from, nodes_by_id)
+            if referred is not None:
+                pd = ptr_depth_map.get((type_node["id"], referred["id"]), 0) or 0
+                ptr_stars = "*" * pd
+                type_fields[label].append((field, ptr_stars + referred.get("label", "")))
+                relations.append((label, referred.get("label", ""), field, ptr_stars))
+                _collect_all(referred)
+            else:
+                type_fields[label].append((field, sym.get("annotation") or None))
 
-    # --- Pass 1b: collect typedef chain relations
-    _expand_typedef_chain(
-        root_type,
-        typedef_from,
-        typedef_to,
-        nodes_by_id,
-        ptr_depth_map,
-        visited=set(),
-        indent=0,
-        lines=[],
-        relations=relations,
-        render_mode="mermaid",
-    )
+        for alias_node in typedef_from.get(type_node["id"], []):
+            alias_label = alias_node.get("label", "")
+            relations.append((label, alias_label, "typedef", ""))
+            _collect_all(alias_node)
+
+    _collect_all(root_type)
 
     # --- Pass 2: emit Mermaid text
     output_lines = ["classDiagram"]

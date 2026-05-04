@@ -22,7 +22,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 # Import analyze module functions
 sys.path.insert(0, os.path.dirname(__file__))
-from analyze import flow_trace, type_expander
+from analyze import flow_trace, type_expander, call_graph
 from schema import node_id_tier
 
 
@@ -222,6 +222,48 @@ class _Handler(BaseHTTPRequestHandler):
             try:
                 types = type_expander.list_types(graph_path)
                 self._send_json(200, {"types": types})
+            except Exception as e:
+                self._send_json(500, {"error": str(e)})
+
+        elif path == "/api/diagram/flowchart":
+            qs = parse_qs(parsed.query)
+            graph = qs.get("graph", [None])[0]
+            node  = qs.get("node",  [None])[0]
+            if not node:
+                self._send_json(400, {"error": "missing ?node= parameter"})
+                return
+            if graph is None:
+                graph_path = str(_graphs_dir / "tier_symbol.json")
+            else:
+                resolved = _safe_resolve(_graphs_dir, graph)
+                if resolved is None:
+                    self._send_json(403, {"error": "Forbidden"})
+                    return
+                graph_path = str(resolved)
+            try:
+                mermaid_output = call_graph.flowchart(graph_path, node)
+                self._send_json(200, {"mermaid": mermaid_output, "node": node})
+            except Exception as e:
+                self._send_json(500, {"error": str(e)})
+
+        elif path == "/api/diagram/dataflow":
+            qs = parse_qs(parsed.query)
+            graph = qs.get("graph", [None])[0]
+            node  = qs.get("node",  [None])[0]
+            if not node:
+                self._send_json(400, {"error": "missing ?node= parameter"})
+                return
+            if graph is None:
+                graph_path = str(_graphs_dir / "tier_symbol.json")
+            else:
+                resolved = _safe_resolve(_graphs_dir, graph)
+                if resolved is None:
+                    self._send_json(403, {"error": "Forbidden"})
+                    return
+                graph_path = str(resolved)
+            try:
+                mermaid_output = call_graph.dataflow(graph_path, node)
+                self._send_json(200, {"mermaid": mermaid_output, "node": node})
             except Exception as e:
                 self._send_json(500, {"error": str(e)})
 

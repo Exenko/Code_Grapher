@@ -203,6 +203,18 @@ class CodeGraph:
                 if edge.to_id in known_symbol_ids:
                     edge.unresolved = False
 
+    def subgraph_by_symbols(self, symbol_ids: set[str]) -> "CodeGraph":
+        """Return new CodeGraph containing only nodes in symbol_ids plus any edges between them."""
+        sub = CodeGraph(self.feature)
+        for nid in symbol_ids:
+            node = self._nodes.get(nid)
+            if node is not None:
+                sub.add_node(node)
+        for edge in self._edges.values():
+            if edge.from_id in symbol_ids and edge.to_id in symbol_ids:
+                sub.add_edge(edge)
+        return sub
+
     # ------------------------------------------------------------------
     # Merge (Phase 2 use: stitch multiple feature graphs)
     # ------------------------------------------------------------------

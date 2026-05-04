@@ -19,11 +19,11 @@ Requires Python 3.10+.
 ## Quick start (human viewer)
 
 ```bash
-# 1. Parse your project into a graph
+# 1. Parse your project into a graph (writes to ./graphs/project/myapp/)
 codegrapher --feature myapp --root /path/to/project --dir src
 
 # 2. Open the interactive viewer
-codegrapher-serve --graphs ./graphs
+codegrapher-serve --graphs ./graphs/project/myapp
 ```
 
 The viewer opens at `http://localhost:5000`. Navigate from repo → directories → files → symbols using the force-directed graph. Click any node to expand it, use the search bar to find symbols, and use the edge-type filters to focus on calls, types, or data flow.
@@ -49,7 +49,7 @@ codegrapher --feature NAME --root PATH --dir SUBDIR [options]
 | `--no-stdlib-calls` | Suppress edges to stdlib/built-in symbols (Python, TS/JS) |
 | `--standalone` | Bake the graph into a self-contained HTML file (auto: on if <1000 nodes) |
 
-Output goes to `./graphs/` by default. Use `--output-dir PATH` to write elsewhere.
+Output goes to `./graphs/<project>/<feature>/` by default, where `<project>` is the name of the directory passed to `--root`. Use `--output-dir PATH` to write to a custom location instead.
 
 **Examples:**
 
@@ -97,14 +97,11 @@ codegrapher-serve --graphs /path/to/graphs --port 8080
 codegrapher-mcp --graphs PATH
 ```
 
-Starts a [Model Context Protocol](https://modelcontextprotocol.io) server exposing 13 tools for LLM-assisted codebase exploration. Connect any MCP-compatible client (Claude Desktop, Claude Code, etc.) to let an LLM navigate the graph programmatically.
+Starts a [Model Context Protocol](https://modelcontextprotocol.io) server exposing 13 tools for LLM-assisted codebase exploration. `PATH` is the **graphs root** — a directory whose subdirectories are named projects, each containing named graph subdirectories.
 
-```bash
-codegrapher --feature myapp --root . --dir .
-codegrapher-mcp --graphs ./graphs
-```
+The default output layout (`codegrapher --feature myapp --root . --dir .` with no `--output-dir`) already matches this structure: graphs land in `./graphs/<project>/<feature>/`, so `--graphs ./graphs` works out of the box.
 
-See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for full MCP setup and tool reference.
+See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for Claude Code and Claude Desktop setup.
 
 > **Note:** The MCP server uses process-level global state for the active graph. Running two concurrent Claude sessions against the same `codegrapher-mcp` process will cause them to interfere. Start a separate server process per session if you need concurrent access.
 
@@ -115,11 +112,11 @@ See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for full MCP setup and tool refer
 ```bash
 cd /path/to/your/project
 
-# Parse
+# Parse (writes to ./graphs/your-project/myapp/)
 codegrapher --feature myapp --root . --dir .
 
 # Explore in browser
-codegrapher-serve --graphs ./graphs
+codegrapher-serve --graphs ./graphs/your-project/myapp
 ```
 
 The `graphs/` directory is self-contained — you can copy it anywhere and re-run `codegrapher-serve` against it.

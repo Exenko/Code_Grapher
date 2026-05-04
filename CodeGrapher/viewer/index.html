@@ -132,26 +132,6 @@
     <div id="loading-status">fetching graph data&hellip;</div>
   </div>
 
-  <!-- Diagram overlay panel -->
-  <div id="diagram-panel" style="display:none;position:fixed;top:0;right:0;bottom:0;width:72%;background:oklch(0.08 0.025 220);border-left:1px solid oklch(0.18 0.04 220);box-shadow:-4px 0 20px oklch(0 0 0 / 0.4);z-index:100;overflow:hidden;box-sizing:border-box;flex-direction:column;">
-    <div id="diagram-resize" style="position:absolute;left:0;top:0;bottom:0;width:4px;cursor:ew-resize;background:transparent;z-index:101;" title="Drag to resize"></div>
-    <div style="display:flex;align-items:center;gap:6px;padding:7px 12px;border-bottom:1px solid oklch(0.18 0.04 220);flex-shrink:0;flex-wrap:wrap;background:oklch(0.11 0.025 220);">
-      <span style="font-family:'JetBrains Mono',Consolas,monospace;font-size:9px;color:oklch(0.32 0.04 220);text-transform:uppercase;letter-spacing:0.12em;margin-right:2px;">//</span>
-      <span id="diagram-title" style="color:oklch(0.65 0.05 220);font-family:'JetBrains Mono',Consolas,monospace;font-size:11px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
-      <label style="color:oklch(0.45 0.05 220);font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;white-space:nowrap;display:flex;align-items:center;gap:5px;">
-        zoom
-        <input id="diagram-zoom" type="range" min="20" max="500" value="100" style="width:80px;vertical-align:middle;accent-color:#2060a0;">
-        <span id="diagram-zoom-val" style="color:oklch(0.65 0.05 220);min-width:34px;display:inline-block;font-size:10px;">100%</span>
-      </label>
-      <button id="diagram-zoom-reset" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 7px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Reset zoom">1:1</button>
-      <button id="diagram-fullscreen" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 7px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Toggle full width">&#x2922;</button>
-      <button id="diagram-close" style="background:oklch(0.15 0.025 220);color:oklch(0.65 0.05 220);border:1px solid oklch(0.28 0.05 220);padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;box-shadow:0 1px 2px oklch(0 0 0 / 0.45),0 2px 5px oklch(0 0 0 / 0.25);" title="Close [Esc]">&#x2715; esc</button>
-    </div>
-    <div id="diagram-scroll" style="overflow:auto;flex:1;padding:14px;">
-      <div id="diagram-content" style="transform-origin:top left;"></div>
-    </div>
-  </div>
-
   <!-- VS Code-style directory tree panel -->
   <div id="tree-panel">
     <div id="tree-header">
@@ -203,6 +183,38 @@
       <div class="legend-item">
         <div class="legend-dot" style="background:#050c1e;border-color:#1a3a70"></div>
         <span>dir</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="diagram-panel" style="display:none;">
+    <div id="diagram-resize"></div>
+    <div id="diagram-header">
+      <span class="dh-prefix">//</span>
+      <span id="diagram-tab-bar">
+        <button class="diag-tab active" data-tab="flowchart">Flowchart</button>
+        <button class="diag-tab" data-tab="dataflow">Data Flow</button>
+        <button class="diag-tab" data-tab="state">State</button>
+      </span>
+      <span style="flex:1"></span>
+      <label id="diagram-zoom-label">zoom
+        <input id="diagram-zoom" type="range" min="20" max="2000" value="100">
+        <span id="diagram-zoom-val">100%</span>
+      </label>
+      <button id="diagram-zoom-reset">1:1</button>
+      <button id="diagram-minimize" title="Minimize">&#x2212;</button>
+      <button id="diagram-fullscreen" title="Toggle full width">&#x2922;</button>
+      <button id="diagram-close" title="Close [Esc]">&#x2715; esc</button>
+    </div>
+    <div id="diagram-body">
+      <div class="diag-pane active" id="pane-flowchart">
+        <div class="diag-scroll"><div class="diag-content"></div></div>
+      </div>
+      <div class="diag-pane" id="pane-dataflow">
+        <div class="diag-scroll"><div class="diag-content"></div></div>
+      </div>
+      <div class="diag-pane" id="pane-state">
+        <div class="diag-scroll"><div class="diag-content"></div></div>
       </div>
     </div>
   </div>

@@ -68,6 +68,23 @@ class TestMerge:
 
         assert g1.edge_count() == 1
 
+    def test_merge_same_edge_different_metadata_keeps_first(self, feature):
+        g1 = CodeGraph(feature)
+        g2 = CodeGraph(feature)
+
+        from_id = symbol_id(feature, "foo.py", "caller")
+        to_id = symbol_id(feature, "bar.py", "callee")
+
+        edge1 = Edge(from_id=from_id, to_id=to_id, relation=EdgeRelation.CALLS, count=1)
+        edge2 = Edge(from_id=from_id, to_id=to_id, relation=EdgeRelation.CALLS, count=5)
+
+        g1.add_edge(edge1)
+        g2.add_edge(edge2)
+        g1.merge(g2)
+
+        assert g1.edge_count() == 1
+        assert g1.edges[0].count == 1
+
 
 class TestDedupTypeNodesByLabel:
     def test_two_type_nodes_with_same_label_deduplicates_to_one(self, feature):

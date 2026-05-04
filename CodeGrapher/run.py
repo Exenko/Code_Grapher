@@ -72,6 +72,104 @@ def _parse_one(feature: str, root: Path, filepath: Path,
 
 
 # ---------------------------------------------------------------------------
+# TwoPassBuilder
+# ---------------------------------------------------------------------------
+
+class TwoPassBuilder:
+    def __init__(self, feature: str, root: Path, all_files: list[Path], filter_stdlib: bool, known_file_ids: dict[str, str]):
+        self.feature = feature
+        self.root = root
+        self.all_files = all_files
+        self.filter_stdlib = filter_stdlib
+        self.known_file_ids = known_file_ids
+
+    def build(self) -> CodeGraph:
+        # ------------------------------------------------------------------
+        # Pass 1: Parse all files, collect symbol registry
+        # ------------------------------------------------------------------
+        print("Pass 1: Parsing files...")
+        per_file_graphs: list[CodeGraph] = []
+        for filepath in self.all_files:
+            g = _parse_one(self.feature, self.root, filepath, known_symbol_ids=None, known_file_ids=self.known_file_ids, filter_stdlib=self.filter_stdlib)
+            if g is not None:
+                per_file_graphs.append(g)
+
+        # Build cross-file symbol registry from Pass 1 results
+        registry: set[str] = set()
+        for g in per_file_graphs:
+            registry.update(g.all_symbol_ids())
+
+        print(f"  Registry: {len(registry)} symbols/types found\n")
+
+        # Build cross-file return type map: function_label → return_type_class_name.
+        # Scanned directly from Python source AST rather than from Pass 1 edges.
+        # Edge-based extraction fails because in Pass 1 (empty known registry),
+        # _emit_return_type_edge can't resolve cross-file type nodes and skips them.
+        # Direct AST scan is registry-independent and always captures annotations.
+        # Used in Pass 2 to resolve instance method calls like:
+        #   db = get_database()   # get_database -> PostgresDatabaseUtility
+        #   db.execute(query)     # resolved to PostgresDatabaseUtility.execute
+        return_type_map: dict[str, str] = {}
+        for filepath in self.all_files:
+            if filepath.suffix.lower() != '.py':
+                continue
+            try:
+                source = filepath.read_text(encoding='utf-8', errors='replace')
+                tree = _ast_mod.parse(source, filename=str(filepath))
+            except Exception:
+                continue
+            for node in _ast_mod.walk(tree):
+                if isinstance(node, (_ast_mod.FunctionDef, _ast_mod.AsyncFunctionDef)):
+                    if node.returns:
+                        for tname in _annotation_names(node.returns):
+                            if not _is_builtin_type(tname):
+                                return_type_map[node.name] = tname
+                                break
+
+        print(f"  Return type map: {len(return_type_map)} annotated functions\n")
+
+        # ------------------------------------------------------------------
+        # Pass 2: Re-parse with full registry to resolve calls
+        # ------------------------------------------------------------------
+        print("Pass 2: Resolving cross-file calls...")
+        feature_graph = CodeGraph(self.feature)
+        for filepath in self.all_files:
+            g = _parse_one(self.feature, self.root, filepath,
+                           known_symbol_ids=registry,
+                           known_return_types=return_type_map,
+                           known_file_ids=self.known_file_ids,
+                           filter_stdlib=self.filter_stdlib)
+            if g is not None:
+                feature_graph.merge(g)
+
+        print(f"  Nodes: {feature_graph.node_count()}")
+        print(f"  Edges: {feature_graph.edge_count()}\n")
+
+        # Collapse forward-declared duplicates to a single canonical type node
+        feature_graph.dedup_type_nodes_by_label()
+
+        # Strip edges to unresolved phantom endpoints (unresolved::X, _unresolved_.X)
+        dropped = feature_graph.drop_ghost_nodes()
+        if dropped:
+            print(f"  Stripped {dropped} unresolved ghost endpoints\n")
+
+        # Propagate RN root component entry points across file boundaries.
+        # index.js stores "rn_root::<ComponentName>" in the file node annotation;
+        # the component itself lives in another file and must be marked here.
+        for node in feature_graph.nodes:
+            if node.annotation and node.annotation.startswith("rn_root::"):
+                comp_name = node.annotation[len("rn_root::"):]
+                suffix = f"::{comp_name}"
+                for n in feature_graph.nodes:
+                    if n.type == NodeType.SYMBOL and (
+                        n.label == comp_name or n.id.endswith(suffix)
+                    ):
+                        n.entry_point = True
+
+        return feature_graph
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -121,87 +219,7 @@ def main() -> None:
         dotted_path = rel_path.replace("\\", "/").replace("/", ".").replace(".py", "")
         known_file_ids[dotted_path] = fid
 
-    # ------------------------------------------------------------------
-    # Pass 1: Parse all files, collect symbol registry
-    # ------------------------------------------------------------------
-    print("Pass 1: Parsing files...")
-    per_file_graphs: list[CodeGraph] = []
-    for filepath in all_files:
-        g = _parse_one(feature, root, filepath, known_symbol_ids=None, known_file_ids=known_file_ids, filter_stdlib=filter_stdlib)
-        if g is not None:
-            per_file_graphs.append(g)
-
-    # Build cross-file symbol registry from Pass 1 results
-    registry: set[str] = set()
-    for g in per_file_graphs:
-        registry.update(g.all_symbol_ids())
-
-    print(f"  Registry: {len(registry)} symbols/types found\n")
-
-    # Build cross-file return type map: function_label → return_type_class_name.
-    # Scanned directly from Python source AST rather than from Pass 1 edges.
-    # Edge-based extraction fails because in Pass 1 (empty known registry),
-    # _emit_return_type_edge can't resolve cross-file type nodes and skips them.
-    # Direct AST scan is registry-independent and always captures annotations.
-    # Used in Pass 2 to resolve instance method calls like:
-    #   db = get_database()   # get_database -> PostgresDatabaseUtility
-    #   db.execute(query)     # resolved to PostgresDatabaseUtility.execute
-    return_type_map: dict[str, str] = {}
-    for filepath in all_files:
-        if filepath.suffix.lower() != '.py':
-            continue
-        try:
-            source = filepath.read_text(encoding='utf-8', errors='replace')
-            tree = _ast_mod.parse(source, filename=str(filepath))
-        except Exception:
-            continue
-        for node in _ast_mod.walk(tree):
-            if isinstance(node, (_ast_mod.FunctionDef, _ast_mod.AsyncFunctionDef)):
-                if node.returns:
-                    for tname in _annotation_names(node.returns):
-                        if not _is_builtin_type(tname):
-                            return_type_map[node.name] = tname
-                            break
-
-    print(f"  Return type map: {len(return_type_map)} annotated functions\n")
-
-    # ------------------------------------------------------------------
-    # Pass 2: Re-parse with full registry to resolve calls
-    # ------------------------------------------------------------------
-    print("Pass 2: Resolving cross-file calls...")
-    feature_graph = CodeGraph(feature)
-    for filepath in all_files:
-        g = _parse_one(feature, root, filepath,
-                       known_symbol_ids=registry,
-                       known_return_types=return_type_map,
-                       known_file_ids=known_file_ids,
-                       filter_stdlib=filter_stdlib)
-        if g is not None:
-            feature_graph.merge(g)
-
-    print(f"  Nodes: {feature_graph.node_count()}")
-    print(f"  Edges: {feature_graph.edge_count()}\n")
-
-    # Collapse forward-declared duplicates to a single canonical type node
-    feature_graph.dedup_type_nodes_by_label()
-
-    # Strip edges to unresolved phantom endpoints (unresolved::X, _unresolved_.X)
-    dropped = feature_graph.drop_ghost_nodes()
-    if dropped:
-        print(f"  Stripped {dropped} unresolved ghost endpoints\n")
-
-    # Propagate RN root component entry points across file boundaries.
-    # index.js stores "rn_root::<ComponentName>" in the file node annotation;
-    # the component itself lives in another file and must be marked here.
-    for node in feature_graph.nodes:
-        if node.annotation and node.annotation.startswith("rn_root::"):
-            comp_name = node.annotation[len("rn_root::"):]
-            suffix = f"::{comp_name}"
-            for n in feature_graph.nodes:
-                if n.type == NodeType.SYMBOL and (
-                    n.label == comp_name or n.id.endswith(suffix)
-                ):
-                    n.entry_point = True
+    feature_graph = TwoPassBuilder(feature, root, all_files, filter_stdlib, known_file_ids).build()
 
     # ------------------------------------------------------------------
     # Write graph JSON
@@ -209,7 +227,8 @@ def main() -> None:
     if args.output_dir:
         graphs_dir = Path(args.output_dir).resolve()
     else:
-        graphs_dir = Path.cwd() / "graphs"
+        project_name = Path(args.root).resolve().name or "project"
+        graphs_dir = Path.cwd() / "graphs" / project_name / args.feature
     graphs_dir.mkdir(parents=True, exist_ok=True)
     out_path = graphs_dir / f"feature_{feature}.json"
     feature_graph.save(out_path)
